@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" fill="none">
+  <g fill="currentColor">
+    <path d="M 28 35 C 28 29, 23 24, 17 24 C 23 24, 28 19, 28 13 C 28 19, 33 24, 39 24 C 33 24, 28 29, 28 35 Z" fill="#2E4F94"/>
+    <text x="0" y="48" font-family="'Outfit', sans-serif" font-weight="700" font-size="48" letter-spacing="-1px" fill="currentColor">Clandest</text>
+    <text x="48" y="96" font-family="'Outfit', sans-serif" font-weight="600" font-size="44" letter-spacing="-1px" fill="currentColor">agency</text>
+  </g>
+</svg>
