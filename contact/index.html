@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clandest Agency — Design, Dev & Video Studio</title>
+  <title>Contact — Clandest Agency</title>
   <meta name="description" content="A design, development, and video post-production studio in Dhaka. We build clean brand systems, custom websites, and high-converting marketing videos.">
   
   <!-- Google Fonts Preconnect and Preload to prevent FOUT -->
@@ -13,11 +13,11 @@
   <link rel="preload" href="https://fonts.gstatic.com/s/hostgrotesk/v5/co3UmWBnlCJ3U42vbbfdwMjzqHAXOdFzqU5PudXOzhY.ttf" as="font" type="font/truetype" crossorigin>
   <link rel="preload" href="https://fonts.gstatic.com/s/hostgrotesk/v5/co3UmWBnlCJ3U42vbbfdwMjzqHAXOdFzqU5PuTnJzhY.ttf" as="font" type="font/truetype" crossorigin>
   <link rel="preload" href="https://fonts.gstatic.com/s/hostgrotesk/v5/co3UmWBnlCJ3U42vbbfdwMjzqHAXOdFzqU5PuQDJzhY.ttf" as="font" type="font/truetype" crossorigin>
-  <link rel="preload" href="style.css" as="style">
+  <link rel="preload" href="../style.css" as="style">
   
   <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=block" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
 </head>
 <body>
 
@@ -25,138 +25,59 @@
   <header class="site-header" id="siteHeader">
     <div class="nav-container">
       
-      <a href="index.html" class="brand-link" aria-label="Clandest Agency Homepage">
-        <img src="assets/logo.svg" alt="Clandest Agency logo" class="brand-logo-img">
+      <a href="../" class="brand-link" aria-label="Clandest Agency Homepage">
+        <img src="../assets/logo.svg" alt="Clandest Agency logo" class="brand-logo-img">
       </a>
 
       <nav class="main-nav" aria-label="Main Navigation">
         <ul class="nav-list">
-          <li><a href="about/" class="nav-link">About</a></li>
-          <li><a href="services/" class="nav-link">Services</a></li>
-          <li><a href="process/" class="nav-link">Process</a></li>
-          <li><a href="contact/" class="nav-link">Contact</a></li>
+          <li><a href="../about/" class="nav-link">About</a></li>
+          <li><a href="../services/" class="nav-link">Services</a></li>
+          <li><a href="../process/" class="nav-link">Process</a></li>
+          <li><a href="../contact/" class="nav-link" style="font-weight: 700;">Contact</a></li>
         </ul>
       </nav>
 
       <div class="nav-action">
-        <a href="#contact" class="header-cta-btn">Work with us</a>
+        <a href="../contact/" class="header-cta-btn">Work with us</a>
       </div>
 
     </div>
   </header>
 
   <main>
-    <!-- HERO SECTION -->
-    <section class="hero-section" id="hero">
-      <div class="container hero-container">
-        <h1 class="hero-title">
-          We design brands, websites,<br>and edit marketing videos.
-        </h1>
-        <p class="hero-subtext">
-          We are four friends who met at Munshiganj Polytechnic Institute. We combine UX design, clean software engineering, and post-production video editing to build digital assets that actually work.
-        </p>
-      </div>
-    </section>
-
-    <!-- SERVICES SECTION ("What we can do for you.") -->
-    <section class="services-section" id="services">
+    <section class="contact-section" id="contact" style="padding-top: 20px;">
       <div class="container">
         
-        <h2 class="section-heading-centered">What we can do for you.</h2>
-
-        <div class="services-visual-grid">
-          
-          <!-- Service 1: Marketing Video -->
-          <a href="services/#video" class="service-visual-card">
-            <div class="service-image-box">
-              <img src="assets/service-marketing-video.png" alt="Marketing Video Production" loading="lazy">
-            </div>
-            <div class="service-card-label">Marketing Video</div>
-          </a>
-
-          <!-- Service 2: Logo & Brand Design -->
-          <a href="services/#branding" class="service-visual-card">
-            <div class="service-image-box">
-              <img src="assets/service-brand-design.jpg" alt="Logo and Brand Design" loading="lazy">
-            </div>
-            <div class="service-card-label">Logo &amp; Brand Design</div>
-          </a>
-
-          <!-- Service 3: Website Redesign -->
-          <a href="services/#development" class="service-visual-card">
-            <div class="service-image-box">
-              <img src="assets/service-web-redesign.png" alt="Website Redesign and Development" loading="lazy">
-            </div>
-            <div class="service-card-label">Website Redesign</div>
-          </a>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- THE FOUNDING TEAM SECTION -->
-    <section class="team-section" id="team">
-      <div class="container">
-        
-        <h2 class="section-heading-centered">The Founding Team</h2>
-
-        <div class="team-members-grid">
-          
-          <!-- Team Member 1 -->
-          <div class="team-member-card">
-            <div class="team-portrait-box">
-              <img src="assets/team-sadman.png" alt="Sadman Zaman Khan" loading="lazy">
-            </div>
-            <div class="team-name">Sadman Zaman Khan</div>
-            <div class="team-role">UI/UX &amp; Brand Design</div>
-          </div>
-
-          <!-- Team Member 2 -->
-          <div class="team-member-card">
-            <div class="team-portrait-box">
-              <img src="assets/team-habibullah.png" alt="Md. Habibullah" loading="lazy">
-            </div>
-            <div class="team-name">Md. Habibullah</div>
-            <div class="team-role">Client Relationship Manager</div>
-          </div>
-
-          <!-- Team Member 3 -->
-          <div class="team-member-card">
-            <div class="team-portrait-box">
-              <img src="assets/team-nafiur.png" alt="Md. Nafiur Rahman" loading="lazy">
-            </div>
-            <div class="team-name">Md. Nafiur Rahman</div>
-            <div class="team-role">Web Development &amp; AI</div>
-          </div>
-
-          <!-- Team Member 4 -->
-          <div class="team-member-card">
-            <div class="team-portrait-box">
-              <img src="assets/team-rafayet.png" alt="Md. Abdullah al Rafayet" loading="lazy">
-            </div>
-            <div class="team-name">Md. Abdullah al Rafayet</div>
-            <div class="team-role">Video &amp; Motion Graphics</div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- CONTACT FORM SECTION ("Ready to build something?") -->
-    <section class="contact-section" id="contact">
-      <div class="container">
-        
-        <div class="contact-header">
-          <h2 class="section-heading-centered" style="margin-bottom: 0;">Ready to build something?</h2>
-          <p class="contact-subtext">
+        <div class="subpage-hero" style="padding-top: 20px;">
+          <h1 class="subpage-title">
+            Ready to build something?
+          </h1>
+          <p class="subpage-subtext">
             We work directly with you—no account managers, no layers of bureaucracy. Drop us a line about your brand, dev, or video needs.
           </p>
         </div>
 
+        <!-- Direct Contact Pills -->
+        <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 40px;">
+          <a href="mailto:clandest.agency@gmail.com" class="social-pill-badge" style="padding: 10px 24px; font-size: 16px;">
+            <svg class="badge-icon" viewBox="0 0 24 24" fill="none" style="width: 18px; height: 18px;">
+              <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.272H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L12 9.548l8.073-6.055C21.69 2.28 24 3.434 24 5.457z" fill="#EA4335"/>
+            </svg>
+            <span>clandest.agency@gmail.com</span>
+          </a>
+          <div class="contact-info-pill">
+            <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="var(--c-blue)" stroke-width="2" style="width: 18px; height: 18px;">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span>Dhaka, Bangladesh</span>
+          </div>
+        </div>
+
+        <!-- Working Contact Form matching Homepage Design -->
         <div class="contact-form-wrapper">
-          <form class="redesign-form" id="contactForm" action="#" method="POST">
+          <form class="redesign-form" id="contactForm" onsubmit="return false;">
             
             <div class="form-row-2col">
               <div class="form-field-group">
@@ -182,12 +103,16 @@
 
             <div class="form-field-group">
               <label for="userMessage">Tell us about your project</label>
-              <textarea id="userMessage" name="message" class="form-textarea" placeholder="Briefly describe your brand identity, web project, or raw video edit requirements..." rows="4"></textarea>
+              <textarea id="userMessage" name="message" class="form-textarea" placeholder="Briefly describe your brand identity, web project, or raw video edit requirements..." rows="4" required></textarea>
             </div>
 
             <div class="form-action-container">
-              <button type="submit" class="send-msg-btn">Send Message</button>
+              <button type="submit" class="send-msg-btn" id="submitBtn">Send Message</button>
               <span class="form-direct-note">You talk directly with our founding team.</span>
+            </div>
+
+            <div class="form-feedback" id="formFeedback" style="display: none; margin-top: 20px; font-size: 16px; color: var(--c-blue); font-weight: 500;">
+              Thank you! We received your message and will reply to your email shortly.
             </div>
 
           </form>
@@ -203,7 +128,7 @@
       
       <!-- Giant Vector Wordmark -->
       <div class="footer-giant-wordmark-container">
-        <img src="assets/logo.svg" alt="Clandest Agency" class="footer-giant-wordmark-img">
+        <img src="../assets/logo.svg" alt="Clandest Agency" class="footer-giant-wordmark-img">
       </div>
 
       <!-- Bottom Bar with Copyright and Social Badges -->
@@ -243,6 +168,6 @@
     </div>
   </footer>
 
-  <script src="app.js"></script>
+  <script src="../app.js"></script>
 </body>
 </html>
