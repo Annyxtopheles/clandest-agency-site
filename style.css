@@ -364,36 +364,37 @@ button, input, select, textarea {
 }
 
 .form-field-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.form-field-group label {
-  font-size: var(--fs-form-label);
-  font-weight: 600;
-  line-height: 1.1;
-  color: var(--c-blue);
+  position: relative;
+  margin-top: 16px;
 }
 
 .form-input,
 .form-select,
 .form-textarea {
   width: 100%;
-  padding: 12px 18px;
+  padding: 16px 18px;
   border-radius: var(--radius-input);
   background-color: transparent;
-  border: 1px solid var(--c-border);
+  border: 1.5px solid var(--c-border);
   color: var(--c-text);
   font-size: var(--fs-form-input);
   font-family: inherit;
   outline: none;
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-input::placeholder,
-.form-textarea::placeholder {
+.form-field-group label {
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  font-size: var(--fs-form-input);
+  font-weight: 500;
   color: var(--c-placeholder);
+  pointer-events: none;
+  transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: var(--c-white);
+  padding: 0 6px;
+  line-height: 1;
 }
 
 .form-input:focus,
@@ -402,38 +403,119 @@ button, input, select, textarea {
   border-color: var(--c-blue);
 }
 
+/* Floating label when focused or holding text */
+.form-input:focus ~ label,
+.form-input:not(:placeholder-shown) ~ label,
+.form-select:focus ~ label,
+.form-select ~ label, /* Always float for select since it has a default option value */
+.form-textarea:focus ~ label,
+.form-textarea:not(:placeholder-shown) ~ label {
+  top: 0;
+  transform: translateY(-50%) scale(0.85);
+  color: var(--c-blue);
+  font-weight: 600;
+}
+
 .form-textarea {
   resize: vertical;
-  min-height: 110px;
+  min-height: 120px;
 }
 
 .form-action-container {
   display: flex;
   align-items: center;
   gap: 24px;
-  margin-top: 10px;
+  margin-top: 24px;
   flex-wrap: wrap;
 }
 
-.send-msg-btn {
+/* Uiverse Button: gharsh11032000/loud-chicken-53 */
+.animated-button {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 4px;
   padding: 16px 36px;
-  border-radius: var(--radius-pill);
-  background-color: var(--c-blue);
-  color: var(--c-white);
+  border: 2px solid var(--c-blue);
   font-size: var(--fs-button);
+  background-color: transparent;
+  border-radius: 100px;
   font-weight: 600;
-  border: 1px solid var(--c-blue);
+  color: var(--c-blue);
   cursor: pointer;
-  white-space: nowrap;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+  overflow: hidden;
+  text-decoration: none;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.send-msg-btn:hover {
-  background-color: var(--c-blue-dark);
-  border-color: var(--c-blue-dark);
+.animated-button svg {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  fill: var(--c-blue);
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .arr-1 {
+  right: 18px;
+}
+
+.animated-button .arr-2 {
+  left: -25%;
+}
+
+.animated-button .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: var(--c-blue);
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .text {
+  position: relative;
+  z-index: 1;
+  transform: translateX(-12px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button:hover {
+  box-shadow: 0 0 0 12px transparent;
+  color: var(--c-white);
+}
+
+.animated-button:hover .arr-1 {
+  right: -25%;
+}
+
+.animated-button:hover .arr-2 {
+  left: 18px;
+}
+
+.animated-button:hover .text {
+  transform: translateX(12px);
+}
+
+.animated-button:hover svg {
+  fill: var(--c-white);
+}
+
+.animated-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 0 4px var(--c-blue);
+}
+
+.animated-button:hover .circle {
+  width: 240px;
+  height: 240px;
+  opacity: 1;
 }
 
 .form-direct-note {
@@ -809,4 +891,121 @@ button, input, select, textarea {
   object-fit: cover;
   display: block;
 }
+
+.service-visual-card-link {
+  text-decoration: none;
+  display: block;
+}
+
+.service-visual-card-link:hover {
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   3D Card Hover Tracker System (Kennyotsu/Witty-Deer-12)
+   ========================================================================== */
+.card-3d-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+}
+
+.card-3d-wrapper .canvas {
+  perspective: 1000px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 0;
+  grid-template-areas: 
+    "tr-1 tr-2 tr-3 tr-4 tr-5"
+    "tr-6 tr-7 tr-8 tr-9 tr-10"
+    "tr-11 tr-12 tr-13 tr-14 tr-15"
+    "tr-16 tr-17 tr-18 tr-19 tr-20"
+    "tr-21 tr-22 tr-23 tr-24 tr-25";
+}
+
+.card-3d-wrapper .tracker {
+  position: absolute;
+  z-index: 200;
+  width: 100%;
+  height: 100%;
+}
+
+.card-3d-wrapper .tracker:hover {
+  cursor: pointer;
+}
+
+.card-3d-wrapper .card-3d-target {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  z-index: 1;
+  transition: transform 300ms cubic-bezier(0.25, 1, 0.5, 1), box-shadow 300ms ease;
+  transform-style: preserve-3d;
+}
+
+.card-3d-wrapper .card-3d-target:hover {
+  transform: none; /* Override absolute standard translate hovers */
+}
+
+/* Define trackers area */
+.card-3d-wrapper .tr-1 { grid-area: tr-1; }
+.card-3d-wrapper .tr-2 { grid-area: tr-2; }
+.card-3d-wrapper .tr-3 { grid-area: tr-3; }
+.card-3d-wrapper .tr-4 { grid-area: tr-4; }
+.card-3d-wrapper .tr-5 { grid-area: tr-5; }
+.card-3d-wrapper .tr-6 { grid-area: tr-6; }
+.card-3d-wrapper .tr-7 { grid-area: tr-7; }
+.card-3d-wrapper .tr-8 { grid-area: tr-8; }
+.card-3d-wrapper .tr-9 { grid-area: tr-9; }
+.card-3d-wrapper .tr-10 { grid-area: tr-10; }
+.card-3d-wrapper .tr-11 { grid-area: tr-11; }
+.card-3d-wrapper .tr-12 { grid-area: tr-12; }
+.card-3d-wrapper .tr-13 { grid-area: tr-13; }
+.card-3d-wrapper .tr-14 { grid-area: tr-14; }
+.card-3d-wrapper .tr-15 { grid-area: tr-15; }
+.card-3d-wrapper .tr-16 { grid-area: tr-16; }
+.card-3d-wrapper .tr-17 { grid-area: tr-17; }
+.card-3d-wrapper .tr-18 { grid-area: tr-18; }
+.card-3d-wrapper .tr-19 { grid-area: tr-19; }
+.card-3d-wrapper .tr-20 { grid-area: tr-20; }
+.card-3d-wrapper .tr-21 { grid-area: tr-21; }
+.card-3d-wrapper .tr-22 { grid-area: tr-22; }
+.card-3d-wrapper .tr-23 { grid-area: tr-23; }
+.card-3d-wrapper .tr-24 { grid-area: tr-24; }
+.card-3d-wrapper .tr-25 { grid-area: tr-25; }
+
+/* Tilt values on hover */
+.card-3d-wrapper .tr-1:hover ~ .card-3d-target { transform: rotateX(12deg) rotateY(-8deg); }
+.card-3d-wrapper .tr-2:hover ~ .card-3d-target { transform: rotateX(12deg) rotateY(-4deg); }
+.card-3d-wrapper .tr-3:hover ~ .card-3d-target { transform: rotateX(12deg) rotateY(0deg); }
+.card-3d-wrapper .tr-4:hover ~ .card-3d-target { transform: rotateX(12deg) rotateY(4deg); }
+.card-3d-wrapper .tr-5:hover ~ .card-3d-target { transform: rotateX(12deg) rotateY(8deg); }
+
+.card-3d-wrapper .tr-6:hover ~ .card-3d-target { transform: rotateX(6deg) rotateY(-8deg); }
+.card-3d-wrapper .tr-7:hover ~ .card-3d-target { transform: rotateX(6deg) rotateY(-4deg); }
+.card-3d-wrapper .tr-8:hover ~ .card-3d-target { transform: rotateX(6deg) rotateY(0deg); }
+.card-3d-wrapper .tr-9:hover ~ .card-3d-target { transform: rotateX(6deg) rotateY(4deg); }
+.card-3d-wrapper .tr-10:hover ~ .card-3d-target { transform: rotateX(6deg) rotateY(8deg); }
+
+.card-3d-wrapper .tr-11:hover ~ .card-3d-target { transform: rotateX(0deg) rotateY(-8deg); }
+.card-3d-wrapper .tr-12:hover ~ .card-3d-target { transform: rotateX(0deg) rotateY(-4deg); }
+.card-3d-wrapper .tr-13:hover ~ .card-3d-target { transform: rotateX(0deg) rotateY(0deg); }
+.card-3d-wrapper .tr-14:hover ~ .card-3d-target { transform: rotateX(0deg) rotateY(4deg); }
+.card-3d-wrapper .tr-15:hover ~ .card-3d-target { transform: rotateX(0deg) rotateY(8deg); }
+
+.card-3d-wrapper .tr-16:hover ~ .card-3d-target { transform: rotateX(-6deg) rotateY(-8deg); }
+.card-3d-wrapper .tr-17:hover ~ .card-3d-target { transform: rotateX(-6deg) rotateY(-4deg); }
+.card-3d-wrapper .tr-18:hover ~ .card-3d-target { transform: rotateX(-6deg) rotateY(0deg); }
+.card-3d-wrapper .tr-19:hover ~ .card-3d-target { transform: rotateX(-6deg) rotateY(4deg); }
+.card-3d-wrapper .tr-20:hover ~ .card-3d-target { transform: rotateX(-6deg) rotateY(8deg); }
+
+.card-3d-wrapper .tr-21:hover ~ .card-3d-target { transform: rotateX(-12deg) rotateY(-8deg); }
+.card-3d-wrapper .tr-22:hover ~ .card-3d-target { transform: rotateX(-12deg) rotateY(-4deg); }
+.card-3d-wrapper .tr-23:hover ~ .card-3d-target { transform: rotateX(-12deg) rotateY(0deg); }
+.card-3d-wrapper .tr-24:hover ~ .card-3d-target { transform: rotateX(-12deg) rotateY(4deg); }
+.card-3d-wrapper .tr-25:hover ~ .card-3d-target { transform: rotateX(-12deg) rotateY(8deg); }
 

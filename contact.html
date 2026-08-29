@@ -39,7 +39,16 @@
       </nav>
 
       <div class="nav-action">
-        <a href="contact.html" class="header-cta-btn">Work with us</a>
+        <a href="contact.html" class="animated-button header-cta-btn">
+          <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+          </svg>
+          <span class="text">Work with us</span>
+          <span class="circle"></span>
+          <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+          </svg>
+        </a>
       </div>
 
     </div>
@@ -81,33 +90,42 @@
             
             <div class="form-row-2col">
               <div class="form-field-group">
+                <input type="text" id="userName" name="name" class="form-input" placeholder=" " required>
                 <label for="userName">Your name</label>
-                <input type="text" id="userName" name="name" class="form-input" placeholder="eg. Sarah Khan" required>
               </div>
 
               <div class="form-field-group">
+                <input type="email" id="userEmail" name="email" class="form-input" placeholder=" " required>
                 <label for="userEmail">Your email</label>
-                <input type="email" id="userEmail" name="email" class="form-input" placeholder="sarah@example.com" required>
               </div>
             </div>
 
             <div class="form-field-group">
-              <label for="userService">What do you need help with?</label>
               <select id="userService" name="service" class="form-select">
                 <option value="Logo & Brand Design" selected>Logo &amp; Brand Design</option>
                 <option value="Website Redesign">Website Redesign</option>
                 <option value="Marketing Video">Marketing Video</option>
                 <option value="Full Agency Support">Full Agency Retainer</option>
               </select>
+              <label for="userService">What do you need help with?</label>
             </div>
 
             <div class="form-field-group">
+              <textarea id="userMessage" name="message" class="form-textarea" placeholder=" " rows="4" required></textarea>
               <label for="userMessage">Tell us about your project</label>
-              <textarea id="userMessage" name="message" class="form-textarea" placeholder="Briefly describe your brand identity, web project, or raw video edit requirements..." rows="4" required></textarea>
             </div>
 
             <div class="form-action-container">
-              <button type="submit" class="send-msg-btn" id="submitBtn">Send Message</button>
+              <button type="submit" class="animated-button" id="submitBtn">
+                <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+                </svg>
+                <span class="text">Send Message</span>
+                <span class="circle"></span>
+                <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+                </svg>
+              </button>
               <span class="form-direct-note">You talk directly with our founding team.</span>
             </div>
 
