@@ -1,29 +1,52 @@
 /* ==========================================================================
-   CLANDEST AGENCY — STRICT 2-COLOR SYSTEM
-   Base: #E6E6E6 | Brand Blue: #2E4F94
-   No gradients, no stray colors, unified pill buttons, full mobile responsiveness
+   CLANDEST AGENCY — FIGMA REDESIGN SYSTEM
+   Theme: Pure White #FFFFFF | Brand Blue: #2E4F94
+   Typography: Host Grotesk throughout
    ========================================================================== */
 
 :root {
-  /* Strict Palette Tokens */
-  --c-base: #E6E6E6;
-  --c-base-card: #DADADA;
-  --c-base-border: #C8C8C8;
-
+  /* Core Colors */
+  --c-bg: #FFFFFF;
   --c-blue: #2E4F94;
-  --c-blue-dark: #223B72;
-  --c-blue-card: #264380;
-  --c-blue-border: #3D62A8;
-
+  --c-blue-dark: #20396B;
+  --c-blue-alt: #244894;
+  --c-text: #000000;
+  --c-text-muted: #555555;
+  --c-placeholder: #757575;
+  --c-border: #BFBFBF;
   --c-white: #FFFFFF;
 
-  /* Single Rounded Typeface */
-  --font-main: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  /* Brand Accents for Badges */
+  --c-facebook: #1877F2;
+  --c-whatsapp: #25D366;
+  --c-gmail: #EA4335;
+
+  /* Typography: Single Family */
+  --font-main: 'Host Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   /* Layout Variables */
-  --max-width: 1240px;
-  --radius-pill: 9999px;
+  --max-width: 1440px;
+  --container-width: 1440px;
+  --radius-input: 10px;
   --radius-card: 18px;
+  --radius-badge: 27px;
+  --radius-cta: 32px;
+  --radius-pill: 9999px;
+
+  /* Desktop Typographic Scale */
+  --fs-hero-title: 90px;
+  --fs-hero-sub: 32px;
+  --fs-section-title: 48px;
+  --fs-service-title: 32px;
+  --fs-nav: 24px;
+  --fs-team-name: 24px;
+  --fs-team-role: 16px;
+  --fs-cta-sub: 24px;
+  --fs-form-label: 24px;
+  --fs-form-input: 20px;
+  --fs-button: 20px;
+  --fs-footer-copy: 20px;
+  --fs-social: 18px;
 }
 
 /* Global Reset */
@@ -35,8 +58,8 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: var(--c-base);
-  color: var(--c-blue);
+  background-color: var(--c-bg);
+  color: var(--c-text);
   font-family: var(--font-main);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -44,10 +67,11 @@ html {
 
 body {
   min-height: 100vh;
-  background-color: var(--c-base);
-  color: var(--c-blue);
+  background-color: var(--c-bg);
+  color: var(--c-text);
   font-family: var(--font-main);
-  line-height: 1.55;
+  line-height: 1.4;
+  font-size: 16px;
   position: relative;
   overflow-x: hidden;
 }
@@ -67,39 +91,535 @@ button, input, select, textarea {
   font-family: inherit;
 }
 
-/* Grain Layer (Subtle SVG noise overlay from logo) */
-.grain-layer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 99;
-  opacity: 0.04;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-}
-
 /* Container */
 .container {
   width: 100%;
-  max-width: var(--max-width);
+  max-width: var(--container-width);
   margin-left: auto;
   margin-right: auto;
-  padding-left: clamp(20px, 4vw, 48px);
-  padding-right: clamp(20px, 4vw, 48px);
+  padding-left: clamp(20px, 4vw, 40px);
+  padding-right: clamp(20px, 4vw, 40px);
   position: relative;
-  z-index: 1;
 }
 
-/* Unified Pill Button System */
+/* ==========================================================================
+   Header & Navigation
+   ========================================================================== */
+.site-header {
+  width: 100%;
+  background-color: var(--c-bg);
+  padding: 20px 0;
+  position: relative;
+  z-index: 50;
+}
+
+.nav-container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 40px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand-link {
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.brand-logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
+.main-nav .nav-list {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 3vw, 36px);
+  list-style: none;
+}
+
+.nav-link {
+  font-size: var(--fs-nav);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--c-blue);
+}
+
+.nav-link:hover {
+  opacity: 0.75;
+}
+
+.header-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  border-radius: var(--radius-cta);
+  background-color: var(--c-blue);
+  color: var(--c-white);
+  font-size: var(--fs-button);
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.header-cta-btn:hover {
+  background-color: var(--c-blue-dark);
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero-section {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  text-align: center;
+}
+
+.hero-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: var(--fs-hero-title);
+  font-weight: 400;
+  line-height: 1.0;
+  letter-spacing: -2.5px;
+  color: var(--c-blue);
+  margin-bottom: 28px;
+}
+
+.hero-subtext {
+  font-size: var(--fs-hero-sub);
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--c-text);
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   Section Common
+   ========================================================================== */
+.section-heading-centered {
+  font-size: var(--fs-section-title);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+  color: var(--c-blue);
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+/* ==========================================================================
+   Services Section ("What we can do for you.")
+   ========================================================================== */
+.services-section {
+  padding-top: 32px;
+  padding-bottom: 90px;
+}
+
+.services-visual-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.service-visual-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.service-visual-card:hover {
+  transform: translateY(-4px);
+}
+
+.service-image-box {
+  width: 100%;
+  aspect-ratio: 4 / 3.1;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background-color: #F0F0F0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.service-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.service-card-label {
+  font-size: var(--fs-service-title);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.33px;
+  color: var(--c-blue);
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* ==========================================================================
+   The Founding Team Section
+   ========================================================================== */
+.team-section {
+  padding-top: 52px;
+  padding-bottom: 40px;
+}
+
+.team-members-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  align-items: flex-end;
+}
+
+.team-member-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.team-portrait-box {
+  width: 100%;
+  aspect-ratio: 3 / 3.8;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.team-portrait-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom;
+  display: block;
+}
+
+.team-name {
+  font-size: var(--fs-team-name);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--c-blue);
+  margin-top: 14px;
+}
+
+.team-role {
+  font-size: var(--fs-team-role);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: 0.7px;
+  color: var(--c-text);
+  margin-top: 4px;
+}
+
+/* ==========================================================================
+   Contact Form Section ("Ready to build something?")
+   ========================================================================== */
+.contact-section {
+  padding-top: 90px;
+  padding-bottom: 52px;
+}
+
+.contact-header {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 48px;
+}
+
+.contact-subtext {
+  font-size: var(--fs-cta-sub);
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--c-text);
+  margin-top: 12px;
+}
+
+.contact-form-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.redesign-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-field-group label {
+  font-size: var(--fs-form-label);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--c-blue);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 12px 18px;
+  border-radius: var(--radius-input);
+  background-color: transparent;
+  border: 1px solid var(--c-border);
+  color: var(--c-text);
+  font-size: var(--fs-form-input);
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--c-placeholder);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--c-blue);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.form-action-container {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.send-msg-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 36px;
+  border-radius: var(--radius-pill);
+  background-color: var(--c-blue);
+  color: var(--c-white);
+  font-size: var(--fs-button);
+  font-weight: 600;
+  border: 1px solid var(--c-blue);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.send-msg-btn:hover {
+  background-color: var(--c-blue-dark);
+  border-color: var(--c-blue-dark);
+}
+
+.form-direct-note {
+  font-size: var(--fs-button);
+  font-weight: 400;
+  color: var(--c-blue);
+}
+
+/* ==========================================================================
+   Footer & Giant Wordmark
+   ========================================================================== */
+.site-footer-redesign {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  position: relative;
+}
+
+.footer-giant-wordmark-fullbleed {
+  width: 100vw;
+  max-width: 100%;
+  padding: 0 4px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  user-select: none;
+}
+
+.footer-giant-wordmark-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.footer-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footer-copyright-text {
+  font-size: var(--fs-footer-copy);
+  font-weight: 500;
+  color: var(--c-blue);
+}
+
+.footer-social-badges {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.social-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 18px;
+  border-radius: var(--radius-badge);
+  border: 1.5px solid var(--c-text);
+  background-color: var(--c-white);
+  color: var(--c-text);
+  font-size: var(--fs-social);
+  font-weight: 500;
+  line-height: 1;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.social-pill-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.badge-icon {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 1100px) {
+  :root {
+    --fs-hero-title: 68px;
+    --fs-hero-sub: 26px;
+    --fs-section-title: 38px;
+    --fs-service-title: 26px;
+    --fs-nav: 20px;
+    --fs-team-name: 20px;
+    --fs-form-label: 20px;
+    --fs-form-input: 18px;
+  }
+
+  .team-members-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --fs-hero-title: 44px;
+    --fs-hero-sub: 18px;
+    --fs-section-title: 32px;
+    --fs-service-title: 22px;
+    --fs-nav: 18px;
+    --fs-team-name: 18px;
+    --fs-team-role: 14px;
+    --fs-cta-sub: 18px;
+    --fs-form-label: 18px;
+    --fs-form-input: 16px;
+    --fs-button: 16px;
+    --fs-footer-copy: 16px;
+    --fs-social: 15px;
+  }
+
+  .main-nav {
+    display: none;
+  }
+
+  .hero-section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .hero-title {
+    letter-spacing: -1px;
+    line-height: 1.1;
+  }
+
+  .services-visual-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  .team-members-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .form-row-2col {
+    grid-template-columns: 1fr;
+  }
+
+  .form-action-container {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .send-msg-btn {
+    width: 100%;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-members-grid {
+    grid-template-columns: 1fr;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .footer-social-badges {
+    justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   Subpage Compatibility Styles (About, Services, Process, Contact)
+   ========================================================================== */
 .pill-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 22px;
+  padding: 12px 28px;
   border-radius: var(--radius-pill);
-  font-size: 14.5px;
+  font-size: var(--fs-social);
   font-weight: 600;
   cursor: pointer;
   background-color: var(--c-blue);
@@ -114,718 +634,123 @@ button, input, select, textarea {
   border-color: var(--c-blue-dark);
 }
 
-.pill-btn-secondary {
-  background-color: transparent;
-  color: var(--c-blue);
-  border-color: var(--c-blue);
+.about-section-new {
+  padding-top: clamp(60px, 8vw, 100px);
+  padding-bottom: clamp(60px, 8vw, 100px);
 }
 
-.pill-btn-secondary:hover {
-  background-color: var(--c-blue);
-  color: var(--c-white);
-}
-
-.pill-btn-lg {
-  padding: 13px 28px;
-  font-size: 16px;
-}
-
-/* Header */
-.site-header {
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 50;
-  background-color: var(--c-base);
-  border-bottom: 1px solid var(--c-base-border);
-  padding: 16px 0;
-}
-
-.nav-container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 clamp(20px, 4vw, 48px);
-  display: flex;
+.about-narrative-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: clamp(40px, 6vw, 80px);
   align-items: center;
-  justify-content: space-between;
+  margin-bottom: clamp(60px, 8vw, 100px);
 }
 
-.brand-link {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  user-select: none;
+.about-narrative-row.reverse {
+  grid-template-columns: 1fr 1.2fr;
 }
 
-.brand-logo-img {
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-.brand-name-text {
+.about-narrative-text {
   font-size: 20px;
-  font-weight: 700;
-  color: var(--c-blue);
-  letter-spacing: -0.02em;
-  display: flex;
-  align-items: baseline;
-  gap: 4px;
-}
-
-.brand-name-sub {
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--c-blue);
-  opacity: 0.8;
-}
-
-.main-nav .nav-list {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  list-style: none;
-}
-
-.nav-link {
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--c-blue);
-}
-
-.nav-link:hover {
-  text-decoration: underline;
-}
-
-/* Hero Section */
-.hero-section {
-  background-color: var(--c-base);
-  padding-top: clamp(60px, 10vh, 130px);
-  padding-bottom: clamp(60px, 8vw, 110px);
-}
-
-.hero-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  max-width: 1040px;
-}
-
-.hero-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 14px;
-  border-radius: var(--radius-pill);
-  background-color: var(--c-base-card);
-  border: 1px solid var(--c-base-border);
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--c-blue);
-  margin-bottom: 24px;
-}
-
-.tag-bullet {
-  font-size: 10px;
-  opacity: 0.7;
-}
-
-.hero-title {
-  font-size: clamp(38px, 5.8vw, 76px);
-  font-weight: 800;
-  line-height: 1.06;
-  letter-spacing: -0.03em;
-  color: var(--c-blue);
-  margin-bottom: 22px;
-}
-
-.hero-subtext {
-  font-size: clamp(17px, 1.8vw, 22px);
-  font-weight: 400;
-  line-height: 1.48;
-  color: var(--c-blue);
-  max-width: 760px;
-  margin-bottom: 36px;
-  opacity: 0.92;
-}
-
-.hero-cta-group {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-
-/* Section Common */
-section {
-  padding-top: clamp(60px, 8vw, 110px);
-  padding-bottom: clamp(60px, 8vw, 110px);
-  border-top: 1px solid var(--c-base-border);
-}
-
-.section-intro {
-  margin-bottom: 40px;
-}
-
-.section-eyebrow {
-  display: block;
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--c-blue);
-  opacity: 0.8;
-  margin-bottom: 10px;
-}
-
-.section-title {
-  font-size: clamp(30px, 3.8vw, 48px);
-  font-weight: 800;
-  line-height: 1.12;
-  letter-spacing: -0.025em;
-  color: var(--c-blue);
-}
-
-/* About / Team */
-.about-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: clamp(36px, 5vw, 72px);
-  align-items: start;
-}
-
-.about-lead {
-  font-size: clamp(19px, 1.8vw, 24px);
-  font-weight: 600;
-  line-height: 1.4;
-  color: var(--c-blue);
-  margin-bottom: 18px;
-}
-
-.about-body {
-  font-size: 16.5px;
   line-height: 1.6;
-  color: var(--c-blue);
-  margin-bottom: 16px;
-  opacity: 0.92;
+  color: var(--c-text);
 }
 
-.about-team-box {
-  background-color: var(--c-base-card);
-  border: 1px solid var(--c-base-border);
+.about-narrative-text p {
+  margin-bottom: 15px;
+}
+
+.about-image-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background-color: #F7F7F7;
+  border: 1px solid var(--c-border);
   border-radius: var(--radius-card);
-  padding: clamp(22px, 3.5vw, 34px);
-}
-
-.team-box-title {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--c-blue);
-  margin-bottom: 20px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--c-base-border);
-}
-
-.team-member-item {
   display: flex;
-  gap: 14px;
-  margin-bottom: 18px;
-}
-
-.team-member-item:last-child {
-  margin-bottom: 0;
-}
-
-.member-role-num {
-  font-size: 14px;
-  font-weight: 700;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   color: var(--c-blue);
-  opacity: 0.7;
-}
-
-.member-name {
+  font-weight: 600;
   font-size: 16px;
-  font-weight: 700;
-  color: var(--c-blue);
-  margin-bottom: 2px;
+  text-align: center;
+  padding: 20px;
 }
 
-.member-desc {
-  font-size: 14px;
-  color: var(--c-blue);
-  line-height: 1.45;
-  opacity: 0.88;
+.about-image-placeholder svg {
+  margin-bottom: 12px;
+  opacity: 0.6;
 }
 
-/* Services */
-.services-list {
+.founders-profile-section {
+  margin-top: 80px;
+  border-top: 1px solid var(--c-border);
+  padding-top: 60px;
+}
+
+.founders-profile-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
 }
 
-.service-card {
-  background-color: var(--c-base-card);
-  border: 1px solid var(--c-base-border);
+.founder-profile-card {
+  background-color: #FAFAFA;
+  border: 1px solid var(--c-border);
   border-radius: var(--radius-card);
-  padding: clamp(24px, 3.5vw, 36px);
+  padding: 30px;
   display: flex;
   flex-direction: column;
-}
-
-.service-card-top {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-  margin-bottom: 14px;
-}
-
-.service-index {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--c-blue);
-  opacity: 0.7;
-}
-
-.service-heading {
-  font-size: clamp(19px, 2vw, 24px);
-  font-weight: 700;
-  color: var(--c-blue);
-  letter-spacing: -0.015em;
-}
-
-.service-card-desc {
-  font-size: 15px;
-  line-height: 1.55;
-  color: var(--c-blue);
-  margin-bottom: 20px;
-  opacity: 0.92;
-}
-
-.service-bullets {
-  list-style: none;
-  margin-top: auto;
-  border-top: 1px solid var(--c-base-border);
-  padding-top: 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.service-bullets li {
-  font-size: 14px;
-  color: var(--c-blue);
-  position: relative;
-  padding-left: 14px;
-  opacity: 0.9;
-}
-
-.service-bullets li::before {
-  content: '•';
-  position: absolute;
-  left: 0;
-  color: var(--c-blue);
-}
-
-/* Blue Contrast Section (#2E4F94) */
-.section-blue {
-  background-color: var(--c-blue);
-  color: var(--c-white);
-  border-top: 1px solid var(--c-blue-border);
-}
-
-.section-blue .section-eyebrow {
-  color: var(--c-white);
-  opacity: 0.8;
-}
-
-.section-blue .section-title {
-  color: var(--c-white);
-}
-
-.approach-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 
-.section-blue .step-card {
-  background-color: var(--c-blue-card);
-  border: 1px solid var(--c-blue-border);
-  border-radius: var(--radius-card);
-  padding: 26px 20px;
+.founder-avatar-placeholder {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #EFEFEF;
+  border: 1px solid var(--c-border);
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.section-blue .step-num {
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--c-white);
-  opacity: 0.75;
-}
-
-.section-blue .step-title {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--c-white);
-}
-
-.section-blue .step-desc {
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--c-white);
-  opacity: 0.9;
-}
-
-/* Contact */
-.contact-card {
-  background-color: var(--c-base-card);
-  border: 1px solid var(--c-base-border);
-  border-radius: var(--radius-card);
-  padding: clamp(28px, 5vw, 56px);
-}
-
-.contact-header {
-  max-width: 740px;
-  margin-bottom: 30px;
-}
-
-.contact-main-title {
-  font-size: clamp(28px, 4vw, 48px);
-  font-weight: 800;
-  line-height: 1.12;
-  letter-spacing: -0.025em;
-  color: var(--c-blue);
-  margin-bottom: 12px;
-}
-
-.contact-lead {
-  font-size: 16.5px;
-  line-height: 1.55;
-  color: var(--c-blue);
-  opacity: 0.92;
-}
-
-.contact-methods {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  margin-bottom: 32px;
-}
-
-.contact-pill-item {
-  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  border-radius: var(--radius-pill);
-  background-color: var(--c-base);
-  border: 1px solid var(--c-base-border);
-  font-size: 14.5px;
-  color: var(--c-blue);
-}
-
-.contact-pill-item .pill-label {
-  opacity: 0.75;
-}
-
-.contact-pill-item .pill-value {
-  font-weight: 700;
-}
-
-.contact-pill-item:hover {
-  border-color: var(--c-blue);
-}
-
-.location-item:hover {
-  border-color: var(--c-base-border);
-}
-
-.contact-form {
-  border-top: 1px solid var(--c-base-border);
-  padding-top: 30px;
-}
-
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-bottom: 22px;
-}
-
-.input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.input-group.full-width {
-  grid-column: span 2;
-}
-
-.input-group label {
-  font-size: 13.5px;
+  justify-content: center;
+  font-size: 14px;
   font-weight: 600;
   color: var(--c-blue);
+  margin-bottom: 10px;
 }
 
-.input-group input,
-.input-group select,
-.input-group textarea {
-  width: 100%;
-  padding: 11px 15px;
-  border-radius: 10px;
-  background-color: var(--c-base);
-  border: 1px solid var(--c-base-border);
+.founder-name {
+  font-size: 24px;
+  font-weight: 700;
   color: var(--c-blue);
-  font-size: 14.5px;
-  outline: none;
-  transition: border-color 0.2s ease;
 }
 
-.input-group input:focus,
-.input-group select:focus,
-.input-group textarea:focus {
-  border-color: var(--c-blue);
-}
-
-.form-action-row {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  flex-wrap: wrap;
-}
-
-.form-note {
-  font-size: 13px;
-  color: var(--c-blue);
-  opacity: 0.8;
-}
-
-.form-feedback {
-  margin-top: 18px;
-  padding: 14px 18px;
-  border-radius: 10px;
-  background-color: var(--c-blue);
-  color: var(--c-white);
-  font-weight: 500;
-  font-size: 14.5px;
-}
-
-/* Footer */
-.site-footer {
-  padding-top: clamp(50px, 7vw, 80px);
-  padding-bottom: 36px;
-}
-
-.site-footer .brand-name-text {
-  color: var(--c-white);
-}
-
-.site-footer .brand-name-sub {
-  color: var(--c-white);
-  opacity: 0.8;
-}
-
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  gap: 36px;
-  margin-bottom: 40px;
-  flex-wrap: wrap;
-}
-
-.footer-brand-side {
-  max-width: 340px;
-}
-
-.footer-desc {
-  margin-top: 12px;
+.founder-role {
   font-size: 14px;
-  color: var(--c-white);
-  opacity: 0.85;
-  line-height: 1.5;
-}
-
-.footer-links-side {
-  display: flex;
-  gap: clamp(36px, 7vw, 70px);
-}
-
-.footer-col-title {
-  font-size: 13.5px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--c-white);
-  margin-bottom: 14px;
-}
-
-.footer-col ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-}
-
-.footer-col a, .footer-col span {
-  font-size: 14px;
-  color: var(--c-white);
-  opacity: 0.85;
-}
-
-.footer-col a:hover {
-  opacity: 1;
-  text-decoration: underline;
-}
-
-.footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 20px;
-  border-top: 1px solid var(--c-blue-border);
-  font-size: 13px;
-  color: var(--c-white);
+  letter-spacing: 0.05em;
+  color: var(--c-blue);
   opacity: 0.8;
+  margin-top: -15px;
+  margin-bottom: 5px;
 }
 
-.back-top-link:hover {
-  opacity: 1;
+.founder-bio {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--c-text);
 }
 
-/* Mobile Responsiveness */
 @media (max-width: 960px) {
-  .about-grid {
+  .about-narrative-row, .about-narrative-row.reverse {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 30px;
   }
-
-  .services-list {
+  .founders-profile-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .approach-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-}
-
-@media (max-width: 640px) {
-  .main-nav {
-    display: none;
-  }
-
-  .site-header {
-    padding: 12px 0;
-  }
-
-  .brand-logo-img {
-    width: 32px;
-    height: 32px;
-  }
-
-  .brand-name-text {
-    font-size: 18px;
-  }
-
-  .hero-section {
-    padding-top: 48px;
-    padding-bottom: 48px;
-  }
-
-  .hero-title {
-    font-size: 34px;
-    line-height: 1.1;
-    margin-bottom: 16px;
-  }
-
-  .hero-subtext {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 28px;
-  }
-
-  .hero-cta-group {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .hero-cta-group .pill-btn {
-    width: 100%;
-    text-align: center;
-  }
-
-  section {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-
-  .section-intro {
-    margin-bottom: 28px;
-  }
-
-  .section-title {
-    font-size: 26px;
-  }
-
-  .approach-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  .contact-card {
-    padding: 24px 18px;
-  }
-
-  .contact-methods {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .contact-pill-item {
-    width: 100%;
-    justify-content: flex-start;
-  }
-
-  .form-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  .input-group.full-width {
-    grid-column: span 1;
-  }
-
-  .form-action-row {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
-  }
-
-  .form-action-row .pill-btn {
-    width: 100%;
-  }
-
-  .footer-container {
-    flex-direction: column;
-    gap: 28px;
-  }
-
-  .footer-links-side {
-    flex-direction: column;
     gap: 24px;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-start;
   }
 }

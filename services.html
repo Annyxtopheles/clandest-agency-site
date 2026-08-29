@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clandest Agency — Design, Dev & Video Studio</title>
+  <title>Services — Clandest Agency</title>
   <meta name="description" content="A design, development, and video post-production studio in Dhaka. We build clean brand systems, custom websites, and high-converting marketing videos.">
   
   <!-- Google Fonts Preconnect and Preload to prevent FOUT -->
@@ -32,165 +32,86 @@
       <nav class="main-nav" aria-label="Main Navigation">
         <ul class="nav-list">
           <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="services.html" class="nav-link" style="font-weight: 700;">Services</a></li>
           <li><a href="process.html" class="nav-link">Process</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
       </nav>
 
       <div class="nav-action">
-        <a href="#contact" class="header-cta-btn">Work with us</a>
+        <a href="contact.html" class="header-cta-btn">Work with us</a>
       </div>
 
     </div>
   </header>
 
   <main>
-    <!-- HERO SECTION -->
-    <section class="hero-section" id="hero">
-      <div class="container hero-container">
-        <h1 class="hero-title">
-          We design brands, websites,<br>and edit marketing videos.
+    <section class="services-section">
+      <div class="container">
+        
+        <h1 class="section-heading-centered" style="font-size: var(--fs-hero-title); line-height: 1.0; margin-bottom: 24px;">
+          What we can DO for you.
         </h1>
-        <p class="hero-subtext">
-          We are four friends who met at Munshiganj Polytechnic Institute. We combine UX design, clean software engineering, and post-production video editing to build digital assets that actually work.
+        <p class="hero-subtext" style="text-align: center; margin-bottom: 70px;">
+          Three core studio disciplines executed by founders with deep craft. No account managers, no layers of bureaucracy.
         </p>
-      </div>
-    </section>
 
-    <!-- SERVICES SECTION ("What we can do for you.") -->
-    <section class="services-section" id="services">
-      <div class="container">
-        
-        <h2 class="section-heading-centered">What we can do for you.</h2>
-
-        <div class="services-visual-grid">
-          
-          <!-- Service 1: Marketing Video -->
-          <a href="services.html#video" class="service-visual-card">
-            <div class="service-image-box">
-              <img src="assets/service-marketing-video.png" alt="Marketing Video Production" loading="lazy">
-            </div>
-            <div class="service-card-label">Marketing Video</div>
-          </a>
-
-          <!-- Service 2: Logo & Brand Design -->
-          <a href="services.html#branding" class="service-visual-card">
-            <div class="service-image-box">
-              <img src="assets/service-brand-design.jpg" alt="Logo and Brand Design" loading="lazy">
-            </div>
-            <div class="service-card-label">Logo &amp; Brand Design</div>
-          </a>
-
-          <!-- Service 3: Website Redesign -->
-          <a href="services.html#development" class="service-visual-card">
-            <div class="service-image-box">
-              <img src="assets/service-web-redesign.png" alt="Website Redesign and Development" loading="lazy">
-            </div>
-            <div class="service-card-label">Website Redesign</div>
-          </a>
-
+        <!-- Service Item 1: Logo & Brand Design -->
+        <div class="about-narrative-row" id="branding" style="margin-bottom: 80px;">
+          <div class="about-narrative-text">
+            <h2 style="font-size: 36px; color: var(--c-blue); margin-bottom: 16px; font-weight: 600;">Logo &amp; Brand Design</h2>
+            <p>Led by <strong>Sadman Zaman Khan</strong>, we build scalable, future-proof visual identity systems and high-fidelity interactive prototypes. We turn complex product visions into clean, recognizable brand guidelines.</p>
+            <ul style="list-style: none; margin-top: 20px; display: flex; flex-direction: column; gap: 10px;">
+              <li style="position: relative; padding-left: 20px; color: var(--c-text);"><strong>•</strong> Primary logo, wordmarks, and responsive icon sets</li>
+              <li style="position: relative; padding-left: 20px; color: var(--c-text);"><strong>•</strong> Complete design systems in Figma (typography, tokens, colors)</li>
+              <li style="position: relative; padding-left: 20px; color: var(--c-text);"><strong>•</strong> Marketing creatives, pitch decks, and vector illustrations</li>
+              <li style="position: relative; padding-left: 20px; color: var(--c-text);"><strong>•</strong> Interactive UI/UX high-fidelity wireframing</li>
+            </ul>
+          </div>
+          <div class="service-image-box" style="aspect-ratio: 4 / 3.1;">
+            <img src="assets/service-brand-design.jpg" alt="Logo & Brand Design" loading="lazy">
+          </div>
         </div>
 
-      </div>
-    </section>
-
-    <!-- THE FOUNDING TEAM SECTION -->
-    <section class="team-section" id="team">
-      <div class="container">
-        
-        <h2 class="section-heading-centered">The Founding Team</h2>
-
-        <div class="team-members-grid">
-          
-          <!-- Team Member 1 -->
-          <div class="team-member-card">
-            <div class="team-portrait-box">
-              <img src="assets/team-sadman.png" alt="Sadman Zaman Khan" loading="lazy">
-            </div>
-            <div class="team-name">Sadman Zaman Khan</div>
-            <div class="team-role">UI/UX &amp; Brand Design</div>
+        <!-- Service Item 2: Website Redesign -->
+        <div class="about-narrative-row reverse" id="development" style="margin-bottom: 80px;">
+          <div class="service-image-box" style="aspect-ratio: 4 / 3.1;">
+            <img src="assets/service-web-redesign.png" alt="Website Redesign" loading="lazy">
           </div>
-
-          <!-- Team Member 2 -->
-          <div class="team-member-card">
-            <div class="team-portrait-box">
-              <img src="assets/team-habibullah.png" alt="Md. Habibullah" loading="lazy">
-            </div>
-            <div class="team-name">Md. Habibullah</div>
-            <div class="team-role">Client Relationship Manager</div>
+          <div class="about-narrative-text">
+            <h2 style="font-size: 36px; color: var(--c-blue); margin-bottom: 16px; font-weight: 600;">Website Redesign</h2>
+            <p>Led by <strong>Md. Nafiur Rahman</strong>, we develop ultra-fast, lightweight web applications and conversion-focused landing pages. We build with clean, hand-coded architectures that load instantaneously.</p>
+            <ul style="list-style: none; margin-top: 20px; display: flex; flex-direction: column; gap: 10px;">
+              <li style="position: relative; padding-left: 20px; color: var(--c-text);"><strong>•</strong> Modern HTML, clean CSS, and fast JavaScript (Zero bloat)</li>
+              <li style="position: relative; padding-left: 20px; color: var(--c-text);"><strong>•</strong> 100% mobile, tablet, and high-DPI desktop responsive layouts</li>
+              <li style="position: relative; padding-left: 20px; color: var(--c-text);"><strong>•</strong> Core Web Vitals optimization and instant loading speeds</li>
+              <li style="position: relative; padding-left: 20px; color: var(--c-text);"><strong>•</strong> Python backends, automation scripts, and custom data pipelines</li>
+            </ul>
           </div>
-
-          <!-- Team Member 3 -->
-          <div class="team-member-card">
-            <div class="team-portrait-box">
-              <img src="assets/team-nafiur.png" alt="Md. Nafiur Rahman" loading="lazy">
-            </div>
-            <div class="team-name">Md. Nafiur Rahman</div>
-            <div class="team-role">Web Development &amp; AI</div>
-          </div>
-
-          <!-- Team Member 4 -->
-          <div class="team-member-card">
-            <div class="team-portrait-box">
-              <img src="assets/team-rafayet.png" alt="Md. Abdullah al Rafayet" loading="lazy">
-            </div>
-            <div class="team-name">Md. Abdullah al Rafayet</div>
-            <div class="team-role">Video &amp; Motion Graphics</div>
-          </div>
-
         </div>
 
-      </div>
-    </section>
-
-    <!-- CONTACT FORM SECTION ("Ready to build something?") -->
-    <section class="contact-section" id="contact">
-      <div class="container">
-        
-        <div class="contact-header">
-          <h2 class="section-heading-centered" style="margin-bottom: 0;">Ready to build something?</h2>
-          <p class="contact-subtext">
-            We work directly with you—no account managers, no layers of bureaucracy. Drop us a line about your brand, dev, or video needs.
-          </p>
+        <!-- Service Item 3: Marketing Video -->
+        <div class="about-narrative-row" id="video" style="margin-bottom: 80px;">
+          <div class="about-narrative-text">
+            <h2 style="font-size: 36px; color: var(--c-blue); margin-bottom: 16px; font-weight: 600;">Marketing Video</h2>
+            <p>Led by <strong>Md. Abdullah al Rafayet</strong>, we deliver end-to-end post-production video editing, cinematic color grading, sound design, and custom vector motion graphics that convert viewers into customers.</p>
+            <ul style="list-style: none; margin-top: 20px; display: flex; flex-direction: column; gap: 10px;">
+              <li style="position: relative; padding-left: 20px; color: var(--c-text);"><strong>•</strong> High-converting Video Sales Letters (VSLs) &amp; social UGC ads</li>
+              <li style="position: relative; padding-left: 20px; color: var(--c-text);"><strong>•</strong> Adobe After Effects motion graphics &amp; animated typography</li>
+              <li style="position: relative; padding-left: 20px; color: var(--c-text);"><strong>•</strong> Studio color grading &amp; professional audio mastering</li>
+              <li style="position: relative; padding-left: 20px; color: var(--c-text);"><strong>•</strong> Commercial product explainers &amp; documentary narratives</li>
+            </ul>
+          </div>
+          <div class="service-image-box" style="aspect-ratio: 4 / 3.1;">
+            <img src="assets/service-marketing-video.png" alt="Marketing Video" loading="lazy">
+          </div>
         </div>
 
-        <div class="contact-form-wrapper">
-          <form class="redesign-form" id="contactForm" action="#" method="POST">
-            
-            <div class="form-row-2col">
-              <div class="form-field-group">
-                <label for="userName">Your name</label>
-                <input type="text" id="userName" name="name" class="form-input" placeholder="eg. Sarah Khan" required>
-              </div>
-
-              <div class="form-field-group">
-                <label for="userEmail">Your email</label>
-                <input type="email" id="userEmail" name="email" class="form-input" placeholder="sarah@example.com" required>
-              </div>
-            </div>
-
-            <div class="form-field-group">
-              <label for="userService">What do you need help with?</label>
-              <select id="userService" name="service" class="form-select">
-                <option value="Logo & Brand Design" selected>Logo &amp; Brand Design</option>
-                <option value="Website Redesign">Website Redesign</option>
-                <option value="Marketing Video">Marketing Video</option>
-                <option value="Full Agency Support">Full Agency Retainer</option>
-              </select>
-            </div>
-
-            <div class="form-field-group">
-              <label for="userMessage">Tell us about your project</label>
-              <textarea id="userMessage" name="message" class="form-textarea" placeholder="Briefly describe your brand identity, web project, or raw video edit requirements..." rows="4"></textarea>
-            </div>
-
-            <div class="form-action-container">
-              <button type="submit" class="send-msg-btn">Send Message</button>
-              <span class="form-direct-note">You talk directly with our founding team.</span>
-            </div>
-
-          </form>
+        <!-- Bottom CTA Box -->
+        <div style="background-color: #FAFAFA; border: 1px solid var(--c-border); border-radius: var(--radius-card); padding: 50px 30px; text-align: center; margin-top: 40px;">
+          <h3 style="font-size: 32px; color: var(--c-blue); font-weight: 600; margin-bottom: 12px;">Have a project in mind?</h3>
+          <p style="font-size: 20px; color: var(--c-text); max-width: 600px; margin: 0 auto 28px;">Talk directly with our founding team to get a clear scope and timeline.</p>
+          <a href="contact.html" class="header-cta-btn">Start a Conversation</a>
         </div>
 
       </div>
