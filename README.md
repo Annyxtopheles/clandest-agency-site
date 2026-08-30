@@ -20,4 +20,4 @@ npx serve .
 ```
 
 ## License
-© 2026 Clandest Agency. Handcrafted in Dhaka.
+© 2026 Clandest.agency. Handcrafted in Dhaka.
