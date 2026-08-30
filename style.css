@@ -203,81 +203,6 @@ button, input, select, textarea {
   margin: 0 auto;
 }
 
-.hero-cta-group {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  margin-top: 36px;
-  flex-wrap: wrap;
-}
-
-.hero-secondary-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 28px;
-  border-radius: var(--radius-cta);
-  border: 1.5px solid var(--c-border);
-  background-color: transparent;
-  color: var(--c-blue);
-  font-size: 18px;
-  font-weight: 600;
-  transition: all 0.25s ease;
-}
-
-.hero-secondary-btn:hover {
-  border-color: var(--c-blue);
-  background-color: #F6F8FC;
-  transform: translateY(-2px);
-}
-
-/* ==========================================================================
-   Trust Proof & Metrics Bar
-   ========================================================================== */
-.trust-proof-section {
-  padding-top: 10px;
-  padding-bottom: 70px;
-}
-
-.trust-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  background-color: #FAFAFA;
-  border: 1.5px solid var(--c-border);
-  border-radius: var(--radius-card);
-  padding: 24px 20px;
-}
-
-.trust-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 6px;
-  padding: 8px 12px;
-}
-
-.trust-icon {
-  width: 28px;
-  height: 28px;
-  color: var(--c-blue);
-  margin-bottom: 4px;
-}
-
-.trust-title {
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--c-blue);
-}
-
-.trust-desc {
-  font-size: 14px;
-  color: var(--c-text-muted);
-  line-height: 1.35;
-}
-
 /* ==========================================================================
    Section Common
    ========================================================================== */
@@ -394,65 +319,6 @@ button, input, select, textarea {
   width: 20px;
   height: 20px;
   margin-top: 2px;
-}
-
-/* ==========================================================================
-   How It Works / 4-Step Process Section
-   ========================================================================== */
-.process-overview-section {
-  padding-top: 40px;
-  padding-bottom: 90px;
-}
-
-.process-step-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-}
-
-.process-step-card {
-  background-color: #FAFAFA;
-  border: 1.5px solid var(--c-border);
-  border-radius: var(--radius-card);
-  padding: 32px 24px;
-  position: relative;
-  transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
-}
-
-.process-step-card:hover {
-  background-color: #FFFFFF;
-  border-color: var(--c-blue);
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(46, 79, 148, 0.08);
-}
-
-.process-step-number {
-  font-size: 14px;
-  font-weight: 800;
-  color: var(--c-blue);
-  background-color: #EBF1FC;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  margin-bottom: 18px;
-}
-
-.process-step-title {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--c-blue);
-  margin-bottom: 10px;
-}
-
-.process-step-desc {
-  font-size: 15px;
-  color: var(--c-text-muted);
-  line-height: 1.55;
 }
 
 /* ==========================================================================
@@ -1021,15 +887,6 @@ button, input, select, textarea {
     grid-template-columns: repeat(2, 1fr);
     gap: 36px;
   }
-
-  .trust-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-
-  .process-step-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media (max-width: 768px) {
@@ -1063,22 +920,9 @@ button, input, select, textarea {
     line-height: 1.1;
   }
 
-  .trust-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
   .comparison-dual-grid {
     grid-template-columns: 1fr;
     gap: 20px;
-  }
-
-  .comparison-box {
-    padding: 28px 20px;
-  }
-
-  .process-step-grid {
-    grid-template-columns: 1fr;
   }
 
   .faq-question {
