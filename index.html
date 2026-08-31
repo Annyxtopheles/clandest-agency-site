@@ -3,138 +3,152 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clandest Agency — Design, Dev & Video Studio</title>
-  <meta name="description" content="A design, development, and video post-production studio in Dhaka. We build clean brand systems, custom websites, and high-converting marketing videos.">
+  <title>Clandest Agency — Small Web & Brand Studio in Dhaka</title>
+  <meta name="description" content="A 4-person design and web studio in Dhaka. We build clean logos, brand identities, and fast websites for small businesses and founders.">
   
-  <!-- Google Fonts Preconnect and Preload to prevent FOUT -->
+  <!-- Single Rounded Font matching the logo -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.gstatic.com/s/hostgrotesk/v5/co3UmWBnlCJ3U42vbbfdwMjzqHAXOdFzqU5PuefOzhY.ttf" as="font" type="font/truetype" crossorigin>
-  <link rel="preload" href="https://fonts.gstatic.com/s/hostgrotesk/v5/co3UmWBnlCJ3U42vbbfdwMjzqHAXOdFzqU5PudXOzhY.ttf" as="font" type="font/truetype" crossorigin>
-  <link rel="preload" href="https://fonts.gstatic.com/s/hostgrotesk/v5/co3UmWBnlCJ3U42vbbfdwMjzqHAXOdFzqU5PuTnJzhY.ttf" as="font" type="font/truetype" crossorigin>
-  <link rel="preload" href="https://fonts.gstatic.com/s/hostgrotesk/v5/co3UmWBnlCJ3U42vbbfdwMjzqHAXOdFzqU5PuQDJzhY.ttf" as="font" type="font/truetype" crossorigin>
-  <link rel="preload" href="style.css" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=block" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="icon" type="image/svg+xml" href="assets/logo-icon.svg">
 </head>
 <body>
+
+  <!-- Subtle Grain Layer -->
+  <div class="grain-layer" aria-hidden="true"></div>
+
+  <!-- Ambient Sparkle Canvas (Tactile Star Dust) -->
+  <canvas id="sparkleCanvas" class="sparkle-canvas" aria-hidden="true"></canvas>
+
+  <!-- Reading / Scroll Progress Bar -->
+  <div class="scroll-progress-bar" id="scrollProgress" aria-hidden="true"></div>
 
   <!-- Header / Navigation -->
   <header class="site-header" id="siteHeader">
     <div class="nav-container">
       
-      <a href="index.html" class="brand-link" aria-label="Clandest Agency Homepage">
-        <img src="assets/logo.svg" alt="Clandest Agency logo" class="brand-logo-img">
+      <a href="#" class="brand-link" aria-label="Clandest Agency Homepage">
+        <img src="assets/logo-icon.svg" alt="Clandest Agency logo" class="brand-logo-img">
+        <span class="brand-name-text">Clandest <span class="brand-name-sub">agency</span></span>
       </a>
 
       <nav class="main-nav" aria-label="Main Navigation">
         <ul class="nav-list">
-          <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="services.html" class="nav-link">Services</a></li>
-          <li><a href="process.html" class="nav-link">Process</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="#about" class="nav-link">About us</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#approach" class="nav-link">Process</a></li>
+          <li><a href="#calculator" class="nav-link">Scope Builder</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
 
       <div class="nav-action">
-        <a href="#contact" class="animated-button header-cta-btn">
-          <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
-            <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
-          </svg>
-          <span class="text">Work with us</span>
-          <span class="circle"></span>
-          <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
-            <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
-          </svg>
-        </a>
+        <a href="#contact" class="pill-btn magnetic-btn">Work with us</a>
       </div>
 
     </div>
   </header>
 
   <main>
+
     <!-- HERO SECTION -->
     <section class="hero-section" id="hero">
       <div class="container hero-container">
-        <h1 class="hero-title">
-          We design brands, websites,<br>and edit marketing videos.
+        
+        <!-- Live Clock & Heartbeat Badge -->
+        <div class="hero-tag">
+          <span class="live-dot" aria-hidden="true"></span>
+          <span>Dhaka, BD</span>
+          <span class="tag-bullet">•</span>
+          <span id="liveDhakaClock" class="clock-ticker">16:05:00 BST</span>
+          <span class="tag-bullet">•</span>
+          <span>4-Person Studio</span>
+        </div>
+
+        <!-- Interactive Kinetic Headline -->
+        <h1 class="hero-title interactive-headline" id="heroHeadline">
+          <span class="word-hover">We</span> 
+          <span class="word-hover">design</span> 
+          <span class="word-hover highlight-word">logos</span>, 
+          <span class="word-hover highlight-word">brand</span> 
+          <span class="word-hover highlight-word">identities</span>, 
+          <span class="word-hover">and</span> 
+          <span class="word-hover highlight-word">clean</span> 
+          <span class="word-hover highlight-word">websites</span>.
         </h1>
+
         <p class="hero-subtext">
-          We are four friends who met at Munshiganj Polytechnic Institute. We combine UX design, clean software engineering, and post-production video editing to build digital assets that actually work.
+          We are <span class="tooltip-trigger" data-tip="2 Designers + 2 Coders in Dhaka">four friends</span> in Dhaka who design and code. We work directly with founders and small businesses to build fast websites and clear visual identities with <span class="tooltip-trigger" data-tip="100% Handcrafted • 0 KB bloat">clean code</span> that just works.
         </p>
+
+        <div class="hero-cta-group">
+          <a href="#calculator" class="pill-btn pill-btn-lg magnetic-btn">Calculate project scope</a>
+          <a href="#services" class="pill-btn pill-btn-lg pill-btn-secondary magnetic-btn">See our services</a>
+        </div>
+
       </div>
     </section>
 
-    <!-- PROBLEM VS SOLUTION SECTION -->
-    <section class="value-comparison-section" id="why-us">
+    <!-- ABOUT SECTION -->
+    <section class="about-section" id="about">
       <div class="container">
         
-        <h2 class="section-heading-centered">Why the old agency model is broken.</h2>
-        <p class="section-subtext-centered">
-          Traditional agencies charge high overhead markups and pass your work to juniors. Freelancers work in silos. We built a direct-access studio model that actually delivers.
-        </p>
+        <div class="section-intro">
+          <span class="section-eyebrow">Who we are</span>
+          <h2 class="section-title">Four people who care about good craft.</h2>
+        </div>
 
-        <div class="comparison-dual-grid">
+        <div class="about-grid">
           
-          <!-- Problem Box -->
-          <div class="comparison-box problem-box">
-            <div class="comparison-box-header">
-              <span class="comparison-badge problem-badge">The Traditional Way</span>
-              <h3 class="comparison-box-title">Bureaucracy, delays, and disjointed handoffs</h3>
-            </div>
-            <ul class="comparison-list">
-              <li class="comparison-list-item">
-                <svg class="comparison-icon" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2.5">
-                  <line x1="18" y1="6" x2="6" y2="18"></line>
-                  <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-                <span><strong>Layers of middlemen:</strong> You talk to account reps who relay messages to junior designers, causing endless confusion.</span>
-              </li>
-              <li class="comparison-list-item">
-                <svg class="comparison-icon" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2.5">
-                  <line x1="18" y1="6" x2="6" y2="18"></line>
-                  <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-                <span><strong>Disconnected freelancers:</strong> Your branding designer and web developer don't talk, leading to broken aesthetics and buggy code.</span>
-              </li>
-              <li class="comparison-list-item">
-                <svg class="comparison-icon" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2.5">
-                  <line x1="18" y1="6" x2="6" y2="18"></line>
-                  <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-                <span><strong>Slow timelines &amp; bloated fees:</strong> 3-week waits for basic revisions, with retainers paying for lavish agency offices instead of quality work.</span>
-              </li>
-            </ul>
+          <div class="about-main-text">
+            <p class="about-lead">
+              We started Clandest because we got tired of slow agencies, endless meetings, and bloated templates.
+            </p>
+            <p class="about-body">
+              It is just the four of us — two designers and two developers. When you send an email or jump on a call, you speak directly with the person working on your typography, your layouts, or your code.
+            </p>
+            <p class="about-body">
+              Because we are a new studio, we don't juggle dozens of projects at once. We take on one or two jobs at a time and put our full effort into getting every detail right.
+            </p>
           </div>
 
-          <!-- Solution Box -->
-          <div class="comparison-box solution-box">
-            <div class="comparison-box-header">
-              <span class="comparison-badge solution-badge">The Clandest Way</span>
-              <h3 class="comparison-box-title">Founder-led speed, precision, and unified execution</h3>
+          <div class="about-team-box tilt-card">
+            <h3 class="team-box-title">Our 4-Person Team</h3>
+            
+            <div class="team-member-item">
+              <div class="member-role-num">01</div>
+              <div class="member-info">
+                <h4 class="member-name">Brand & Visual Design</h4>
+                <p class="member-desc">Logos, color palettes, type choices, and graphic assets.</p>
+              </div>
             </div>
-            <ul class="comparison-list">
-              <li class="comparison-list-item">
-                <svg class="comparison-icon" viewBox="0 0 24 24" fill="none" stroke="var(--c-blue)" stroke-width="2.5">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-                <span><strong>Direct specialist access:</strong> You speak directly with Sadman (Design), Nafiur (Dev), Rafayet (Video), and Habibullah (CRM).</span>
-              </li>
-              <li class="comparison-list-item">
-                <svg class="comparison-icon" viewBox="0 0 24 24" fill="none" stroke="var(--c-blue)" stroke-width="2.5">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-                <span><strong>Seamless cross-discipline synergy:</strong> UI designs in Figma transition into clean responsive web code and video motion graphics effortlessly.</span>
-              </li>
-              <li class="comparison-list-item">
-                <svg class="comparison-icon" viewBox="0 0 24 24" fill="none" stroke="var(--c-blue)" stroke-width="2.5">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-                <span><strong>Transparent fixed pricing &amp; rapid pace:</strong> Clear upfront deliverables, rapid turnaround cycles, and zero surprise hourly billing.</span>
-              </li>
-            </ul>
+
+            <div class="team-member-item">
+              <div class="member-role-num">02</div>
+              <div class="member-info">
+                <h4 class="member-name">UI & Layout Design</h4>
+                <p class="member-desc">Page layouts, wireframes, and responsive Figma prototypes.</p>
+              </div>
+            </div>
+
+            <div class="team-member-item">
+              <div class="member-role-num">03</div>
+              <div class="member-info">
+                <h4 class="member-name">Frontend Code</h4>
+                <p class="member-desc">Clean HTML, modern CSS, and fast JavaScript without heavy bloat.</p>
+              </div>
+            </div>
+
+            <div class="team-member-item">
+              <div class="member-role-num">04</div>
+              <div class="member-info">
+                <h4 class="member-name">Hosting & Setup</h4>
+                <p class="member-desc">Connecting domains, setting up fast hosting, and technical launch.</p>
+              </div>
+            </div>
+
           </div>
 
         </div>
@@ -142,196 +156,127 @@
       </div>
     </section>
 
-    <!-- SERVICES SECTION ("What we can do for you.") -->
+    <!-- SERVICES SECTION -->
     <section class="services-section" id="services">
       <div class="container">
         
-        <h2 class="section-heading-centered">What we can do for you.</h2>
+        <div class="section-intro">
+          <span class="section-eyebrow">What we do</span>
+          <h2 class="section-title">What we can build for you.</h2>
+        </div>
 
-        <div class="services-visual-grid">
+        <div class="services-list">
           
-          <!-- Service 1: Marketing Video -->
-          <a href="services.html#video" class="service-visual-card-link">
-            <div class="card-3d-wrapper noselect">
-              <div class="canvas">
-                <div class="tracker tr-1"></div>
-                <div class="tracker tr-2"></div>
-                <div class="tracker tr-3"></div>
-                <div class="tracker tr-4"></div>
-                <div class="tracker tr-5"></div>
-                <div class="tracker tr-6"></div>
-                <div class="tracker tr-7"></div>
-                <div class="tracker tr-8"></div>
-                <div class="tracker tr-9"></div>
-                <div class="tracker tr-10"></div>
-                <div class="tracker tr-11"></div>
-                <div class="tracker tr-12"></div>
-                <div class="tracker tr-13"></div>
-                <div class="tracker tr-14"></div>
-                <div class="tracker tr-15"></div>
-                <div class="tracker tr-16"></div>
-                <div class="tracker tr-17"></div>
-                <div class="tracker tr-18"></div>
-                <div class="tracker tr-19"></div>
-                <div class="tracker tr-20"></div>
-                <div class="tracker tr-21"></div>
-                <div class="tracker tr-22"></div>
-                <div class="tracker tr-23"></div>
-                <div class="tracker tr-24"></div>
-                <div class="tracker tr-25"></div>
-                <div class="service-visual-card card-3d-target">
-                  <div class="service-image-box">
-                    <img src="assets/service-marketing-video.png" alt="Marketing Video Production" loading="lazy">
-                  </div>
-                  <div class="service-card-label">Marketing Video</div>
-                </div>
-              </div>
+          <div class="service-card tilt-card">
+            <div class="service-card-top">
+              <span class="service-index">01</span>
+              <h3 class="service-heading">Logos & Brand Identity</h3>
             </div>
-          </a>
+            <p class="service-card-desc">
+              Everything your business needs to look professional from day one: clean logo design, typography pairings, color systems, and file exports for print and web.
+            </p>
+            <ul class="service-bullets">
+              <li>Primary logo and wordmark</li>
+              <li>Color palette and font guidelines</li>
+              <li>Social media profile assets</li>
+              <li>Ready-to-print vector files (SVG, PDF)</li>
+            </ul>
+          </div>
 
-          <!-- Service 2: Logo & Brand Design -->
-          <a href="services.html#branding" class="service-visual-card-link">
-            <div class="card-3d-wrapper noselect">
-              <div class="canvas">
-                <div class="tracker tr-1"></div>
-                <div class="tracker tr-2"></div>
-                <div class="tracker tr-3"></div>
-                <div class="tracker tr-4"></div>
-                <div class="tracker tr-5"></div>
-                <div class="tracker tr-6"></div>
-                <div class="tracker tr-7"></div>
-                <div class="tracker tr-8"></div>
-                <div class="tracker tr-9"></div>
-                <div class="tracker tr-10"></div>
-                <div class="tracker tr-11"></div>
-                <div class="tracker tr-12"></div>
-                <div class="tracker tr-13"></div>
-                <div class="tracker tr-14"></div>
-                <div class="tracker tr-15"></div>
-                <div class="tracker tr-16"></div>
-                <div class="tracker tr-17"></div>
-                <div class="tracker tr-18"></div>
-                <div class="tracker tr-19"></div>
-                <div class="tracker tr-20"></div>
-                <div class="tracker tr-21"></div>
-                <div class="tracker tr-22"></div>
-                <div class="tracker tr-23"></div>
-                <div class="tracker tr-24"></div>
-                <div class="tracker tr-25"></div>
-                <div class="service-visual-card card-3d-target">
-                  <div class="service-image-box">
-                    <img src="assets/service-brand-design.jpg" alt="Logo and Brand Design" loading="lazy">
-                  </div>
-                  <div class="service-card-label">Logo &amp; Brand Design</div>
-                </div>
-              </div>
+          <div class="service-card tilt-card">
+            <div class="service-card-top">
+              <span class="service-index">02</span>
+              <h3 class="service-heading">Fast Custom Websites</h3>
             </div>
-          </a>
+            <p class="service-card-desc">
+              We build custom websites and landing pages by hand. They load fast, look sharp on every phone screen, and are easy for your customers to read and use.
+            </p>
+            <ul class="service-bullets">
+              <li>Small business and marketing sites</li>
+              <li>Product and portfolio landing pages</li>
+              <li>Full mobile and tablet responsiveness</li>
+              <li>Clean code with zero unnecessary plugins</li>
+            </ul>
+          </div>
 
-          <!-- Service 3: Website Redesign -->
-          <a href="services.html#development" class="service-visual-card-link">
-            <div class="card-3d-wrapper noselect">
-              <div class="canvas">
-                <div class="tracker tr-1"></div>
-                <div class="tracker tr-2"></div>
-                <div class="tracker tr-3"></div>
-                <div class="tracker tr-4"></div>
-                <div class="tracker tr-5"></div>
-                <div class="tracker tr-6"></div>
-                <div class="tracker tr-7"></div>
-                <div class="tracker tr-8"></div>
-                <div class="tracker tr-9"></div>
-                <div class="tracker tr-10"></div>
-                <div class="tracker tr-11"></div>
-                <div class="tracker tr-12"></div>
-                <div class="tracker tr-13"></div>
-                <div class="tracker tr-14"></div>
-                <div class="tracker tr-15"></div>
-                <div class="tracker tr-16"></div>
-                <div class="tracker tr-17"></div>
-                <div class="tracker tr-18"></div>
-                <div class="tracker tr-19"></div>
-                <div class="tracker tr-20"></div>
-                <div class="tracker tr-21"></div>
-                <div class="tracker tr-22"></div>
-                <div class="tracker tr-23"></div>
-                <div class="tracker tr-24"></div>
-                <div class="tracker tr-25"></div>
-                <div class="service-visual-card card-3d-target">
-                  <div class="service-image-box">
-                    <img src="assets/service-web-redesign.png" alt="Website Redesign and Development" loading="lazy">
-                  </div>
-                  <div class="service-card-label">Website Redesign</div>
-                </div>
-              </div>
+          <div class="service-card tilt-card">
+            <div class="service-card-top">
+              <span class="service-index">03</span>
+              <h3 class="service-heading">Website Redesigns</h3>
             </div>
-          </a>
+            <p class="service-card-desc">
+              If your current website feels dated, cluttered, or hard to use on mobile, we can clean up the structure, fix the typography, and give it a fresh look.
+            </p>
+            <ul class="service-bullets">
+              <li>Page cleanup and reorganization</li>
+              <li>Modernized layout and typography</li>
+              <li>Smoother mobile navigation</li>
+              <li>Figma previews before coding</li>
+            </ul>
+          </div>
+
+          <div class="service-card tilt-card">
+            <div class="service-card-top">
+              <span class="service-index">04</span>
+              <h3 class="service-heading">Launch & Helpful Support</h3>
+            </div>
+            <p class="service-card-desc">
+              We stick around to help you get your site live. We can link your custom domain, set up fast hosting, and help you update text and images whenever you need.
+            </p>
+            <ul class="service-bullets">
+              <li>Domain and DNS configuration</li>
+              <li>Fast, reliable hosting setup</li>
+              <li>Basic SEO and Google Search Console</li>
+              <li>Friendly ongoing help when things change</li>
+            </ul>
+          </div>
 
         </div>
 
       </div>
     </section>
 
-    <!-- THE FOUNDING TEAM SECTION -->
-    <section class="team-section" id="team">
+    <!-- PROCESS SECTION (BLUE THEMED CONTRAST SECTION #2E4F94) -->
+    <section class="approach-section section-blue" id="approach">
       <div class="container">
         
-        <h2 class="section-heading-centered">The Founding Team</h2>
+        <div class="section-intro">
+          <span class="section-eyebrow">Our process</span>
+          <h2 class="section-title">How a project works with us.</h2>
+        </div>
 
-        <div class="team-members-grid">
+        <div class="approach-grid">
           
-          <!-- Team Member 1 -->
-          <div class="team-member-card">
-            <div class="team-portrait-box">
-              <img src="assets/team-sadman.png" alt="Sadman Zaman Khan" loading="lazy">
-            </div>
-            <div class="team-name">Sadman Zaman Khan</div>
-            <div class="team-role">UI/UX &amp; Brand Design</div>
-            <a href="https://www.linkedin.com/in/sadmanzamankhan/" target="_blank" class="card-button">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14">
-                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-              </svg>
-              LinkedIn
-            </a>
+          <div class="step-card tilt-card">
+            <span class="step-num">Step 1</span>
+            <h3 class="step-title">1. We talk</h3>
+            <p class="step-desc">
+              You tell us what you want to build, who your audience is, and your timeline. We give you a clear, fixed quote with no hidden surprises.
+            </p>
           </div>
 
-          <!-- Team Member 2 -->
-          <div class="team-member-card">
-            <div class="team-portrait-box">
-              <img src="assets/team-habibullah.png" alt="Md. Habibullah" loading="lazy">
-            </div>
-            <div class="team-name">Md. Habibullah</div>
-            <div class="team-role">Client Relationship Manager</div>
+          <div class="step-card tilt-card">
+            <span class="step-num">Step 2</span>
+            <h3 class="step-title">2. We design</h3>
+            <p class="step-desc">
+              We share design drafts directly with you in Figma. You tell us what you like and what needs changing, and we iterate until it feels right.
+            </p>
           </div>
 
-          <!-- Team Member 3 -->
-          <div class="team-member-card">
-            <div class="team-portrait-box">
-              <img src="assets/team-nafiur.png" alt="Md. Nafiur Rahman" loading="lazy">
-            </div>
-            <div class="team-name">Md. Nafiur Rahman</div>
-            <div class="team-role">Web Development &amp; AI</div>
-            <a href="https://www.linkedin.com/in/md-nafiur-rahman/" target="_blank" class="card-button">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14">
-                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-              </svg>
-              LinkedIn
-            </a>
+          <div class="step-card tilt-card">
+            <span class="step-num">Step 3</span>
+            <h3 class="step-title">3. We code</h3>
+            <p class="step-desc">
+              Once you approve the design, we write clean, lightweight code. We test every page across phones, laptops, and different browsers.
+            </p>
           </div>
 
-          <!-- Team Member 4 -->
-          <div class="team-member-card">
-            <div class="team-portrait-box">
-              <img src="assets/team-rafayet.png" alt="Md. Abdullah al Rafayet" loading="lazy">
-            </div>
-            <div class="team-name">Md. Abdullah al Rafayet</div>
-            <div class="team-role">Video &amp; Motion Graphics</div>
-            <a href="https://www.linkedin.com/in/md-abdullah-245448293/" target="_blank" class="card-button">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14">
-                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-              </svg>
-              LinkedIn
-            </a>
+          <div class="step-card tilt-card">
+            <span class="step-num">Step 4</span>
+            <h3 class="step-title">4. We launch</h3>
+            <p class="step-desc">
+              We hook up your domain, deploy the website live, and hand over all files. You own 100% of your code, design assets, and domain.
+            </p>
           </div>
 
         </div>
@@ -339,208 +284,191 @@
       </div>
     </section>
 
-    <!-- FAQ SECTION -->
-    <section class="faq-section" id="faq">
+    <!-- INTERACTIVE PROJECT SCOPE CALCULATOR / PLAYGROUND -->
+    <section class="calculator-section" id="calculator">
       <div class="container">
         
-        <h2 class="section-heading-centered">Frequently Asked Questions</h2>
-        <p class="section-subtext-centered">
-          Everything you need to know about working with Clandest Agency.
-        </p>
+        <div class="calculator-card">
+          <div class="section-intro">
+            <span class="section-eyebrow">Interactive Estimator</span>
+            <h2 class="section-title">Build your project scope.</h2>
+            <p class="calculator-intro-text">Click to customize your ideal project package and see the estimated timeline:</p>
+          </div>
 
-        <div class="faq-grid">
-          
-          <details class="faq-item" open>
-            <summary class="faq-question">
-              <span>Who will I be communicating with during the project?</span>
-              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </summary>
-            <div class="faq-answer">
-              You work directly with our 4 founding partners (Sadman for UI/UX, Nafiur for Web Dev, Rafayet for Video, and Habibullah for Client Relations). We don't have account managers or junior buffers—you always talk to the makers executing the work.
+          <div class="calculator-controls">
+            
+            <!-- Step 1: Deliverable -->
+            <div class="calc-group">
+              <label class="calc-label">1. What do you need?</label>
+              <div class="calc-pills" data-calc-group="deliverable">
+                <button type="button" class="calc-pill active" data-value="Custom Website" data-days="14">Custom Website</button>
+                <button type="button" class="calc-pill" data-value="Logo & Branding" data-days="10">Logo & Branding</button>
+                <button type="button" class="calc-pill" data-value="Brand + Website Package" data-days="21">Brand + Web Package</button>
+                <button type="button" class="calc-pill" data-value="Website Redesign" data-days="12">Site Redesign</button>
+              </div>
             </div>
-          </details>
 
-          <details class="faq-item">
-            <summary class="faq-question">
-              <span>What is your typical turnaround time?</span>
-              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </summary>
-            <div class="faq-answer">
-              Turnaround depends on scope: brand identity packages typically take 1–2 weeks, website designs &amp; builds take 2–3 weeks, and marketing video edits take 3–7 business days. We provide initial visual concepts within 48–72 hours of kickoff.
+            <!-- Step 2: Page Count / Scale -->
+            <div class="calc-group">
+              <label class="calc-label">2. Page Scope</label>
+              <div class="calc-pills" data-calc-group="scope">
+                <button type="button" class="calc-pill active" data-value="Single Landing Page" data-factor="1.0">1 Page / Landing Page</button>
+                <button type="button" class="calc-pill" data-value="Multi-Page (3-5 Pages)" data-factor="1.4">Multi-Page (3–5 Pages)</button>
+                <button type="button" class="calc-pill" data-value="Custom Scope" data-factor="1.8">Custom Scope</button>
+              </div>
             </div>
-          </details>
 
-          <details class="faq-item">
-            <summary class="faq-question">
-              <span>How does your project pricing work?</span>
-              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </summary>
-            <div class="faq-answer">
-              We offer clear, fixed-price quotes based on the exact deliverables agreed upon during discovery. You will never receive surprise hourly bills or hidden fees. We also offer monthly retainer packages for continuous design, dev, and video support.
+            <!-- Step 3: Timeline Goal -->
+            <div class="calc-group">
+              <label class="calc-label">3. Target Timeline</label>
+              <div class="calc-pills" data-calc-group="timeline">
+                <button type="button" class="calc-pill active" data-value="Standard Pace">Standard Pace</button>
+                <button type="button" class="calc-pill" data-value="Fast Track (Priority)">Fast Track (Priority)</button>
+              </div>
             </div>
-          </details>
 
-          <details class="faq-item">
-            <summary class="faq-question">
-              <span>Do I get full ownership of all source files and code?</span>
-              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </summary>
-            <div class="faq-answer">
-              Yes, 100%. Upon project completion and final payment, you receive complete commercial ownership of all intellectual property, Figma design files, source code repositories, and raw video project files.
-            </div>
-          </details>
+          </div>
 
-          <details class="faq-item">
-            <summary class="faq-question">
-              <span>How do revisions and feedback cycles work?</span>
-              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </summary>
-            <div class="faq-answer">
-              We conduct collaborative feedback rounds at every major milestone. We share interactive Figma links, staging previews, or Frame.io video links so you can leave pinpoint feedback before we finalize production.
+          <!-- Scope Result Summary Box -->
+          <div class="calc-result-box">
+            <div class="result-details">
+              <span class="result-label">Estimated Delivery Window:</span>
+              <span class="result-value" id="calcEstimateValue">~2 to 3 Weeks</span>
+              <span class="result-summary" id="calcSummaryText">Custom Website • Single Landing Page • Standard Pace</span>
             </div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="faq-question">
-              <span>Can you handle all three (Brand, Web, Video) together?</span>
-              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </summary>
-            <div class="faq-answer">
-              That is our core superpower. Instead of hiring three separate agencies that struggle to align, we build your brand identity, code your website, and produce your launch video concurrently with unified creative direction.
-            </div>
-          </details>
+            <button type="button" class="pill-btn pill-btn-lg magnetic-btn" id="applyScopeBtn">
+              Apply to message below ↓
+            </button>
+          </div>
 
         </div>
 
       </div>
     </section>
 
-    <!-- CONTACT FORM SECTION ("Ready to build something?") -->
+    <!-- CONTACT SECTION -->
     <section class="contact-section" id="contact">
       <div class="container">
         
-        <div class="contact-header">
-          <h2 class="section-heading-centered" style="margin-bottom: 0;">Ready to build something?</h2>
-          <p class="contact-subtext">
-            We work directly with you—no account managers, no layers of bureaucracy. Drop us a line about your brand, dev, or video needs.
-          </p>
-        </div>
+        <div class="contact-card">
+          
+          <div class="contact-header">
+            <span class="section-eyebrow">Get in touch</span>
+            <h2 class="contact-main-title">Ready to build something?</h2>
+            <p class="contact-lead">
+              As a new studio, we are eager to work on our first projects. Send us a message about what you need and we will write back within 24 hours.
+            </p>
+          </div>
 
-        <div class="contact-form-wrapper">
-          <form class="redesign-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-            <!-- Web3Forms Config -->
-            <input type="hidden" name="access_key" value="89c6e3bd-72cc-484f-a17e-130334989e24">
-            <input type="hidden" name="from_name" value="Clandest.agency Website">
-            <input type="hidden" name="subject" value="New Website Inquiry">
-            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-            
-            <div class="form-row-2col">
-              <div class="form-field-group">
-                <input type="text" id="userName" name="name" class="form-input" placeholder=" " required>
-                <label for="userName">Your name</label>
+          <div class="contact-methods">
+            <a href="mailto:hello@clandest.agency" class="contact-pill-item magnetic-btn">
+              <span class="pill-label">Email:</span>
+              <span class="pill-value">hello@clandest.agency</span>
+            </a>
+            <div class="contact-pill-item location-item">
+              <span class="pill-label">Location:</span>
+              <span class="pill-value">Dhaka, Bangladesh</span>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contactForm" onsubmit="return false;">
+            <div class="form-grid">
+              
+              <div class="input-group">
+                <label for="name">Your name</label>
+                <input type="text" id="name" name="name" placeholder="e.g. Sarah Khan" required>
               </div>
 
-              <div class="form-field-group">
-                <input type="email" id="userEmail" name="email" class="form-input" placeholder=" " required>
-                <label for="userEmail">Your email</label>
+              <div class="input-group">
+                <label for="email">Your email</label>
+                <input type="email" id="email" name="email" placeholder="sarah@example.com" required>
               </div>
+
+              <div class="input-group full-width">
+                <label for="serviceType">What do you need help with?</label>
+                <select id="serviceType" name="serviceType">
+                  <option value="website">Custom Website or Landing Page</option>
+                  <option value="branding">Logo & Brand Identity</option>
+                  <option value="redesign">Website Redesign</option>
+                  <option value="both">Both Branding and Website</option>
+                  <option value="other">General Question</option>
+                </select>
+              </div>
+
+              <div class="input-group full-width">
+                <label for="message">Tell us about your project</label>
+                <textarea id="message" name="message" rows="4" placeholder="Briefly describe your business, what you want to build, and any target timeline you have in mind..." required></textarea>
+              </div>
+
             </div>
 
-            <div class="form-field-group">
-              <select id="userService" name="service" class="form-select">
-                <option value="Logo & Brand Design" selected>Logo &amp; Brand Design</option>
-                <option value="Website Redesign">Website Redesign</option>
-                <option value="Marketing Video">Marketing Video</option>
-                <option value="Full Agency Support">Full Agency Retainer</option>
-              </select>
-              <label for="userService">What do you need help with?</label>
-            </div>
-
-            <div class="form-field-group">
-              <textarea id="userMessage" name="message" class="form-textarea" placeholder=" " rows="4" required></textarea>
-              <label for="userMessage">Tell us about your project</label>
-            </div>
-
-            <div class="form-action-container">
-              <button type="submit" class="animated-button" id="submitBtn">
-                <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
-                </svg>
-                <span class="text">Send Message</span>
-                <span class="circle"></span>
-                <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
-                </svg>
+            <div class="form-action-row">
+              <button type="submit" class="pill-btn pill-btn-lg magnetic-btn" id="submitBtn">
+                Send Message
               </button>
-              <span class="form-direct-note">You talk directly with our founding team.</span>
+              <span class="form-note">No spam. You talk directly with our 4-person team.</span>
             </div>
 
-            <div class="form-feedback" id="formFeedback" style="display: none; margin-top: 20px; font-size: 16px; color: var(--c-blue); font-weight: 500;">
-              Thank you! We received your message and will reply to your email shortly.
+            <div class="form-feedback" id="formFeedback" style="display: none;">
+              Thanks for reaching out! We received your message and will reply to your email shortly.
             </div>
 
           </form>
+
         </div>
 
       </div>
     </section>
+
   </main>
 
   <!-- FOOTER -->
-  <footer class="site-footer-redesign">
-    <div class="container">
+  <footer class="site-footer section-blue">
+    <div class="container footer-container">
       
-      <!-- Giant Vector Wordmark -->
-      <div class="footer-giant-wordmark-container">
-        <img src="assets/logo.svg" alt="Clandest Agency" class="footer-giant-wordmark-img">
+      <div class="footer-brand-side">
+        <a href="#" class="brand-link">
+          <img src="assets/logo-icon.svg" alt="Clandest Agency logo" class="brand-logo-img">
+          <span class="brand-name-text">Clandest <span class="brand-name-sub">agency</span></span>
+        </a>
+        <p class="footer-desc">
+          An independent 4-person design & web studio in Dhaka, Bangladesh.
+        </p>
       </div>
 
-      <!-- Bottom Bar with Copyright and Social Badges -->
-      <div class="footer-bottom-bar">
-        <div class="footer-copyright-text">
-          &copy; 2026, Clandest.agency | Handcrafted in Dhaka.
+      <div class="footer-links-side">
+        <div class="footer-col">
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#approach">Process</a></li>
+            <li><a href="#calculator">Scope Builder</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
         </div>
 
-        <div class="footer-social-badges">
-          <!-- Facebook Badge -->
-          <a href="https://www.facebook.com/clandest.agency" class="social-pill-badge" target="_blank" rel="noopener noreferrer">
-            <svg class="badge-icon" viewBox="0 0 24 24" fill="none">
-              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#1877F2"/>
-            </svg>
-            <span>Facebook</span>
-          </a>
-
-          <!-- WhatsApp Badge -->
-          <a href="https://wa.me/8801869504388" class="social-pill-badge" target="_blank" rel="noopener noreferrer">
-            <svg class="badge-icon" viewBox="0 0 24 24" fill="none">
-              <path d="M17.507 14.307l-.009.075c-.244-.122-1.442-.712-1.666-.793-.223-.082-.386-.122-.549.122-.163.245-.632.794-.775.957-.142.163-.285.183-.529.061-.244-.122-1.03-.38-1.962-1.21-.726-.647-1.217-1.446-1.36-1.69-.142-.244-.015-.376.107-.498.11-.11.244-.285.367-.428.122-.142.163-.244.244-.407.082-.163.041-.306-.02-.428-.061-.123-.549-1.325-.753-1.814-.198-.476-.4-.412-.549-.42-.143-.007-.306-.009-.469-.009-.163 0-.428.061-.652.306-.224.244-.856.836-.856 2.039 0 1.203.877 2.365.999 2.528.122.163 1.724 2.632 4.177 3.69 2.453 1.059 2.453.706 2.894.665.441-.041 1.427-.584 1.631-1.149.204-.565.204-1.05.143-1.149-.062-.099-.225-.16-.469-.282z" fill="#25D366"/>
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 1.892.524 3.662 1.436 5.176L2 22l4.966-1.408A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2a8.17 8.17 0 01-4.226-1.173l-.303-.18-3.118.883.886-3.036-.197-.315A8.17 8.17 0 1112 20.2z" fill="#25D366"/>
-            </svg>
-            <span>Whatsapp</span>
-          </a>
-
-          <!-- Gmail Badge -->
-          <a href="mailto:clandest.agency@gmail.com" class="social-pill-badge">
-            <svg class="badge-icon" viewBox="0 0 24 24" fill="none">
-              <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.272H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L12 9.548l8.073-6.055C21.69 2.28 24 3.434 24 5.457z" fill="#EA4335"/>
-            </svg>
-            <span>Gmail</span>
-          </a>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Contact</h4>
+          <ul>
+            <li><a href="mailto:hello@clandest.agency">hello@clandest.agency</a></li>
+            <li><span>Dhaka, Bangladesh</span></li>
+          </ul>
         </div>
       </div>
 
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© 2026 Clandest Agency. Built in Dhaka.</p>
+      
+      <!-- Audio ASMR Sound Toggle & Back to top -->
+      <div class="footer-controls">
+        <button type="button" class="audio-toggle-btn" id="audioToggleBtn" title="Toggle subtle UI click sounds">
+          <span id="audioIcon">🔈</span> <span id="audioLabel">Sound: Off</span>
+        </button>
+        <a href="#hero" class="back-top-link">Back to top ↑</a>
+      </div>
     </div>
   </footer>
 
