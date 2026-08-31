@@ -73,5 +73,49 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 6000);
       });
     });
+  // 1. LIVE DHAKA (UTC+6) CLOCK
+  const dhakaClockEl = document.getElementById('dhakaClock');
+  if (dhakaClockEl) {
+    const updateDhakaClock = () => {
+      const now = new Date();
+      // Format time in Asia/Dhaka timezone
+      const options = {
+        timeZone: 'Asia/Dhaka',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+      };
+      const timeStr = new Intl.DateTimeFormat('en-GB', options).format(now);
+      dhakaClockEl.textContent = `Dhaka ${timeStr} • BST`;
+    };
+    updateDhakaClock();
+    setInterval(updateDhakaClock, 1000);
   }
+
+  // 2. INTERACTIVE WORD SPRING LIFT ON HEADLINES
+  const heroTitles = document.querySelectorAll('.hero-title, .subpage-title');
+  heroTitles.forEach((title) => {
+    // Process text nodes to wrap words in .word-lift spans while preserving <br> tags
+    const childNodes = Array.from(title.childNodes);
+    title.innerHTML = '';
+    childNodes.forEach((node) => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        const words = node.textContent.split(/(\s+)/);
+        words.forEach((part) => {
+          if (part.trim().length > 0) {
+            const span = document.createElement('span');
+            span.className = 'word-lift';
+            span.textContent = part;
+            title.appendChild(span);
+          } else if (part.length > 0) {
+            title.appendChild(document.createTextNode(part));
+          }
+        });
+      } else {
+        title.appendChild(node.cloneNode(true));
+      }
+    });
+  });
 });
+

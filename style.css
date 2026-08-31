@@ -197,10 +197,134 @@ button, input, select, textarea {
 .hero-subtext {
   font-size: var(--fs-hero-sub);
   font-weight: 400;
-  line-height: 1.35;
+  line-height: 1.45;
   color: var(--c-text);
   max-width: 1040px;
   margin: 0 auto;
+}
+
+/* Interactive Word Spring Lift */
+.word-lift {
+  display: inline-block;
+  cursor: default;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.2s ease;
+  will-change: transform;
+}
+
+.word-lift:hover {
+  transform: translateY(-6px) scale(1.02);
+  color: #1a3260;
+}
+
+/* Easter-Egg Micro Tooltips */
+.easter-egg {
+  position: relative;
+  display: inline;
+  color: var(--c-blue);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 4px;
+  cursor: help;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.easter-egg:hover {
+  color: #1a3260;
+  text-decoration-color: var(--c-blue);
+}
+
+.easter-egg::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  background-color: var(--c-blue);
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 6px 20px rgba(46, 79, 148, 0.25);
+  z-index: 1000;
+  letter-spacing: 0.2px;
+}
+
+.easter-egg::before {
+  content: '';
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  border-width: 6px 6px 0 6px;
+  border-style: solid;
+  border-color: var(--c-blue) transparent transparent transparent;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1000;
+}
+
+.easter-egg:hover::after,
+.easter-egg:hover::before {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Dhaka Live Clock Pill in Header */
+.dhaka-time-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background-color: rgba(46, 79, 148, 0.05);
+  border: 1px solid rgba(46, 79, 148, 0.16);
+  border-radius: 9999px;
+  padding: 5px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--c-blue);
+  letter-spacing: 0.2px;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.dhaka-time-pill:hover {
+  background-color: rgba(46, 79, 148, 0.09);
+  border-color: var(--c-blue);
+}
+
+.pulse-dot {
+  width: 7px;
+  height: 7px;
+  background-color: #2ECC71;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.6);
+  animation: pulseGreen 2.2s infinite;
+}
+
+@keyframes pulseGreen {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(46, 204, 113, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0);
+  }
 }
 
 .hero-cta-group {
