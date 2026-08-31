@@ -1,73 +1,77 @@
 /**
- * CLANDEST AGENCY — SCRIPT
+ * CLANDEST AGENCY — MAIN VANILLA JS SCRIPT
  */
-
 document.addEventListener('DOMContentLoaded', () => {
-
-  // 1. FAQ ACCORDION HANDLER
-  const faqQuestions = document.querySelectorAll('.faq-question');
-  faqQuestions.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.parentElement;
-      const isOpen = item.classList.contains('active');
-
-      // Close all
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-
-      // Toggle current
-      if (!isOpen) {
-        item.classList.add('active');
-        btn.setAttribute('aria-expanded', 'true');
-      } else {
-        btn.setAttribute('aria-expanded', 'false');
-      }
-    });
-  });
-
-  // 2. CONTACT FORM SUBMISSION (Web3Forms AJAX)
   const form = document.getElementById('contactForm');
   const submitBtn = document.getElementById('submitBtn');
   const feedback = document.getElementById('formFeedback');
 
-  if (form && submitBtn && feedback) {
+  if (form && submitBtn) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-
-      const originalBtnText = submitBtn.querySelector('.text').textContent;
-      submitBtn.querySelector('.text').textContent = 'Sending...';
+      
+      const btnText = submitBtn.querySelector('.text');
+      const originalText = btnText ? btnText.textContent : 'Send Message';
+      
+      // Disable button and show sending state
       submitBtn.disabled = true;
+      if (btnText) {
+        btnText.textContent = 'Sending...';
+      } else {
+        submitBtn.textContent = 'Sending...';
+      }
 
       const formData = new FormData(form);
-      const object = Object.fromEntries(formData);
-      const json = JSON.stringify(object);
 
       fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
-        body: json
+        body: formData
       })
       .then(async (response) => {
-        const jsonResponse = await response.json();
+        let json = await response.json();
         if (response.status === 200) {
-          feedback.style.display = 'block';
-          feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          if (feedback) {
+            feedback.style.display = 'block';
+            feedback.style.color = 'var(--c-blue)';
+            feedback.textContent = 'Thank you! We received your message and will reply to your email shortly.';
+          }
           form.reset();
         } else {
-          alert(jsonResponse.message || 'Something went wrong. Please try again.');
+          console.error(response);
+          if (feedback) {
+            feedback.style.display = 'block';
+            feedback.style.color = '#ff4d4d';
+            feedback.textContent = json.message || 'Something went wrong. Please try again.';
+          }
         }
       })
       .catch((error) => {
-        console.error('Error submitting form:', error);
-        alert('Something went wrong. Please try sending directly to hello@clandest.agency');
+        console.error(error);
+        if (feedback) {
+          feedback.style.display = 'block';
+          feedback.style.color = '#ff4d4d';
+          feedback.textContent = 'Something went wrong. Please check your connection.';
+        }
       })
       .finally(() => {
-        submitBtn.querySelector('.text').textContent = originalBtnText;
+        // Re-enable button and restore text
         submitBtn.disabled = false;
+        if (btnText) {
+          btnText.textContent = originalText;
+        } else {
+          submitBtn.textContent = originalText;
+        }
+        
+        // Hide feedback message after 6 seconds
+        setTimeout(() => {
+          if (feedback) {
+            feedback.style.display = 'none';
+          }
+        }, 6000);
       });
     });
   }
-
 });
