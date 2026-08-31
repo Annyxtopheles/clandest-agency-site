@@ -78,28 +78,84 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 3. INTERACTIVE WORD SPRING LIFT ON HEADLINES
+  // 3. MAGICUI KINETIC TEXT ENGINE (Character Weight & Kinetic Wave Physics)
   // =========================================================================
-  const heroTitles = document.querySelectorAll('.hero-title, .subpage-title');
-  heroTitles.forEach((title) => {
+  const kineticTitles = document.querySelectorAll('.hero-title, .subpage-title');
+  
+  kineticTitles.forEach((title) => {
+    // Preserve screen-reader accessibility
+    const originalText = title.textContent.trim();
+    if (!title.getAttribute('aria-label')) {
+      title.setAttribute('aria-label', originalText);
+    }
+
     const childNodes = Array.from(title.childNodes);
     title.innerHTML = '';
+
+    const allChars = [];
+
     childNodes.forEach((node) => {
       if (node.nodeType === Node.TEXT_NODE) {
-        const words = node.textContent.split(/(\s+)/);
-        words.forEach((part) => {
-          if (part.trim().length > 0) {
-            const span = document.createElement('span');
-            span.className = 'word-lift';
-            span.textContent = part;
-            title.appendChild(span);
-          } else if (part.length > 0) {
-            title.appendChild(document.createTextNode(part));
+        const text = node.textContent;
+        const tokens = text.split(/(\s+)/);
+        tokens.forEach((token) => {
+          if (token.trim().length > 0) {
+            const wordSpan = document.createElement('span');
+            wordSpan.className = 'kinetic-word';
+            for (const char of token) {
+              const charSpan = document.createElement('span');
+              charSpan.className = 'kinetic-char';
+              charSpan.textContent = char;
+              charSpan.style.setProperty('--char-wght', '400');
+              wordSpan.appendChild(charSpan);
+              allChars.push(charSpan);
+            }
+            title.appendChild(wordSpan);
+          } else if (token.length > 0) {
+            title.appendChild(document.createTextNode(token));
           }
         });
       } else {
         title.appendChild(node.cloneNode(true));
       }
+    });
+
+    // Fluid Proximity Wave on MouseMove
+    const radius = 135; // Proximity wave field radius in px
+    const baseWeight = 400;
+    const maxWeight = 800;
+
+    title.addEventListener('mousemove', (e) => {
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+
+      allChars.forEach((char) => {
+        const rect = char.getBoundingClientRect();
+        const charCenterX = rect.left + rect.width / 2;
+        const charCenterY = rect.top + rect.height / 2;
+
+        const dist = Math.hypot(mouseX - charCenterX, mouseY - charCenterY);
+
+        if (dist < radius) {
+          const intensity = 1 - (dist / radius);
+          const eased = Math.pow(intensity, 1.8);
+          const targetWeight = Math.round(baseWeight + (maxWeight - baseWeight) * eased);
+          const lift = -5 * eased;
+
+          char.style.setProperty('--char-wght', targetWeight);
+          char.style.transform = `translateY(${lift.toFixed(1)}px)`;
+        } else {
+          char.style.setProperty('--char-wght', '400');
+          char.style.transform = 'translateY(0px)';
+        }
+      });
+    });
+
+    title.addEventListener('mouseleave', () => {
+      allChars.forEach((char) => {
+        char.style.setProperty('--char-wght', '400');
+        char.style.transform = 'translateY(0px)';
+      });
     });
   });
 
