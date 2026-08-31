@@ -216,10 +216,10 @@ button, input, select, textarea {
   font-optical-sizing: auto;
   font-variation-settings: 'wght' var(--char-wght, 400);
   font-weight: var(--char-wght, 400);
+  color: inherit;
   transition: font-variation-settings 0.2s cubic-bezier(0.16, 1, 0.3, 1),
               font-weight 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
-              color 0.2s ease;
+              transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
   will-change: font-variation-settings, font-weight, transform;
   cursor: default;
 }
@@ -227,7 +227,6 @@ button, input, select, textarea {
 .kinetic-char:hover {
   --char-wght: 800;
   transform: translateY(-4px);
-  color: #1a3260;
 }
 
 /* Easter-Egg Micro Tooltips */
