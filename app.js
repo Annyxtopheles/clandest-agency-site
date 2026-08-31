@@ -78,27 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 2. LIVE DHAKA (UTC+6) CLOCK
-  // =========================================================================
-  const dhakaClockEl = document.getElementById('dhakaClock');
-  if (dhakaClockEl) {
-    const updateDhakaClock = () => {
-      const now = new Date();
-      const options = {
-        timeZone: 'Asia/Dhaka',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: false
-      };
-      const timeStr = new Intl.DateTimeFormat('en-GB', options).format(now);
-      dhakaClockEl.textContent = `Dhaka ${timeStr} • BST`;
-    };
-    updateDhakaClock();
-    setInterval(updateDhakaClock, 1000);
-  }
-
-  // =========================================================================
   // 3. INTERACTIVE WORD SPRING LIFT ON HEADLINES
   // =========================================================================
   const heroTitles = document.querySelectorAll('.hero-title, .subpage-title');
@@ -162,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // =========================================================================
   // 5. MAGNETIC BUTTON PHYSICS
   // =========================================================================
-  const magneticElements = document.querySelectorAll('.animated-button, .social-pill-badge, .card-button, .dhaka-time-pill');
+  const magneticElements = document.querySelectorAll('.animated-button, .social-pill-badge, .card-button');
 
   magneticElements.forEach((btn) => {
     btn.style.transition = 'transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.2s ease';

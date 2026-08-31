@@ -222,17 +222,12 @@ button, input, select, textarea {
   display: inline;
   color: var(--c-blue);
   font-weight: 600;
-  text-decoration: underline;
-  text-decoration-style: dashed;
-  text-decoration-thickness: 1.5px;
-  text-underline-offset: 4px;
   cursor: help;
-  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .easter-egg:hover {
   color: #1a3260;
-  text-decoration-color: var(--c-blue);
 }
 
 .easter-egg::after {
@@ -280,52 +275,7 @@ button, input, select, textarea {
   transform: translateX(-50%) translateY(0);
 }
 
-/* Dhaka Live Clock Pill in Header */
-.dhaka-time-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  background-color: rgba(46, 79, 148, 0.05);
-  border: 1px solid rgba(46, 79, 148, 0.16);
-  border-radius: 9999px;
-  padding: 5px 12px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--c-blue);
-  letter-spacing: 0.2px;
-  user-select: none;
-  transition: all 0.2s ease;
-}
 
-.dhaka-time-pill:hover {
-  background-color: rgba(46, 79, 148, 0.09);
-  border-color: var(--c-blue);
-}
-
-.pulse-dot {
-  width: 7px;
-  height: 7px;
-  background-color: #2ECC71;
-  border-radius: 50%;
-  display: inline-block;
-  box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.6);
-  animation: pulseGreen 2.2s infinite;
-}
-
-@keyframes pulseGreen {
-  0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7);
-  }
-  70% {
-    transform: scale(1);
-    box-shadow: 0 0 0 6px rgba(46, 204, 113, 0);
-  }
-  100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0);
-  }
-}
 
 .hero-cta-group {
   display: flex;
