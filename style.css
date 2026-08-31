@@ -548,8 +548,7 @@ button, input, select, textarea {
 .process-step-card:hover {
   background-color: #FFFFFF;
   border-color: var(--c-blue);
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(46, 79, 148, 0.08);
+  box-shadow: 0 14px 30px rgba(46, 79, 148, 0.1);
 }
 
 .process-step-number {
