@@ -35,7 +35,7 @@
 
   /* Desktop Typographic Scale */
   --fs-hero-title: 90px;
-  --fs-hero-sub: 32px;
+  --fs-hero-sub: 24px;
   --fs-section-title: 48px;
   --fs-service-title: 32px;
   --fs-nav: 24px;
@@ -1008,7 +1008,7 @@ button, input, select, textarea {
 @media (max-width: 1100px) {
   :root {
     --fs-hero-title: 68px;
-    --fs-hero-sub: 26px;
+    --fs-hero-sub: 20px;
     --fs-section-title: 38px;
     --fs-service-title: 26px;
     --fs-nav: 20px;
@@ -1035,7 +1035,7 @@ button, input, select, textarea {
 @media (max-width: 768px) {
   :root {
     --fs-hero-title: 44px;
-    --fs-hero-sub: 18px;
+    --fs-hero-sub: 16px;
     --fs-section-title: 32px;
     --fs-service-title: 22px;
     --fs-nav: 18px;
