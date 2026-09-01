@@ -229,4 +229,114 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // =========================================================================
+  // 6. TEXT PRESSURE FOOTER WORDMARK ENGINE (Interactive Variable Typography)
+  // =========================================================================
+  const textPressureContainers = document.querySelectorAll('.footer-giant-wordmark-container');
+
+  textPressureContainers.forEach((container) => {
+    const text = container.dataset.text || 'CLANDESTAGENCY';
+    container.innerHTML = '';
+
+    const title = document.createElement('h2');
+    title.className = 'text-pressure-title';
+    title.setAttribute('aria-label', 'Clandest Agency');
+    container.appendChild(title);
+
+    const chars = text.split('');
+    const spans = [];
+
+    chars.forEach((char) => {
+      const span = document.createElement('span');
+      span.textContent = char;
+      span.setAttribute('data-char', char);
+      title.appendChild(span);
+      spans.push(span);
+    });
+
+    const mouse = { x: 0, y: 0 };
+    const cursor = { x: 0, y: 0 };
+
+    const updateInitialPos = () => {
+      const rect = container.getBoundingClientRect();
+      mouse.x = rect.left + rect.width / 2;
+      mouse.y = rect.top + rect.height / 2;
+      cursor.x = mouse.x;
+      cursor.y = mouse.y;
+    };
+    updateInitialPos();
+
+    const handleMouseMove = (e) => {
+      cursor.x = e.clientX;
+      cursor.y = e.clientY;
+    };
+
+    const handleTouchMove = (e) => {
+      if (e.touches && e.touches[0]) {
+        cursor.x = e.touches[0].clientX;
+        cursor.y = e.touches[0].clientY;
+      }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('touchmove', handleTouchMove, { passive: true });
+
+    // Dynamic responsive font size to span container
+    const setSize = () => {
+      const containerW = container.getBoundingClientRect().width;
+      if (containerW <= 0) return;
+
+      // Calculate base font size fitted to character count
+      const newFontSize = containerW / (chars.length * 0.58);
+      title.style.fontSize = `${Math.max(newFontSize, 24).toFixed(1)}px`;
+    };
+
+    setSize();
+    window.addEventListener('resize', setSize);
+
+    const dist = (a, b) => {
+      const dx = b.x - a.x;
+      const dy = b.y - a.y;
+      return Math.sqrt(dx * dx + dy * dy);
+    };
+
+    const getAttr = (distance, maxDist, minVal, maxVal) => {
+      const val = maxVal - Math.abs((maxVal * distance) / maxDist);
+      return Math.max(minVal, val + minVal);
+    };
+
+    const animate = () => {
+      // Elastic cursor spring
+      mouse.x += (cursor.x - mouse.x) / 12;
+      mouse.y += (cursor.y - mouse.y) / 12;
+
+      const titleRect = title.getBoundingClientRect();
+      const maxDist = Math.max(titleRect.width / 2, 200);
+
+      spans.forEach((span) => {
+        const rect = span.getBoundingClientRect();
+        const charCenter = {
+          x: rect.left + rect.width / 2,
+          y: rect.top + rect.height / 2
+        };
+
+        const d = dist(mouse, charCenter);
+
+        // Variable font parameters (wdth 25..151, wght 100..900, ital 0..1)
+        const wdth = Math.floor(getAttr(d, maxDist, 25, 151));
+        const wght = Math.floor(getAttr(d, maxDist, 100, 900));
+        const italVal = getAttr(d, maxDist, 0, 1).toFixed(2);
+
+        const settings = `'wght' ${wght}, 'wdth' ${wdth}, 'ital' ${italVal}`;
+        if (span.style.fontVariationSettings !== settings) {
+          span.style.fontVariationSettings = settings;
+        }
+      });
+
+      requestAnimationFrame(animate);
+    };
+
+    requestAnimationFrame(animate);
+  });
 });
+

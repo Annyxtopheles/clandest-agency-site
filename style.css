@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,100..1000&display=swap');
+
 /* ==========================================================================
    CLANDEST AGENCY — FIGMA REDESIGN SYSTEM
    Theme: Pure White #FFFFFF | Brand Blue: #2E4F94
@@ -987,17 +989,37 @@ button, input, select, textarea {
 }
 
 .footer-giant-wordmark-container {
+  position: relative;
   width: 100%;
   overflow: hidden;
   margin-bottom: 24px;
   user-select: none;
+  background: transparent;
 }
 
-.footer-giant-wordmark-container img,
-.footer-giant-wordmark-svg {
+.text-pressure-title {
+  font-family: 'Roboto Flex', 'Host Grotesk', sans-serif;
+  text-transform: uppercase;
+  color: var(--c-blue);
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  user-select: none;
+  white-space: nowrap;
+  font-weight: 100;
   width: 100%;
-  height: auto;
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  transform-origin: center top;
+}
+
+.text-pressure-title span {
+  display: inline-block;
+  color: var(--c-blue);
+  font-optical-sizing: auto;
+  will-change: font-variation-settings;
 }
 
 /* ==========================================================================
