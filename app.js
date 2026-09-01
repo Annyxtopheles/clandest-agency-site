@@ -322,12 +322,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const d = dist(mouse, charCenter);
 
-        // Variable font parameters (wdth 25..151, wght 100..900, ital 0..1)
-        const wdth = Math.floor(getAttr(d, maxDist, 25, 151));
-        const wght = Math.floor(getAttr(d, maxDist, 100, 900));
-        const italVal = getAttr(d, maxDist, 0, 1).toFixed(2);
+        // Controlled, tasteful font variation (Regular 400 to Bold 800 across 5 clean weights)
+        const rawWght = getAttr(d, maxDist, 400, 800);
+        // Snap to 5 clean weights: 400, 500, 600, 700, 800
+        const wght = Math.min(800, Math.max(400, Math.round(rawWght / 100) * 100));
+        
+        // Subtle, elegant width response (90% to 115%)
+        const wdth = Math.floor(getAttr(d, maxDist, 90, 115));
 
-        const settings = `'wght' ${wght}, 'wdth' ${wdth}, 'ital' ${italVal}`;
+        const settings = `'wght' ${wght}, 'wdth' ${wdth}`;
         if (span.style.fontVariationSettings !== settings) {
           span.style.fontVariationSettings = settings;
         }
