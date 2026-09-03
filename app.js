@@ -230,8 +230,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const containerW = container.getBoundingClientRect().width;
       if (containerW <= 0) return;
 
-      // Calculate base font size fitted to character count with safe margin for expansion
-      const newFontSize = containerW / (chars.length * 0.63);
+      // Calculate base font size fitted to character count with safe headroom so middle swells never push letters off-screen
+      const newFontSize = containerW / (chars.length * 0.72);
       title.style.fontSize = `${Math.max(newFontSize, 24).toFixed(1)}px`;
     };
 
@@ -271,14 +271,24 @@ document.addEventListener('DOMContentLoaded', () => {
         // Snap to 5 clean weights: 400, 500, 600, 700, 800
         const wght = Math.min(800, Math.max(400, Math.round(rawWght / 100) * 100));
         
-        // Subtle, elegant width response (90% to 115%)
-        const wdth = Math.floor(getAttr(d, maxDist, 90, 115));
+        // Subtle, elegant width response (88% to 108%)
+        const wdth = Math.floor(getAttr(d, maxDist, 88, 108));
 
         const settings = `'wght' ${wght}, 'wdth' ${wdth}`;
         if (span.style.fontVariationSettings !== settings) {
           span.style.fontVariationSettings = settings;
         }
       });
+
+      // Elastic auto-containment: dynamically scale so wordmark never exceeds container bounds
+      const containerW = container.getBoundingClientRect().width;
+      const scrollW = title.scrollWidth;
+      if (scrollW > containerW && containerW > 0) {
+        const scale = containerW / scrollW;
+        title.style.transform = `scaleX(${scale.toFixed(4)})`;
+      } else {
+        title.style.transform = 'scaleX(1)';
+      }
 
       requestAnimationFrame(animate);
     };

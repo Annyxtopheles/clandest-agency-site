@@ -1264,7 +1264,7 @@ button, input, select, textarea {
   justify-content: space-between;
   align-items: center;
   line-height: 0.95;
-  transform-origin: center top;
+  transform-origin: center center;
 }
 
 .text-pressure-title span {
