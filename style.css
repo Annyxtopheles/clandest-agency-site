@@ -206,29 +206,17 @@ button, input, select, textarea {
 }
 
 /* ==========================================================================
-   Kinetic Typography System (MagicUI Style)
+   Interactive Word Spring Lift System (.word-lift)
    ========================================================================== */
-.kinetic-word {
+.word-lift {
   display: inline-block;
-  white-space: nowrap;
-}
-
-.kinetic-char {
-  display: inline-block;
-  font-optical-sizing: auto;
-  font-variation-settings: 'wght' var(--char-wght, 400);
-  font-weight: var(--char-wght, 400);
-  color: inherit;
-  transition: font-variation-settings 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-              font-weight 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
-  will-change: font-variation-settings, font-weight, transform;
   cursor: default;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.2s ease;
+  will-change: transform;
 }
 
-.kinetic-char:hover {
-  --char-wght: 800;
-  transform: translateY(-4px);
+.word-lift:hover {
+  transform: translateY(-6px) scale(1.02);
 }
 
 /* Easter-Egg Micro Tooltips */
