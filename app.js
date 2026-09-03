@@ -341,5 +341,211 @@ document.addEventListener('DOMContentLoaded', () => {
 
     requestAnimationFrame(animate);
   });
+
+  // =========================================================================
+  // 7. VIDEO PORTFOLIO SHOWCASE & LIGHTBOX PLAYER (By Abdullah Al Rafayet)
+  // =========================================================================
+  const videoGrid = document.getElementById('videoPortfolioGrid');
+  if (videoGrid) {
+    const videoProjects = [
+      {
+        id: '1-wkIHX69tQ',
+        title: 'Healthcare Product VSL (Core Pitch)',
+        category: 'vsl',
+        categoryLabel: 'VSL & Commercial',
+        duration: '1:31',
+        desc: 'Conversion-driven direct response edit featuring synchronized motion typography, B-roll pacing, and clinical proof graphics.',
+        author: 'Post-Production by Abdullah Al Rafayet'
+      },
+      {
+        id: 'O1KD4GBdw3s',
+        title: 'Healthcare Product VSL (In-Depth)',
+        category: 'vsl',
+        categoryLabel: 'VSL & Commercial',
+        duration: '2:45',
+        desc: 'Extended high-ticket explainer with custom sound design, color grading, and dynamic product breakdown.',
+        author: 'Post-Production by Abdullah Al Rafayet'
+      },
+      {
+        id: 't9RAkGK49BM',
+        title: 'Female UGC & Testimonial Ad',
+        category: 'ugc',
+        categoryLabel: 'Short-Form UGC',
+        duration: '0:51',
+        desc: 'High-engagement authentic creator testimonial with dynamic subtitles, sound effects, and scroll-stopping hooks.',
+        author: 'Post-Production by Abdullah Al Rafayet'
+      },
+      {
+        id: 'CrxJCEeQ0Os',
+        title: 'Healthcare Product VSL (Benefits Breakdown)',
+        category: 'vsl',
+        categoryLabel: 'VSL & Commercial',
+        duration: '1:44',
+        desc: 'Fast-paced sales video pacing highlighting competitive advantages, user testimonials, and urgent CTA.',
+        author: 'Post-Production by Abdullah Al Rafayet'
+      },
+      {
+        id: 'bvAdnAvqvCU',
+        title: 'Healthcare Product VSL (Full Narrative)',
+        category: 'vsl',
+        categoryLabel: 'VSL & Commercial',
+        duration: '3:10',
+        desc: 'Comprehensive marketing narrative structured for cold-traffic conversion and high average order value.',
+        author: 'Post-Production by Abdullah Al Rafayet'
+      },
+      {
+        id: 'Mt4w-_jwU_c',
+        title: 'Healthcare Product VSL (Problem / Solution)',
+        category: 'vsl',
+        categoryLabel: 'VSL & Commercial',
+        duration: '2:20',
+        desc: 'Story-driven hook sequence with visual problem agitation and scientific solution validation.',
+        author: 'Post-Production by Abdullah Al Rafayet'
+      },
+      {
+        id: 'uIE8A5dWw9A',
+        title: 'Healthcare Product (High-Impact 60s)',
+        category: 'vsl',
+        categoryLabel: 'VSL & Commercial',
+        duration: '1:00',
+        desc: 'Punchy 60-second direct response cut optimized for paid social ads and rapid hook retention.',
+        author: 'Post-Production by Abdullah Al Rafayet'
+      },
+      {
+        id: '-nfffjkbgY0',
+        title: 'Murder Mystery & Narrative Showcase',
+        category: 'documentary',
+        categoryLabel: 'Documentary & Story',
+        duration: '0:52',
+        desc: 'Atmospheric narrative editing featuring dark color grading, Foley sound design, and tense cinematic pacing.',
+        author: 'Post-Production by Abdullah Al Rafayet'
+      },
+      {
+        id: 'QwrpMQH9UGE',
+        title: 'Construction & Industry Showcase',
+        category: 'documentary',
+        categoryLabel: 'Documentary & Story',
+        duration: '0:49',
+        desc: 'Heavy industrial documentary edit highlighting commercial project milestones with clean lower-third graphics.',
+        author: 'Post-Production by Abdullah Al Rafayet'
+      },
+      {
+        id: '_-_xyVjZivE',
+        title: 'History Documentary & Archival Motion',
+        category: 'documentary',
+        categoryLabel: 'Documentary & Story',
+        duration: '0:38',
+        desc: 'Archival image restoration, 2.5D parallax photo animation, and historical storytelling pacing.',
+        author: 'Post-Production by Abdullah Al Rafayet'
+      },
+      {
+        id: 'mIV8rsaohN4',
+        title: 'Commercial Direct-Response Showreel',
+        category: 'vsl',
+        categoryLabel: 'VSL & Commercial',
+        duration: '1:15',
+        desc: 'Curated montage of high-converting e-commerce product videos, motion graphics, and sales letters.',
+        author: 'Post-Production by Abdullah Al Rafayet'
+      }
+    ];
+
+    // Render cards function
+    const renderVideoCards = (filter = 'all') => {
+      videoGrid.innerHTML = '';
+      const filtered = filter === 'all' 
+        ? videoProjects 
+        : videoProjects.filter(p => p.category === filter);
+
+      filtered.forEach((video) => {
+        const card = document.createElement('div');
+        card.className = 'video-project-card';
+        card.dataset.videoId = video.id;
+        card.dataset.category = video.category;
+
+        card.innerHTML = `
+          <div class="video-thumbnail-box">
+            <img src="https://img.youtube.com/vi/${video.id}/hqdefault.jpg" alt="${video.title}" loading="lazy">
+            <div class="video-play-badge">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <div class="video-duration-pill">${video.duration}</div>
+          </div>
+          <div class="video-card-info">
+            <div class="video-category-tag">${video.categoryLabel}</div>
+            <h4 class="video-card-title">${video.title}</h4>
+            <p class="video-card-desc">${video.desc}</p>
+            <div class="video-author-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+              <span>${video.author}</span>
+            </div>
+          </div>
+        `;
+
+        card.addEventListener('click', () => {
+          openVideoModal(video.id, video.title);
+        });
+
+        videoGrid.appendChild(card);
+      });
+    };
+
+    // Filter Buttons
+    const filterButtons = document.querySelectorAll('.video-filter-btn');
+    filterButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderVideoCards(btn.dataset.filter);
+      });
+    });
+
+    renderVideoCards('all');
+
+    // Create Modal Elements
+    const modalOverlay = document.createElement('div');
+    modalOverlay.className = 'video-modal-overlay';
+    modalOverlay.innerHTML = `
+      <div class="video-modal-dialog">
+        <button class="video-modal-close-btn" aria-label="Close Video Player">&times;</button>
+        <div class="video-modal-iframe-box"></div>
+      </div>
+    `;
+    document.body.appendChild(modalOverlay);
+
+    const iframeBox = modalOverlay.querySelector('.video-modal-iframe-box');
+    const closeBtn = modalOverlay.querySelector('.video-modal-close-btn');
+
+    const openVideoModal = (videoId, title) => {
+      iframeBox.innerHTML = `
+        <iframe 
+          src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1" 
+          title="${title}" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      `;
+      modalOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeVideoModal = () => {
+      modalOverlay.classList.remove('active');
+      iframeBox.innerHTML = '';
+      document.body.style.overflow = '';
+    };
+
+    closeBtn.addEventListener('click', closeVideoModal);
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) {
+        closeVideoModal();
+      }
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+        closeVideoModal();
+      }
+    });
+  }
 });
 
