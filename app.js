@@ -230,8 +230,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const containerW = container.getBoundingClientRect().width;
       if (containerW <= 0) return;
 
-      // Calculate base font size fitted to character count
-      const newFontSize = containerW / (chars.length * 0.58);
+      // Calculate base font size fitted to character count with safe margin for expansion
+      const newFontSize = containerW / (chars.length * 0.63);
       title.style.fontSize = `${Math.max(newFontSize, 24).toFixed(1)}px`;
     };
 
