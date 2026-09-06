@@ -205,7 +205,7 @@ export const Services: React.FC = () => {
               </ul>
             </div>
             <div className="service-image-box" style={{ width: '100%', aspectRatio: '4 / 3.1' }}>
-              <img src="assets/service-brand-design.jpg" alt="Logo & Brand Design" loading="lazy" />
+              <img src="assets/service-brand-design.gif" alt="Logo & Brand Design" loading="lazy" />
             </div>
           </div>
 

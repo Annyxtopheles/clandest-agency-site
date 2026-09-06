@@ -73,7 +73,7 @@ export const Home: React.FC = () => {
             <Link to="/services#branding" className="service-visual-card">
               <TiltCard>
                 <div className="service-image-box">
-                  <img src="assets/service-brand-design.jpg" alt="Logo and Brand Design" loading="lazy" />
+                  <img src="assets/service-brand-design.gif" alt="Logo and Brand Design" loading="lazy" />
                 </div>
                 <div className="service-card-label">Logo & Brand Design</div>
               </TiltCard>
