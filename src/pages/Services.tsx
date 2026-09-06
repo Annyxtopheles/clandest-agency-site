@@ -124,59 +124,8 @@ export const Services: React.FC = () => {
             </p>
           </div>
 
-          {/* Service Item 1: Logo & Brand Design */}
-          <div className="about-narrative-row" id="branding" style={{ marginBottom: '80px' }}>
-            <div className="about-narrative-text">
-              <h2 style={{ fontSize: '32px', color: 'var(--c-blue)', marginBottom: '16px', fontWeight: 600 }}>Logo & Brand Design</h2>
-              <p>Logo design, color palettes, and full brand identities that make your product stand out.</p>
-              <ul style={{ listStyle: 'none', marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Primary logo, wordmarks, and responsive icon sets</li>
-                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Complete design systems in Figma (typography, tokens, colors)</li>
-                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Marketing creatives, pitch decks, and vector illustrations</li>
-                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Interactive UI/UX high-fidelity wireframing</li>
-              </ul>
-            </div>
-            <div className="service-image-box" style={{ width: '100%', aspectRatio: '4 / 3.1' }}>
-              <img src="assets/service-brand-design.jpg" alt="Logo & Brand Design" loading="lazy" />
-            </div>
-          </div>
-
-          {/* Service Item 2: Website Redesign */}
-          <div className="about-narrative-row reverse" id="development" style={{ marginBottom: '80px' }}>
-            <div className="service-image-box" style={{ width: '100%', aspectRatio: '4 / 3.1' }}>
-              <img src="assets/service-web-redesign.png" alt="Website Redesign" loading="lazy" />
-            </div>
-            <div className="about-narrative-text">
-              <h2 style={{ fontSize: '32px', color: 'var(--c-blue)', marginBottom: '16px', fontWeight: 600 }}>Website Redesign</h2>
-              <p>Custom landing pages and websites built from scratch. Fast, responsive, and completely optimized.</p>
-              <ul style={{ listStyle: 'none', marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Modern HTML, clean CSS, and fast JavaScript (Zero bloat)</li>
-                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> 100% mobile, tablet, and high-DPI desktop responsive layouts</li>
-                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Core Web Vitals optimization and instant loading speeds</li>
-                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Python backends, automation scripts, and custom data pipelines</li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Service Item 3: Marketing Video */}
-          <div className="about-narrative-row" id="video" style={{ marginBottom: '60px' }}>
-            <div className="about-narrative-text">
-              <h2 style={{ fontSize: '32px', color: 'var(--c-blue)', marginBottom: '16px', fontWeight: 600 }}>Marketing Video</h2>
-              <p>High-converting video ads, post-production editing, motion graphics, and sound design.</p>
-              <ul style={{ listStyle: 'none', marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> High-converting Video Sales Letters (VSLs) & social UGC ads</li>
-                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Adobe After Effects motion graphics & animated typography</li>
-                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Studio color grading & professional audio mastering</li>
-                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Commercial product explainers & documentary narratives</li>
-              </ul>
-            </div>
-            <div className="service-image-box" style={{ width: '100%', aspectRatio: '4 / 3.1' }}>
-              <img src="assets/service-marketing-video.png" alt="Marketing Video" loading="lazy" />
-            </div>
-          </div>
-
           {/* VIDEO PRODUCTION PORTFOLIO SHOWCASE */}
-          <div className="video-portfolio-section" id="video-portfolio">
+          <div className="video-portfolio-section" id="video-portfolio" style={{ marginBottom: '80px' }}>
             <div style={{ textAlign: 'center', marginBottom: '32px' }}>
               <h3 style={{ fontSize: '32px', color: 'var(--c-blue)', fontWeight: 600, marginBottom: '10px' }}>Featured Video Projects</h3>
               <p style={{ fontSize: '18px', color: 'var(--c-text-muted)', maxWidth: '680px', margin: '0 auto' }}>
@@ -240,6 +189,57 @@ export const Services: React.FC = () => {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* Service Item 1: Logo & Brand Design */}
+          <div className="about-narrative-row" id="branding" style={{ marginBottom: '80px' }}>
+            <div className="about-narrative-text">
+              <h2 style={{ fontSize: '32px', color: 'var(--c-blue)', marginBottom: '16px', fontWeight: 600 }}>Logo & Brand Design</h2>
+              <p>Logo design, color palettes, and full brand identities that make your product stand out.</p>
+              <ul style={{ listStyle: 'none', marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Primary logo, wordmarks, and responsive icon sets</li>
+                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Complete design systems in Figma (typography, tokens, colors)</li>
+                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Marketing creatives, pitch decks, and vector illustrations</li>
+                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Interactive UI/UX high-fidelity wireframing</li>
+              </ul>
+            </div>
+            <div className="service-image-box" style={{ width: '100%', aspectRatio: '4 / 3.1' }}>
+              <img src="assets/service-brand-design.jpg" alt="Logo & Brand Design" loading="lazy" />
+            </div>
+          </div>
+
+          {/* Service Item 2: Website Redesign */}
+          <div className="about-narrative-row reverse" id="development" style={{ marginBottom: '80px' }}>
+            <div className="service-image-box" style={{ width: '100%', aspectRatio: '4 / 3.1' }}>
+              <img src="assets/service-web-redesign.png" alt="Website Redesign" loading="lazy" />
+            </div>
+            <div className="about-narrative-text">
+              <h2 style={{ fontSize: '32px', color: 'var(--c-blue)', marginBottom: '16px', fontWeight: 600 }}>Website Redesign</h2>
+              <p>Custom landing pages and websites built from scratch. Fast, responsive, and completely optimized.</p>
+              <ul style={{ listStyle: 'none', marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Modern HTML, clean CSS, and fast JavaScript (Zero bloat)</li>
+                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> 100% mobile, tablet, and high-DPI desktop responsive layouts</li>
+                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Core Web Vitals optimization and instant loading speeds</li>
+                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Python backends, automation scripts, and custom data pipelines</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Service Item 3: Marketing Video */}
+          <div className="about-narrative-row" id="video" style={{ marginBottom: '60px' }}>
+            <div className="about-narrative-text">
+              <h2 style={{ fontSize: '32px', color: 'var(--c-blue)', marginBottom: '16px', fontWeight: 600 }}>Marketing Video</h2>
+              <p>High-converting video ads, post-production editing, motion graphics, and sound design.</p>
+              <ul style={{ listStyle: 'none', marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> High-converting Video Sales Letters (VSLs) & social UGC ads</li>
+                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Adobe After Effects motion graphics & animated typography</li>
+                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Studio color grading & professional audio mastering</li>
+                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Commercial product explainers & documentary narratives</li>
+              </ul>
+            </div>
+            <div className="service-image-box" style={{ width: '100%', aspectRatio: '4 / 3.1' }}>
+              <img src="assets/service-marketing-video.png" alt="Marketing Video" loading="lazy" />
             </div>
           </div>
 
