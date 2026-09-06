@@ -1669,7 +1669,7 @@ button, input, select, textarea {
 
 /* Hide default cursor on desktop when SmoothCursor is active */
 @media (any-hover: hover) and (any-pointer: fine) {
-  html, body, a, button, [role="button"] {
+  *, *::before, *::after {
     cursor: none !important;
   }
 

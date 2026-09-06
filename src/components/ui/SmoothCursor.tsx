@@ -26,11 +26,11 @@ const DefaultCursorSVG: React.FC = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={40}
-      height={44}
+      width={24}
+      height={26}
       viewBox="0 0 50 54"
       fill="none"
-      style={{ scale: 0.6 }}
+      style={{ display: 'block' }}
     >
       <g filter="url(#filter0_d_clandest)">
         <path
