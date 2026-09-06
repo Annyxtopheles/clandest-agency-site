@@ -63,7 +63,7 @@ export const Home: React.FC = () => {
             <Link to="/services#video" className="service-visual-card">
               <TiltCard>
                 <div className="service-image-box">
-                  <img src="assets/service-marketing-video.png" alt="Marketing Video Production" fetchPriority="high" />
+                  <img src="/assets/service-marketing-video.png" alt="Marketing Video Production" fetchPriority="high" />
                 </div>
                 <div className="service-card-label">Marketing Video</div>
               </TiltCard>
@@ -73,7 +73,7 @@ export const Home: React.FC = () => {
             <Link to="/services#branding" className="service-visual-card">
               <TiltCard>
                 <div className="service-image-box">
-                  <img src="assets/service-brand-design.gif" alt="Logo and Brand Design" fetchPriority="high" />
+                  <img src="/assets/service-brand-design.gif" alt="Logo and Brand Design" fetchPriority="high" />
                 </div>
                 <div className="service-card-label">Logo & Brand Design</div>
               </TiltCard>
@@ -83,7 +83,7 @@ export const Home: React.FC = () => {
             <Link to="/services#development" className="service-visual-card">
               <TiltCard>
                 <div className="service-image-box">
-                  <img src="assets/service-web-redesign.png" alt="Website Redesign and Development" fetchPriority="high" />
+                  <img src="/assets/service-web-redesign.png" alt="Website Redesign and Development" fetchPriority="high" />
                 </div>
                 <div className="service-card-label">Website Redesign</div>
               </TiltCard>

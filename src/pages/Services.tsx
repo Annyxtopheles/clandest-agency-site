@@ -205,14 +205,14 @@ export const Services: React.FC = () => {
               </ul>
             </div>
             <div className="service-image-box" style={{ width: '100%', aspectRatio: '4 / 3.1' }}>
-              <img src="assets/service-brand-design.gif" alt="Logo & Brand Design" loading="lazy" />
+              <img src="/assets/service-brand-design.gif" alt="Logo & Brand Design" loading="lazy" />
             </div>
           </div>
 
           {/* Service Item 2: Website Redesign */}
           <div className="about-narrative-row reverse" id="development" style={{ marginBottom: '80px' }}>
             <div className="service-image-box" style={{ width: '100%', aspectRatio: '4 / 3.1' }}>
-              <img src="assets/service-web-redesign.png" alt="Website Redesign" loading="lazy" />
+              <img src="/assets/service-web-redesign.png" alt="Website Redesign" loading="lazy" />
             </div>
             <div className="about-narrative-text">
               <h2 style={{ fontSize: '32px', color: 'var(--c-blue)', marginBottom: '16px', fontWeight: 600 }}>Website Redesign</h2>
@@ -239,7 +239,7 @@ export const Services: React.FC = () => {
               </ul>
             </div>
             <div className="service-image-box" style={{ width: '100%', aspectRatio: '4 / 3.1' }}>
-              <img src="assets/service-marketing-video.png" alt="Marketing Video" loading="lazy" />
+              <img src="/assets/service-marketing-video.png" alt="Marketing Video" loading="lazy" />
             </div>
           </div>
 

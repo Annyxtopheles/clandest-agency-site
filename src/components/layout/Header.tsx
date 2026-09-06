@@ -7,7 +7,7 @@ export const Header: React.FC = () => {
     <header className="site-header" id="siteHeader">
       <div className="nav-container">
         <Link to="/" className="brand-link" aria-label="Clandest Agency Homepage">
-          <img src="assets/logo.svg" alt="Clandest Agency logo" className="brand-logo-img" />
+          <img src="/assets/logo.svg" alt="Clandest Agency logo" className="brand-logo-img" />
         </Link>
 
         <nav className="main-nav" aria-label="Main Navigation">
