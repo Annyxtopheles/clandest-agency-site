@@ -1667,5 +1667,13 @@ button, input, select, textarea {
   text-decoration: none;
 }
 
+/* Hide default cursor on desktop when SmoothCursor is active */
+@media (any-hover: hover) and (any-pointer: fine) {
+  html, body, a, button, [role="button"] {
+    cursor: none !important;
+  }
 
-
+  input, textarea, select {
+    cursor: text !important;
+  }
+}

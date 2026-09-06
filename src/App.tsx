@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { ScrollToTop } from './components/ui/ScrollToTop';
+import { SmoothCursor } from './components/ui/SmoothCursor';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
 import { Home } from './pages/Home';
@@ -12,6 +13,7 @@ import { Contact } from './pages/Contact';
 export const App: React.FC = () => {
   return (
     <>
+      <SmoothCursor />
       <ScrollToTop />
       <Header />
       <Routes>
