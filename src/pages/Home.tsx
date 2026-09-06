@@ -45,7 +45,7 @@ export const Home: React.FC = () => {
       <section className="hero-section" id="hero">
         <div className="container hero-container">
           <WordLift as="h1" className="hero-title">
-            We design brands, websites, and edit marketing videos.
+            We design brands, websites,<br />and edit marketing videos.
           </WordLift>
           <p className="hero-subtext">
             We are <span className="easter-egg" data-tooltip="🎨 2 Designers + 💻 2 Engineers">four friends</span> who met at <span className="easter-egg" data-tooltip="📍 Munshiganj / Dhaka, Bangladesh">Munshiganj Polytechnic Institute</span>. We combine UX design, clean software engineering, and post-production video editing to build digital assets that actually work. Direct access to founders—<span className="easter-egg" data-tooltip="⚡ Sadman, Nafiur, Rafayet & Habibullah">zero middlemen</span>.
