@@ -4,8 +4,11 @@
   "version": "2.0.0",
   "type": "module",
   "scripts": {
+    "predev": "tsx scripts/generate-sitemap.ts",
     "dev": "vite",
+    "prebuild": "tsx scripts/generate-sitemap.ts",
     "build": "tsc && vite build",
+    "postbuild": "tsx scripts/prerender.ts",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -16,9 +19,11 @@
     "react-router-dom": "^6.28.0"
   },
   "devDependencies": {
+    "@types/node": "^26.5.0",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",
+    "tsx": "^4.23.13",
     "typescript": "^5.7.3",
     "vite": "^6.2.0"
   }
