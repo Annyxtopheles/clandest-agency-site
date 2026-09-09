@@ -1,0 +1,36 @@
+# Clandest Agency — Complete Documentation & Context
+
+Website: https://clandestagency.vercel.app
+Contact: clandest.agency@gmail.com | WhatsApp: +8801869504388
+Location: Dhaka, Bangladesh
+
+## About the Agency
+Clandest Agency is a multidisciplinary digital studio specializing in brand identity design, modern web engineering, and direct-response marketing video post-production.
+The agency was founded by four college friends who met at Munshiganj Polytechnic Institute during their Diploma in Computer Technology (2021–2025). The team combines deep discipline honed through the Rover Scouts movement (winning national recognition including the 'Serader Sera' top 16 award out of 600+ units in Bangladesh) with commercial IT experience gained through attachments at European IT Solutions in Mirpur, Dhaka.
+
+## Founders & Core Disciplines
+1. Sadman Zaman Khan — UI/UX & Brand Design
+   - Brand identity architecture, vector marks, design systems in Figma, design tokens, responsive typography hierarchies, pitch decks, and commercial packaging.
+2. Md. Habibullah — Operations & Client Relations
+   - Client strategy, project management, milestone tracking, scope definition, and operational logistics.
+3. Abdullah Al Rafayet — Head of Video & Motion
+   - Direct-response Video Sales Letters (VSLs), scroll-stopping short-form UGC ads (9:16 optimized for TikTok, Instagram Reels, YouTube Shorts), cinematic documentary narratives, After Effects motion graphics, studio color grading, and professional audio mastering.
+4. Md Nafiur Rahman — Lead Frontend Engineer
+   - Modern React, TypeScript, Vite, semantic HTML5, Core Web Vitals optimization, zero-bloat styling, static site generation (SSG), search engine indexability, and clean architecture.
+
+## Deliverables ("What You Walk Away With")
+- Marketing Video: 4K Master Exports & ProRes Files, 9:16 Vertical Cuts for TikTok & Reels, Professional Audio & Foley Stems, Complete Project Timelines Archive.
+- Logo & Brand Design: Master Vector Files (.SVG, .AI, .PDF), Complete Figma Brand System, Typography & Color Tokens, 100% Commercial Copyright Ownership.
+- Website Redesign: Clean React/TypeScript Codebase, Full GitHub Repo Ownership, Production Vercel Deployment, Zero Subscriptions or Vendor Lock-in.
+
+## Frequently Asked Questions (FAQs)
+1. How much does a project typically cost?
+   We work on transparent, fixed-price project quotes based on concrete deliverables rather than ambiguous hourly rates. Once we review your scope and goals during our initial consultation, you receive a clear, fixed proposal with zero surprise invoices or scope creep.
+2. How long does a typical project take?
+   Direct-response marketing video edits (VSLs, UGC cuts) typically turn around in 3 to 7 days. Brand identity systems take 1 to 2 weeks. Full custom website redesigns and engineering take 2 to 4 weeks from kickoff to deployment.
+3. Do we get the raw project and master source files?
+   Yes, 100%. Upon final project completion, you receive full commercial rights and all master files: vector Figma files and design assets, raw 4K video project timelines and audio stems, or clean GitHub repository source code with zero vendor lock-in.
+4. How do revisions and feedback work?
+   Feedback is direct and collaborative. Clients work directly with the makers (Sadman for branding, Nafiur for web, Rafayet for video) via Figma, Frame.io, and direct WhatsApp/Slack channels to iterate rapidly.
+5. Can we meet before committing to work together?
+   Yes. We encourage a direct 15-minute intro conversation via Google Meet or WhatsApp call with our founding team to align on goals, assess fit, and answer questions.

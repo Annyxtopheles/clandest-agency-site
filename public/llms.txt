@@ -1,57 +1,36 @@
 # Clandest Agency
 
-> Clandest Agency is a multidisciplinary design, development, and video post-production studio in Dhaka, Bangladesh.
+> Clandest Agency is a design, development, and video post-production studio based in Dhaka, Bangladesh, founded by four diploma graduates from Munshiganj Polytechnic Institute. Direct founder access, zero middlemen, 100% commercial ownership.
 
-## Quick Facts
-- **Location:** Munshiganj & Dhaka, Bangladesh
-- **Founding Team:** Four friends and Computer Technology diploma graduates from Munshiganj Polytechnic Institute (2021–2025).
-- **Core Philosophy:** Direct access to founders. Zero account managers, zero bureaucracy, zero middleman markup. Full commercial ownership of all source files.
-- **Website:** https://clandestagency.vercel.app
-- **Contact:** clandest.agency@gmail.com
+Website: https://clandestagency.vercel.app
+Email: clandest.agency@gmail.com
+WhatsApp: https://wa.me/8801869504388 (+880 1869 504388)
+Location: Dhaka, Bangladesh
 
----
+## Core Services & Disciplines
 
-## Core Services
+- [Marketing Video Post-Production](https://clandestagency.vercel.app/services#video): High-converting Video Sales Letters (VSLs), short-form UGC ads (9:16 for TikTok/Reels), documentary narratives, motion graphics in After Effects, studio audio mastering, and color grading. Led by Abdullah Al Rafayet.
+- [Logo & Brand Identity Design](https://clandestagency.vercel.app/services#branding): Vector master assets (.SVG, .AI, .PDF), comprehensive Figma design systems, color tokens, typography scales, social kits, and 100% commercial copyright. Led by Sadman Zaman Khan.
+- [Website Redesign & Frontend Development](https://clandestagency.vercel.app/services#development): Ultra-fast, clean React + TypeScript web applications, zero bloated plugins, Core Web Vitals optimization, full GitHub repo ownership, and production Vercel deployment. Led by Md Nafiur Rahman.
 
-### 1. Marketing Video Post-Production & Motion
-- **Head of Video:** Abdullah Al Rafayet
-- **Capabilities:** Direct-response Video Sales Letters (VSLs), Short-Form UGC ads (TikTok, Reels, Shorts), Documentary & Brand Storytelling, 2.5D archival motion graphics, color grading, and custom Foley/sound design.
-- **Portfolio Showcase:** 11 production cuts featuring high-conversion commercial ads and narrative documentaries.
-- **Page:** https://clandestagency.vercel.app/services#video
+## The Founding Team
 
-### 2. Logo & Brand Identity Design
-- **Lead Designer:** Sadman Zaman Khan
-- **Capabilities:** Comprehensive visual identity systems, vector brandmarks, scalable design systems, typography hierarchy, brand guidelines, and collateral design.
-- **Page:** https://clandestagency.vercel.app/services#branding
+- Sadman Zaman Khan: UI/UX & Brand Design (Munshiganj Polytechnic, European IT Solutions industrial attachment)
+- Md. Habibullah: Operations & Client Relations (Munshiganj Polytechnic, client coordination & delivery)
+- Abdullah Al Rafayet: Head of Video & Motion (Munshiganj Polytechnic, European IT Solutions attachment, commercial video editing)
+- Md Nafiur Rahman: Lead Frontend Engineer (Munshiganj Polytechnic, Rover Scouts Senior Rover Mate, web architecture)
 
-### 3. Website Redesign & Frontend Engineering
-- **Lead Engineer:** Md Nafiur Rahman
-- **Capabilities:** High-performance bespoke web applications, responsive UI/UX, sub-second load times, accessible semantic architecture, and modern JavaScript/TypeScript engineering.
-- **Page:** https://clandestagency.vercel.app/services#development
+## How We Work (4-Step Process)
 
----
+1. We talk: Direct consultation to define scope, timeline, and a fixed quote.
+2. We design: Interactive Figma prototypes, high-fidelity brand concepts, and video storyboards.
+3. We build: Clean, lightweight TypeScript code and cinematic post-production video editing.
+4. We launch: DNS setup, live Vercel deployment, and handoff of all raw master files with 100% ownership.
 
-## 4-Step Working Framework
+## Key Pages
 
-1. **We Talk:** Direct discovery consultation to define goals, audience, and scope. Fixed-price transparent quotation with no surprise fees.
-2. **We Design:** Interactive Figma prototypes, high-fidelity brand concepts, and video storyboards for collaborative refinement.
-3. **We Build:** Lightweight, performant code paired with meticulous post-production editing, audio mastering, and color finishing.
-4. **We Launch:** Live deployment, DNS configuration, and handoff of all final and master source files with 100% commercial ownership.
-- **Page:** https://clandestagency.vercel.app/process
-
----
-
-## Founding Team
-- **Sadman Zaman Khan:** UI/UX & Brand Design (LinkedIn: https://www.linkedin.com/in/sadmanzamankhan/)
-- **Md Nafiur Rahman:** Lead Frontend & Software Engineer (LinkedIn: https://www.linkedin.com/in/nafiur-rahman-5047b925b/)
-- **Abdullah Al Rafayet:** Head of Video Post-Production & Motion
-- **Md Habibullah:** Operations & Client Relations (LinkedIn: https://www.linkedin.com/in/mdhabibullah-dev/)
-
----
-
-## Site Pages
-- **Home:** https://clandestagency.vercel.app/ — Studio overview, core offerings, and interactive contact.
-- **About:** https://clandestagency.vercel.app/about — Origin story at Munshiganj Polytechnic, Rover Scout leadership, and founder biographies.
-- **Services:** https://clandestagency.vercel.app/services — In-depth breakdown of Video, Branding, and Web Development, with interactive video portfolio player.
-- **Process:** https://clandestagency.vercel.app/process — The 4-step client engagement framework.
-- **Contact:** https://clandestagency.vercel.app/contact — Direct consultation inquiry form and direct email/social channels.
+- [Home](https://clandestagency.vercel.app/): Overview of agency capabilities, philosophy, and work.
+- [About](https://clandestagency.vercel.app/about): The origin story from Munshiganj Polytechnic Institute, Rover Scouts leadership, and European IT Solutions.
+- [Services & Portfolio](https://clandestagency.vercel.app/services): Detailed breakdown of video post-production, branding, web development, and deliverables checklists.
+- [Process & FAQs](https://clandestagency.vercel.app/process): 4-step framework and answers to pricing, timelines, revisions, and project handoff.
+- [Contact](https://clandestagency.vercel.app/contact): Direct contact via WhatsApp (+8801869504388), 15-minute Google Meet booking, and project inquiry form.

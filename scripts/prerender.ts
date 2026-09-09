@@ -467,20 +467,35 @@ function updateHtmlTags(
     `<meta name="description" content="${escapeHtml(options.description)}">`
   );
 
-  const imageUrl = options.image || `${BASE_URL}/assets/team-main.jpg`;
+  const defaultImage = `${BASE_URL}/assets/og-image.png`;
+  const imageUrl = options.image || defaultImage;
 
   const headExtra = `
     <link rel="canonical" href="${escapeHtml(options.url)}" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="theme-color" content="#2E4F94" />
+    <meta name="author" content="Clandest Agency" />
+
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Clandest Agency" />
     <meta property="og:title" content="${escapeHtml(options.title)}" />
     <meta property="og:description" content="${escapeHtml(options.description)}" />
     <meta property="og:url" content="${escapeHtml(options.url)}" />
     <meta property="og:image" content="${escapeHtml(imageUrl)}" />
+    <meta property="og:image:secure_url" content="${escapeHtml(imageUrl)}" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="${escapeHtml(options.title)}" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter / X Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${escapeHtml(options.title)}" />
     <meta name="twitter:description" content="${escapeHtml(options.description)}" />
     <meta name="twitter:image" content="${escapeHtml(imageUrl)}" />
+    <meta name="twitter:image:alt" content="${escapeHtml(options.title)}" />
     ${options.jsonLd ? `<script type="application/ld+json">${JSON.stringify(options.jsonLd)}</script>` : ""}
   </head>`;
   html = html.replace(/<\/head>/i, headExtra);
@@ -506,21 +521,59 @@ export function prerender() {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
     'name': 'Clandest Agency',
+    'legalName': 'Clandest Agency',
     'url': BASE_URL,
     'logo': `${BASE_URL}/assets/logo.svg`,
-    'description': 'A design, development, and video post-production studio in Dhaka, Bangladesh.',
+    'image': `${BASE_URL}/assets/og-image.png`,
+    'description': 'A design, development, and video post-production studio in Dhaka, Bangladesh. We build clean brand systems, custom websites, and high-converting marketing videos.',
     'email': 'clandest.agency@gmail.com',
+    'telephone': '+8801869504388',
+    'priceRange': '$$',
     'address': {
       '@type': 'PostalAddress',
       'addressLocality': 'Dhaka',
       'addressCountry': 'Bangladesh'
     },
+    'sameAs': [
+      'https://www.facebook.com/clandest.agency',
+      'https://wa.me/8801869504388'
+    ],
     'founder': [
       { '@type': 'Person', 'name': 'Sadman Zaman Khan', 'jobTitle': 'UI/UX & Brand Design' },
       { '@type': 'Person', 'name': 'Md Nafiur Rahman', 'jobTitle': 'Lead Frontend Engineer' },
       { '@type': 'Person', 'name': 'Abdullah Al Rafayet', 'jobTitle': 'Head of Video Post-Production' },
       { '@type': 'Person', 'name': 'Md Habibullah', 'jobTitle': 'Operations & Client Relations' }
-    ]
+    ],
+    'hasOfferCatalog': {
+      '@type': 'OfferCatalog',
+      'name': 'Agency Disciplines',
+      'itemListElement': [
+        {
+          '@type': 'Offer',
+          'itemOffered': {
+            '@type': 'Service',
+            'name': 'Marketing Video Post-Production',
+            'description': 'High-converting VSLs, 9:16 short-form UGC ads, documentaries, motion graphics, color grading, and audio mastering.'
+          }
+        },
+        {
+          '@type': 'Offer',
+          'itemOffered': {
+            '@type': 'Service',
+            'name': 'Logo & Brand Identity Design',
+            'description': 'Vector master assets, complete Figma design systems, typography hierarchies, and brand guidelines.'
+          }
+        },
+        {
+          '@type': 'Offer',
+          'itemOffered': {
+            '@type': 'Service',
+            'name': 'Website Redesign & Frontend Development',
+            'description': 'Ultra-fast React and TypeScript custom web applications with semantic architecture and zero bloat.'
+          }
+        }
+      ]
+    }
   };
 
   // 1. Prerender / (Home)
@@ -528,7 +581,7 @@ export function prerender() {
     title: 'Clandest Agency — Design, Dev & Video Studio',
     description: 'A design, development, and video post-production studio in Dhaka. We build clean brand systems, custom websites, and high-converting marketing videos.',
     url: `${BASE_URL}/`,
-    image: `${BASE_URL}/assets/team-main.jpg`,
+    image: `${BASE_URL}/assets/og-image.png`,
     contentHtml: buildHomeHtml(),
     jsonLd: sharedOrgLd
   });
@@ -540,7 +593,7 @@ export function prerender() {
     title: 'About Us — Clandest Agency | Dhaka, Bangladesh',
     description: 'Meet the four founders of Clandest Agency. From Munshiganj Polytechnic Institute to Rover Scouts leadership and European IT Solutions attachment.',
     url: `${BASE_URL}/about`,
-    image: `${BASE_URL}/assets/team-main.jpg`,
+    image: `${BASE_URL}/assets/og-image.png`,
     contentHtml: buildAboutHtml(),
     jsonLd: {
       ...sharedOrgLd,
@@ -633,7 +686,7 @@ export function prerender() {
     title: 'Contact Us — Clandest Agency | Start a Project',
     description: 'Get in touch directly with the founders of Clandest Agency for brand identity, custom web development, or video post-production.',
     url: `${BASE_URL}/contact`,
-    image: `${BASE_URL}/assets/team-main.jpg`,
+    image: `${BASE_URL}/assets/og-image.png`,
     contentHtml: buildContactHtml(),
     jsonLd: {
       ...sharedOrgLd,
