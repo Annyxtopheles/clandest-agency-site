@@ -460,46 +460,81 @@ function updateHtmlTags(
 ): string {
   let html = templateHtml;
 
+  // 1. Replace Title
   html = html.replace(/<title>.*?<\/title>/i, `<title>${escapeHtml(options.title)}</title>`);
 
+  // 2. Replace Description
   html = html.replace(
     /<meta\s+name=["']description["']\s+content=["'][^"']*["']\s*\/?>/i,
     `<meta name="description" content="${escapeHtml(options.description)}">`
   );
 
+  // 3. Replace Canonical
+  html = html.replace(
+    /<link\s+rel=["']canonical["']\s+href=["'][^"']*["']\s*\/?>/i,
+    `<link rel="canonical" href="${escapeHtml(options.url)}">`
+  );
+
+  // 4. Replace og:url
+  html = html.replace(
+    /<meta\s+property=["']og:url["']\s+content=["'][^"']*["']\s*\/?>/i,
+    `<meta property="og:url" content="${escapeHtml(options.url)}">`
+  );
+
+  // 5. Replace og:title & twitter:title
+  html = html.replace(
+    /<meta\s+property=["']og:title["']\s+content=["'][^"']*["']\s*\/?>/i,
+    `<meta property="og:title" content="${escapeHtml(options.title)}">`
+  );
+  html = html.replace(
+    /<meta\s+name=["']twitter:title["']\s+content=["'][^"']*["']\s*\/?>/i,
+    `<meta name="twitter:title" content="${escapeHtml(options.title)}">`
+  );
+
+  // 6. Replace og:description & twitter:description
+  html = html.replace(
+    /<meta\s+property=["']og:description["']\s+content=["'][^"']*["']\s*\/?>/i,
+    `<meta property="og:description" content="${escapeHtml(options.description)}">`
+  );
+  html = html.replace(
+    /<meta\s+name=["']twitter:description["']\s+content=["'][^"']*["']\s*\/?>/i,
+    `<meta name="twitter:description" content="${escapeHtml(options.description)}">`
+  );
+
   const defaultImage = `${BASE_URL}/assets/og-image.png`;
   const imageUrl = options.image || defaultImage;
 
-  const headExtra = `
-    <link rel="canonical" href="${escapeHtml(options.url)}" />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="theme-color" content="#2E4F94" />
-    <meta name="author" content="Clandest Agency" />
+  // 7. Replace og:image, og:image:secure_url, twitter:image, alt
+  html = html.replace(
+    /<meta\s+property=["']og:image["']\s+content=["'][^"']*["']\s*\/?>/i,
+    `<meta property="og:image" content="${escapeHtml(imageUrl)}">`
+  );
+  html = html.replace(
+    /<meta\s+property=["']og:image:secure_url["']\s+content=["'][^"']*["']\s*\/?>/i,
+    `<meta property="og:image:secure_url" content="${escapeHtml(imageUrl)}">`
+  );
+  html = html.replace(
+    /<meta\s+property=["']og:image:alt["']\s+content=["'][^"']*["']\s*\/?>/i,
+    `<meta property="og:image:alt" content="${escapeHtml(options.title)}">`
+  );
+  html = html.replace(
+    /<meta\s+name=["']twitter:image["']\s+content=["'][^"']*["']\s*\/?>/i,
+    `<meta name="twitter:image" content="${escapeHtml(imageUrl)}">`
+  );
+  html = html.replace(
+    /<meta\s+name=["']twitter:image:alt["']\s+content=["'][^"']*["']\s*\/?>/i,
+    `<meta name="twitter:image:alt" content="${escapeHtml(options.title)}">`
+  );
 
-    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Clandest Agency" />
-    <meta property="og:title" content="${escapeHtml(options.title)}" />
-    <meta property="og:description" content="${escapeHtml(options.description)}" />
-    <meta property="og:url" content="${escapeHtml(options.url)}" />
-    <meta property="og:image" content="${escapeHtml(imageUrl)}" />
-    <meta property="og:image:secure_url" content="${escapeHtml(imageUrl)}" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="${escapeHtml(options.title)}" />
-    <meta property="og:locale" content="en_US" />
+  // 8. Replace JSON-LD schema cleanly
+  if (options.jsonLd) {
+    html = html.replace(
+      /<script type=["']application\/ld\+json["']>[\s\S]*?<\/script>/i,
+      `<script type="application/ld+json">\n  ${JSON.stringify(options.jsonLd, null, 2)}\n  </script>`
+    );
+  }
 
-    <!-- Twitter / X Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="${escapeHtml(options.title)}" />
-    <meta name="twitter:description" content="${escapeHtml(options.description)}" />
-    <meta name="twitter:image" content="${escapeHtml(imageUrl)}" />
-    <meta name="twitter:image:alt" content="${escapeHtml(options.title)}" />
-    ${options.jsonLd ? `<script type="application/ld+json">${JSON.stringify(options.jsonLd)}</script>` : ""}
-  </head>`;
-  html = html.replace(/<\/head>/i, headExtra);
-
+  // 9. Inject content into #root
   html = html.replace('<div id="root"></div>', `<div id="root">${options.contentHtml}</div>`);
 
   return html;
