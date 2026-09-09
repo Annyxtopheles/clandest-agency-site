@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { WordLift } from '../components/ui/WordLift';
 import { AnimatedButton } from '../components/ui/AnimatedButton';
 import { VideoModal } from '../components/ui/VideoModal';
+import { triggerHaptic } from '../utils/haptics';
 
 const VIDEO_PROJECTS = [
   {
@@ -137,25 +138,37 @@ export const Services: React.FC = () => {
             <div className="video-filter-bar">
               <button
                 className={`video-filter-btn ${filter === 'all' ? 'active' : ''}`}
-                onClick={() => setFilter('all')}
+                onClick={() => {
+                  triggerHaptic('selection');
+                  setFilter('all');
+                }}
               >
                 All Projects ({VIDEO_PROJECTS.length})
               </button>
               <button
                 className={`video-filter-btn ${filter === 'vsl' ? 'active' : ''}`}
-                onClick={() => setFilter('vsl')}
+                onClick={() => {
+                  triggerHaptic('selection');
+                  setFilter('vsl');
+                }}
               >
                 VSLs & Sales Ads
               </button>
               <button
                 className={`video-filter-btn ${filter === 'documentary' ? 'active' : ''}`}
-                onClick={() => setFilter('documentary')}
+                onClick={() => {
+                  triggerHaptic('selection');
+                  setFilter('documentary');
+                }}
               >
                 Documentaries & Stories
               </button>
               <button
                 className={`video-filter-btn ${filter === 'ugc' ? 'active' : ''}`}
-                onClick={() => setFilter('ugc')}
+                onClick={() => {
+                  triggerHaptic('selection');
+                  setFilter('ugc');
+                }}
               >
                 Short-Form UGC
               </button>
@@ -203,6 +216,20 @@ export const Services: React.FC = () => {
                 <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Marketing creatives, pitch decks, and vector illustrations</li>
                 <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Interactive UI/UX high-fidelity wireframing</li>
               </ul>
+
+              {/* Deliverables Checklist */}
+              <div style={{ marginTop: '24px', padding: '18px 22px', backgroundColor: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '12px' }}>
+                <div style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700, color: 'var(--c-blue)', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                  What You Walk Away With
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '8px', fontSize: '14px', color: '#334155' }}>
+                  <span>✓ Master Vector Files (SVG, AI, PDF)</span>
+                  <span>✓ Complete Figma Brand System</span>
+                  <span>✓ Typography & Color Tokens</span>
+                  <span>✓ 100% Commercial Copyright</span>
+                </div>
+              </div>
             </div>
             <div className="service-image-box" style={{ width: '100%', aspectRatio: '4 / 3.1' }}>
               <img src="/assets/service-brand-design.gif" alt="Logo & Brand Design" loading="lazy" />
@@ -223,6 +250,20 @@ export const Services: React.FC = () => {
                 <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Core Web Vitals optimization and instant loading speeds</li>
                 <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Python backends, automation scripts, and custom data pipelines</li>
               </ul>
+
+              {/* Deliverables Checklist */}
+              <div style={{ marginTop: '24px', padding: '18px 22px', backgroundColor: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '12px' }}>
+                <div style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700, color: 'var(--c-blue)', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                  What You Walk Away With
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '8px', fontSize: '14px', color: '#334155' }}>
+                  <span>✓ Clean React/TypeScript Codebase</span>
+                  <span>✓ Full GitHub Repo Ownership</span>
+                  <span>✓ Production Vercel Deployment</span>
+                  <span>✓ Zero Subscriptions or Vendor Lock-in</span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -237,6 +278,20 @@ export const Services: React.FC = () => {
                 <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Studio color grading & professional audio mastering</li>
                 <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Commercial product explainers & documentary narratives</li>
               </ul>
+
+              {/* Deliverables Checklist */}
+              <div style={{ marginTop: '24px', padding: '18px 22px', backgroundColor: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '12px' }}>
+                <div style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700, color: 'var(--c-blue)', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                  What You Walk Away With
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '8px', fontSize: '14px', color: '#334155' }}>
+                  <span>✓ 4K Master Exports & ProRes Files</span>
+                  <span>✓ 9:16 Vertical Cuts for TikTok & Reels</span>
+                  <span>✓ Professional Audio & Foley Stems</span>
+                  <span>✓ Complete Project Timelines Archive</span>
+                </div>
+              </div>
             </div>
             <div className="service-image-box" style={{ width: '100%', aspectRatio: '4 / 3.1' }}>
               <img src="/assets/service-marketing-video.png" alt="Marketing Video" loading="lazy" />

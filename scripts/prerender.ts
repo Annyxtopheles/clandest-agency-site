@@ -237,23 +237,50 @@ function buildServicesHtml(): string {
 
           <div class="service-detail-block" id="video">
             <h2 style="font-size: 32px; color: var(--c-blue); margin-bottom: 16px;">1. Marketing Video Post-Production</h2>
-            <p style="font-size: 18px; line-height: 1.6; max-width: 800px; margin-bottom: 24px;">
+            <p style="font-size: 18px; line-height: 1.6; max-width: 800px; margin-bottom: 16px;">
               Led by Abdullah Al Rafayet. We produce high-converting Video Sales Letters (VSLs), scroll-stopping short-form UGC ads, atmospheric narrative documentaries, and motion graphics designed to maximize viewer retention and direct-response sales.
             </p>
+            <div style="padding: 16px 20px; background-color: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; max-width: 700px; margin-bottom: 24px;">
+              <strong style="display: block; font-size: 14px; text-transform: uppercase; color: var(--c-blue); margin-bottom: 8px;">What You Walk Away With</strong>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px; font-size: 14px; color: #334155;">
+                <span>✓ 4K Master Exports & ProRes Files</span>
+                <span>✓ 9:16 Vertical Cuts for TikTok & Reels</span>
+                <span>✓ Professional Audio & Foley Stems</span>
+                <span>✓ Complete Project Timelines Archive</span>
+              </div>
+            </div>
           </div>
 
           <div class="service-detail-block" id="branding">
             <h2 style="font-size: 32px; color: var(--c-blue); margin-bottom: 16px;">2. Logo & Brand Identity Design</h2>
-            <p style="font-size: 18px; line-height: 1.6; max-width: 800px; margin-bottom: 24px;">
+            <p style="font-size: 18px; line-height: 1.6; max-width: 800px; margin-bottom: 16px;">
               Led by Sadman Zaman Khan. We build complete, versatile visual identity systems from the ground up: primary and secondary brandmarks, color palettes, typography hierarchy, and scalable brand guidelines.
             </p>
+            <div style="padding: 16px 20px; background-color: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; max-width: 700px; margin-bottom: 24px;">
+              <strong style="display: block; font-size: 14px; text-transform: uppercase; color: var(--c-blue); margin-bottom: 8px;">What You Walk Away With</strong>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px; font-size: 14px; color: #334155;">
+                <span>✓ Vector Master Assets (.SVG, .EPS)</span>
+                <span>✓ Complete Brand Guidelines & Color Tokens</span>
+                <span>✓ Social Media Avatar & Banner Kit</span>
+                <span>✓ 100% Commercial Copyright Ownership</span>
+              </div>
+            </div>
           </div>
 
           <div class="service-detail-block" id="development">
             <h2 style="font-size: 32px; color: var(--c-blue); margin-bottom: 16px;">3. Website Redesign & Frontend Development</h2>
-            <p style="font-size: 18px; line-height: 1.6; max-width: 800px; margin-bottom: 24px;">
+            <p style="font-size: 18px; line-height: 1.6; max-width: 800px; margin-bottom: 16px;">
               Led by Md Nafiur Rahman. We engineer ultra-fast, responsive websites with semantic HTML5, clean CSS/Tailwind, and modern TypeScript. Zero bloated plugins, sub-second load speeds, and full search engine indexability.
             </p>
+            <div style="padding: 16px 20px; background-color: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; max-width: 700px; margin-bottom: 24px;">
+              <strong style="display: block; font-size: 14px; text-transform: uppercase; color: var(--c-blue); margin-bottom: 8px;">What You Walk Away With</strong>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px; font-size: 14px; color: #334155;">
+                <span>✓ Clean React/TypeScript Codebase</span>
+                <span>✓ Full GitHub Repo Ownership</span>
+                <span>✓ Production Vercel Deployment</span>
+                <span>✓ Zero Subscriptions or Vendor Lock-in</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -301,6 +328,36 @@ function buildProcessHtml(): string {
               </p>
             </div>
           </div>
+
+          <!-- FAQ Section -->
+          <div class="faq-section" style="margin-bottom: 80px;">
+            <h2 class="section-heading-centered" style="margin-bottom: 16px;">Frequently Asked Questions</h2>
+            <p class="section-subtext-centered" style="max-width: 650px; margin: 0 auto 40px; textAlign: center;">
+              Direct, transparent answers about timelines, deliverables, commercial rights, and how we collaborate.
+            </p>
+            <div class="faq-accordion-container" style="max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px;">
+              <details open style="background: #FFFFFF; border: 1px solid var(--c-border, #E5E7EB); border-radius: 16px; padding: 20px 24px;">
+                <summary style="font-size: 20px; font-weight: 600; color: var(--c-blue); cursor: pointer; margin-bottom: 10px;">How much does a project typically cost?</summary>
+                <p style="font-size: 17px; line-height: 1.65; color: var(--c-text-muted);">We work on transparent, fixed-price project quotes based on concrete deliverables rather than ambiguous hourly rates. Once we review your scope and goals during our initial consultation, you receive a clear, fixed proposal with zero surprise invoices or scope creep.</p>
+              </details>
+              <details style="background: #FFFFFF; border: 1px solid var(--c-border, #E5E7EB); border-radius: 16px; padding: 20px 24px;">
+                <summary style="font-size: 20px; font-weight: 600; color: var(--c-blue); cursor: pointer; margin-bottom: 10px;">How long does a typical project take?</summary>
+                <p style="font-size: 17px; line-height: 1.65; color: var(--c-text-muted);">Timelines depend on scope: Direct-response marketing video edits (VSLs, UGC cuts) typically turn around in 3 to 7 days. Brand identity systems take 1 to 2 weeks. Full custom website redesigns and engineering take 2 to 4 weeks from kickoff to deployment.</p>
+              </details>
+              <details style="background: #FFFFFF; border: 1px solid var(--c-border, #E5E7EB); border-radius: 16px; padding: 20px 24px;">
+                <summary style="font-size: 20px; font-weight: 600; color: var(--c-blue); cursor: pointer; margin-bottom: 10px;">Do we get the raw project and master source files?</summary>
+                <p style="font-size: 17px; line-height: 1.65; color: var(--c-text-muted);">Yes, 100%. Upon final project completion, you receive full commercial rights and all master files: vector Figma files and design assets, raw 4K video project timelines and audio stems, or clean GitHub repository source code with zero vendor lock-in.</p>
+              </details>
+              <details style="background: #FFFFFF; border: 1px solid var(--c-border, #E5E7EB); border-radius: 16px; padding: 20px 24px;">
+                <summary style="font-size: 20px; font-weight: 600; color: var(--c-blue); cursor: pointer; margin-bottom: 10px;">How do revisions and feedback work?</summary>
+                <p style="font-size: 17px; line-height: 1.65; color: var(--c-text-muted);">Feedback is direct and collaborative. You work directly with the makers (Sadman for branding, Nafiur for web, Rafayet for video). We use collaborative platforms like Figma, Frame.io, and direct WhatsApp/Slack channels to iterate rapidly until every asset is pixel-perfect.</p>
+              </details>
+              <details style="background: #FFFFFF; border: 1px solid var(--c-border, #E5E7EB); border-radius: 16px; padding: 20px 24px;">
+                <summary style="font-size: 20px; font-weight: 600; color: var(--c-blue); cursor: pointer; margin-bottom: 10px;">Can we meet before committing to work together?</summary>
+                <p style="font-size: 17px; line-height: 1.65; color: var(--c-text-muted);">Absolutely. We encourage a direct 15-minute intro conversation via Google Meet or WhatsApp call with our founding team to align on your goals, assess fit, and answer any questions before you invest a single dollar.</p>
+              </details>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -321,8 +378,14 @@ function buildContactHtml(): string {
             </p>
           </div>
 
-          <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 40px;">
-            <a href="mailto:clandest.agency@gmail.com" class="social-pill-badge" style="padding: 10px 24px; font-size: 16px;">
+          <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 40px;">
+            <a href="https://wa.me/8801869504388?text=Hi%20Clandest%20Agency,%20I'd%20like%20to%20discuss%20a%20project!" target="_blank" rel="noopener noreferrer" class="social-pill-badge" style="padding: 12px 24px; font-size: 15px; background-color: #25D366; color: #FFFFFF; border: none; font-weight: 600;">
+              Chat on WhatsApp
+            </a>
+            <a href="mailto:clandest.agency@gmail.com?subject=15-Minute%20Intro%20Call%20Request%20(Google%20Meet)&body=Hi%20Clandest%20Team,%0A%0AI'd%20like%20to%20schedule%20a%20quick%2015-minute%20intro%20call%20via%20Google%20Meet.%0A%0APreferred%20Date%20/%20Time%20(with%20timezone):%20" class="social-pill-badge" style="padding: 12px 24px; font-size: 15px; border: 1.5px solid var(--c-blue); color: var(--c-blue); font-weight: 600;">
+              Book 15-Min Google Meet
+            </a>
+            <a href="mailto:clandest.agency@gmail.com" class="social-pill-badge" style="padding: 12px 24px; font-size: 15px;">
               <span>clandest.agency@gmail.com</span>
             </a>
           </div>
@@ -330,6 +393,7 @@ function buildContactHtml(): string {
           <div class="contact-card-box" style="max-width: 650px; margin: 0 auto;">
             <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
               <input type="hidden" name="access_key" value="7e1c8d5c-d3fe-4228-a6d1-4dbfa4a1329a">
+              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
               <div class="form-row-2col">
                 <input type="text" name="name" placeholder="Your name" required class="form-input">
                 <input type="email" name="email" placeholder="Your email" required class="form-input">
@@ -353,6 +417,7 @@ function updateHtmlTags(
     title: string;
     description: string;
     url: string;
+    image?: string;
     contentHtml: string;
     jsonLd?: object;
   }
@@ -366,6 +431,8 @@ function updateHtmlTags(
     `<meta name="description" content="${escapeHtml(options.description)}">`
   );
 
+  const imageUrl = options.image || `${BASE_URL}/assets/team-main.jpg`;
+
   const headExtra = `
     <link rel="canonical" href="${escapeHtml(options.url)}" />
     <meta property="og:type" content="website" />
@@ -373,9 +440,11 @@ function updateHtmlTags(
     <meta property="og:title" content="${escapeHtml(options.title)}" />
     <meta property="og:description" content="${escapeHtml(options.description)}" />
     <meta property="og:url" content="${escapeHtml(options.url)}" />
+    <meta property="og:image" content="${escapeHtml(imageUrl)}" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${escapeHtml(options.title)}" />
     <meta name="twitter:description" content="${escapeHtml(options.description)}" />
+    <meta name="twitter:image" content="${escapeHtml(imageUrl)}" />
     ${options.jsonLd ? `<script type="application/ld+json">${JSON.stringify(options.jsonLd)}</script>` : ""}
   </head>`;
   html = html.replace(/<\/head>/i, headExtra);
@@ -423,6 +492,7 @@ export function prerender() {
     title: 'Clandest Agency — Design, Dev & Video Studio',
     description: 'A design, development, and video post-production studio in Dhaka. We build clean brand systems, custom websites, and high-converting marketing videos.',
     url: `${BASE_URL}/`,
+    image: `${BASE_URL}/assets/team-main.jpg`,
     contentHtml: buildHomeHtml(),
     jsonLd: sharedOrgLd
   });
@@ -434,6 +504,7 @@ export function prerender() {
     title: 'About Us — Clandest Agency | Dhaka, Bangladesh',
     description: 'Meet the four founders of Clandest Agency. From Munshiganj Polytechnic Institute to Rover Scouts leadership and European IT Solutions attachment.',
     url: `${BASE_URL}/about`,
+    image: `${BASE_URL}/assets/team-main.jpg`,
     contentHtml: buildAboutHtml(),
     jsonLd: {
       ...sharedOrgLd,
@@ -450,6 +521,7 @@ export function prerender() {
     title: 'Services & Portfolio — Clandest Agency',
     description: 'Explore our core capabilities: Direct-response marketing video post-production (VSLs, UGC ads, documentaries), brand identity design, and custom web development.',
     url: `${BASE_URL}/services`,
+    image: `${BASE_URL}/assets/service-marketing-video.png`,
     contentHtml: buildServicesHtml(),
     jsonLd: {
       ...sharedOrgLd,
@@ -463,11 +535,57 @@ export function prerender() {
 
   // 4. Prerender /process
   const processHtml = updateHtmlTags(templateHtml, {
-    title: 'Our 4-Step Process — Clandest Agency',
-    description: 'A direct, transparent 4-stage collaboration framework from kickoff to live deployment. Work directly with our founding team.',
+    title: 'Our 4-Step Process & FAQs — Clandest Agency',
+    description: 'A direct, transparent 4-stage collaboration framework from kickoff to live deployment. Explore frequently asked questions regarding scope, timelines, and deliverables.',
     url: `${BASE_URL}/process`,
+    image: `${BASE_URL}/assets/service-web-redesign.png`,
     contentHtml: buildProcessHtml(),
-    jsonLd: sharedOrgLd
+    jsonLd: {
+      ...sharedOrgLd,
+      '@type': 'FAQPage',
+      'mainEntity': [
+        {
+          '@type': 'Question',
+          'name': 'How much does a project typically cost?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'We work on transparent, fixed-price project quotes based on concrete deliverables rather than ambiguous hourly rates. Once we review your scope and goals during our initial consultation, you receive a clear, fixed proposal with zero surprise invoices or scope creep.'
+          }
+        },
+        {
+          '@type': 'Question',
+          'name': 'How long does a typical project take?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'Timelines depend on scope: Direct-response marketing video edits (VSLs, UGC cuts) typically turn around in 3 to 7 days. Brand identity systems take 1 to 2 weeks. Full custom website redesigns and engineering take 2 to 4 weeks from kickoff to deployment.'
+          }
+        },
+        {
+          '@type': 'Question',
+          'name': 'Do we get the raw project and master source files?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'Yes, 100%. Upon final project completion, you receive full commercial rights and all master files: vector Figma files and design assets, raw 4K video project timelines and audio stems, or clean GitHub repository source code with zero vendor lock-in.'
+          }
+        },
+        {
+          '@type': 'Question',
+          'name': 'How do revisions and feedback work?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'Feedback is direct and collaborative. You work directly with the makers (Sadman for branding, Nafiur for web, Rafayet for video). We use collaborative platforms like Figma, Frame.io, and direct WhatsApp/Slack channels to iterate rapidly until every asset is pixel-perfect.'
+          }
+        },
+        {
+          '@type': 'Question',
+          'name': 'Can we meet before committing to work together?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'Absolutely. We encourage a direct 15-minute intro conversation via Google Meet or WhatsApp call with our founding team to align on your goals, assess fit, and answer any questions before you invest a single dollar.'
+          }
+        }
+      ]
+    }
   });
   const processPath = resolve(distDir, 'process', 'index.html');
   ensureDir(processPath);
@@ -479,6 +597,7 @@ export function prerender() {
     title: 'Contact Us — Clandest Agency | Start a Project',
     description: 'Get in touch directly with the founders of Clandest Agency for brand identity, custom web development, or video post-production.',
     url: `${BASE_URL}/contact`,
+    image: `${BASE_URL}/assets/team-main.jpg`,
     contentHtml: buildContactHtml(),
     jsonLd: {
       ...sharedOrgLd,

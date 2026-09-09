@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { triggerHaptic } from '../../utils/haptics';
 
 interface TextPressureProps {
   text?: string;
@@ -36,6 +37,14 @@ export const TextPressure: React.FC<TextPressureProps> = ({
       cursor.y = e.clientY;
     };
 
+    const handleTouchStart = (e: TouchEvent) => {
+      if (e.touches && e.touches[0]) {
+        cursor.x = e.touches[0].clientX;
+        cursor.y = e.touches[0].clientY;
+        triggerHaptic('light');
+      }
+    };
+
     const handleTouchMove = (e: TouchEvent) => {
       if (e.touches && e.touches[0]) {
         cursor.x = e.touches[0].clientX;
@@ -43,8 +52,17 @@ export const TextPressure: React.FC<TextPressureProps> = ({
       }
     };
 
+    const handleTouchEnd = () => {
+      // Elastic spring back to center when finger lifts
+      const rect = container.getBoundingClientRect();
+      cursor.x = rect.left + rect.width / 2;
+      cursor.y = rect.top + rect.height / 2;
+    };
+
     window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('touchstart', handleTouchStart, { passive: true });
     window.addEventListener('touchmove', handleTouchMove, { passive: true });
+    window.addEventListener('touchend', handleTouchEnd, { passive: true });
 
     const setSize = () => {
       const containerW = container.getBoundingClientRect().width;
@@ -110,7 +128,9 @@ export const TextPressure: React.FC<TextPressureProps> = ({
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('touchstart', handleTouchStart);
       window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('touchend', handleTouchEnd);
       window.removeEventListener('resize', setSize);
       cancelAnimationFrame(animId);
     };

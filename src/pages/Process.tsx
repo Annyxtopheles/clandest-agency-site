@@ -2,6 +2,7 @@ import React from 'react';
 import { WordLift } from '../components/ui/WordLift';
 import { AnimatedButton } from '../components/ui/AnimatedButton';
 import { TiltCard } from '../components/ui/TiltCard';
+import { FaqAccordion } from '../components/ui/FaqAccordion';
 
 export const Process: React.FC = () => {
   return (
@@ -45,6 +46,15 @@ export const Process: React.FC = () => {
                 We coordinate DNS setup, push your site live, and deliver all final and raw master files. You retain 100% full commercial ownership of everything we build.
               </p>
             </TiltCard>
+          </div>
+
+          {/* FAQ Section */}
+          <div className="faq-section" style={{ marginBottom: '80px' }}>
+            <h2 className="section-heading-centered" style={{ marginBottom: '16px' }}>Frequently Asked Questions</h2>
+            <p className="section-subtext-centered" style={{ maxWidth: '650px', margin: '0 auto 40px', textAlign: 'center' }}>
+              Direct, transparent answers about timelines, deliverables, commercial rights, and how we collaborate.
+            </p>
+            <FaqAccordion />
           </div>
 
           {/* Bottom CTA Box */}
