@@ -2,7 +2,6 @@ import React from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'motion/react';
 import { ScrollToTop } from './components/ui/ScrollToTop';
-import { SmoothCursor } from './components/ui/SmoothCursor';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
 import { Home } from './pages/Home';
@@ -16,7 +15,6 @@ export const App: React.FC = () => {
 
   return (
     <>
-      <SmoothCursor />
       <ScrollToTop />
       <Header />
       <AnimatePresence mode="wait">

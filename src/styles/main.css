@@ -1736,13 +1736,42 @@ button, input, select, textarea {
   text-decoration: none;
 }
 
-/* Hide default cursor on desktop when SmoothCursor is active */
+/* ==========================================================================
+   Custom Native Cursor System
+   Deep navy #0F2167 stealth pointer with crisp white border and drop shadow.
+   Hardware accelerated, zero lag, zero duplicate cursor interactions.
+   ========================================================================== */
 @media (any-hover: hover) and (any-pointer: fine) {
-  *, *::before, *::after {
-    cursor: none !important;
+  html, body, .word-lift {
+    cursor: url('/assets/cursor-default.svg') 2 2, auto;
   }
 
-  input, textarea, select {
+  a, 
+  a *,
+  button, 
+  button *,
+  [role="button"], 
+  [role="button"] *,
+  input[type="submit"], 
+  input[type="button"], 
+  select, 
+  summary, 
+  .animated-button, 
+  .social-pill-badge, 
+  .deliverable-btn, 
+  .video-filter-btn, 
+  .easter-egg, 
+  .card-button,
+  .video-card-thumbnail,
+  .service-visual-card,
+  .faq-accordion-container button,
+  .faq-accordion-container summary {
+    cursor: url('/assets/cursor-pointer.svg') 2 2, pointer !important;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
     cursor: text !important;
   }
 }
