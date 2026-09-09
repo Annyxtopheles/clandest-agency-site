@@ -1,7 +1,7 @@
-﻿import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs';
 import { resolve, dirname } from 'path';
 
-const BASE_URL = 'https://clandestagency.pages.dev';
+const BASE_URL = 'https://clandestagency.vercel.app';
 
 function escapeHtml(str: string | undefined | null): string {
   if (!str) return '';
@@ -380,7 +380,7 @@ function updateHtmlTags(
   </head>`;
   html = html.replace(/<\/head>/i, headExtra);
 
-  html = html.replace(/<div id="root">[\s\S]*?<\/div>/i, `<div id="root">${options.contentHtml}</div>`);
+  html = html.replace('<div id="root"></div>', `<div id="root">${options.contentHtml}</div>`);
 
   return html;
 }

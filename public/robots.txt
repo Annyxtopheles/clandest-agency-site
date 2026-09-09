@@ -25,4 +25,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://clandestagency.pages.dev/sitemap.xml
+Sitemap: https://clandestagency.vercel.app/sitemap.xml

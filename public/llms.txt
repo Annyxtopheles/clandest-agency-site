@@ -6,7 +6,7 @@
 - **Location:** Munshiganj & Dhaka, Bangladesh
 - **Founding Team:** Four friends and Computer Technology diploma graduates from Munshiganj Polytechnic Institute (2021–2025).
 - **Core Philosophy:** Direct access to founders. Zero account managers, zero bureaucracy, zero middleman markup. Full commercial ownership of all source files.
-- **Website:** https://clandestagency.pages.dev
+- **Website:** https://clandestagency.vercel.app
 - **Contact:** clandest.agency@gmail.com
 
 ---
@@ -17,17 +17,17 @@
 - **Head of Video:** Abdullah Al Rafayet
 - **Capabilities:** Direct-response Video Sales Letters (VSLs), Short-Form UGC ads (TikTok, Reels, Shorts), Documentary & Brand Storytelling, 2.5D archival motion graphics, color grading, and custom Foley/sound design.
 - **Portfolio Showcase:** 11 production cuts featuring high-conversion commercial ads and narrative documentaries.
-- **Page:** https://clandestagency.pages.dev/services#video
+- **Page:** https://clandestagency.vercel.app/services#video
 
 ### 2. Logo & Brand Identity Design
 - **Lead Designer:** Sadman Zaman Khan
 - **Capabilities:** Comprehensive visual identity systems, vector brandmarks, scalable design systems, typography hierarchy, brand guidelines, and collateral design.
-- **Page:** https://clandestagency.pages.dev/services#branding
+- **Page:** https://clandestagency.vercel.app/services#branding
 
 ### 3. Website Redesign & Frontend Engineering
 - **Lead Engineer:** Md Nafiur Rahman
 - **Capabilities:** High-performance bespoke web applications, responsive UI/UX, sub-second load times, accessible semantic architecture, and modern JavaScript/TypeScript engineering.
-- **Page:** https://clandestagency.pages.dev/services#development
+- **Page:** https://clandestagency.vercel.app/services#development
 
 ---
 
@@ -37,7 +37,7 @@
 2. **We Design:** Interactive Figma prototypes, high-fidelity brand concepts, and video storyboards for collaborative refinement.
 3. **We Build:** Lightweight, performant code paired with meticulous post-production editing, audio mastering, and color finishing.
 4. **We Launch:** Live deployment, DNS configuration, and handoff of all final and master source files with 100% commercial ownership.
-- **Page:** https://clandestagency.pages.dev/process
+- **Page:** https://clandestagency.vercel.app/process
 
 ---
 
@@ -50,8 +50,8 @@
 ---
 
 ## Site Pages
-- **Home:** https://clandestagency.pages.dev/ — Studio overview, core offerings, and interactive contact.
-- **About:** https://clandestagency.pages.dev/about — Origin story at Munshiganj Polytechnic, Rover Scout leadership, and founder biographies.
-- **Services:** https://clandestagency.pages.dev/services — In-depth breakdown of Video, Branding, and Web Development, with interactive video portfolio player.
-- **Process:** https://clandestagency.pages.dev/process — The 4-step client engagement framework.
-- **Contact:** https://clandestagency.pages.dev/contact — Direct consultation inquiry form and direct email/social channels.
+- **Home:** https://clandestagency.vercel.app/ — Studio overview, core offerings, and interactive contact.
+- **About:** https://clandestagency.vercel.app/about — Origin story at Munshiganj Polytechnic, Rover Scout leadership, and founder biographies.
+- **Services:** https://clandestagency.vercel.app/services — In-depth breakdown of Video, Branding, and Web Development, with interactive video portfolio player.
+- **Process:** https://clandestagency.vercel.app/process — The 4-step client engagement framework.
+- **Contact:** https://clandestagency.vercel.app/contact — Direct consultation inquiry form and direct email/social channels.
