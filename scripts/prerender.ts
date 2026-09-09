@@ -240,13 +240,25 @@ function buildServicesHtml(): string {
             <p style="font-size: 18px; line-height: 1.6; max-width: 800px; margin-bottom: 16px;">
               Led by Abdullah Al Rafayet. We produce high-converting Video Sales Letters (VSLs), scroll-stopping short-form UGC ads, atmospheric narrative documentaries, and motion graphics designed to maximize viewer retention and direct-response sales.
             </p>
-            <div style="padding: 16px 20px; background-color: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; max-width: 700px; margin-bottom: 24px;">
-              <strong style="display: block; font-size: 14px; text-transform: uppercase; color: var(--c-blue); margin-bottom: 8px;">What You Walk Away With</strong>
-              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px; font-size: 14px; color: #334155;">
-                <span>✓ 4K Master Exports & ProRes Files</span>
-                <span>✓ 9:16 Vertical Cuts for TikTok & Reels</span>
-                <span>✓ Professional Audio & Foley Stems</span>
-                <span>✓ Complete Project Timelines Archive</span>
+            <div class="deliverables-container">
+              <h3 class="deliverables-title">What you walk away with</h3>
+              <div class="deliverables-list">
+                <div class="deliverable-btn">
+                  <span class="deliverable-check">✓</span>
+                  <span>4K Master Exports & ProRes Files</span>
+                </div>
+                <div class="deliverable-btn">
+                  <span class="deliverable-check">✓</span>
+                  <span>9:16 Vertical Cuts for TikTok & Reels</span>
+                </div>
+                <div class="deliverable-btn">
+                  <span class="deliverable-check">✓</span>
+                  <span>Studio Audio & Foley Stems</span>
+                </div>
+                <div class="deliverable-btn">
+                  <span class="deliverable-check">✓</span>
+                  <span>Complete Project Timelines Archive</span>
+                </div>
               </div>
             </div>
           </div>
@@ -256,13 +268,25 @@ function buildServicesHtml(): string {
             <p style="font-size: 18px; line-height: 1.6; max-width: 800px; margin-bottom: 16px;">
               Led by Sadman Zaman Khan. We build complete, versatile visual identity systems from the ground up: primary and secondary brandmarks, color palettes, typography hierarchy, and scalable brand guidelines.
             </p>
-            <div style="padding: 16px 20px; background-color: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; max-width: 700px; margin-bottom: 24px;">
-              <strong style="display: block; font-size: 14px; text-transform: uppercase; color: var(--c-blue); margin-bottom: 8px;">What You Walk Away With</strong>
-              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px; font-size: 14px; color: #334155;">
-                <span>✓ Vector Master Assets (.SVG, .EPS)</span>
-                <span>✓ Complete Brand Guidelines & Color Tokens</span>
-                <span>✓ Social Media Avatar & Banner Kit</span>
-                <span>✓ 100% Commercial Copyright Ownership</span>
+            <div class="deliverables-container">
+              <h3 class="deliverables-title">What you walk away with</h3>
+              <div class="deliverables-list">
+                <div class="deliverable-btn">
+                  <span class="deliverable-check">✓</span>
+                  <span>Master Vector Files (SVG, AI, PDF)</span>
+                </div>
+                <div class="deliverable-btn">
+                  <span class="deliverable-check">✓</span>
+                  <span>Complete Figma Brand System</span>
+                </div>
+                <div class="deliverable-btn">
+                  <span class="deliverable-check">✓</span>
+                  <span>Typography & Color Tokens</span>
+                </div>
+                <div class="deliverable-btn">
+                  <span class="deliverable-check">✓</span>
+                  <span>100% Commercial Copyright</span>
+                </div>
               </div>
             </div>
           </div>
@@ -272,13 +296,25 @@ function buildServicesHtml(): string {
             <p style="font-size: 18px; line-height: 1.6; max-width: 800px; margin-bottom: 16px;">
               Led by Md Nafiur Rahman. We engineer ultra-fast, responsive websites with semantic HTML5, clean CSS/Tailwind, and modern TypeScript. Zero bloated plugins, sub-second load speeds, and full search engine indexability.
             </p>
-            <div style="padding: 16px 20px; background-color: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; max-width: 700px; margin-bottom: 24px;">
-              <strong style="display: block; font-size: 14px; text-transform: uppercase; color: var(--c-blue); margin-bottom: 8px;">What You Walk Away With</strong>
-              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px; font-size: 14px; color: #334155;">
-                <span>✓ Clean React/TypeScript Codebase</span>
-                <span>✓ Full GitHub Repo Ownership</span>
-                <span>✓ Production Vercel Deployment</span>
-                <span>✓ Zero Subscriptions or Vendor Lock-in</span>
+            <div class="deliverables-container">
+              <h3 class="deliverables-title">What you walk away with</h3>
+              <div class="deliverables-list">
+                <div class="deliverable-btn">
+                  <span class="deliverable-check">✓</span>
+                  <span>Clean React & TypeScript Codebase</span>
+                </div>
+                <div class="deliverable-btn">
+                  <span class="deliverable-check">✓</span>
+                  <span>Full GitHub Repo Ownership</span>
+                </div>
+                <div class="deliverable-btn">
+                  <span class="deliverable-check">✓</span>
+                  <span>Production Vercel Deployment</span>
+                </div>
+                <div class="deliverable-btn">
+                  <span class="deliverable-check">✓</span>
+                  <span>Zero Subscriptions or Vendor Lock-in</span>
+                </div>
               </div>
             </div>
           </div>

@@ -217,17 +217,26 @@ export const Services: React.FC = () => {
                 <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Interactive UI/UX high-fidelity wireframing</li>
               </ul>
 
-              {/* Deliverables Checklist */}
-              <div style={{ marginTop: '24px', padding: '18px 22px', backgroundColor: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '12px' }}>
-                <div style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700, color: 'var(--c-blue)', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-                  What You Walk Away With
-                </div>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '8px', fontSize: '14px', color: '#334155' }}>
-                  <span>✓ Master Vector Files (SVG, AI, PDF)</span>
-                  <span>✓ Complete Figma Brand System</span>
-                  <span>✓ Typography & Color Tokens</span>
-                  <span>✓ 100% Commercial Copyright</span>
+              {/* Deliverables */}
+              <div className="deliverables-container">
+                <h3 className="deliverables-title">What you walk away with</h3>
+                <div className="deliverables-list">
+                  <div className="deliverable-btn" onClick={() => triggerHaptic('light')}>
+                    <span className="deliverable-check">✓</span>
+                    <span>Master Vector Files (SVG, AI, PDF)</span>
+                  </div>
+                  <div className="deliverable-btn" onClick={() => triggerHaptic('light')}>
+                    <span className="deliverable-check">✓</span>
+                    <span>Complete Figma Brand System</span>
+                  </div>
+                  <div className="deliverable-btn" onClick={() => triggerHaptic('light')}>
+                    <span className="deliverable-check">✓</span>
+                    <span>Typography & Color Tokens</span>
+                  </div>
+                  <div className="deliverable-btn" onClick={() => triggerHaptic('light')}>
+                    <span className="deliverable-check">✓</span>
+                    <span>100% Commercial Copyright</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -251,17 +260,26 @@ export const Services: React.FC = () => {
                 <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Python backends, automation scripts, and custom data pipelines</li>
               </ul>
 
-              {/* Deliverables Checklist */}
-              <div style={{ marginTop: '24px', padding: '18px 22px', backgroundColor: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '12px' }}>
-                <div style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700, color: 'var(--c-blue)', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-                  What You Walk Away With
-                </div>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '8px', fontSize: '14px', color: '#334155' }}>
-                  <span>✓ Clean React/TypeScript Codebase</span>
-                  <span>✓ Full GitHub Repo Ownership</span>
-                  <span>✓ Production Vercel Deployment</span>
-                  <span>✓ Zero Subscriptions or Vendor Lock-in</span>
+              {/* Deliverables */}
+              <div className="deliverables-container">
+                <h3 className="deliverables-title">What you walk away with</h3>
+                <div className="deliverables-list">
+                  <div className="deliverable-btn" onClick={() => triggerHaptic('light')}>
+                    <span className="deliverable-check">✓</span>
+                    <span>Clean React & TypeScript Codebase</span>
+                  </div>
+                  <div className="deliverable-btn" onClick={() => triggerHaptic('light')}>
+                    <span className="deliverable-check">✓</span>
+                    <span>Full GitHub Repo Ownership</span>
+                  </div>
+                  <div className="deliverable-btn" onClick={() => triggerHaptic('light')}>
+                    <span className="deliverable-check">✓</span>
+                    <span>Production Vercel Deployment</span>
+                  </div>
+                  <div className="deliverable-btn" onClick={() => triggerHaptic('light')}>
+                    <span className="deliverable-check">✓</span>
+                    <span>Zero Subscriptions or Vendor Lock-in</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -279,17 +297,26 @@ export const Services: React.FC = () => {
                 <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Commercial product explainers & documentary narratives</li>
               </ul>
 
-              {/* Deliverables Checklist */}
-              <div style={{ marginTop: '24px', padding: '18px 22px', backgroundColor: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '12px' }}>
-                <div style={{ fontSize: '13px', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 700, color: 'var(--c-blue)', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-                  What You Walk Away With
-                </div>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '8px', fontSize: '14px', color: '#334155' }}>
-                  <span>✓ 4K Master Exports & ProRes Files</span>
-                  <span>✓ 9:16 Vertical Cuts for TikTok & Reels</span>
-                  <span>✓ Professional Audio & Foley Stems</span>
-                  <span>✓ Complete Project Timelines Archive</span>
+              {/* Deliverables */}
+              <div className="deliverables-container">
+                <h3 className="deliverables-title">What you walk away with</h3>
+                <div className="deliverables-list">
+                  <div className="deliverable-btn" onClick={() => triggerHaptic('light')}>
+                    <span className="deliverable-check">✓</span>
+                    <span>4K Master Exports & ProRes Files</span>
+                  </div>
+                  <div className="deliverable-btn" onClick={() => triggerHaptic('light')}>
+                    <span className="deliverable-check">✓</span>
+                    <span>9:16 Vertical Cuts for TikTok & Reels</span>
+                  </div>
+                  <div className="deliverable-btn" onClick={() => triggerHaptic('light')}>
+                    <span className="deliverable-check">✓</span>
+                    <span>Studio Audio & Foley Stems</span>
+                  </div>
+                  <div className="deliverable-btn" onClick={() => triggerHaptic('light')}>
+                    <span className="deliverable-check">✓</span>
+                    <span>Complete Project Timelines Archive</span>
+                  </div>
                 </div>
               </div>
             </div>
