@@ -82,19 +82,19 @@ function buildHomeHtml(): string {
           <div class="services-visual-grid">
             <a href="/services#video" class="service-visual-card">
               <div class="service-image-box">
-                <img src="/assets/service-marketing-video.png" alt="Marketing Video Production" fetchpriority="high">
+                <img src="/assets/service-marketing-video.webp" alt="Marketing Video Production" width="928" height="800" fetchpriority="high">
               </div>
               <div class="service-card-label">Marketing Video</div>
             </a>
             <a href="/services#branding" class="service-visual-card">
               <div class="service-image-box">
-                <img src="/assets/service-brand-design.gif" alt="Logo and Brand Design" fetchpriority="high">
+                <img src="/assets/service-brand-design.gif" alt="Logo and Brand Design" width="928" height="800" fetchpriority="high">
               </div>
               <div class="service-card-label">Logo & Brand Design</div>
             </a>
             <a href="/services#development" class="service-visual-card">
               <div class="service-image-box">
-                <img src="/assets/service-web-redesign.png" alt="Website Redesign and Development" fetchpriority="high">
+                <img src="/assets/service-web-redesign.webp" alt="Website Redesign and Development" width="928" height="800" fetchpriority="high">
               </div>
               <div class="service-card-label">Website Redesign</div>
             </a>
@@ -160,7 +160,7 @@ function buildAboutHtml(): string {
 
           <div class="about-narrative-row">
             <div class="about-narrative-text">
-              <h3 style="font-size: 28px; color: var(--c-blue); margin-bottom: 12px; font-weight: 600;">The Origin</h3>
+              <h2 style="font-size: 28px; color: var(--c-blue); margin-bottom: 12px; font-weight: 600;">The Origin</h2>
               <p>Our journey began at <strong>Munshiganj Polytechnic Institute</strong>, where we met for the first time while pursuing our Diplomas in Computer Technology (2021–2025). Coming from different backgrounds, contexts, and histories, we discovered a shared passion for visual aesthetics, robust engineering, and creative media.</p>
               <p>Collaborating on projects throughout our studies, we established a seamless team shorthand and standard of work.</p>
             </div>
@@ -168,7 +168,7 @@ function buildAboutHtml(): string {
 
           <div class="about-narrative-row reverse">
             <div class="about-narrative-text">
-              <h3 style="font-size: 28px; color: var(--c-blue); margin-bottom: 12px; font-weight: 600;">Leadership in Scouts</h3>
+              <h2 style="font-size: 28px; color: var(--c-blue); margin-bottom: 12px; font-weight: 600;">Leadership in Scouts</h2>
               <p>During our college years, we dedicated our energy to the <strong>Rover Scouts movement</strong>. Scouting was our testing ground for discipline, accountability, volunteer coordination, and leadership under pressure.</p>
               <p>Under Md Nafiur Rahman's leadership as Senior Rover Mate, our campus unit won national recognition, including the prestigious <strong>"Serader Sera"</strong> award at the National Rover Moot 2024, placing in the top 16 of 600+ units across Bangladesh.</p>
             </div>
@@ -176,7 +176,7 @@ function buildAboutHtml(): string {
 
           <div class="about-narrative-row">
             <div class="about-narrative-text">
-              <h3 style="font-size: 28px; color: var(--c-blue); margin-bottom: 12px; font-weight: 600;">Industrial Mastery</h3>
+              <h2 style="font-size: 28px; color: var(--c-blue); margin-bottom: 12px; font-weight: 600;">Industrial Mastery</h2>
               <p>After our diplomas, we expanded our industry experience. Sadman and Rafayet completed their industrial attachment together at <strong>European IT Solutions in Mirpur</strong>.</p>
               <p>Working side-by-side on commercial graphics, illustration assets, and branding systems, they integrated their design and editing workflows—laying the foundation for Clandest's visual strategy.</p>
             </div>
@@ -190,25 +190,25 @@ function buildAboutHtml(): string {
 
             <div class="team-members-grid">
               <article class="team-member-card">
-                <div class="team-name">Sadman Zaman Khan</div>
+                <h3 class="team-name">Sadman Zaman Khan</h3>
                 <div class="team-role">UI/UX & Brand Design</div>
                 <p>Specializes in comprehensive design systems, user flows, and brand architecture.</p>
                 <a href="https://www.linkedin.com/in/sadmanzamankhan/" target="_blank" rel="noreferrer" class="card-button">LinkedIn</a>
               </article>
               <article class="team-member-card">
-                <div class="team-name">Md. Habibullah</div>
+                <h3 class="team-name">Md. Habibullah</h3>
                 <div class="team-role">Operations & Client Relations</div>
                 <p>Coordinates client communication, project timelines, and operational delivery.</p>
                 <a href="https://www.linkedin.com/in/mdhabibullah-dev/" target="_blank" rel="noreferrer" class="card-button">LinkedIn</a>
               </article>
               <article class="team-member-card">
-                <div class="team-name">Abdullah Al Rafayet</div>
+                <h3 class="team-name">Abdullah Al Rafayet</h3>
                 <div class="team-role">Head of Video & Motion</div>
                 <p>Directs high-converting VSLs, commercial video ads, sound design, and color grading.</p>
                 <a href="https://www.linkedin.com/in/abdullah-al-rafayet/" target="_blank" rel="noreferrer" class="card-button">LinkedIn</a>
               </article>
               <article class="team-member-card">
-                <div class="team-name">Md Nafiur Rahman</div>
+                <h3 class="team-name">Md Nafiur Rahman</h3>
                 <div class="team-role">Lead Frontend Engineer</div>
                 <p>Builds responsive, high-performance web applications with semantic architecture.</p>
                 <a href="https://www.linkedin.com/in/nafiur-rahman-5047b925b/" target="_blank" rel="noreferrer" class="card-button">LinkedIn</a>
@@ -331,12 +331,14 @@ function buildProcessHtml(): string {
     <main>
       <section class="approach-section">
         <div class="container">
-          <div class="subpage-hero" style="padding-top: 20px;">
+          <div class="subpage-hero" style="padding-top: 20px; margin-bottom: 30px;">
             <h1 class="subpage-title">How a project works with us.</h1>
             <p class="subpage-subtext">
               A direct, transparent 4-stage collaboration from kickoff to live deployment. You work directly with our founding team.
             </p>
           </div>
+
+          <h2 class="section-heading-centered" style="margin-bottom: 40px;">Our 4-Stage Process</h2>
 
           <div class="approach-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 70px;">
             <div class="step-card" style="background: #FFFFFF; border: 1px solid var(--c-border); border-radius: var(--radius-card); padding: 40px 30px;">
@@ -447,6 +449,32 @@ function buildContactHtml(): string {
   `;
 }
 
+function buildNotFoundHtml(): string {
+  return `
+    ${headerHtml}
+    <main>
+      <section class="not-found-section" style="min-height: 75vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 24px 80px;">
+        <div class="container" style="max-width: 640px;">
+          <div style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 999px; background: rgba(46, 79, 148, 0.08); border: 1px solid rgba(46, 79, 148, 0.25); color: var(--c-blue); font-size: 14px; font-weight: 600; letter-spacing: 1px; margin-bottom: 24px;">
+            ERROR 404
+          </div>
+          <h1 style="font-size: clamp(36px, 6vw, 56px); font-weight: 700; color: var(--c-blue); line-height: 1.15; margin-bottom: 20px;">
+            Page Not Found
+          </h1>
+          <p style="font-size: 19px; color: var(--c-text); line-height: 1.5; margin-bottom: 36px;">
+            The link you followed doesn't exist or may have been moved. Let's get you back to where you need to be.
+          </p>
+          <div style="display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap;">
+            <a href="/" class="animated-button"><span class="text">Return Home</span></a>
+            <a href="/contact" class="social-pill-badge" style="padding: 12px 24px; font-size: 15px; font-weight: 600; color: var(--c-blue); border: 1.5px solid var(--c-blue);">Contact Us</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    ${footerHtml}
+  `;
+}
+
 function updateHtmlTags(
   templateHtml: string,
   options: {
@@ -456,6 +484,7 @@ function updateHtmlTags(
     image?: string;
     contentHtml: string;
     jsonLd?: object;
+    robots?: string;
   }
 ): string {
   let html = templateHtml;
@@ -525,6 +554,14 @@ function updateHtmlTags(
     /<meta\s+name=["']twitter:image:alt["']\s+content=["'][^"']*["']\s*\/?>/i,
     `<meta name="twitter:image:alt" content="${escapeHtml(options.title)}">`
   );
+
+  // 7.5. Replace robots if specified
+  if (options.robots) {
+    html = html.replace(
+      /<meta\s+name=["']robots["']\s+content=["'][^"']*["']\s*\/?>/i,
+      `<meta name="robots" content="${escapeHtml(options.robots)}">`
+    );
+  }
 
   // 8. Replace JSON-LD schema cleanly
   if (options.jsonLd) {
@@ -731,6 +768,19 @@ export function prerender() {
   const contactPath = resolve(distDir, 'contact', 'index.html');
   ensureDir(contactPath);
   writeFileSync(contactPath, contactHtml, 'utf-8');
+  count++;
+
+  // 6. Prerender 404.html (Vercel natively serves this file for all 404 HTTP errors)
+  const notFoundHtml = updateHtmlTags(templateHtml, {
+    title: '404: Page Not Found — Clandest Agency',
+    description: 'The page you are looking for does not exist or has been moved.',
+    url: `${BASE_URL}/404`,
+    image: `${BASE_URL}/assets/og-image.png`,
+    contentHtml: buildNotFoundHtml(),
+    robots: 'noindex, follow',
+  });
+  const notFoundPath = resolve(distDir, '404.html');
+  writeFileSync(notFoundPath, notFoundHtml, 'utf-8');
   count++;
 
   console.log(`[prerender] Successfully generated ${count} static crawlable SSG HTML pages in dist/!`);

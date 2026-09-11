@@ -9,6 +9,7 @@ import { About } from './pages/About';
 import { Services } from './pages/Services';
 import { Process } from './pages/Process';
 import { Contact } from './pages/Contact';
+import { NotFound } from './pages/NotFound';
 
 export const App: React.FC = () => {
   const location = useLocation();
@@ -31,6 +32,7 @@ export const App: React.FC = () => {
             <Route path="/services" element={<Services />} />
             <Route path="/process" element={<Process />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </motion.div>
       </AnimatePresence>

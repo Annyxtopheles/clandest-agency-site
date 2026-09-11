@@ -128,7 +128,7 @@ export const Services: React.FC = () => {
           {/* VIDEO PRODUCTION PORTFOLIO SHOWCASE */}
           <div className="video-portfolio-section" id="video-portfolio" style={{ marginBottom: '80px' }}>
             <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-              <h3 style={{ fontSize: '32px', color: 'var(--c-blue)', fontWeight: 600, marginBottom: '10px' }}>Featured Video Projects</h3>
+              <h2 style={{ fontSize: '32px', color: 'var(--c-blue)', fontWeight: 600, marginBottom: '10px' }}>Featured Video Projects</h2>
               <p style={{ fontSize: '18px', color: 'var(--c-text-muted)', maxWidth: '680px', margin: '0 auto' }}>
                 Direct-response VSLs, commercial product ads, and documentary post-production edited by Abdullah Al Rafayet.
               </p>
@@ -191,7 +191,7 @@ export const Services: React.FC = () => {
                   </div>
                   <div className="video-card-info">
                     <div className="video-category-tag">{video.categoryLabel}</div>
-                    <h4 className="video-card-title">{video.title}</h4>
+                    <h3 className="video-card-title">{video.title}</h3>
                     <p className="video-card-desc">{video.desc}</p>
                     <div className="video-author-badge">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
@@ -327,7 +327,7 @@ export const Services: React.FC = () => {
 
           {/* Bottom CTA Box */}
           <div style={{ backgroundColor: '#FAFAFA', border: '1px solid var(--c-border)', borderRadius: 'var(--radius-card)', padding: '50px 30px', textAlign: 'center', marginTop: '40px' }}>
-            <h3 style={{ fontSize: '32px', color: 'var(--c-blue)', fontWeight: 600, marginBottom: '12px' }}>Have a project in mind?</h3>
+            <h2 style={{ fontSize: '32px', color: 'var(--c-blue)', fontWeight: 600, marginBottom: '12px' }}>Have a project in mind?</h2>
             <p style={{ fontSize: '20px', color: 'var(--c-text)', maxWidth: '600px', margin: '0 auto 28px' }}>
               Talk directly with our founding team to get a clear scope and timeline.
             </p>

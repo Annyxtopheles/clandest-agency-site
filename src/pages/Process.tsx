@@ -9,7 +9,7 @@ export const Process: React.FC = () => {
     <main>
       <section className="approach-section">
         <div className="container">
-          <div className="subpage-hero" style={{ paddingTop: '20px' }}>
+          <div className="subpage-hero" style={{ paddingTop: '20px', marginBottom: '30px' }}>
             <WordLift as="h1" className="subpage-title">
               How a project works with us.
             </WordLift>
@@ -17,6 +17,8 @@ export const Process: React.FC = () => {
               A direct, transparent 4-stage collaboration from kickoff to live deployment. You work directly with our founding team.
             </p>
           </div>
+
+          <h2 className="section-heading-centered" style={{ marginBottom: '40px' }}>Our 4-Stage Process</h2>
 
           <div className="approach-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', marginBottom: '70px' }}>
             <TiltCard className="step-card" style={{ background: '#FFFFFF', border: '1px solid var(--c-border)', borderRadius: 'var(--radius-card)', padding: '40px 30px' }}>
@@ -59,7 +61,7 @@ export const Process: React.FC = () => {
 
           {/* Bottom CTA Box */}
           <div style={{ backgroundColor: '#FAFAFA', border: '1px solid var(--c-border)', borderRadius: 'var(--radius-card)', padding: '50px 30px', textAlign: 'center' }}>
-            <h3 style={{ fontSize: '32px', color: 'var(--c-blue)', fontWeight: 600, marginBottom: '12px' }}>Ready to get started?</h3>
+            <h2 style={{ fontSize: '32px', color: 'var(--c-blue)', fontWeight: 600, marginBottom: '12px' }}>Ready to get started?</h2>
             <p style={{ fontSize: '20px', color: 'var(--c-text)', maxWidth: '600px', margin: '0 auto 28px' }}>
               Let's discuss your brand, web, or video project directly.
             </p>

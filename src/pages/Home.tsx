@@ -64,7 +64,7 @@ export const Home: React.FC = () => {
             <Link to="/services#video" className="service-visual-card">
               <TiltCard>
                 <div className="service-image-box">
-                  <img src="/assets/service-marketing-video.png" alt="Marketing Video Production" fetchPriority="high" />
+                  <img src="/assets/service-marketing-video.webp" alt="Marketing Video Production" width="928" height="800" fetchPriority="high" />
                 </div>
                 <div className="service-card-label">Marketing Video</div>
               </TiltCard>
@@ -74,7 +74,7 @@ export const Home: React.FC = () => {
             <Link to="/services#branding" className="service-visual-card">
               <TiltCard>
                 <div className="service-image-box">
-                  <img src="/assets/service-brand-design.gif" alt="Logo and Brand Design" fetchPriority="high" />
+                  <img src="/assets/service-brand-design.gif" alt="Logo and Brand Design" width="928" height="800" fetchPriority="high" />
                 </div>
                 <div className="service-card-label">Logo & Brand Design</div>
               </TiltCard>
@@ -84,7 +84,7 @@ export const Home: React.FC = () => {
             <Link to="/services#development" className="service-visual-card">
               <TiltCard>
                 <div className="service-image-box">
-                  <img src="/assets/service-web-redesign.png" alt="Website Redesign and Development" fetchPriority="high" />
+                  <img src="/assets/service-web-redesign.webp" alt="Website Redesign and Development" width="928" height="800" fetchPriority="high" />
                 </div>
                 <div className="service-card-label">Website Redesign</div>
               </TiltCard>
@@ -141,9 +141,9 @@ export const Home: React.FC = () => {
           <div className="team-members-grid">
             <TiltCard className="team-member-card">
               <div className="team-portrait-box">
-                <img src="assets/team-sadman.png" alt="Sadman Zaman Khan" loading="lazy" />
+                <img src="/assets/team-sadman.webp" alt="Sadman Zaman Khan" width="672" height="888" loading="lazy" />
               </div>
-              <div className="team-name">Sadman Zaman Khan</div>
+              <h3 className="team-name">Sadman Zaman Khan</h3>
               <div className="team-role">UI/UX & Brand Design</div>
               <a href="https://www.linkedin.com/in/sadmanzamankhan/" target="_blank" rel="noreferrer" className="card-button">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14">
@@ -155,17 +155,17 @@ export const Home: React.FC = () => {
 
             <TiltCard className="team-member-card">
               <div className="team-portrait-box">
-                <img src="assets/team-habibullah.png" alt="Md. Habibullah" loading="lazy" />
+                <img src="/assets/team-habibullah.webp" alt="Md. Habibullah" width="672" height="888" loading="lazy" />
               </div>
-              <div className="team-name">Md. Habibullah</div>
+              <h3 className="team-name">Md. Habibullah</h3>
               <div className="team-role">Client Relationship Manager</div>
             </TiltCard>
 
             <TiltCard className="team-member-card">
               <div className="team-portrait-box">
-                <img src="assets/team-nafiur.png" alt="Md. Nafiur Rahman" loading="lazy" />
+                <img src="/assets/team-nafiur.webp" alt="Md. Nafiur Rahman" width="672" height="888" loading="lazy" />
               </div>
-              <div className="team-name">Md. Nafiur Rahman</div>
+              <h3 className="team-name">Md. Nafiur Rahman</h3>
               <div className="team-role">Web Development & AI</div>
               <a href="https://www.linkedin.com/in/md-nafiur-rahman/" target="_blank" rel="noreferrer" className="card-button">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14">
@@ -177,9 +177,9 @@ export const Home: React.FC = () => {
 
             <TiltCard className="team-member-card">
               <div className="team-portrait-box">
-                <img src="assets/team-rafayet.png" alt="Md. Abdullah al Rafayet" loading="lazy" />
+                <img src="/assets/team-rafayet.webp" alt="Md. Abdullah al Rafayet" width="672" height="888" loading="lazy" />
               </div>
-              <div className="team-name">Md. Abdullah al Rafayet</div>
+              <h3 className="team-name">Md. Abdullah al Rafayet</h3>
               <div className="team-role">Video & Motion Graphics</div>
               <a href="https://www.linkedin.com/in/md-abdullah-245448293/" target="_blank" rel="noreferrer" className="card-button">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14">
