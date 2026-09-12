@@ -151,16 +151,18 @@ export const AiChatWidget: React.FC = () => {
     setIsLoading(true);
 
     try {
+      const outgoingMessages = newHistory
+        .filter(m => m.id !== 'welcome')
+        .map(m => ({ role: m.role, content: m.content }));
+
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          messages: newHistory.map(m => ({ role: m.role, content: m.content }))
-        })
+        body: JSON.stringify({ messages: outgoingMessages })
       });
 
       const data = await response.json();
-      const replyText = data.reply || data.error || "Sorry, I couldn't process that. Please reach out to us at clandest.agency@gmail.com!";
+      const replyText = data.reply || (data.details ? `Error: ${data.details}` : data.error) || "Sorry, I couldn't process that. Please reach out to us at clandest.agency@gmail.com!";
 
       const assistantMessage: Message = {
         id: (Date.now() + 1).toString(),

@@ -88,20 +88,39 @@ export default async function handler(req: any, res: any) {
 
   try {
     const ai = new GoogleGenAI({ apiKey });
-    const contents = messages.map((m: any) => ({
+
+    // Filter to ensure the conversation starts with a user message
+    const firstUserIdx = messages.findIndex((m: any) => m.role === 'user');
+    const validMessages = firstUserIdx >= 0 ? messages.slice(firstUserIdx) : messages;
+
+    const contents = validMessages.map((m: any) => ({
       role: m.role === 'assistant' || m.role === 'model' ? 'model' : 'user',
       parts: [{ text: m.content }]
     }));
 
-    const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
-      contents,
-      config: {
-        systemInstruction: SYSTEM_INSTRUCTION,
-        temperature: 0.7,
-        maxOutputTokens: 600,
-      }
-    });
+    let response;
+    try {
+      response = await ai.models.generateContent({
+        model: 'gemini-2.5-flash',
+        contents,
+        config: {
+          systemInstruction: SYSTEM_INSTRUCTION,
+          temperature: 0.7,
+          maxOutputTokens: 600,
+        }
+      });
+    } catch (e) {
+      // Fallback to gemini-1.5-flash if 2.5 is unavailable
+      response = await ai.models.generateContent({
+        model: 'gemini-1.5-flash',
+        contents,
+        config: {
+          systemInstruction: SYSTEM_INSTRUCTION,
+          temperature: 0.7,
+          maxOutputTokens: 600,
+        }
+      });
+    }
 
     const reply = response.text || "I'm here to help with any questions about Clandest Agency's design, dev, and video services!";
     return res.status(200).json({ reply });
