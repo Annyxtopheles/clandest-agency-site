@@ -89,7 +89,7 @@ export default async function handler(req: any, res: any) {
   try {
     const ai = new GoogleGenAI({ apiKey });
 
-    // Filter to ensure the conversation starts with a user message
+    // Filter to ensure conversation starts with a user message
     const firstUserIdx = messages.findIndex((m: any) => m.role === 'user');
     const validMessages = firstUserIdx >= 0 ? messages.slice(firstUserIdx) : messages;
 
@@ -109,10 +109,9 @@ export default async function handler(req: any, res: any) {
           maxOutputTokens: 600,
         }
       });
-    } catch (e) {
-      // Fallback to gemini-1.5-flash if 2.5 is unavailable
+    } catch (primaryErr) {
       response = await ai.models.generateContent({
-        model: 'gemini-1.5-flash',
+        model: 'gemini-2.0-flash',
         contents,
         config: {
           systemInstruction: SYSTEM_INSTRUCTION,
