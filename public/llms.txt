@@ -3,8 +3,12 @@
 > Clandest Agency is a design, development, and video post-production studio based in Dhaka, Bangladesh, founded by four diploma graduates from Munshiganj Polytechnic Institute. Direct founder access, zero middlemen, 100% commercial ownership.
 
 Website: https://clandestagency.vercel.app
-Email: clandest.agency@gmail.com
+LinkedIn: https://www.linkedin.com/company/clandestagency
+YouTube: https://www.youtube.com/@Clandestagency
+Facebook: https://www.facebook.com/clandest.agency
 WhatsApp: https://wa.me/8801869504388 (+880 1869 504388)
+Email: clandest.agency@gmail.com
+GitHub: https://github.com/Annyxtopheles/clandest-agency-site
 Location: Dhaka, Bangladesh
 
 ## Core Services & Disciplines

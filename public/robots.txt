@@ -41,6 +41,9 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
+User-agent: Applebot-Extended
+Allow: /
+
 User-agent: Google-Extended
 Allow: /
 
@@ -81,5 +84,8 @@ Allow: /
 # Default for all other crawlers
 User-agent: *
 Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
 
 Sitemap: https://clandestagency.vercel.app/sitemap.xml
+LLM: https://clandestagency.vercel.app/llms.txt

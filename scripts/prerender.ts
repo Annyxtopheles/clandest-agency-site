@@ -607,14 +607,38 @@ export function prerender() {
       'addressCountry': 'Bangladesh'
     },
     'sameAs': [
+      'https://www.linkedin.com/company/clandestagency',
+      'https://www.youtube.com/@Clandestagency',
       'https://www.facebook.com/clandest.agency',
-      'https://wa.me/8801869504388'
+      'https://wa.me/8801869504388',
+      'https://github.com/Annyxtopheles/clandest-agency-site'
     ],
     'founder': [
-      { '@type': 'Person', 'name': 'Sadman Zaman Khan', 'jobTitle': 'UI/UX & Brand Design' },
-      { '@type': 'Person', 'name': 'Md Nafiur Rahman', 'jobTitle': 'Lead Frontend Engineer' },
-      { '@type': 'Person', 'name': 'Abdullah Al Rafayet', 'jobTitle': 'Head of Video Post-Production' },
-      { '@type': 'Person', 'name': 'Md Habibullah', 'jobTitle': 'Operations & Client Relations' }
+      {
+        '@type': 'Person',
+        'name': 'Sadman Zaman Khan',
+        'jobTitle': 'UI/UX & Brand Design',
+        'alumniOf': 'Munshiganj Polytechnic Institute',
+        'sameAs': 'https://sadmanportfolio.vercel.app/'
+      },
+      {
+        '@type': 'Person',
+        'name': 'Md Nafiur Rahman',
+        'jobTitle': 'Lead Frontend Engineer',
+        'alumniOf': 'Munshiganj Polytechnic Institute'
+      },
+      {
+        '@type': 'Person',
+        'name': 'Abdullah Al Rafayet',
+        'jobTitle': 'Head of Video Post-Production',
+        'alumniOf': 'Munshiganj Polytechnic Institute'
+      },
+      {
+        '@type': 'Person',
+        'name': 'Md Habibullah',
+        'jobTitle': 'Operations & Client Relations',
+        'alumniOf': 'Munshiganj Polytechnic Institute'
+      }
     ],
     'hasOfferCatalog': {
       '@type': 'OfferCatalog',
