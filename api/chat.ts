@@ -104,9 +104,9 @@ export default async function handler(req: any, res: any) {
         model: 'gemini-3.6-flash',
         contents,
         config: {
-          systemInstruction: SYSTEM_INSTRUCTION,
-          temperature: 0.7,
-          maxOutputTokens: 600,
+          systemInstruction: SYSTEM_INSTRUCTION + "\n\nSPEED & CONCISENESS RULE: Keep every response crisp, clear, and direct (max 2 short paragraphs or bullet points). Deliver immediate value without wordy fluff.",
+          temperature: 0.3,
+          maxOutputTokens: 300,
         }
       });
     } catch (primaryErr) {
@@ -114,9 +114,9 @@ export default async function handler(req: any, res: any) {
         model: 'gemini-2.5-flash',
         contents,
         config: {
-          systemInstruction: SYSTEM_INSTRUCTION,
-          temperature: 0.7,
-          maxOutputTokens: 600,
+          systemInstruction: SYSTEM_INSTRUCTION + "\n\nSPEED & CONCISENESS RULE: Keep every response crisp, clear, and direct (max 2 short paragraphs or bullet points). Deliver immediate value without wordy fluff.",
+          temperature: 0.3,
+          maxOutputTokens: 300,
         }
       });
     }

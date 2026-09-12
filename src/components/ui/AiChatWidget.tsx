@@ -12,10 +12,13 @@ interface Message {
 
 const QUICK_PROMPTS = [
   "What services do you offer?",
-  "How long does a website take?",
   "How does your pricing work?",
+  "How long does a website take?",
   "Who are the founders?",
-  "Do I get all raw source files?"
+  "Do I get all raw source files?",
+  "How do revisions work?",
+  "Do you make 9:16 TikTok ads?",
+  "Can we book a 15-min call?"
 ];
 
 // Lightweight Markdown formatter for links, bold, bullet points
@@ -115,7 +118,6 @@ export const AiChatWidget: React.FC = () => {
   ]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [hasInteracted, setHasInteracted] = useState(false);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -136,7 +138,6 @@ export const AiChatWidget: React.FC = () => {
     if (!query || isLoading) return;
 
     triggerHaptic();
-    setHasInteracted(true);
     setInputValue('');
 
     const userMessage: Message = {
@@ -303,29 +304,28 @@ export const AiChatWidget: React.FC = () => {
                 </div>
               )}
 
-              {/* Quick Suggestion Chips (visible when user hasn't sent many messages) */}
-              {!hasInteracted && messages.length <= 2 && (
-                <div className="ai-chat-suggestions">
-                  <p className="ai-chat-suggestions-label">Suggested questions:</p>
-                  <div className="ai-chat-chips-wrap">
-                    {QUICK_PROMPTS.map((prompt, pIdx) => (
-                      <button
-                        key={pIdx}
-                        className="ai-chat-chip"
-                        onClick={() => handleSendMessage(prompt)}
-                      >
-                        {prompt}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-
               <div ref={messagesEndRef} />
             </div>
 
             {/* Footer / Input Bar */}
             <div className="ai-chat-footer">
+              {/* Sticky Suggestion Chips */}
+              <div className="ai-chat-sticky-suggestions">
+                <div className="ai-chat-chips-scroll">
+                  {QUICK_PROMPTS.map((prompt, pIdx) => (
+                    <button
+                      key={pIdx}
+                      type="button"
+                      className="ai-chat-chip-pill"
+                      onClick={() => handleSendMessage(prompt)}
+                      disabled={isLoading}
+                    >
+                      {prompt}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
               <form
                 className="ai-chat-input-form"
                 onSubmit={e => {
