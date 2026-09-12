@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, Send, Sparkles, RefreshCw, Bot, User, ArrowUpRight } from 'lucide-react';
+import { X, Send, Sparkles, RefreshCw, User, ArrowUpRight } from 'lucide-react';
 import { triggerHaptic } from '../../utils/haptics';
 
 interface Message {
@@ -241,15 +241,14 @@ export const AiChatWidget: React.FC = () => {
             {/* Header */}
             <div className="ai-chat-header">
               <div className="ai-chat-header-info">
-                <div className="ai-chat-avatar">
-                  <Bot size={18} />
-                </div>
-                <div>
-                  <div className="ai-chat-title-row">
-                    <span className="ai-chat-title">Clandest AI</span>
-                    <span className="ai-chat-pill-badge">Online</span>
+                <div className="ai-chat-avatar-wrapper">
+                  <div className="ai-chat-avatar">
+                    <Sparkles size={18} />
                   </div>
-                  <p className="ai-chat-subtitle">Direct answers about brand, web & video</p>
+                  <span className="ai-chat-avatar-status-dot" title="Online" />
+                </div>
+                <div className="ai-chat-title-box">
+                  <span className="ai-chat-title">Clandest AI</span>
                 </div>
               </div>
               <div className="ai-chat-header-actions">
@@ -284,7 +283,7 @@ export const AiChatWidget: React.FC = () => {
                 >
                   {msg.role === 'assistant' && (
                     <div className="ai-chat-msg-avatar assistant">
-                      <Bot size={14} />
+                      <Sparkles size={13} />
                     </div>
                   )}
                   <div className={`ai-chat-bubble ${msg.role === 'user' ? 'user-bubble' : 'assistant-bubble'}`}>
@@ -353,7 +352,7 @@ export const AiChatWidget: React.FC = () => {
               {isLoading && (
                 <div className="ai-chat-message-row assistant-row">
                   <div className="ai-chat-msg-avatar assistant">
-                    <Bot size={14} />
+                    <Sparkles size={13} />
                   </div>
                   <div className="ai-chat-bubble assistant-bubble typing-bubble">
                     <span className="typing-dot" />
@@ -393,12 +392,6 @@ export const AiChatWidget: React.FC = () => {
                   <Send size={16} />
                 </button>
               </form>
-              <div className="ai-chat-footer-note">
-                <span>Want to talk to founders directly?</span>
-                <a href="/contact" onClick={() => setIsOpen(false)} className="ai-chat-footer-link">
-                  Book a 15-min call →
-                </a>
-              </div>
             </div>
           </motion.div>
         )}
