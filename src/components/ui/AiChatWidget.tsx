@@ -10,15 +10,21 @@ interface Message {
   timestamp: string;
 }
 
-const QUICK_PROMPTS = [
+const INITIAL_SUGGESTIONS = [
   "What services do you offer?",
   "How does your pricing work?",
   "How long does a website take?",
   "Who are the founders?",
   "Do I get all raw source files?",
-  "How do revisions work?",
-  "Do you make 9:16 TikTok ads?",
   "Can we book a 15-min call?"
+];
+
+const FOLLOWUP_SUGGESTIONS = [
+  "What's your pricing?",
+  "How long does it take?",
+  "Do I own source code?",
+  "How do revisions work?",
+  "Can we book a call?"
 ];
 
 // Lightweight Markdown formatter for links, bold, bullet points
@@ -190,13 +196,15 @@ export const AiChatWidget: React.FC = () => {
     triggerHaptic();
     setMessages([
       {
-        id: Date.now().toString(),
+        id: 'welcome',
         role: 'assistant',
-        content: "Chat cleared! How can Clandest Agency help with your project today?",
+        content: "Hi there! 👋 I am Clandest's AI Assistant.\n\nAsk me anything about our **brand design**, **custom web development**, or **marketing video** services. How can we help you today?",
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       }
     ]);
   };
+
+  const isInitialState = messages.length <= 1;
 
   return (
     <div className="ai-chat-root">
@@ -291,6 +299,57 @@ export const AiChatWidget: React.FC = () => {
                 </motion.div>
               ))}
 
+              {/* Initial State Stacked Suggestion Cards */}
+              {isInitialState && (
+                <motion.div
+                  className="ai-chat-initial-suggestions"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.25, delay: 0.1 }}
+                >
+                  <span className="ai-chat-suggestions-heading">Common questions:</span>
+                  <div className="ai-chat-suggestions-stack">
+                    {INITIAL_SUGGESTIONS.map((prompt, idx) => (
+                      <button
+                        key={idx}
+                        type="button"
+                        className="ai-chat-stacked-card"
+                        onClick={() => handleSendMessage(prompt)}
+                        disabled={isLoading}
+                      >
+                        <span>{prompt}</span>
+                        <ArrowUpRight size={14} className="ai-chat-card-arrow" />
+                      </button>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+
+              {/* Follow-up State Wrapped Chips (visible when conversation is active) */}
+              {!isInitialState && !isLoading && (
+                <motion.div
+                  className="ai-chat-followup-container"
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <span className="ai-chat-followup-heading">Suggested follow-ups:</span>
+                  <div className="ai-chat-followup-chips">
+                    {FOLLOWUP_SUGGESTIONS.map((prompt, idx) => (
+                      <button
+                        key={idx}
+                        type="button"
+                        className="ai-chat-followup-chip"
+                        onClick={() => handleSendMessage(prompt)}
+                        disabled={isLoading}
+                      >
+                        {prompt}
+                      </button>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+
               {isLoading && (
                 <div className="ai-chat-message-row assistant-row">
                   <div className="ai-chat-msg-avatar assistant">
@@ -309,23 +368,6 @@ export const AiChatWidget: React.FC = () => {
 
             {/* Footer / Input Bar */}
             <div className="ai-chat-footer">
-              {/* Sticky Suggestion Chips */}
-              <div className="ai-chat-sticky-suggestions">
-                <div className="ai-chat-chips-scroll">
-                  {QUICK_PROMPTS.map((prompt, pIdx) => (
-                    <button
-                      key={pIdx}
-                      type="button"
-                      className="ai-chat-chip-pill"
-                      onClick={() => handleSendMessage(prompt)}
-                      disabled={isLoading}
-                    >
-                      {prompt}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
               <form
                 className="ai-chat-input-form"
                 onSubmit={e => {
