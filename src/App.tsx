@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'motion/react';
 import { ScrollToTop } from './components/ui/ScrollToTop';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
+import { AiChatWidget } from './components/ui/AiChatWidget';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Services } from './pages/Services';
@@ -37,6 +38,8 @@ export const App: React.FC = () => {
         </motion.div>
       </AnimatePresence>
       <Footer />
+      <AiChatWidget />
     </>
   );
 };
+
