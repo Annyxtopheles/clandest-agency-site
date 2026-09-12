@@ -1,4 +1,4 @@
-﻿import { GoogleGenAI } from '@google/genai';
+import { GoogleGenAI } from '@google/genai';
 
 const SYSTEM_INSTRUCTION = `You are the official AI Assistant for Clandest Agency (clandest.agency), a high-end digital studio based in Dhaka, Bangladesh.
 Your goal is to answer visitor inquiries politely, accurately, concisely, and helpfully based strictly on the agency's real information below.
@@ -101,7 +101,7 @@ export default async function handler(req: any, res: any) {
     let response;
     try {
       response = await ai.models.generateContent({
-        model: 'gemini-2.5-flash',
+        model: 'gemini-3.6-flash',
         contents,
         config: {
           systemInstruction: SYSTEM_INSTRUCTION,
@@ -111,7 +111,7 @@ export default async function handler(req: any, res: any) {
       });
     } catch (primaryErr) {
       response = await ai.models.generateContent({
-        model: 'gemini-2.0-flash',
+        model: 'gemini-2.5-flash',
         contents,
         config: {
           systemInstruction: SYSTEM_INSTRUCTION,
