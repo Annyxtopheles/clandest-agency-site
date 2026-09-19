@@ -282,21 +282,20 @@ function buildServicesHtml(): string {
           </div>
 
           <!-- 3 Categories Selector -->
-          <div class="services-visual-grid" style="margin-bottom: 60px;">
+          <div class="services-visual-grid services-category-selector" style="margin-bottom: 60px;">
             <a href="#video-portfolio" class="service-visual-card active-service-card" style="text-decoration: none;">
               <div class="service-image-box">
                 <img src="/assets/service-marketing-video.webp" alt="Marketing Video Production" width="928" height="800" fetchpriority="high">
               </div>
-              <div class="service-card-label" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+              <div class="service-card-label">
                 <span>Marketing Video</span>
-                <span class="active-dot">•</span>
               </div>
             </a>
             <a href="#branding" class="service-visual-card" style="text-decoration: none;">
               <div class="service-image-box">
                 <img src="/assets/service-brand-design.gif" alt="Logo & Brand Design" width="928" height="800" fetchpriority="high">
               </div>
-              <div class="service-card-label" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+              <div class="service-card-label">
                 <span>Logo & Brand Design</span>
               </div>
             </a>
@@ -304,7 +303,7 @@ function buildServicesHtml(): string {
               <div class="service-image-box">
                 <img src="/assets/service-web-redesign.webp" alt="Website Redesign and Development" width="928" height="800" fetchpriority="high">
               </div>
-              <div class="service-card-label" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+              <div class="service-card-label">
                 <span>Website Redesign</span>
               </div>
             </a>
@@ -350,7 +349,7 @@ function buildServicesHtml(): string {
 
               <div class="video-project-card">
                 <div class="video-thumbnail-box">
-                  <img src="/assets/service-marketing-video.webp" alt="Pet Health Care Product VSL" loading="lazy">
+                  <img src="https://img.youtube.com/vi/JutzyFN-EUM/hqdefault.jpg" alt="Pet Health Care Product VSL" loading="lazy">
                   <div class="video-play-badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></div>
                   <div class="video-duration-pill">2:15</div>
                 </div>
@@ -516,6 +515,19 @@ function buildServicesHtml(): string {
                 </div>
               </div>
             </div>
+          </div>
+
+          <!-- Bottom CTA Box -->
+          <div style="background-color: #FAFAFA; border: 1px solid var(--c-border); border-radius: var(--radius-card); padding: 56px 28px; text-align: center; margin-top: 40px;">
+            <h2 style="font-size: clamp(28px, 3.5vw, 36px); color: var(--c-blue); font-weight: 700; margin-bottom: 14px; text-wrap: balance;">
+              Work directly with the makers.
+            </h2>
+            <p style="font-size: 19px; color: var(--c-text); max-width: 640px; margin: 0 auto 32px; line-height: 1.55; text-wrap: pretty;">
+              Skip the account managers and agency fluff. Talk directly with Sadman, Nafiur, and Rafayet to map out your deliverables, timeline, and&nbsp;quote.
+            </p>
+            <a href="/contact" class="animated-button">
+              <span class="text">Start Your Project</span>
+            </a>
           </div>
         </div>
       </section>

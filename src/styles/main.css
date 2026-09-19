@@ -89,6 +89,14 @@ a {
   transition: opacity 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
+h1, h2, h3, h4, h5, h6, .hero-title, .subpage-title, .section-heading-centered {
+  text-wrap: balance;
+}
+
+p, .hero-subtext, .subpage-subtext, .section-subtext-centered {
+  text-wrap: pretty;
+}
+
 button, input, select, textarea {
   font-family: inherit;
 }
@@ -676,23 +684,40 @@ button, input, select, textarea {
   transition: color 0.2s ease;
 }
 
-.service-visual-card.active-service-card .service-image-box {
-  outline: 3px solid var(--c-blue);
-  outline-offset: 4px;
-  box-shadow: 0 16px 36px rgba(46, 79, 148, 0.18);
+.services-category-selector .service-visual-card {
+  opacity: 0.55;
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.service-visual-card.active-service-card .service-card-label {
+.services-category-selector .service-visual-card:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+.services-category-selector .service-visual-card.active-service-card {
+  opacity: 1;
+  transform: translateY(-4px);
+}
+
+.services-category-selector .service-visual-card.active-service-card .service-image-box {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.services-category-selector .service-visual-card.active-service-card .service-card-label {
   color: #111111;
   font-weight: 600;
 }
 
-.active-dot {
-  display: inline-block;
-  color: var(--c-blue);
-  font-size: 1.2em;
-  line-height: 1;
+.services-category-selector .service-visual-card.active-service-card .service-card-label::after {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 2.5px;
+  background-color: #111111;
+  margin: 10px auto 0;
+  border-radius: 2px;
 }
+
 
 /* ==========================================================================
    The Founding Team Section

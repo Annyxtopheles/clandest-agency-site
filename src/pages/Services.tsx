@@ -25,7 +25,7 @@ const VIDEO_PROJECTS = [
     author: 'Post-Production by Abdullah Al Rafayet',
   },
   {
-    id: 'pet-health-vsl',
+    id: 'JutzyFN-EUM',
     title: 'Pet Health Care Product VSL',
     category: 'vsl',
     categoryLabel: 'VSL & Commercial',
@@ -113,7 +113,7 @@ export const Services: React.FC = () => {
           </div>
 
           {/* 3 MAIN CATEGORIES SELECTOR (MATCHING HOMEPAGE) */}
-          <div className="services-visual-grid" style={{ marginBottom: '60px' }}>
+          <div className="services-visual-grid services-category-selector" style={{ marginBottom: '60px' }}>
             {/* Category 1: Marketing Video */}
             <div
               className={`service-visual-card ${activeCategory === 'video' ? 'active-service-card' : ''}`}
@@ -130,9 +130,8 @@ export const Services: React.FC = () => {
                 <div className="service-image-box">
                   <img src="/assets/service-marketing-video.webp" alt="Marketing Video Production" width="928" height="800" fetchPriority="high" />
                 </div>
-                <div className="service-card-label" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                <div className="service-card-label">
                   <span>Marketing Video</span>
-                  {activeCategory === 'video' && <span className="active-dot">•</span>}
                 </div>
               </TiltCard>
             </div>
@@ -153,9 +152,8 @@ export const Services: React.FC = () => {
                 <div className="service-image-box">
                   <img src="/assets/service-brand-design.gif" alt="Logo & Brand Design" width="928" height="800" fetchPriority="high" />
                 </div>
-                <div className="service-card-label" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                <div className="service-card-label">
                   <span>Logo & Brand Design</span>
-                  {activeCategory === 'branding' && <span className="active-dot">•</span>}
                 </div>
               </TiltCard>
             </div>
@@ -176,9 +174,8 @@ export const Services: React.FC = () => {
                 <div className="service-image-box">
                   <img src="/assets/service-web-redesign.webp" alt="Website Redesign and Development" width="928" height="800" fetchPriority="high" />
                 </div>
-                <div className="service-card-label" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                <div className="service-card-label">
                   <span>Website Redesign</span>
-                  {activeCategory === 'web' && <span className="active-dot">•</span>}
                 </div>
               </TiltCard>
             </div>
@@ -258,145 +255,13 @@ export const Services: React.FC = () => {
                   </div>
                 ))}
               </div>
-            </div>
-          )}
 
-          {activeCategory === 'branding' && (
-            <div className="category-empty-showcase" style={{ textAlign: 'center', padding: '60px 24px', background: '#FAFAFA', borderRadius: 'var(--radius-card)', border: '1.5px dashed var(--c-border)', marginBottom: '80px' }}>
-              <div style={{ width: '56px', height: '56px', borderRadius: '50%', backgroundColor: '#EFF6FF', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: 'var(--c-blue)', marginBottom: '16px' }}>
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
-                  <path d="M12 19l7-7 3 3-7 7-3-3z"/>
-                  <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
-                  <path d="M2 2l7.586 7.586"/>
-                  <circle cx="11" cy="11" r="2"/>
-                </svg>
-              </div>
-              <h3 style={{ fontSize: '26px', color: 'var(--c-blue)', fontWeight: 600, marginBottom: '10px' }}>Logo & Brand Design Projects</h3>
-              <p style={{ fontSize: '17px', color: 'var(--c-text-muted)', maxWidth: '520px', margin: '0 auto 24px', lineHeight: 1.5 }}>
-                Identity design systems and client brand guidelines are currently being curated. Explore our deliverables and process below.
-              </p>
-              <a href="#branding" className="card-button" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-                <span>View Brand Deliverables</span>
-                <span>↓</span>
-              </a>
-            </div>
-          )}
-
-          {activeCategory === 'web' && (
-            <div className="category-empty-showcase" style={{ textAlign: 'center', padding: '60px 24px', background: '#FAFAFA', borderRadius: 'var(--radius-card)', border: '1.5px dashed var(--c-border)', marginBottom: '80px' }}>
-              <div style={{ width: '56px', height: '56px', borderRadius: '50%', backgroundColor: '#EFF6FF', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: 'var(--c-blue)', marginBottom: '16px' }}>
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
-                  <polyline points="16 18 22 12 16 6" />
-                  <polyline points="8 6 2 12 8 18" />
-                </svg>
-              </div>
-              <h3 style={{ fontSize: '26px', color: 'var(--c-blue)', fontWeight: 600, marginBottom: '10px' }}>Website Redesign & Frontend Projects</h3>
-              <p style={{ fontSize: '17px', color: 'var(--c-text-muted)', maxWidth: '520px', margin: '0 auto 24px', lineHeight: 1.5 }}>
-                Production web applications and frontend codebases are currently being curated. Explore our technical stack and deliverables below.
-              </p>
-              <a href="#development" className="card-button" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-                <span>View Web Deliverables</span>
-                <span>↓</span>
-              </a>
-            </div>
-          )}
-
-          {/* Service Item 1: Logo & Brand Design */}
-          <div className="about-narrative-row" id="branding" style={{ marginBottom: '80px' }}>
-            <div className="about-narrative-text">
-              <h2 style={{ fontSize: '32px', color: 'var(--c-blue)', marginBottom: '16px', fontWeight: 600 }}>Logo & Brand Design</h2>
-              <p>Logo design, color palettes, and full brand identities that make your product stand out.</p>
-              <ul style={{ listStyle: 'none', marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Primary logo, wordmarks, and responsive icon sets</li>
-                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Complete design systems in Figma (typography, tokens, colors)</li>
-                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Marketing creatives, pitch decks, and vector illustrations</li>
-                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Interactive UI/UX high-fidelity wireframing</li>
-              </ul>
-
-              {/* Deliverables */}
-              <div className="deliverables-container">
-                <h3 className="deliverables-title">What you walk away with</h3>
-                <div className="deliverables-list">
-                  <div className="deliverable-btn" onClick={() => triggerHaptic('light')}>
-                    <span className="deliverable-check">✓</span>
-                    <span>Master Vector Files (SVG, AI, PDF)</span>
-                  </div>
-                  <div className="deliverable-btn" onClick={() => triggerHaptic('light')}>
-                    <span className="deliverable-check">✓</span>
-                    <span>Complete Figma Brand System</span>
-                  </div>
-                  <div className="deliverable-btn" onClick={() => triggerHaptic('light')}>
-                    <span className="deliverable-check">✓</span>
-                    <span>Typography & Color Tokens</span>
-                  </div>
-                  <div className="deliverable-btn" onClick={() => triggerHaptic('light')}>
-                    <span className="deliverable-check">✓</span>
-                    <span>100% Commercial Copyright</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="service-image-box" style={{ width: '100%', aspectRatio: '4 / 3.1' }}>
-              <img src="/assets/service-brand-design.gif" alt="Logo & Brand Design" loading="lazy" />
-            </div>
-          </div>
-
-          {/* Service Item 2: Website Redesign */}
-          <div className="about-narrative-row reverse" id="development" style={{ marginBottom: '80px' }}>
-            <div className="service-image-box" style={{ width: '100%', aspectRatio: '4 / 3.1' }}>
-              <img src="/assets/service-web-redesign.png" alt="Website Redesign" loading="lazy" />
-            </div>
-            <div className="about-narrative-text">
-              <h2 style={{ fontSize: '32px', color: 'var(--c-blue)', marginBottom: '16px', fontWeight: 600 }}>Website Redesign</h2>
-              <p>Custom landing pages and websites built from scratch. Fast, responsive, and completely optimized.</p>
-              <ul style={{ listStyle: 'none', marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Modern HTML, clean CSS, and fast JavaScript (Zero bloat)</li>
-                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> 100% mobile, tablet, and high-DPI desktop responsive layouts</li>
-                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Core Web Vitals optimization and instant loading speeds</li>
-                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Python backends, automation scripts, and custom data pipelines</li>
-              </ul>
-
-              {/* Deliverables */}
-              <div className="deliverables-container">
-                <h3 className="deliverables-title">What you walk away with</h3>
-                <div className="deliverables-list">
-                  <div className="deliverable-btn" onClick={() => triggerHaptic('light')}>
-                    <span className="deliverable-check">✓</span>
-                    <span>Clean React & TypeScript Codebase</span>
-                  </div>
-                  <div className="deliverable-btn" onClick={() => triggerHaptic('light')}>
-                    <span className="deliverable-check">✓</span>
-                    <span>Full GitHub Repo Ownership</span>
-                  </div>
-                  <div className="deliverable-btn" onClick={() => triggerHaptic('light')}>
-                    <span className="deliverable-check">✓</span>
-                    <span>Production Vercel Deployment</span>
-                  </div>
-                  <div className="deliverable-btn" onClick={() => triggerHaptic('light')}>
-                    <span className="deliverable-check">✓</span>
-                    <span>Zero Subscriptions or Vendor Lock-in</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Service Item 3: Marketing Video */}
-          <div className="about-narrative-row" id="video" style={{ marginBottom: '60px' }}>
-            <div className="about-narrative-text">
-              <h2 style={{ fontSize: '32px', color: 'var(--c-blue)', marginBottom: '16px', fontWeight: 600 }}>Marketing Video</h2>
-              <p>High-converting video ads, post-production editing, motion graphics, and sound design.</p>
-              <ul style={{ listStyle: 'none', marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> High-converting Video Sales Letters (VSLs) & social UGC ads</li>
-                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Adobe After Effects motion graphics & animated typography</li>
-                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Studio color grading & professional audio mastering</li>
-                <li style={{ position: 'relative', paddingLeft: '20px', color: 'var(--c-text)' }}><strong>•</strong> Commercial product explainers & documentary narratives</li>
-              </ul>
-
-              {/* Deliverables */}
-              <div className="deliverables-container">
-                <h3 className="deliverables-title">What you walk away with</h3>
-                <div className="deliverables-list">
+              {/* Marketing Video Deliverables */}
+              <div className="category-deliverables-box" style={{ marginTop: '48px', paddingTop: '36px', borderTop: '1px solid var(--c-border)' }}>
+                <h3 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--c-blue)', marginBottom: '18px', textAlign: 'center' }}>
+                  What you walk away with
+                </h3>
+                <div className="deliverables-list" style={{ justifyContent: 'center' }}>
                   <div className="deliverable-btn" onClick={() => triggerHaptic('light')}>
                     <span className="deliverable-check">✓</span>
                     <span>4K Master Exports & ProRes Files</span>
@@ -416,19 +281,94 @@ export const Services: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="service-image-box" style={{ width: '100%', aspectRatio: '4 / 3.1' }}>
-              <img src="/assets/service-marketing-video.png" alt="Marketing Video" loading="lazy" />
+          )}
+
+          {activeCategory === 'branding' && (
+            <div className="category-showcase-panel" style={{ textAlign: 'center', padding: '60px 24px', background: '#FAFAFA', borderRadius: 'var(--radius-card)', border: '1px solid var(--c-border)', marginBottom: '40px' }}>
+              <span style={{ display: 'inline-block', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--c-text-muted)', marginBottom: '12px' }}>
+                Portfolio in Curation
+              </span>
+              <h2 style={{ fontSize: '32px', color: 'var(--c-blue)', fontWeight: 600, marginBottom: '12px' }}>
+                Logo & Brand Design Projects
+              </h2>
+              <p style={{ fontSize: '18px', color: 'var(--c-text)', maxWidth: '540px', margin: '0 auto 36px', lineHeight: 1.5, textWrap: 'pretty' }}>
+                Client brand systems, vector icon sets, and identity guidelines designed by Sadman Zaman Khan are currently being curated for showcase.
+              </p>
+
+              <div className="category-deliverables-box" style={{ paddingTop: '28px', borderTop: '1px solid var(--c-border)' }}>
+                <h3 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--c-blue)', marginBottom: '18px' }}>
+                  What you walk away with
+                </h3>
+                <div className="deliverables-list" style={{ justifyContent: 'center' }}>
+                  <div className="deliverable-btn" onClick={() => triggerHaptic('light')}>
+                    <span className="deliverable-check">✓</span>
+                    <span>Master Vector Files (SVG, AI, PDF)</span>
+                  </div>
+                  <div className="deliverable-btn" onClick={() => triggerHaptic('light')}>
+                    <span className="deliverable-check">✓</span>
+                    <span>Complete Figma Brand System</span>
+                  </div>
+                  <div className="deliverable-btn" onClick={() => triggerHaptic('light')}>
+                    <span className="deliverable-check">✓</span>
+                    <span>Typography & Color Tokens</span>
+                  </div>
+                  <div className="deliverable-btn" onClick={() => triggerHaptic('light')}>
+                    <span className="deliverable-check">✓</span>
+                    <span>100% Commercial Copyright</span>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+          )}
+
+          {activeCategory === 'web' && (
+            <div className="category-showcase-panel" style={{ textAlign: 'center', padding: '60px 24px', background: '#FAFAFA', borderRadius: 'var(--radius-card)', border: '1px solid var(--c-border)', marginBottom: '40px' }}>
+              <span style={{ display: 'inline-block', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--c-text-muted)', marginBottom: '12px' }}>
+                Portfolio in Curation
+              </span>
+              <h2 style={{ fontSize: '32px', color: 'var(--c-blue)', fontWeight: 600, marginBottom: '12px' }}>
+                Website Redesign & Frontend Projects
+              </h2>
+              <p style={{ fontSize: '18px', color: 'var(--c-text)', maxWidth: '540px', margin: '0 auto 36px', lineHeight: 1.5, textWrap: 'pretty' }}>
+                Production web applications, high-performance landing pages, and responsive TypeScript codebases engineered by Md. Nafiur Rahman are currently being curated for showcase.
+              </p>
+
+              <div className="category-deliverables-box" style={{ paddingTop: '28px', borderTop: '1px solid var(--c-border)' }}>
+                <h3 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--c-blue)', marginBottom: '18px' }}>
+                  What you walk away with
+                </h3>
+                <div className="deliverables-list" style={{ justifyContent: 'center' }}>
+                  <div className="deliverable-btn" onClick={() => triggerHaptic('light')}>
+                    <span className="deliverable-check">✓</span>
+                    <span>Clean React & TypeScript Codebase</span>
+                  </div>
+                  <div className="deliverable-btn" onClick={() => triggerHaptic('light')}>
+                    <span className="deliverable-check">✓</span>
+                    <span>Full GitHub Repo Ownership</span>
+                  </div>
+                  <div className="deliverable-btn" onClick={() => triggerHaptic('light')}>
+                    <span className="deliverable-check">✓</span>
+                    <span>Production Vercel Deployment</span>
+                  </div>
+                  <div className="deliverable-btn" onClick={() => triggerHaptic('light')}>
+                    <span className="deliverable-check">✓</span>
+                    <span>Zero Subscriptions or Vendor Lock-in</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Bottom CTA Box */}
-          <div style={{ backgroundColor: '#FAFAFA', border: '1px solid var(--c-border)', borderRadius: 'var(--radius-card)', padding: '50px 30px', textAlign: 'center', marginTop: '40px' }}>
-            <h2 style={{ fontSize: '32px', color: 'var(--c-blue)', fontWeight: 600, marginBottom: '12px' }}>Have a project in mind?</h2>
-            <p style={{ fontSize: '20px', color: 'var(--c-text)', maxWidth: '600px', margin: '0 auto 28px' }}>
-              Talk directly with our founding team to get a clear scope and timeline.
+          <div style={{ backgroundColor: '#FAFAFA', border: '1px solid var(--c-border)', borderRadius: 'var(--radius-card)', padding: '56px 28px', textAlign: 'center', marginTop: '40px' }}>
+            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 36px)', color: 'var(--c-blue)', fontWeight: 700, marginBottom: '14px', textWrap: 'balance' }}>
+              Work directly with the makers.
+            </h2>
+            <p style={{ fontSize: '19px', color: 'var(--c-text)', maxWidth: '640px', margin: '0 auto 32px', lineHeight: 1.55, textWrap: 'pretty' }}>
+              Skip the account managers and agency fluff. Talk directly with Sadman, Nafiur, and Rafayet to map out your deliverables, timeline, and&nbsp;quote.
             </p>
             <AnimatedButton to="/contact">
-              Start a Conversation
+              Start Your Project
             </AnimatedButton>
           </div>
         </div>
