@@ -110,7 +110,7 @@ button, input, select, textarea {
 .site-header {
   width: 100%;
   background-color: var(--c-bg);
-  padding: 20px 0;
+  padding: 18px 0;
   position: relative;
   z-index: 50;
 }
@@ -126,15 +126,21 @@ button, input, select, textarea {
 }
 
 .brand-link {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   user-select: none;
+  line-height: 1;
 }
 
 .brand-logo-img {
-  height: 48px;
+  height: 36px;
   width: auto;
   display: block;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
 }
 
 .main-nav .nav-list {
@@ -142,6 +148,8 @@ button, input, select, textarea {
   align-items: center;
   gap: clamp(20px, 3vw, 36px);
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-link {
@@ -149,10 +157,18 @@ button, input, select, textarea {
   font-weight: 500;
   line-height: 1;
   color: var(--c-blue);
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s ease, opacity 0.2s ease;
 }
 
 .nav-link:hover {
   opacity: 0.75;
+}
+
+.nav-link.active {
+  color: #111111;
+  font-weight: 600;
 }
 
 .header-cta-btn {
@@ -657,6 +673,25 @@ button, input, select, textarea {
   color: var(--c-blue);
   text-align: center;
   margin-top: 20px;
+  transition: color 0.2s ease;
+}
+
+.service-visual-card.active-service-card .service-image-box {
+  outline: 3px solid var(--c-blue);
+  outline-offset: 4px;
+  box-shadow: 0 16px 36px rgba(46, 79, 148, 0.18);
+}
+
+.service-visual-card.active-service-card .service-card-label {
+  color: #111111;
+  font-weight: 600;
+}
+
+.active-dot {
+  display: inline-block;
+  color: var(--c-blue);
+  font-size: 1.2em;
+  line-height: 1;
 }
 
 /* ==========================================================================

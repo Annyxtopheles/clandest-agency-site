@@ -30,12 +30,21 @@ export const VideoModal: React.FC<VideoModalProps> = ({ videoId, title, onClose 
           &times;
         </button>
         <div className="video-modal-iframe-box">
-          <iframe
-            src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`}
-            title={title}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          />
+          {videoId && videoId.length === 11 ? (
+            <iframe
+              src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`}
+              title={title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          ) : (
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%', minHeight: '320px', padding: '30px', textAlign: 'center', color: '#FFFFFF' }}>
+              <h3 style={{ fontSize: '22px', marginBottom: '12px', color: '#FFFFFF' }}>{title}</h3>
+              <p style={{ color: '#AAAAAA', maxWidth: '440px', margin: '0 auto', fontSize: '16px', lineHeight: 1.5 }}>
+                Post-production project link being connected. Please provide the YouTube video link to play the embed.
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </div>

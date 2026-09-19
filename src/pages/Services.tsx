@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { WordLift } from '../components/ui/WordLift';
 import { AnimatedButton } from '../components/ui/AnimatedButton';
 import { VideoModal } from '../components/ui/VideoModal';
+import { TiltCard } from '../components/ui/TiltCard';
 import { triggerHaptic } from '../utils/haptics';
 
 const VIDEO_PROJECTS = [
@@ -24,39 +25,12 @@ const VIDEO_PROJECTS = [
     author: 'Post-Production by Abdullah Al Rafayet',
   },
   {
-    id: 't9RAkGK49BM',
-    title: 'Female UGC & Testimonial Ad',
-    category: 'ugc',
-    categoryLabel: 'Short-Form UGC',
-    duration: '0:51',
-    desc: 'High-engagement authentic creator testimonial with dynamic subtitles, sound effects, and scroll-stopping hooks.',
-    author: 'Post-Production by Abdullah Al Rafayet',
-  },
-  {
-    id: 'CrxJCEeQ0Os',
-    title: 'Healthcare Product VSL (Benefits Breakdown)',
+    id: 'pet-health-vsl',
+    title: 'Pet Health Care Product VSL',
     category: 'vsl',
     categoryLabel: 'VSL & Commercial',
-    duration: '1:44',
-    desc: 'Fast-paced sales video pacing highlighting competitive advantages, user testimonials, and urgent CTA.',
-    author: 'Post-Production by Abdullah Al Rafayet',
-  },
-  {
-    id: 'bvAdnAvqvCU',
-    title: 'Healthcare Product VSL (Full Narrative)',
-    category: 'vsl',
-    categoryLabel: 'VSL & Commercial',
-    duration: '3:10',
-    desc: 'Comprehensive marketing narrative structured for cold-traffic conversion and high average order value.',
-    author: 'Post-Production by Abdullah Al Rafayet',
-  },
-  {
-    id: 'Mt4w-_jwU_c',
-    title: 'Healthcare Product VSL (Problem / Solution)',
-    category: 'vsl',
-    categoryLabel: 'VSL & Commercial',
-    duration: '2:20',
-    desc: 'Story-driven hook sequence with visual problem agitation and scientific solution validation.',
+    duration: '2:15',
+    desc: 'High-converting direct response video sales letter engineered for pet wellness, dietary nutrition, and veterinary product conversion.',
     author: 'Post-Production by Abdullah Al Rafayet',
   },
   {
@@ -107,8 +81,21 @@ const VIDEO_PROJECTS = [
 ];
 
 export const Services: React.FC = () => {
-  const [filter, setFilter] = useState<'all' | 'vsl' | 'documentary' | 'ugc'>('all');
+  const [activeCategory, setActiveCategory] = useState<'video' | 'branding' | 'web'>('video');
+  const [filter, setFilter] = useState<'all' | 'vsl' | 'documentary'>('all');
   const [activeModal, setActiveModal] = useState<{ id: string; title: string } | null>(null);
+
+  useEffect(() => {
+    const handleHash = () => {
+      const hash = window.location.hash;
+      if (hash === '#video') setActiveCategory('video');
+      else if (hash === '#branding') setActiveCategory('branding');
+      else if (hash === '#development' || hash === '#web') setActiveCategory('web');
+    };
+    handleHash();
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
+  }, []);
 
   const filteredVideos = filter === 'all' ? VIDEO_PROJECTS : VIDEO_PROJECTS.filter((v) => v.category === filter);
 
@@ -121,89 +108,198 @@ export const Services: React.FC = () => {
               What we can do for you.
             </WordLift>
             <p className="subpage-subtext">
-              Three core studio disciplines executed by founders with deep craft. No account managers, no layers of bureaucracy.
+              Three core studio disciplines executed by founders with deep craft. Select a category below to explore projects and capabilities.
             </p>
           </div>
 
-          {/* VIDEO PRODUCTION PORTFOLIO SHOWCASE */}
-          <div className="video-portfolio-section" id="video-portfolio" style={{ marginBottom: '80px' }}>
-            <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-              <h2 style={{ fontSize: '32px', color: 'var(--c-blue)', fontWeight: 600, marginBottom: '10px' }}>Featured Video Projects</h2>
-              <p style={{ fontSize: '18px', color: 'var(--c-text-muted)', maxWidth: '680px', margin: '0 auto' }}>
-                Direct-response VSLs, commercial product ads, and documentary post-production edited by Abdullah Al Rafayet.
-              </p>
-            </div>
-
-            {/* Filter Pills */}
-            <div className="video-filter-bar">
-              <button
-                className={`video-filter-btn ${filter === 'all' ? 'active' : ''}`}
-                onClick={() => {
-                  triggerHaptic('selection');
-                  setFilter('all');
-                }}
-              >
-                All Projects ({VIDEO_PROJECTS.length})
-              </button>
-              <button
-                className={`video-filter-btn ${filter === 'vsl' ? 'active' : ''}`}
-                onClick={() => {
-                  triggerHaptic('selection');
-                  setFilter('vsl');
-                }}
-              >
-                VSLs & Sales Ads
-              </button>
-              <button
-                className={`video-filter-btn ${filter === 'documentary' ? 'active' : ''}`}
-                onClick={() => {
-                  triggerHaptic('selection');
-                  setFilter('documentary');
-                }}
-              >
-                Documentaries & Stories
-              </button>
-              <button
-                className={`video-filter-btn ${filter === 'ugc' ? 'active' : ''}`}
-                onClick={() => {
-                  triggerHaptic('selection');
-                  setFilter('ugc');
-                }}
-              >
-                Short-Form UGC
-              </button>
-            </div>
-
-            {/* Video Grid */}
-            <div className="video-portfolio-grid" id="videoPortfolioGrid">
-              {filteredVideos.map((video) => (
-                <div
-                  key={video.id}
-                  className="video-project-card"
-                  onClick={() => setActiveModal({ id: video.id, title: video.title })}
-                >
-                  <div className="video-thumbnail-box">
-                    <img src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`} alt={video.title} loading="lazy" />
-                    <div className="video-play-badge">
-                      <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
-                    </div>
-                    <div className="video-duration-pill">{video.duration}</div>
-                  </div>
-                  <div className="video-card-info">
-                    <div className="video-category-tag">{video.categoryLabel}</div>
-                    <h3 className="video-card-title">{video.title}</h3>
-                    <p className="video-card-desc">{video.desc}</p>
-                    <div className="video-author-badge">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
-                      </svg>
-                      <span>{video.author}</span>
-                    </div>
-                  </div>
+          {/* 3 MAIN CATEGORIES SELECTOR (MATCHING HOMEPAGE) */}
+          <div className="services-visual-grid" style={{ marginBottom: '60px' }}>
+            {/* Category 1: Marketing Video */}
+            <div
+              className={`service-visual-card ${activeCategory === 'video' ? 'active-service-card' : ''}`}
+              onClick={() => {
+                triggerHaptic('selection');
+                setActiveCategory('video');
+              }}
+              style={{ cursor: 'pointer' }}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => e.key === 'Enter' && setActiveCategory('video')}
+            >
+              <TiltCard>
+                <div className="service-image-box">
+                  <img src="/assets/service-marketing-video.webp" alt="Marketing Video Production" width="928" height="800" fetchPriority="high" />
                 </div>
-              ))}
+                <div className="service-card-label" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                  <span>Marketing Video</span>
+                  {activeCategory === 'video' && <span className="active-dot">•</span>}
+                </div>
+              </TiltCard>
+            </div>
+
+            {/* Category 2: Logo & Brand Design */}
+            <div
+              className={`service-visual-card ${activeCategory === 'branding' ? 'active-service-card' : ''}`}
+              onClick={() => {
+                triggerHaptic('selection');
+                setActiveCategory('branding');
+              }}
+              style={{ cursor: 'pointer' }}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => e.key === 'Enter' && setActiveCategory('branding')}
+            >
+              <TiltCard>
+                <div className="service-image-box">
+                  <img src="/assets/service-brand-design.gif" alt="Logo & Brand Design" width="928" height="800" fetchPriority="high" />
+                </div>
+                <div className="service-card-label" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                  <span>Logo & Brand Design</span>
+                  {activeCategory === 'branding' && <span className="active-dot">•</span>}
+                </div>
+              </TiltCard>
+            </div>
+
+            {/* Category 3: Website Redesign */}
+            <div
+              className={`service-visual-card ${activeCategory === 'web' ? 'active-service-card' : ''}`}
+              onClick={() => {
+                triggerHaptic('selection');
+                setActiveCategory('web');
+              }}
+              style={{ cursor: 'pointer' }}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => e.key === 'Enter' && setActiveCategory('web')}
+            >
+              <TiltCard>
+                <div className="service-image-box">
+                  <img src="/assets/service-web-redesign.webp" alt="Website Redesign and Development" width="928" height="800" fetchPriority="high" />
+                </div>
+                <div className="service-card-label" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                  <span>Website Redesign</span>
+                  {activeCategory === 'web' && <span className="active-dot">•</span>}
+                </div>
+              </TiltCard>
             </div>
           </div>
+
+          {/* DYNAMIC CATEGORY SHOWCASE */}
+          {activeCategory === 'video' && (
+            <div className="video-portfolio-section" id="video-portfolio" style={{ marginBottom: '80px' }}>
+              <div style={{ textAlign: 'center', marginBottom: '32px' }}>
+                <h2 style={{ fontSize: '32px', color: 'var(--c-blue)', fontWeight: 600, marginBottom: '10px' }}>Featured Video Projects</h2>
+                <p style={{ fontSize: '18px', color: 'var(--c-text-muted)', maxWidth: '680px', margin: '0 auto' }}>
+                  Direct-response VSLs, commercial product ads, and documentary post-production edited by Abdullah Al Rafayet.
+                </p>
+              </div>
+
+              {/* Filter Pills */}
+              <div className="video-filter-bar">
+                <button
+                  className={`video-filter-btn ${filter === 'all' ? 'active' : ''}`}
+                  onClick={() => {
+                    triggerHaptic('selection');
+                    setFilter('all');
+                  }}
+                >
+                  All Projects ({VIDEO_PROJECTS.length})
+                </button>
+                <button
+                  className={`video-filter-btn ${filter === 'vsl' ? 'active' : ''}`}
+                  onClick={() => {
+                    triggerHaptic('selection');
+                    setFilter('vsl');
+                  }}
+                >
+                  VSLs & Sales Ads
+                </button>
+                <button
+                  className={`video-filter-btn ${filter === 'documentary' ? 'active' : ''}`}
+                  onClick={() => {
+                    triggerHaptic('selection');
+                    setFilter('documentary');
+                  }}
+                >
+                  Documentaries & Stories
+                </button>
+              </div>
+
+              {/* Video Grid */}
+              <div className="video-portfolio-grid" id="videoPortfolioGrid">
+                {filteredVideos.map((video) => (
+                  <div
+                    key={video.id}
+                    className="video-project-card"
+                    onClick={() => setActiveModal({ id: video.id, title: video.title })}
+                  >
+                    <div className="video-thumbnail-box">
+                      <img
+                        src={video.id.length === 11 ? `https://img.youtube.com/vi/${video.id}/hqdefault.jpg` : '/assets/service-marketing-video.webp'}
+                        alt={video.title}
+                        loading="lazy"
+                      />
+                      <div className="video-play-badge">
+                        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+                      </div>
+                      <div className="video-duration-pill">{video.duration}</div>
+                    </div>
+                    <div className="video-card-info">
+                      <div className="video-category-tag">{video.categoryLabel}</div>
+                      <h3 className="video-card-title">{video.title}</h3>
+                      <p className="video-card-desc">{video.desc}</p>
+                      <div className="video-author-badge">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                        </svg>
+                        <span>{video.author}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {activeCategory === 'branding' && (
+            <div className="category-empty-showcase" style={{ textAlign: 'center', padding: '60px 24px', background: '#FAFAFA', borderRadius: 'var(--radius-card)', border: '1.5px dashed var(--c-border)', marginBottom: '80px' }}>
+              <div style={{ width: '56px', height: '56px', borderRadius: '50%', backgroundColor: '#EFF6FF', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: 'var(--c-blue)', marginBottom: '16px' }}>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
+                  <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+                  <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+                  <path d="M2 2l7.586 7.586"/>
+                  <circle cx="11" cy="11" r="2"/>
+                </svg>
+              </div>
+              <h3 style={{ fontSize: '26px', color: 'var(--c-blue)', fontWeight: 600, marginBottom: '10px' }}>Logo & Brand Design Projects</h3>
+              <p style={{ fontSize: '17px', color: 'var(--c-text-muted)', maxWidth: '520px', margin: '0 auto 24px', lineHeight: 1.5 }}>
+                Identity design systems and client brand guidelines are currently being curated. Explore our deliverables and process below.
+              </p>
+              <a href="#branding" className="card-button" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                <span>View Brand Deliverables</span>
+                <span>↓</span>
+              </a>
+            </div>
+          )}
+
+          {activeCategory === 'web' && (
+            <div className="category-empty-showcase" style={{ textAlign: 'center', padding: '60px 24px', background: '#FAFAFA', borderRadius: 'var(--radius-card)', border: '1.5px dashed var(--c-border)', marginBottom: '80px' }}>
+              <div style={{ width: '56px', height: '56px', borderRadius: '50%', backgroundColor: '#EFF6FF', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: 'var(--c-blue)', marginBottom: '16px' }}>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
+              </div>
+              <h3 style={{ fontSize: '26px', color: 'var(--c-blue)', fontWeight: 600, marginBottom: '10px' }}>Website Redesign & Frontend Projects</h3>
+              <p style={{ fontSize: '17px', color: 'var(--c-text-muted)', maxWidth: '520px', margin: '0 auto 24px', lineHeight: 1.5 }}>
+                Production web applications and frontend codebases are currently being curated. Explore our technical stack and deliverables below.
+              </p>
+              <a href="#development" className="card-button" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                <span>View Web Deliverables</span>
+                <span>↓</span>
+              </a>
+            </div>
+          )}
 
           {/* Service Item 1: Logo & Brand Design */}
           <div className="about-narrative-row" id="branding" style={{ marginBottom: '80px' }}>

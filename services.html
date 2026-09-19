@@ -32,7 +32,7 @@
       <nav class="main-nav" aria-label="Main Navigation">
         <ul class="nav-list">
           <li><a href="about.html" class="nav-link">About</a></li>
-          <li><a href="services.html" class="nav-link" style="font-weight: 700;">Services</a></li>
+          <li><a href="services.html" class="nav-link active">Services</a></li>
           <li><a href="process.html" class="nav-link">Process</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
@@ -63,8 +63,37 @@
             What we can do for you.
           </h1>
           <p class="subpage-subtext">
-            Three core studio disciplines executed by founders with deep craft. No account managers, no layers of bureaucracy.
+            Three core studio disciplines executed by founders with deep craft. Select a category below to explore projects and capabilities.
           </p>
+        </div>
+
+        <!-- 3 MAIN CATEGORIES SELECTOR (MATCHING HOMEPAGE) -->
+        <div class="services-visual-grid" style="margin-bottom: 60px;">
+          <a href="#video-portfolio" class="service-visual-card active-service-card" style="text-decoration: none;">
+            <div class="service-image-box">
+              <img src="assets/service-marketing-video.webp" alt="Marketing Video Production" width="928" height="800" fetchpriority="high">
+            </div>
+            <div class="service-card-label" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+              <span>Marketing Video</span>
+              <span class="active-dot">•</span>
+            </div>
+          </a>
+          <a href="#branding" class="service-visual-card" style="text-decoration: none;">
+            <div class="service-image-box">
+              <img src="assets/service-brand-design.gif" alt="Logo & Brand Design" width="928" height="800" fetchpriority="high">
+            </div>
+            <div class="service-card-label" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+              <span>Logo & Brand Design</span>
+            </div>
+          </a>
+          <a href="#development" class="service-visual-card" style="text-decoration: none;">
+            <div class="service-image-box">
+              <img src="assets/service-web-redesign.webp" alt="Website Redesign and Development" width="928" height="800" fetchpriority="high">
+            </div>
+            <div class="service-card-label" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+              <span>Website Redesign</span>
+            </div>
+          </a>
         </div>
 
         <!-- Service Item 1: Logo & Brand Design -->
@@ -127,10 +156,9 @@
 
           <!-- Filter Pills -->
           <div class="video-filter-bar">
-            <button class="video-filter-btn active" data-filter="all">All Projects (11)</button>
+            <button class="video-filter-btn active" data-filter="all">All Projects (8)</button>
             <button class="video-filter-btn" data-filter="vsl">VSLs &amp; Sales Ads</button>
             <button class="video-filter-btn" data-filter="documentary">Documentaries &amp; Stories</button>
-            <button class="video-filter-btn" data-filter="ugc">Short-Form UGC</button>
           </div>
 
           <!-- Video Grid Container (Populated dynamically by app.js for 100% speed) -->

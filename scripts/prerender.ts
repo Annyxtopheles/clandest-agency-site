@@ -20,7 +20,8 @@ function ensureDir(filePath: string) {
   }
 }
 
-const headerHtml = `
+function getHeaderHtml(activePath: string = ''): string {
+  return `
     <header class="site-header" id="siteHeader">
       <div class="nav-container">
         <a href="/" class="brand-link" aria-label="Clandest Agency Homepage">
@@ -28,10 +29,10 @@ const headerHtml = `
         </a>
         <nav class="main-nav" aria-label="Main Navigation">
           <ul class="nav-list">
-            <li><a href="/about" class="nav-link">About</a></li>
-            <li><a href="/services" class="nav-link">Services</a></li>
-            <li><a href="/process" class="nav-link">Process</a></li>
-            <li><a href="/contact" class="nav-link">Contact</a></li>
+            <li><a href="/about" class="nav-link ${activePath === '/about' ? 'active' : ''}">About</a></li>
+            <li><a href="/services" class="nav-link ${activePath === '/services' ? 'active' : ''}">Services</a></li>
+            <li><a href="/process" class="nav-link ${activePath === '/process' ? 'active' : ''}">Process</a></li>
+            <li><a href="/contact" class="nav-link ${activePath === '/contact' ? 'active' : ''}">Contact</a></li>
           </ul>
         </nav>
         <div class="nav-action" style="display: flex; align-items: center; gap: 16px;">
@@ -42,6 +43,7 @@ const headerHtml = `
       </div>
     </header>
 `;
+}
 
 const footerHtml = `
     <footer class="site-footer">
@@ -63,7 +65,7 @@ const footerHtml = `
 
 function buildHomeHtml(): string {
   return `
-    ${headerHtml}
+    ${getHeaderHtml('/')}
     <main>
       <section class="hero-section" id="hero">
         <div class="container hero-container">
@@ -147,7 +149,7 @@ function buildHomeHtml(): string {
 
 function buildAboutHtml(): string {
   return `
-    ${headerHtml}
+    ${getHeaderHtml('/about')}
     <main>
       <section class="about-section-new">
         <div class="container">
@@ -268,15 +270,168 @@ function buildAboutHtml(): string {
 
 function buildServicesHtml(): string {
   return `
-    ${headerHtml}
+    ${getHeaderHtml('/services')}
     <main>
       <section class="services-full-section">
         <div class="container">
           <div class="subpage-hero" style="padding-top: 20px;">
-            <h1 class="subpage-title">Everything you need to launch and scale.</h1>
+            <h1 class="subpage-title">What we can do for you.</h1>
             <p class="subpage-subtext">
-              We specialize in three core domains: high-converting marketing video post-production, comprehensive brand design, and modern website engineering.
+              Three core studio disciplines executed by founders with deep craft. Select a category below to explore projects and capabilities.
             </p>
+          </div>
+
+          <!-- 3 Categories Selector -->
+          <div class="services-visual-grid" style="margin-bottom: 60px;">
+            <a href="#video-portfolio" class="service-visual-card active-service-card" style="text-decoration: none;">
+              <div class="service-image-box">
+                <img src="/assets/service-marketing-video.webp" alt="Marketing Video Production" width="928" height="800" fetchpriority="high">
+              </div>
+              <div class="service-card-label" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+                <span>Marketing Video</span>
+                <span class="active-dot">•</span>
+              </div>
+            </a>
+            <a href="#branding" class="service-visual-card" style="text-decoration: none;">
+              <div class="service-image-box">
+                <img src="/assets/service-brand-design.gif" alt="Logo & Brand Design" width="928" height="800" fetchpriority="high">
+              </div>
+              <div class="service-card-label" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+                <span>Logo & Brand Design</span>
+              </div>
+            </a>
+            <a href="#development" class="service-visual-card" style="text-decoration: none;">
+              <div class="service-image-box">
+                <img src="/assets/service-web-redesign.webp" alt="Website Redesign and Development" width="928" height="800" fetchpriority="high">
+              </div>
+              <div class="service-card-label" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+                <span>Website Redesign</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Video Portfolio Grid -->
+          <div class="video-portfolio-section" id="video-portfolio" style="margin-bottom: 80px;">
+            <div style="text-align: center; margin-bottom: 40px;">
+              <h2 style="font-size: 32px; color: var(--c-blue); font-weight: 600; margin-bottom: 8px;">Featured Video Projects</h2>
+              <p style="font-size: 18px; color: var(--c-text-muted); max-width: 600px; margin: 0 auto;">
+                Direct-response VSLs, commercial product ads, and documentary post-production edited by Abdullah Al Rafayet.
+              </p>
+            </div>
+
+            <div class="video-portfolio-grid" id="videoPortfolioGrid">
+              <div class="video-project-card">
+                <div class="video-thumbnail-box">
+                  <img src="https://img.youtube.com/vi/1-wkIHX69tQ/hqdefault.jpg" alt="Healthcare Product VSL (Core Pitch)" loading="lazy">
+                  <div class="video-play-badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></div>
+                  <div class="video-duration-pill">1:31</div>
+                </div>
+                <div class="video-card-info">
+                  <div class="video-category-tag">VSL & Commercial</div>
+                  <h3 class="video-card-title">Healthcare Product VSL (Core Pitch)</h3>
+                  <p class="video-card-desc">Conversion-driven direct response edit featuring synchronized motion typography, B-roll pacing, and clinical proof graphics.</p>
+                  <div class="video-author-badge"><span>Post-Production by Abdullah Al Rafayet</span></div>
+                </div>
+              </div>
+
+              <div class="video-project-card">
+                <div class="video-thumbnail-box">
+                  <img src="https://img.youtube.com/vi/O1KD4GBdw3s/hqdefault.jpg" alt="Healthcare Product VSL (In-Depth)" loading="lazy">
+                  <div class="video-play-badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></div>
+                  <div class="video-duration-pill">2:45</div>
+                </div>
+                <div class="video-card-info">
+                  <div class="video-category-tag">VSL & Commercial</div>
+                  <h3 class="video-card-title">Healthcare Product VSL (In-Depth)</h3>
+                  <p class="video-card-desc">Extended high-ticket explainer with custom sound design, color grading, and dynamic product breakdown.</p>
+                  <div class="video-author-badge"><span>Post-Production by Abdullah Al Rafayet</span></div>
+                </div>
+              </div>
+
+              <div class="video-project-card">
+                <div class="video-thumbnail-box">
+                  <img src="/assets/service-marketing-video.webp" alt="Pet Health Care Product VSL" loading="lazy">
+                  <div class="video-play-badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></div>
+                  <div class="video-duration-pill">2:15</div>
+                </div>
+                <div class="video-card-info">
+                  <div class="video-category-tag">VSL & Commercial</div>
+                  <h3 class="video-card-title">Pet Health Care Product VSL</h3>
+                  <p class="video-card-desc">High-converting direct response video sales letter engineered for pet wellness, dietary nutrition, and veterinary product conversion.</p>
+                  <div class="video-author-badge"><span>Post-Production by Abdullah Al Rafayet</span></div>
+                </div>
+              </div>
+
+              <div class="video-project-card">
+                <div class="video-thumbnail-box">
+                  <img src="https://img.youtube.com/vi/uIE8A5dWw9A/hqdefault.jpg" alt="Healthcare Product (High-Impact 60s)" loading="lazy">
+                  <div class="video-play-badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></div>
+                  <div class="video-duration-pill">1:00</div>
+                </div>
+                <div class="video-card-info">
+                  <div class="video-category-tag">VSL & Commercial</div>
+                  <h3 class="video-card-title">Healthcare Product (High-Impact 60s)</h3>
+                  <p class="video-card-desc">Punchy 60-second direct response cut optimized for paid social ads and rapid hook retention.</p>
+                  <div class="video-author-badge"><span>Post-Production by Abdullah Al Rafayet</span></div>
+                </div>
+              </div>
+
+              <div class="video-project-card">
+                <div class="video-thumbnail-box">
+                  <img src="https://img.youtube.com/vi/-nfffjkbgY0/hqdefault.jpg" alt="Murder Mystery & Narrative Showcase" loading="lazy">
+                  <div class="video-play-badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></div>
+                  <div class="video-duration-pill">0:52</div>
+                </div>
+                <div class="video-card-info">
+                  <div class="video-category-tag">Documentary & Story</div>
+                  <h3 class="video-card-title">Murder Mystery & Narrative Showcase</h3>
+                  <p class="video-card-desc">Atmospheric narrative editing featuring dark color grading, Foley sound design, and tense cinematic pacing.</p>
+                  <div class="video-author-badge"><span>Post-Production by Abdullah Al Rafayet</span></div>
+                </div>
+              </div>
+
+              <div class="video-project-card">
+                <div class="video-thumbnail-box">
+                  <img src="https://img.youtube.com/vi/QwrpMQH9UGE/hqdefault.jpg" alt="Construction & Industry Showcase" loading="lazy">
+                  <div class="video-play-badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></div>
+                  <div class="video-duration-pill">0:49</div>
+                </div>
+                <div class="video-card-info">
+                  <div class="video-category-tag">Documentary & Story</div>
+                  <h3 class="video-card-title">Construction & Industry Showcase</h3>
+                  <p class="video-card-desc">Heavy industrial documentary edit highlighting commercial project milestones with clean lower-third graphics.</p>
+                  <div class="video-author-badge"><span>Post-Production by Abdullah Al Rafayet</span></div>
+                </div>
+              </div>
+
+              <div class="video-project-card">
+                <div class="video-thumbnail-box">
+                  <img src="https://img.youtube.com/vi/_-_xyVjZivE/hqdefault.jpg" alt="History Documentary & Archival Motion" loading="lazy">
+                  <div class="video-play-badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></div>
+                  <div class="video-duration-pill">0:38</div>
+                </div>
+                <div class="video-card-info">
+                  <div class="video-category-tag">Documentary & Story</div>
+                  <h3 class="video-card-title">History Documentary & Archival Motion</h3>
+                  <p class="video-card-desc">Archival image restoration, 2.5D parallax photo animation, and historical storytelling pacing.</p>
+                  <div class="video-author-badge"><span>Post-Production by Abdullah Al Rafayet</span></div>
+                </div>
+              </div>
+
+              <div class="video-project-card">
+                <div class="video-thumbnail-box">
+                  <img src="https://img.youtube.com/vi/mIV8rsaohN4/hqdefault.jpg" alt="Commercial Direct-Response Showreel" loading="lazy">
+                  <div class="video-play-badge"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></div>
+                  <div class="video-duration-pill">1:15</div>
+                </div>
+                <div class="video-card-info">
+                  <div class="video-category-tag">VSL & Commercial</div>
+                  <h3 class="video-card-title">Commercial Direct-Response Showreel</h3>
+                  <p class="video-card-desc">Curated montage of high-converting e-commerce product videos, motion graphics, and sales letters.</p>
+                  <div class="video-author-badge"><span>Post-Production by Abdullah Al Rafayet</span></div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="service-detail-block" id="video">
@@ -371,7 +526,7 @@ function buildServicesHtml(): string {
 
 function buildProcessHtml(): string {
   return `
-    ${headerHtml}
+    ${getHeaderHtml('/process')}
     <main>
       <section class="approach-section">
         <div class="container">
@@ -449,7 +604,7 @@ function buildProcessHtml(): string {
 
 function buildContactHtml(): string {
   return `
-    ${headerHtml}
+    ${getHeaderHtml('/contact')}
     <main>
       <section class="contact-section" id="contact" style="padding-top: 20px;">
         <div class="container">
@@ -495,7 +650,7 @@ function buildContactHtml(): string {
 
 function buildNotFoundHtml(): string {
   return `
-    ${headerHtml}
+    ${getHeaderHtml('')}
     <main>
       <section class="not-found-section" style="min-height: 75vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 24px 80px;">
         <div class="container" style="max-width: 640px;">

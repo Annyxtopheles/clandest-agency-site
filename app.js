@@ -321,39 +321,12 @@ document.addEventListener('DOMContentLoaded', () => {
         author: 'Post-Production by Abdullah Al Rafayet'
       },
       {
-        id: 't9RAkGK49BM',
-        title: 'Female UGC & Testimonial Ad',
-        category: 'ugc',
-        categoryLabel: 'Short-Form UGC',
-        duration: '0:51',
-        desc: 'High-engagement authentic creator testimonial with dynamic subtitles, sound effects, and scroll-stopping hooks.',
-        author: 'Post-Production by Abdullah Al Rafayet'
-      },
-      {
-        id: 'CrxJCEeQ0Os',
-        title: 'Healthcare Product VSL (Benefits Breakdown)',
+        id: 'pet-health-vsl',
+        title: 'Pet Health Care Product VSL',
         category: 'vsl',
         categoryLabel: 'VSL & Commercial',
-        duration: '1:44',
-        desc: 'Fast-paced sales video pacing highlighting competitive advantages, user testimonials, and urgent CTA.',
-        author: 'Post-Production by Abdullah Al Rafayet'
-      },
-      {
-        id: 'bvAdnAvqvCU',
-        title: 'Healthcare Product VSL (Full Narrative)',
-        category: 'vsl',
-        categoryLabel: 'VSL & Commercial',
-        duration: '3:10',
-        desc: 'Comprehensive marketing narrative structured for cold-traffic conversion and high average order value.',
-        author: 'Post-Production by Abdullah Al Rafayet'
-      },
-      {
-        id: 'Mt4w-_jwU_c',
-        title: 'Healthcare Product VSL (Problem / Solution)',
-        category: 'vsl',
-        categoryLabel: 'VSL & Commercial',
-        duration: '2:20',
-        desc: 'Story-driven hook sequence with visual problem agitation and scientific solution validation.',
+        duration: '2:15',
+        desc: 'High-converting direct response video sales letter engineered for pet wellness, dietary nutrition, and veterinary product conversion.',
         author: 'Post-Production by Abdullah Al Rafayet'
       },
       {
@@ -416,11 +389,15 @@ document.addEventListener('DOMContentLoaded', () => {
         card.dataset.videoId = video.id;
         card.dataset.category = video.category;
 
+        const thumbSrc = video.id.length === 11 
+          ? `https://img.youtube.com/vi/${video.id}/hqdefault.jpg` 
+          : 'assets/service-marketing-video.webp';
+
         card.innerHTML = `
           <div class="video-thumbnail-box">
-            <img src="https://img.youtube.com/vi/${video.id}/hqdefault.jpg" alt="${video.title}" loading="lazy">
+            <img src="${thumbSrc}" alt="${video.title}" loading="lazy">
             <div class="video-play-badge">
-              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
             </div>
             <div class="video-duration-pill">${video.duration}</div>
           </div>
@@ -470,14 +447,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeBtn = modalOverlay.querySelector('.video-modal-close-btn');
 
     const openVideoModal = (videoId, title) => {
-      iframeBox.innerHTML = `
-        <iframe 
-          src="https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0" 
-          title="${title}" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-          allowfullscreen>
-        </iframe>
-      `;
+      if (videoId && videoId.length === 11) {
+        iframeBox.innerHTML = `
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0" 
+            title="${title}" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+          </iframe>
+        `;
+      } else {
+        iframeBox.innerHTML = `
+          <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; color: #fff; text-align: center; padding: 32px;">
+            <p style="font-size: 18px; font-weight: 600; margin-bottom: 8px;">${title}</p>
+            <p style="font-size: 14px; opacity: 0.8; max-width: 420px; line-height: 1.5;">This video is currently being updated in our portfolio. Check back shortly!</p>
+          </div>
+        `;
+      }
       modalOverlay.classList.add('active');
       document.body.style.overflow = 'hidden';
     };
