@@ -1914,11 +1914,11 @@ button, input, select, textarea {
 }
 
 .ai-chat-title {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   color: var(--c-blue);
   line-height: 1.2;
-  letter-spacing: -0.2px;
+  letter-spacing: -0.3px;
 }
 
 .ai-chat-header-actions {

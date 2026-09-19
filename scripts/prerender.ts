@@ -71,7 +71,7 @@ function buildHomeHtml(): string {
             <span class="word-lift">We</span> <span class="word-lift">design</span> <span class="word-lift">brands,</span> <span class="word-lift">websites,</span><br><span class="word-lift">and</span> <span class="word-lift">edit</span> <span class="word-lift">marketing</span> <span class="word-lift">videos.</span>
           </h1>
           <p class="hero-subtext">
-            We are four friends who met at Munshiganj Polytechnic Institute. We combine UX design, clean software engineering, and post-production video editing to build digital assets that actually work. Direct access to founders—zero middlemen.
+            We are college friends who met at Munshiganj Polytechnic Institute. We combine UX design, clean software engineering, and post-production video editing to build digital assets that actually work. Direct access to founders—zero middlemen.
           </p>
         </div>
       </section>
@@ -154,7 +154,7 @@ function buildAboutHtml(): string {
           <div class="subpage-hero" style="padding-top: 20px;">
             <h1 class="subpage-title">From Munshiganj Polytechnic to Clandest.</h1>
             <p class="subpage-subtext">
-              We are four friends who met during our college diploma years. We combined our core strengths in UI/UX design, client strategy, software engineering, and cinematic motion graphics to build digital assets that actually work.
+              We are college friends who met during our diploma years. We combined our core strengths in UI/UX design, modern software engineering, and cinematic motion graphics to build digital assets that actually work.
             </p>
           </div>
 
@@ -168,24 +168,24 @@ function buildAboutHtml(): string {
 
           <div class="about-narrative-row reverse">
             <div class="about-narrative-text">
-              <h2 style="font-size: 28px; color: var(--c-blue); margin-bottom: 12px; font-weight: 600;">Leadership in Scouts</h2>
-              <p>During our college years, we dedicated our energy to the <strong>Rover Scouts movement</strong>. Scouting was our testing ground for discipline, accountability, volunteer coordination, and leadership under pressure.</p>
-              <p>Under Md Nafiur Rahman's leadership as Senior Rover Mate, our campus unit won national recognition, including the prestigious <strong>"Serader Sera"</strong> award at the National Rover Moot 2024, placing in the top 16 of 600+ units across Bangladesh.</p>
+              <h2 style="font-size: 28px; color: var(--c-blue); margin-bottom: 12px; font-weight: 600;">Rover Scouts &amp; Discipline</h2>
+              <p>During our college tenure, our core team members earned top positions in the <strong>Bangladesh Rover Scouts</strong> movement, eventually qualifying for the national <em>'Serader Sera'</em> (Top 16 out of 600+ scout groups nationwide).</p>
+              <p>Scouting drilled three non-negotiable principles into us: radical accountability, disciplined execution under tight timelines, and uncompromising respect for teammates and clients.</p>
             </div>
           </div>
 
           <div class="about-narrative-row">
             <div class="about-narrative-text">
-              <h2 style="font-size: 28px; color: var(--c-blue); margin-bottom: 12px; font-weight: 600;">Industrial Mastery</h2>
-              <p>After our diplomas, we expanded our industry experience. Sadman and Rafayet completed their industrial attachment together at <strong>European IT Solutions in Mirpur</strong>.</p>
-              <p>Working side-by-side on commercial graphics, illustration assets, and branding systems, they integrated their design and editing workflows—laying the foundation for Clandest's visual strategy.</p>
+              <h2 style="font-size: 28px; color: var(--c-blue); margin-bottom: 12px; font-weight: 600;">Commercial Attachment</h2>
+              <p>Before launching Clandest, our founders completed intensive commercial industrial attachments at <strong>European IT Solutions</strong> in Mirpur, Dhaka.</p>
+              <p>This experience exposed us to enterprise software workflows, commercial quality benchmarks, and international production standards—knowledge we now pour directly into every client delivery.</p>
             </div>
           </div>
 
-          <div class="founders-profile-section" style="margin-top: 60px;">
-            <h2 class="section-heading-centered">The Founding Team</h2>
-            <p class="hero-subtext" style="font-size: 20px; text-align: center; margin-bottom: 40px;">
-              After gaining real-world industry experience, we reunited to launch Clandest Agency. We work directly with you with zero middlemen.
+          <div class="team-section-container" style="margin-top: 60px;">
+            <h2 class="section-heading-centered" style="margin-bottom: 32px;">The Makers Behind Clandest</h2>
+            <p class="section-subheading-centered" style="margin-bottom: 48px;">
+              Zero middle management or outsourced contractors. You deal directly with the partners who build your assets.
             </p>
 
             <div class="team-members-grid">
@@ -194,12 +194,6 @@ function buildAboutHtml(): string {
                 <div class="team-role">UI/UX & Brand Design</div>
                 <p>Specializes in comprehensive design systems, user flows, and brand architecture.</p>
                 <a href="https://www.linkedin.com/in/sadmanzamankhan/" target="_blank" rel="noreferrer" class="card-button">LinkedIn</a>
-              </article>
-              <article class="team-member-card">
-                <h3 class="team-name">Md. Habibullah</h3>
-                <div class="team-role">Operations & Client Relations</div>
-                <p>Coordinates client communication, project timelines, and operational delivery.</p>
-                <a href="https://www.linkedin.com/in/mdhabibullah-dev/" target="_blank" rel="noreferrer" class="card-button">LinkedIn</a>
               </article>
               <article class="team-member-card">
                 <h3 class="team-name">Abdullah Al Rafayet</h3>
@@ -632,12 +626,6 @@ export function prerender() {
         'name': 'Abdullah Al Rafayet',
         'jobTitle': 'Head of Video Post-Production',
         'alumniOf': 'Munshiganj Polytechnic Institute'
-      },
-      {
-        '@type': 'Person',
-        'name': 'Md Habibullah',
-        'jobTitle': 'Operations & Client Relations',
-        'alumniOf': 'Munshiganj Polytechnic Institute'
       }
     ],
     'hasOfferCatalog': {
@@ -687,7 +675,7 @@ export function prerender() {
   // 2. Prerender /about
   const aboutHtml = updateHtmlTags(templateHtml, {
     title: 'About Us — Clandest Agency | Dhaka, Bangladesh',
-    description: 'Meet the four founders of Clandest Agency. From Munshiganj Polytechnic Institute to Rover Scouts leadership and European IT Solutions attachment.',
+    description: 'Meet the founders of Clandest Agency. From Munshiganj Polytechnic Institute to Rover Scouts leadership and European IT Solutions attachment.',
     url: `${BASE_URL}/about`,
     image: `${BASE_URL}/assets/og-image.png`,
     contentHtml: buildAboutHtml(),

@@ -49,7 +49,7 @@ export const Home: React.FC = () => {
             We design brands, websites,<br />and edit marketing videos.
           </WordLift>
           <p className="hero-subtext">
-            We are <span className="easter-egg" data-tooltip="🎨 2 Designers + 💻 2 Engineers">four friends</span> who met at <span className="easter-egg" data-tooltip="📍 Munshiganj / Dhaka, Bangladesh">Munshiganj Polytechnic Institute</span>. We combine UX design, clean software engineering, and post-production video editing to build digital assets that actually work. Direct access to founders—<span className="easter-egg" data-tooltip="⚡ Sadman, Nafiur, Rafayet & Habibullah">zero middlemen</span>.
+            We are <span className="easter-egg" data-tooltip="🎨 Design + 💻 Code + 🎬 Motion">college friends</span> who met at <span className="easter-egg" data-tooltip="📍 Munshiganj / Dhaka, Bangladesh">Munshiganj Polytechnic Institute</span>. We combine UX design, clean software engineering, and post-production video editing to build digital assets that actually work. Direct access to founders—<span className="easter-egg" data-tooltip="⚡ Sadman, Nafiur & Rafayet">zero middlemen</span>.
           </p>
         </div>
       </section>
@@ -155,14 +155,6 @@ export const Home: React.FC = () => {
 
             <TiltCard className="team-member-card">
               <div className="team-portrait-box">
-                <img src="/assets/team-habibullah.webp" alt="Md. Habibullah" width="672" height="888" loading="lazy" />
-              </div>
-              <h3 className="team-name">Md. Habibullah</h3>
-              <div className="team-role">Client Relationship Manager</div>
-            </TiltCard>
-
-            <TiltCard className="team-member-card">
-              <div className="team-portrait-box">
                 <img src="/assets/team-nafiur.webp" alt="Md. Nafiur Rahman" width="672" height="888" loading="lazy" />
               </div>
               <h3 className="team-name">Md. Nafiur Rahman</h3>
@@ -206,7 +198,7 @@ export const Home: React.FC = () => {
                 </svg>
               </summary>
               <div className="faq-answer">
-                You work directly with our 4 founding partners (Sadman for UI/UX, Nafiur for Web Dev, Rafayet for Video, and Habibullah for Client Relations). We don't have account managers or junior buffers—you always talk to the makers executing the work.
+                You work directly with our 3 founding partners (Sadman for UI/UX, Nafiur for Web Dev, and Rafayet for Video). We don't have account managers or junior buffers—you always talk to the makers executing the work.
               </div>
             </details>
 

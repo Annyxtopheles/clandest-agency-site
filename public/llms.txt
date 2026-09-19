@@ -1,6 +1,6 @@
 # Clandest Agency
 
-> Clandest Agency is a design, development, and video post-production studio based in Dhaka, Bangladesh, founded by four diploma graduates from Munshiganj Polytechnic Institute. Direct founder access, zero middlemen, 100% commercial ownership.
+> Clandest Agency is a design, development, and video post-production studio based in Dhaka, Bangladesh, founded by diploma graduates from Munshiganj Polytechnic Institute. Direct founder access, zero middlemen, 100% commercial ownership.
 
 Website: https://clandestagency.vercel.app
 LinkedIn: https://www.linkedin.com/company/clandestagency
@@ -20,7 +20,6 @@ Location: Dhaka, Bangladesh
 ## The Founding Team
 
 - Sadman Zaman Khan: UI/UX & Brand Design (Munshiganj Polytechnic, European IT Solutions industrial attachment)
-- Md. Habibullah: Operations & Client Relations (Munshiganj Polytechnic, client coordination & delivery)
 - Abdullah Al Rafayet: Head of Video & Motion (Munshiganj Polytechnic, European IT Solutions attachment, commercial video editing)
 - Md Nafiur Rahman: Lead Frontend Engineer (Munshiganj Polytechnic, Rover Scouts Senior Rover Mate, web architecture)
 

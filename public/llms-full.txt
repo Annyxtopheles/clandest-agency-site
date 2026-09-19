@@ -11,16 +11,14 @@ Location: Dhaka, Bangladesh
 
 ## About the Agency
 Clandest Agency is a multidisciplinary digital studio specializing in brand identity design, modern web engineering, and direct-response marketing video post-production.
-The agency was founded by four college friends who met at Munshiganj Polytechnic Institute during their Diploma in Computer Technology (2021–2025). The team combines deep discipline honed through the Rover Scouts movement (winning national recognition including the 'Serader Sera' top 16 award out of 600+ units in Bangladesh) with commercial IT experience gained through attachments at European IT Solutions in Mirpur, Dhaka.
+The agency was founded by college friends who met at Munshiganj Polytechnic Institute during their Diploma in Computer Technology (2021–2025). The team combines deep discipline honed through the Rover Scouts movement (winning national recognition including the 'Serader Sera' top 16 award out of 600+ units in Bangladesh) with commercial IT experience gained through attachments at European IT Solutions in Mirpur, Dhaka.
 
 ## Founders & Core Disciplines
 1. Sadman Zaman Khan — UI/UX & Brand Design
    - Brand identity architecture, vector marks, design systems in Figma, design tokens, responsive typography hierarchies, pitch decks, and commercial packaging.
-2. Md. Habibullah — Operations & Client Relations
-   - Client strategy, project management, milestone tracking, scope definition, and operational logistics.
-3. Abdullah Al Rafayet — Head of Video & Motion
+2. Abdullah Al Rafayet — Head of Video & Motion
    - Direct-response Video Sales Letters (VSLs), scroll-stopping short-form UGC ads (9:16 optimized for TikTok, Instagram Reels, YouTube Shorts), cinematic documentary narratives, After Effects motion graphics, studio color grading, and professional audio mastering.
-4. Md Nafiur Rahman — Lead Frontend Engineer
+3. Md Nafiur Rahman — Lead Frontend Engineer
    - Modern React, TypeScript, Vite, semantic HTML5, Core Web Vitals optimization, zero-bloat styling, static site generation (SSG), search engine indexability, and clean architecture.
 
 ## Deliverables ("What You Walk Away With")

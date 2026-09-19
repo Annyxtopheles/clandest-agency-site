@@ -12,7 +12,7 @@ export const About: React.FC = () => {
               From Munshiganj Polytechnic to Clandest.
             </WordLift>
             <p className="subpage-subtext">
-              We are four friends who met during our college diploma years. We combined our core strengths in UI/UX design, client strategy, software engineering, and cinematic motion graphics to build digital assets that actually work.
+              We are college friends who met during our diploma years. We combined our core strengths in UI/UX design, modern software engineering, and cinematic motion graphics to build digital assets that actually work.
             </p>
           </div>
 
@@ -92,14 +92,6 @@ export const About: React.FC = () => {
                   </svg>
                   LinkedIn
                 </a>
-              </TiltCard>
-
-              <TiltCard className="team-member-card">
-                <div className="team-portrait-box">
-                  <img src="/assets/team-habibullah.webp" alt="Md. Habibullah" width="672" height="888" loading="lazy" />
-                </div>
-                <h3 className="team-name">Md. Habibullah</h3>
-                <div className="team-role">Client Relationship Manager</div>
               </TiltCard>
 
               <TiltCard className="team-member-card">
