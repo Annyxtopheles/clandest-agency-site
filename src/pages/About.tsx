@@ -84,12 +84,34 @@ export const About: React.FC = () => {
                 </div>
                 <h3 className="team-name">Sadman Zaman Khan</h3>
                 <div className="team-role">UI/UX & Brand Design</div>
-                <a href="https://www.linkedin.com/in/sadmanzamankhan/" target="_blank" rel="noreferrer" className="card-button">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                  </svg>
-                  LinkedIn
-                </a>
+                <div className="team-member-links">
+                  <a
+                    href="https://sadmanportfolio.vercel.app/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="team-link-btn portfolio-btn"
+                    aria-label="Sadman Zaman Khan Portfolio"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    Portfolio
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/sadmanzamankhan/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="team-link-btn linkedin-btn"
+                    aria-label="Sadman Zaman Khan LinkedIn"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                    LinkedIn
+                  </a>
+                </div>
               </TiltCard>
 
               <TiltCard className="team-member-card">
@@ -98,12 +120,34 @@ export const About: React.FC = () => {
                 </div>
                 <h3 className="team-name">Md. Nafiur Rahman</h3>
                 <div className="team-role">Web Development & AI</div>
-                <a href="https://www.linkedin.com/in/md-nafiur-rahman/" target="_blank" rel="noreferrer" className="card-button">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                  </svg>
-                  LinkedIn
-                </a>
+                <div className="team-member-links">
+                  <a
+                    href="https://md-nafiur-rahman-portfolio.vercel.app/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="team-link-btn portfolio-btn"
+                    aria-label="Md. Nafiur Rahman Portfolio"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    Portfolio
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/md-nafiur-rahman/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="team-link-btn linkedin-btn"
+                    aria-label="Md. Nafiur Rahman LinkedIn"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                    LinkedIn
+                  </a>
+                </div>
               </TiltCard>
 
               <TiltCard className="team-member-card">
@@ -112,12 +156,34 @@ export const About: React.FC = () => {
                 </div>
                 <h3 className="team-name">Md. Abdullah al Rafayet</h3>
                 <div className="team-role">Video & Motion Graphics</div>
-                <a href="https://www.linkedin.com/in/md-abdullah-245448293/" target="_blank" rel="noreferrer" className="card-button">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                  </svg>
-                  LinkedIn
-                </a>
+                <div className="team-member-links">
+                  <a
+                    href="https://www.youtube.com/@abdullahrafayet1711"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="team-link-btn portfolio-btn"
+                    aria-label="Md. Abdullah al Rafayet Showreel"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    Portfolio
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/md-abdullah-245448293/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="team-link-btn linkedin-btn"
+                    aria-label="Md. Abdullah al Rafayet LinkedIn"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                    LinkedIn
+                  </a>
+                </div>
               </TiltCard>
             </div>
           </div>

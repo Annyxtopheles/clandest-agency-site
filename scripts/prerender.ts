@@ -40,6 +40,51 @@ function getHeaderHtml(activePath: string = ''): string {
             <span class="text">Work with us</span>
           </a>
         </div>
+        <button
+          type="button"
+          class="mobile-menu-toggle"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="mobileNavDrawer"
+        >
+          <span class="hamburger-box">
+            <span class="hamburger-line top"></span>
+            <span class="hamburger-line middle"></span>
+            <span class="hamburger-line bottom"></span>
+          </span>
+        </button>
+      </div>
+      <div id="mobileNavDrawer" class="mobile-nav-drawer" aria-hidden="true">
+        <div class="mobile-nav-inner">
+          <nav class="mobile-nav-menu" aria-label="Mobile Navigation">
+            <ul class="mobile-nav-list">
+              <li><a href="/about" class="mobile-nav-link ${activePath === '/about' ? 'active' : ''}">About</a></li>
+              <li><a href="/services" class="mobile-nav-link ${activePath === '/services' ? 'active' : ''}">Services</a></li>
+              <li><a href="/process" class="mobile-nav-link ${activePath === '/process' ? 'active' : ''}">Process</a></li>
+              <li><a href="/contact" class="mobile-nav-link ${activePath === '/contact' ? 'active' : ''}">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="mobile-nav-cta">
+            <a href="/contact" class="animated-button header-cta-btn mobile-cta-btn">
+              <span class="text">Work with us</span>
+            </a>
+          </div>
+          <div class="mobile-nav-contact-info">
+            <a href="mailto:clandest.agency@gmail.com" class="mobile-contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              clandest.agency@gmail.com
+            </a>
+            <a href="tel:+8801886373307" class="mobile-contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              +880 1886-373307
+            </a>
+          </div>
+        </div>
       </div>
     </header>
 `;
@@ -224,12 +269,22 @@ function buildAboutHtml(): string {
                 </div>
                 <h3 class="team-name">Sadman Zaman Khan</h3>
                 <div class="team-role">UI/UX &amp; Brand Design</div>
-                <a href="https://www.linkedin.com/in/sadmanzamankhan/" target="_blank" rel="noreferrer" class="card-button">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                  </svg>
-                  LinkedIn
-                </a>
+                <div class="team-member-links">
+                  <a href="https://sadmanportfolio.vercel.app/" target="_blank" rel="noreferrer" class="team-link-btn portfolio-btn" aria-label="Sadman Zaman Khan Portfolio">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    Portfolio
+                  </a>
+                  <a href="https://www.linkedin.com/in/sadmanzamankhan/" target="_blank" rel="noreferrer" class="team-link-btn linkedin-btn" aria-label="Sadman Zaman Khan LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                    LinkedIn
+                  </a>
+                </div>
               </div>
 
               <div class="team-member-card">
@@ -238,12 +293,22 @@ function buildAboutHtml(): string {
                 </div>
                 <h3 class="team-name">Md. Nafiur Rahman</h3>
                 <div class="team-role">Web Development &amp; AI</div>
-                <a href="https://www.linkedin.com/in/md-nafiur-rahman/" target="_blank" rel="noreferrer" class="card-button">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                  </svg>
-                  LinkedIn
-                </a>
+                <div class="team-member-links">
+                  <a href="https://md-nafiur-rahman-portfolio.vercel.app/" target="_blank" rel="noreferrer" class="team-link-btn portfolio-btn" aria-label="Md. Nafiur Rahman Portfolio">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    Portfolio
+                  </a>
+                  <a href="https://www.linkedin.com/in/md-nafiur-rahman/" target="_blank" rel="noreferrer" class="team-link-btn linkedin-btn" aria-label="Md. Nafiur Rahman LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                    LinkedIn
+                  </a>
+                </div>
               </div>
 
               <div class="team-member-card">
@@ -252,12 +317,22 @@ function buildAboutHtml(): string {
                 </div>
                 <h3 class="team-name">Md. Abdullah al Rafayet</h3>
                 <div class="team-role">Video &amp; Motion Graphics</div>
-                <a href="https://www.linkedin.com/in/md-abdullah-245448293/" target="_blank" rel="noreferrer" class="card-button">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                  </svg>
-                  LinkedIn
-                </a>
+                <div class="team-member-links">
+                  <a href="https://www.youtube.com/@abdullahrafayet1711" target="_blank" rel="noreferrer" class="team-link-btn portfolio-btn" aria-label="Md. Abdullah al Rafayet Showreel">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    Portfolio
+                  </a>
+                  <a href="https://www.linkedin.com/in/md-abdullah-245448293/" target="_blank" rel="noreferrer" class="team-link-btn linkedin-btn" aria-label="Md. Abdullah al Rafayet LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                    LinkedIn
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -830,19 +905,30 @@ export function prerender() {
         'name': 'Sadman Zaman Khan',
         'jobTitle': 'UI/UX & Brand Design',
         'alumniOf': 'Munshiganj Polytechnic Institute',
-        'sameAs': 'https://sadmanportfolio.vercel.app/'
+        'sameAs': [
+          'https://sadmanportfolio.vercel.app/',
+          'https://www.linkedin.com/in/sadmanzamankhan/'
+        ]
       },
       {
         '@type': 'Person',
         'name': 'Md Nafiur Rahman',
         'jobTitle': 'Lead Frontend Engineer',
-        'alumniOf': 'Munshiganj Polytechnic Institute'
+        'alumniOf': 'Munshiganj Polytechnic Institute',
+        'sameAs': [
+          'https://md-nafiur-rahman-portfolio.vercel.app/',
+          'https://www.linkedin.com/in/md-nafiur-rahman/'
+        ]
       },
       {
         '@type': 'Person',
         'name': 'Abdullah Al Rafayet',
         'jobTitle': 'Head of Video Post-Production',
-        'alumniOf': 'Munshiganj Polytechnic Institute'
+        'alumniOf': 'Munshiganj Polytechnic Institute',
+        'sameAs': [
+          'https://www.youtube.com/@abdullahrafayet1711',
+          'https://www.linkedin.com/in/md-abdullah-245448293/'
+        ]
       }
     ],
     'hasOfferCatalog': {

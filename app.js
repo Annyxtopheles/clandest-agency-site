@@ -487,5 +487,33 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // =========================================================================
+  // 9. MOBILE NAVIGATION DRAWER
+  // =========================================================================
+  const mobileToggle = document.querySelector('.mobile-menu-toggle');
+  const mobileDrawer = document.getElementById('mobileNavDrawer');
+  if (mobileToggle && mobileDrawer) {
+    const toggleMenu = (open) => {
+      const isOpen = open !== undefined ? open : !mobileDrawer.classList.contains('open');
+      mobileDrawer.classList.toggle('open', isOpen);
+      mobileToggle.classList.toggle('open', isOpen);
+      mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      mobileDrawer.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    };
+
+    mobileToggle.addEventListener('click', () => toggleMenu());
+
+    mobileDrawer.querySelectorAll('.mobile-nav-link, .mobile-cta-btn').forEach((link) => {
+      link.addEventListener('click', () => toggleMenu(false));
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileDrawer.classList.contains('open')) {
+        toggleMenu(false);
+      }
+    });
+  }
 });
 
