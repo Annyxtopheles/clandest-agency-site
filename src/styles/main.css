@@ -669,9 +669,11 @@ button, input, select, textarea {
 
 .team-members-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 28px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
   align-items: stretch;
+  max-width: 1120px;
+  margin: 0 auto;
 }
 
 .team-member-card {
@@ -1435,8 +1437,17 @@ button, input, select, textarea {
   }
 
   .team-members-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 36px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .team-member-card {
+    flex: 1 1 280px;
+    max-width: 360px;
   }
 
   .trust-grid {
@@ -1515,8 +1526,16 @@ button, input, select, textarea {
   }
 
   .team-members-grid {
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 24px;
+    margin: 0 auto;
+  }
+
+  .team-member-card {
+    flex: 1 1 260px;
+    max-width: 340px;
   }
 
   .form-row-2col {
@@ -1557,9 +1576,17 @@ button, input, select, textarea {
 
 @media (max-width: 480px) {
   .team-members-grid {
-    grid-template-columns: 1fr;
-    max-width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    max-width: 320px;
     margin: 0 auto;
+  }
+
+  .team-members-grid .team-member-card {
+    width: 100%;
+    max-width: 320px;
   }
 
   .footer-social-badges {

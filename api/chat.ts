@@ -1,4 +1,5 @@
 import { GoogleGenAI } from '@google/genai';
+import { PRIVATE_KNOWLEDGE_BASE } from './knowledge';
 
 const SYSTEM_INSTRUCTION = `You are the official AI Assistant for Clandest Agency (clandest.agency), a high-end digital studio based in Dhaka, Bangladesh.
 Your goal is to answer visitor inquiries politely, accurately, concisely, and helpfully based strictly on the agency's real information below.
@@ -37,6 +38,8 @@ Your goal is to answer visitor inquiries politely, accurately, concisely, and he
 - Use Markdown (bold, bullet points) for readability.
 - When relevant, politely encourage visitors to submit a message on the Contact page (/contact) or reach out on WhatsApp for a custom proposal.
 - If asked about something outside Clandest's expertise, politely explain what Clandest does and offer to connect them with the team.`;
+
+const FULL_SYSTEM_INSTRUCTION = `${SYSTEM_INSTRUCTION}\n\n${PRIVATE_KNOWLEDGE_BASE}`;
 
 export default async function handler(req: any, res: any) {
   res.setHeader('Access-Control-Allow-Credentials', 'true');
@@ -103,7 +106,7 @@ export default async function handler(req: any, res: any) {
         model: 'gemini-3.6-flash',
         contents,
         config: {
-          systemInstruction: SYSTEM_INSTRUCTION,
+          systemInstruction: FULL_SYSTEM_INSTRUCTION,
           temperature: 0.4,
         }
       });
@@ -112,7 +115,7 @@ export default async function handler(req: any, res: any) {
         model: 'gemini-2.5-flash',
         contents,
         config: {
-          systemInstruction: SYSTEM_INSTRUCTION,
+          systemInstruction: FULL_SYSTEM_INSTRUCTION,
           temperature: 0.4,
         }
       });
