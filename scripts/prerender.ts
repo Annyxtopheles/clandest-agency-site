@@ -164,49 +164,99 @@ function buildAboutHtml(): string {
               <p>Our journey began at <strong>Munshiganj Polytechnic Institute</strong>, where we met for the first time while pursuing our Diplomas in Computer Technology (2021–2025). Coming from different backgrounds, contexts, and histories, we discovered a shared passion for visual aesthetics, robust engineering, and creative media.</p>
               <p>Collaborating on projects throughout our studies, we established a seamless team shorthand and standard of work.</p>
             </div>
+            <div class="about-image-box">
+              <img
+                src="/assets/team-main.webp"
+                alt="Clandest Agency Founders at Munshiganj Polytechnic"
+                width="1024"
+                height="769"
+                loading="lazy"
+              />
+            </div>
           </div>
 
           <div class="about-narrative-row reverse">
+            <div class="about-image-box">
+              <img
+                src="/assets/about-scouts.webp"
+                alt="Bangladesh Rover Scouts Unit Serader Sera National Award"
+                width="1024"
+                height="853"
+                loading="lazy"
+              />
+            </div>
             <div class="about-narrative-text">
-              <h2 style="font-size: 28px; color: var(--c-blue); margin-bottom: 12px; font-weight: 600;">Rover Scouts &amp; Discipline</h2>
-              <p>During our college tenure, our core team members earned top positions in the <strong>Bangladesh Rover Scouts</strong> movement, eventually qualifying for the national <em>'Serader Sera'</em> (Top 16 out of 600+ scout groups nationwide).</p>
-              <p>Scouting drilled three non-negotiable principles into us: radical accountability, disciplined execution under tight timelines, and uncompromising respect for teammates and clients.</p>
+              <h2 style="font-size: 28px; color: var(--c-blue); margin-bottom: 12px; font-weight: 600;">Leadership in Scouts</h2>
+              <p>During our college years, we dedicated our energy to the <strong>Rover Scouts movement</strong>. Scouting was our testing ground for discipline, accountability, volunteer coordination, and leadership under pressure.</p>
+              <p>Under Md Nafiur Rahman's leadership as Senior Rover Mate, our campus unit won national recognition, including the prestigious <strong>"Serader Sera"</strong> award at the National Rover Moot 2024, placing in the top 16 of 600+ units across Bangladesh.</p>
             </div>
           </div>
 
           <div class="about-narrative-row">
             <div class="about-narrative-text">
-              <h2 style="font-size: 28px; color: var(--c-blue); margin-bottom: 12px; font-weight: 600;">Commercial Attachment</h2>
-              <p>Before launching Clandest, our founders completed intensive commercial industrial attachments at <strong>European IT Solutions</strong> in Mirpur, Dhaka.</p>
-              <p>This experience exposed us to enterprise software workflows, commercial quality benchmarks, and international production standards—knowledge we now pour directly into every client delivery.</p>
+              <h2 style="font-size: 28px; color: var(--c-blue); margin-bottom: 12px; font-weight: 600;">Industrial Mastery</h2>
+              <p>After our diplomas, we expanded our industry experience. Sadman and Rafayet completed their industrial attachment together at <strong>European IT Solutions in Mirpur</strong>.</p>
+              <p>Working side-by-side on commercial graphics, illustration assets, and branding systems, they integrated their design and editing workflows—laying the foundation for Clandest's visual strategy.</p>
+            </div>
+            <div class="about-image-box">
+              <img
+                src="/assets/about-industrial.webp"
+                alt="Clandest Agency Founders"
+                width="1024"
+                height="768"
+                loading="lazy"
+              />
             </div>
           </div>
 
-          <div class="team-section-container" style="margin-top: 60px;">
-            <h2 class="section-heading-centered" style="margin-bottom: 32px;">The Makers Behind Clandest</h2>
-            <p class="section-subheading-centered" style="margin-bottom: 48px;">
-              Zero middle management or outsourced contractors. You deal directly with the partners who build your assets.
+          <div class="founders-profile-section" style="margin-top: 60px;">
+            <h2 class="section-heading-centered">The Founding Team</h2>
+            <p class="hero-subtext" style="font-size: 20px; text-align: center; margin-bottom: 40px;">
+              After gaining real-world industry experience, we reunited to launch Clandest Agency. We work directly with you with zero middlemen.
             </p>
 
             <div class="team-members-grid">
-              <article class="team-member-card">
+              <div class="team-member-card">
+                <div class="team-portrait-box">
+                  <img src="/assets/team-sadman.webp" alt="Sadman Zaman Khan" width="672" height="888" loading="lazy" />
+                </div>
                 <h3 class="team-name">Sadman Zaman Khan</h3>
-                <div class="team-role">UI/UX & Brand Design</div>
-                <p>Specializes in comprehensive design systems, user flows, and brand architecture.</p>
-                <a href="https://www.linkedin.com/in/sadmanzamankhan/" target="_blank" rel="noreferrer" class="card-button">LinkedIn</a>
-              </article>
-              <article class="team-member-card">
-                <h3 class="team-name">Abdullah Al Rafayet</h3>
-                <div class="team-role">Head of Video & Motion</div>
-                <p>Directs high-converting VSLs, commercial video ads, sound design, and color grading.</p>
-                <a href="https://www.linkedin.com/in/abdullah-al-rafayet/" target="_blank" rel="noreferrer" class="card-button">LinkedIn</a>
-              </article>
-              <article class="team-member-card">
-                <h3 class="team-name">Md Nafiur Rahman</h3>
-                <div class="team-role">Lead Frontend Engineer</div>
-                <p>Builds responsive, high-performance web applications with semantic architecture.</p>
-                <a href="https://www.linkedin.com/in/nafiur-rahman-5047b925b/" target="_blank" rel="noreferrer" class="card-button">LinkedIn</a>
-              </article>
+                <div class="team-role">UI/UX &amp; Brand Design</div>
+                <a href="https://www.linkedin.com/in/sadmanzamankhan/" target="_blank" rel="noreferrer" class="card-button">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  </svg>
+                  LinkedIn
+                </a>
+              </div>
+
+              <div class="team-member-card">
+                <div class="team-portrait-box">
+                  <img src="/assets/team-nafiur.webp" alt="Md. Nafiur Rahman" width="672" height="888" loading="lazy" />
+                </div>
+                <h3 class="team-name">Md. Nafiur Rahman</h3>
+                <div class="team-role">Web Development &amp; AI</div>
+                <a href="https://www.linkedin.com/in/md-nafiur-rahman/" target="_blank" rel="noreferrer" class="card-button">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  </svg>
+                  LinkedIn
+                </a>
+              </div>
+
+              <div class="team-member-card">
+                <div class="team-portrait-box">
+                  <img src="/assets/team-rafayet.webp" alt="Md. Abdullah al Rafayet" width="672" height="888" loading="lazy" />
+                </div>
+                <h3 class="team-name">Md. Abdullah al Rafayet</h3>
+                <div class="team-role">Video &amp; Motion Graphics</div>
+                <a href="https://www.linkedin.com/in/md-abdullah-245448293/" target="_blank" rel="noreferrer" class="card-button">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  </svg>
+                  LinkedIn
+                </a>
+              </div>
             </div>
           </div>
         </div>

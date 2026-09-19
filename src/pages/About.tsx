@@ -16,11 +16,6 @@ export const About: React.FC = () => {
             </p>
           </div>
 
-          {/* Main Team Banner */}
-          <div className="about-main-image" style={{ marginBottom: '70px', borderRadius: 'var(--radius-card)', overflow: 'hidden', border: '1px solid var(--c-border)' }}>
-            <img src="/assets/team-main.webp" alt="Clandest Agency Founders at Munshiganj" width="1024" height="769" style={{ width: '100%', maxHeight: '550px', objectFit: 'cover', display: 'block' }} />
-          </div>
-
           {/* Narrative Row 1: Origin */}
           <div className="about-narrative-row">
             <div className="about-narrative-text">
@@ -28,25 +23,27 @@ export const About: React.FC = () => {
               <p>Our journey began at <strong>Munshiganj Polytechnic Institute</strong>, where we met for the first time while pursuing our Diplomas in Computer Technology (2021–2025). Coming from different backgrounds, contexts, and histories, we discovered a shared passion for visual aesthetics, robust engineering, and creative media.</p>
               <p>Collaborating on projects throughout our studies, we established a seamless team shorthand and standard of work.</p>
             </div>
-            <div className="about-image-placeholder">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <rect x="3" y="3" width="18" height="18" rx="2" />
-                <circle cx="8.5" cy="8.5" r="1.5" />
-                <path d="M21 15l-5-5L5 21" />
-              </svg>
-              <span>Munshiganj Polytechnic Diploma Years</span>
+            <div className="about-image-box">
+              <img
+                src="/assets/team-main.webp"
+                alt="Clandest Agency Founders at Munshiganj Polytechnic"
+                width="1024"
+                height="769"
+                loading="lazy"
+              />
             </div>
           </div>
 
           {/* Narrative Row 2: Scouting */}
           <div className="about-narrative-row reverse">
-            <div className="about-image-placeholder">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <rect x="3" y="3" width="18" height="18" rx="2" />
-                <circle cx="8.5" cy="8.5" r="1.5" />
-                <path d="M21 15l-5-5L5 21" />
-              </svg>
-              <span>Rover Scouts Unit Leadership</span>
+            <div className="about-image-box">
+              <img
+                src="/assets/about-scouts.webp"
+                alt="Bangladesh Rover Scouts Unit Serader Sera National Award"
+                width="1024"
+                height="853"
+                loading="lazy"
+              />
             </div>
             <div className="about-narrative-text">
               <h2 style={{ fontSize: '28px', color: 'var(--c-blue)', marginBottom: '12px', fontWeight: 600 }}>Leadership in Scouts</h2>
@@ -62,13 +59,14 @@ export const About: React.FC = () => {
               <p>After our diplomas, we expanded our industry experience. Sadman and Rafayet completed their industrial attachment together at <strong>European IT Solutions in Mirpur</strong>.</p>
               <p>Working side-by-side on commercial graphics, illustration assets, and branding systems, they integrated their design and editing workflows—laying the foundation for Clandest's visual strategy.</p>
             </div>
-            <div className="about-image-placeholder">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <rect x="3" y="3" width="18" height="18" rx="2" />
-                <circle cx="8.5" cy="8.5" r="1.5" />
-                <path d="M21 15l-5-5L5 21" />
-              </svg>
-              <span>European IT Solutions Attachment</span>
+            <div className="about-image-box">
+              <img
+                src="/assets/about-industrial.webp"
+                alt="Clandest Agency Founders"
+                width="1024"
+                height="768"
+                loading="lazy"
+              />
             </div>
           </div>
 
