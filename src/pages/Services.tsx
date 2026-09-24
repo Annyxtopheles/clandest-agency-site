@@ -105,10 +105,10 @@ export const Services: React.FC = () => {
         <div className="container">
           <div className="subpage-hero" style={{ paddingTop: '20px' }}>
             <WordLift as="h1" className="subpage-title">
-              What we can do for you.
+              Creative Agency Services & Capabilities
             </WordLift>
             <p className="subpage-subtext">
-              Three core studio disciplines executed by founders with deep craft. Select a category below to explore projects and capabilities.
+              From creative brand design systems and high-converting marketing video post-production to modern custom web engineering. Work directly with founders with deep craft.
             </p>
           </div>
 
@@ -185,9 +185,9 @@ export const Services: React.FC = () => {
           {activeCategory === 'video' && (
             <div className="video-portfolio-section" id="video-portfolio" style={{ marginBottom: '80px' }}>
               <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-                <h2 style={{ fontSize: '32px', color: 'var(--c-blue)', fontWeight: 600, marginBottom: '10px' }}>Featured Video Projects</h2>
+                <h2 style={{ fontSize: '32px', color: 'var(--c-blue)', fontWeight: 600, marginBottom: '10px' }}>Direct-Response Marketing Video & Motion</h2>
                 <p style={{ fontSize: '18px', color: 'var(--c-text-muted)', maxWidth: '680px', margin: '0 auto' }}>
-                  Direct-response VSLs, commercial product ads, and documentary post-production edited by Abdullah Al Rafayet.
+                  High-converting VSLs, commercial product ads, documentary post-production, and motion graphics edited by Abdullah Al Rafayet.
                 </p>
               </div>
 
@@ -289,10 +289,10 @@ export const Services: React.FC = () => {
                 Portfolio in Curation
               </span>
               <h2 style={{ fontSize: '32px', color: 'var(--c-blue)', fontWeight: 600, marginBottom: '12px' }}>
-                Logo & Brand Design Projects
+                Creative Brand Design & Identity Systems
               </h2>
-              <p style={{ fontSize: '18px', color: 'var(--c-text)', maxWidth: '540px', margin: '0 auto 36px', lineHeight: 1.5, textWrap: 'pretty' }}>
-                Client brand systems, vector icon sets, and identity guidelines designed by Sadman Zaman Khan are currently being curated for showcase.
+              <p style={{ fontSize: '18px', color: 'var(--c-text)', maxWidth: '620px', margin: '0 auto 36px', lineHeight: 1.5, textWrap: 'pretty' }}>
+                As a dedicated brand design studio, we build complete visual identities, scalable Figma design systems, and UI/UX assets designed by Sadman Zaman Khan to elevate modern startups and enterprises.
               </p>
 
               <div className="category-deliverables-box" style={{ paddingTop: '28px', borderTop: '1px solid var(--c-border)' }}>
@@ -327,10 +327,10 @@ export const Services: React.FC = () => {
                 Portfolio in Curation
               </span>
               <h2 style={{ fontSize: '32px', color: 'var(--c-blue)', fontWeight: 600, marginBottom: '12px' }}>
-                Website Redesign & Frontend Projects
+                Web Design Agency & Custom Frontend Engineering
               </h2>
-              <p style={{ fontSize: '18px', color: 'var(--c-text)', maxWidth: '540px', margin: '0 auto 36px', lineHeight: 1.5, textWrap: 'pretty' }}>
-                Production web applications, high-performance landing pages, and responsive TypeScript codebases engineered by Md. Nafiur Rahman are currently being curated for showcase.
+              <p style={{ fontSize: '18px', color: 'var(--c-text)', maxWidth: '620px', margin: '0 auto 36px', lineHeight: 1.5, textWrap: 'pretty' }}>
+                A high-performance web development studio delivering responsive, lightning-fast web applications, SEO-optimized landing pages, and clean TypeScript/React codebases engineered by Md. Nafiur Rahman.
               </p>
 
               <div className="category-deliverables-box" style={{ paddingTop: '28px', borderTop: '1px solid var(--c-border)' }}>

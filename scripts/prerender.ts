@@ -350,9 +350,9 @@ function buildServicesHtml(): string {
       <section class="services-full-section">
         <div class="container">
           <div class="subpage-hero" style="padding-top: 20px;">
-            <h1 class="subpage-title">What we can do for you.</h1>
+            <h1 class="subpage-title">Creative Agency Services & Capabilities</h1>
             <p class="subpage-subtext">
-              Three core studio disciplines executed by founders with deep craft. Select a category below to explore projects and capabilities.
+              From creative brand design systems and high-converting marketing video post-production to modern custom web engineering. Work directly with founders with deep craft.
             </p>
           </div>
 
@@ -387,9 +387,9 @@ function buildServicesHtml(): string {
           <!-- Video Portfolio Grid -->
           <div class="video-portfolio-section" id="video-portfolio" style="margin-bottom: 80px;">
             <div style="text-align: center; margin-bottom: 40px;">
-              <h2 style="font-size: 32px; color: var(--c-blue); font-weight: 600; margin-bottom: 8px;">Featured Video Projects</h2>
-              <p style="font-size: 18px; color: var(--c-text-muted); max-width: 600px; margin: 0 auto;">
-                Direct-response VSLs, commercial product ads, and documentary post-production edited by Abdullah Al Rafayet.
+              <h2 style="font-size: 32px; color: var(--c-blue); font-weight: 600; margin-bottom: 8px;">Direct-Response Marketing Video & Motion</h2>
+              <p style="font-size: 18px; color: var(--c-text-muted); max-width: 680px; margin: 0 auto;">
+                High-converting VSLs, commercial product ads, documentary post-production, and motion graphics edited by Abdullah Al Rafayet.
               </p>
             </div>
 
@@ -509,9 +509,9 @@ function buildServicesHtml(): string {
           </div>
 
           <div class="service-detail-block" id="video">
-            <h2 style="font-size: 32px; color: var(--c-blue); margin-bottom: 16px;">1. Marketing Video Post-Production</h2>
+            <h2 style="font-size: 32px; color: var(--c-blue); margin-bottom: 16px;">1. Direct-Response Marketing Video & Motion Post-Production</h2>
             <p style="font-size: 18px; line-height: 1.6; max-width: 800px; margin-bottom: 16px;">
-              Led by Abdullah Al Rafayet. We produce high-converting Video Sales Letters (VSLs), scroll-stopping short-form UGC ads, atmospheric narrative documentaries, and motion graphics designed to maximize viewer retention and direct-response sales.
+              Led by Abdullah Al Rafayet. As a specialized video post-production studio, we produce high-converting Video Sales Letters (VSLs), scroll-stopping short-form UGC ads, atmospheric narrative documentaries, and motion graphics designed to maximize viewer retention and direct-response sales. Explore our <a href="/process" style="color: var(--c-blue); text-decoration: underline;">4-step production process</a> or <a href="/contact" style="color: var(--c-blue); text-decoration: underline;">request a project quote</a>.
             </p>
             <div class="deliverables-container">
               <h3 class="deliverables-title">What you walk away with</h3>
@@ -537,9 +537,9 @@ function buildServicesHtml(): string {
           </div>
 
           <div class="service-detail-block" id="branding">
-            <h2 style="font-size: 32px; color: var(--c-blue); margin-bottom: 16px;">2. Logo & Brand Identity Design</h2>
+            <h2 style="font-size: 32px; color: var(--c-blue); margin-bottom: 16px;">2. Creative Brand Design Agency & Identity Systems</h2>
             <p style="font-size: 18px; line-height: 1.6; max-width: 800px; margin-bottom: 16px;">
-              Led by Sadman Zaman Khan. We build complete, versatile visual identity systems from the ground up: primary and secondary brandmarks, color palettes, typography hierarchy, and scalable brand guidelines.
+              Led by Sadman Zaman Khan. As a dedicated brand design studio, we build complete visual identity systems and UI/UX design from the ground up: primary and secondary brandmarks, complete Figma design systems, typography hierarchies, and scalable brand guidelines. Learn more about our <a href="/process" style="color: var(--c-blue); text-decoration: underline;">design workflow</a> or <a href="/contact" style="color: var(--c-blue); text-decoration: underline;">book an intro consultation</a>.
             </p>
             <div class="deliverables-container">
               <h3 class="deliverables-title">What you walk away with</h3>
@@ -565,9 +565,9 @@ function buildServicesHtml(): string {
           </div>
 
           <div class="service-detail-block" id="development">
-            <h2 style="font-size: 32px; color: var(--c-blue); margin-bottom: 16px;">3. Website Redesign & Frontend Development</h2>
+            <h2 style="font-size: 32px; color: var(--c-blue); margin-bottom: 16px;">3. Web Design Agency & Custom Frontend Engineering</h2>
             <p style="font-size: 18px; line-height: 1.6; max-width: 800px; margin-bottom: 16px;">
-              Led by Md Nafiur Rahman. We engineer ultra-fast, responsive websites with semantic HTML5, clean CSS/Tailwind, and modern TypeScript. Zero bloated plugins, sub-second load speeds, and full search engine indexability.
+              Led by Md Nafiur Rahman. A high-performance web development studio engineering responsive, lightning-fast web applications with clean TypeScript, React, and semantic HTML5/Tailwind. Zero bloated plugins, sub-second load speeds, and enterprise-grade SEO indexability. Review our <a href="/process" style="color: var(--c-blue); text-decoration: underline;">development stages</a> or <a href="/contact" style="color: var(--c-blue); text-decoration: underline;">start your web project</a>.
             </p>
             <div class="deliverables-container">
               <h3 class="deliverables-title">What you walk away with</h3>
@@ -727,6 +727,67 @@ function buildContactHtml(): string {
                 <span class="text">Send Message</span>
               </button>
             </form>
+          </div>
+
+          <!-- Studio Operations & Location Signals -->
+          <div style="margin-top: 70px; border-top: 1px solid var(--c-border); padding-top: 50px;">
+            <div style="text-align: center; margin-bottom: 36px;">
+              <h2 style="font-size: 28px; color: var(--c-blue); font-weight: 600; margin-bottom: 10px;">
+                Direct Access & Studio Operations
+              </h2>
+              <p style="font-size: 17px; color: var(--c-text-muted); max-width: 640px; margin: 0 auto; line-height: 1.5;">
+                We operate as an agile creative studio headquartered in Dhaka, Bangladesh, collaborating with founders, startups, and marketing leaders globally.
+              </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-bottom: 60px;">
+              <div style="background: #FFFFFF; border: 1px solid var(--c-border); border-radius: var(--radius-card); padding: 28px 24px;">
+                <h3 style="font-size: 18px; font-weight: 600; color: var(--c-blue); margin-bottom: 8px;">Studio Headquarters</h3>
+                <p style="font-size: 15px; color: var(--c-text); line-height: 1.5; margin: 0;">
+                  Dhaka, Bangladesh (UTC+6). We coordinate seamless timezone overlap for clients across North America, Europe, and Asia.
+                </p>
+              </div>
+              <div style="background: #FFFFFF; border: 1px solid var(--c-border); border-radius: var(--radius-card); padding: 28px 24px;">
+                <h3 style="font-size: 18px; font-weight: 600; color: var(--c-blue); margin-bottom: 8px;">Response Time</h3>
+                <p style="font-size: 15px; color: var(--c-text); line-height: 1.5; margin: 0;">
+                  Guaranteed response within 12 hours on business days (Sunday–Thursday). Direct communication with founders—never account managers.
+                </p>
+              </div>
+              <div style="background: #FFFFFF; border: 1px solid var(--c-border); border-radius: var(--radius-card); padding: 28px 24px;">
+                <h3 style="font-size: 18px; font-weight: 600; color: var(--c-blue); margin-bottom: 8px;">Sprint Engagements</h3>
+                <p style="font-size: 15px; color: var(--c-text); line-height: 1.5; margin: 0;">
+                  We take on a limited number of client projects per month to maintain craftsmanship, focus, and rapid turnaround speeds.
+                </p>
+              </div>
+            </div>
+
+            <div style="text-align: center; margin-bottom: 28px;">
+              <h2 style="font-size: 28px; color: var(--c-blue); font-weight: 600; margin-bottom: 10px;">
+                Project Scopes & Frequently Asked Questions
+              </h2>
+              <p style="font-size: 17px; color: var(--c-text-muted); max-width: 640px; margin: 0 auto; line-height: 1.5;">
+                Key information on onboarding, turnaround times, and scope commitments before we kick off.
+              </p>
+            </div>
+
+            <div class="faq-accordion-container" style="max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px;">
+              <details open style="background: #FFFFFF; border: 1px solid var(--c-border, #E5E7EB); border-radius: 16px; padding: 20px 24px;">
+                <summary style="font-size: 20px; font-weight: 600; color: var(--c-blue); cursor: pointer; margin-bottom: 10px;">How fast can we start a project?</summary>
+                <p style="font-size: 17px; line-height: 1.65; color: var(--c-text-muted);">We can typically kick off within 3 to 5 business days after our initial discovery call and scope sign-off. We prepare onboarding roadmaps and milestone timelines immediately upon confirmation.</p>
+              </details>
+              <details style="background: #FFFFFF; border: 1px solid var(--c-border, #E5E7EB); border-radius: 16px; padding: 20px 24px;">
+                <summary style="font-size: 20px; font-weight: 600; color: var(--c-blue); cursor: pointer; margin-bottom: 10px;">What are your turnaround times for each service?</summary>
+                <p style="font-size: 17px; line-height: 1.65; color: var(--c-text-muted);">Turnaround times depend on scope: Direct-response marketing video edits (VSLs, UGC cuts) deliver in 3 to 7 days. Brand identity design systems take 1 to 2 weeks. Custom website redesigns and frontend engineering sprints take 2 to 4 weeks from kickoff to deployment.</p>
+              </details>
+              <details style="background: #FFFFFF; border: 1px solid var(--c-border, #E5E7EB); border-radius: 16px; padding: 20px 24px;">
+                <summary style="font-size: 20px; font-weight: 600; color: var(--c-blue); cursor: pointer; margin-bottom: 10px;">How do project payments and contracts work?</summary>
+                <p style="font-size: 17px; line-height: 1.65; color: var(--c-text-muted);">We work on milestone-based fixed pricing: typically 50% upfront to reserve sprint capacity and 50% upon final delivery and client satisfaction. You receive full commercial ownership and master files upon final sign-off with zero surprise invoices.</p>
+              </details>
+              <details style="background: #FFFFFF; border: 1px solid var(--c-border, #E5E7EB); border-radius: 16px; padding: 20px 24px;">
+                <summary style="font-size: 20px; font-weight: 600; color: var(--c-blue); cursor: pointer; margin-bottom: 10px;">Can we schedule a call before sending a brief?</summary>
+                <p style="font-size: 17px; line-height: 1.65; color: var(--c-text-muted);">Yes! You can book a direct 15-minute intro conversation via Google Meet or message us on WhatsApp (+880 1869-504388) to discuss your vision directly with our founders.</p>
+              </details>
+            </div>
           </div>
         </div>
       </section>
@@ -978,7 +1039,7 @@ export function prerender() {
   // 2. Prerender /about
   const aboutHtml = updateHtmlTags(templateHtml, {
     title: 'About Us — Clandest Agency | Dhaka, Bangladesh',
-    description: 'Meet the founders of Clandest Agency. From Munshiganj Polytechnic Institute to Rover Scouts leadership and European IT Solutions attachment.',
+    description: 'Meet Clandest: A creative design & branding agency in Dhaka crafting brand systems, custom websites, and direct-response marketing videos.',
     url: `${BASE_URL}/about`,
     image: `${BASE_URL}/assets/og-image.png`,
     contentHtml: buildAboutHtml(),
@@ -994,8 +1055,8 @@ export function prerender() {
 
   // 3. Prerender /services
   const servicesHtml = updateHtmlTags(templateHtml, {
-    title: 'Services & Portfolio — Clandest Agency',
-    description: 'Explore our core capabilities: Direct-response marketing video post-production (VSLs, UGC ads, documentaries), brand identity design, and custom web development.',
+    title: 'Creative Agency Services & Capabilities — Clandest Agency',
+    description: 'Full-service creative branding agency. High-converting marketing video edits, brand design systems, and modern custom web development in Dhaka.',
     url: `${BASE_URL}/services`,
     image: `${BASE_URL}/assets/service-marketing-video.png`,
     contentHtml: buildServicesHtml(),
@@ -1012,7 +1073,7 @@ export function prerender() {
   // 4. Prerender /process
   const processHtml = updateHtmlTags(templateHtml, {
     title: 'Our 4-Step Process & FAQs — Clandest Agency',
-    description: 'A direct, transparent 4-stage collaboration framework from kickoff to live deployment. Explore frequently asked questions regarding scope, timelines, and deliverables.',
+    description: 'Our transparent 4-stage studio framework: discovery, design sprints, custom build, and deployment. Zero middlemen, direct access to founders.',
     url: `${BASE_URL}/process`,
     image: `${BASE_URL}/assets/service-web-redesign.png`,
     contentHtml: buildProcessHtml(),
@@ -1070,14 +1131,48 @@ export function prerender() {
 
   // 5. Prerender /contact
   const contactHtml = updateHtmlTags(templateHtml, {
-    title: 'Contact Us — Clandest Agency | Start a Project',
-    description: 'Get in touch directly with the founders of Clandest Agency for brand identity, custom web development, or video post-production.',
+    title: 'Contact Us — Clandest Agency | Direct Studio Access',
+    description: 'Work directly with the founders of Clandest Agency. Book a 15-minute discovery call for brand identity, custom web development, or marketing video.',
     url: `${BASE_URL}/contact`,
     image: `${BASE_URL}/assets/og-image.png`,
     contentHtml: buildContactHtml(),
     jsonLd: {
       ...sharedOrgLd,
-      '@type': 'ContactPage'
+      '@type': 'ContactPage',
+      'mainEntity': [
+        {
+          '@type': 'Question',
+          'name': 'How fast can we start a project?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'We can typically kick off within 3 to 5 business days after our initial discovery call and scope sign-off. We prepare onboarding roadmaps and milestone timelines immediately upon confirmation.'
+          }
+        },
+        {
+          '@type': 'Question',
+          'name': 'What are your turnaround times for each service?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'Turnaround times depend on scope: Direct-response marketing video edits (VSLs, UGC cuts) deliver in 3 to 7 days. Brand identity design systems take 1 to 2 weeks. Custom website redesigns and frontend engineering sprints take 2 to 4 weeks from kickoff to deployment.'
+          }
+        },
+        {
+          '@type': 'Question',
+          'name': 'How do project payments and contracts work?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'We work on milestone-based fixed pricing: typically 50% upfront to reserve sprint capacity and 50% upon final delivery and client satisfaction. You receive full commercial ownership and master files upon final sign-off with zero surprise invoices.'
+          }
+        },
+        {
+          '@type': 'Question',
+          'name': 'Can we schedule a call before sending a brief?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'Yes! You can book a direct 15-minute intro conversation via Google Meet or message us on WhatsApp (+880 1869-504388) to discuss your vision directly with our founders.'
+          }
+        }
+      ]
     }
   });
   const contactPath = resolve(distDir, 'contact', 'index.html');

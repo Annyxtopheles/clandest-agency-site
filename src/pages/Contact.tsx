@@ -1,7 +1,31 @@
 import React, { useState } from 'react';
 import { WordLift } from '../components/ui/WordLift';
 import { AnimatedButton } from '../components/ui/AnimatedButton';
+import { FaqAccordion, FaqItem } from '../components/ui/FaqAccordion';
 import { triggerHaptic } from '../utils/haptics';
+
+const CONTACT_FAQS: FaqItem[] = [
+  {
+    question: 'How fast can we start a project?',
+    answer:
+      'We can typically kick off within 3 to 5 business days after our initial discovery call and scope sign-off. We prepare onboarding roadmaps and milestone timelines immediately upon confirmation.',
+  },
+  {
+    question: 'What are your turnaround times for each service?',
+    answer:
+      'Turnaround times depend on scope: Direct-response marketing video edits (VSLs, UGC cuts) deliver in 3 to 7 days. Brand identity design systems take 1 to 2 weeks. Custom website redesigns and frontend engineering sprints take 2 to 4 weeks from kickoff to deployment.',
+  },
+  {
+    question: 'How do project payments and contracts work?',
+    answer:
+      'We work on milestone-based fixed pricing: typically 50% upfront to reserve sprint capacity and 50% upon final delivery and client satisfaction. You receive full commercial ownership and master files upon final sign-off with zero surprise invoices.',
+  },
+  {
+    question: 'Can we schedule a call before sending a brief?',
+    answer:
+      'Yes! You can book a direct 15-minute intro conversation via Google Meet or message us on WhatsApp (+880 1869-504388) to discuss your vision directly with our founders.',
+  },
+];
 
 export const Contact: React.FC = () => {
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
@@ -158,6 +182,51 @@ export const Contact: React.FC = () => {
                 </div>
               )}
             </form>
+          </div>
+
+          {/* Studio Information & Location Signals */}
+          <div style={{ marginTop: '70px', borderTop: '1px solid var(--c-border)', paddingTop: '50px' }}>
+            <div style={{ textAlign: 'center', marginBottom: '36px' }}>
+              <h2 style={{ fontSize: '28px', color: 'var(--c-blue)', fontWeight: 600, marginBottom: '10px' }}>
+                Direct Access & Studio Operations
+              </h2>
+              <p style={{ fontSize: '17px', color: 'var(--c-text-muted)', maxWidth: '640px', margin: '0 auto', lineHeight: 1.5 }}>
+                We operate as an agile creative studio headquartered in Dhaka, Bangladesh, collaborating with founders, startups, and marketing leaders globally.
+              </p>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '20px', marginBottom: '60px' }}>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--c-border)', borderRadius: 'var(--radius-card)', padding: '28px 24px' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--c-blue)', marginBottom: '8px' }}>Studio Headquarters</h3>
+                <p style={{ fontSize: '15px', color: 'var(--c-text)', lineHeight: 1.5, margin: 0 }}>
+                  Dhaka, Bangladesh (UTC+6). We coordinate seamless timezone overlap for clients across North America, Europe, and Asia.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--c-border)', borderRadius: 'var(--radius-card)', padding: '28px 24px' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--c-blue)', marginBottom: '8px' }}>Response Time</h3>
+                <p style={{ fontSize: '15px', color: 'var(--c-text)', lineHeight: 1.5, margin: 0 }}>
+                  Guaranteed response within 12 hours on business days (Sunday–Thursday). Direct communication with founders—never account managers.
+                </p>
+              </div>
+              <div style={{ background: '#FFFFFF', border: '1px solid var(--c-border)', borderRadius: 'var(--radius-card)', padding: '28px 24px' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--c-blue)', marginBottom: '8px' }}>Sprint Engagements</h3>
+                <p style={{ fontSize: '15px', color: 'var(--c-text)', lineHeight: 1.5, margin: 0 }}>
+                  We take on a limited number of client projects per month to maintain craftsmanship, focus, and rapid turnaround speeds.
+                </p>
+              </div>
+            </div>
+
+            {/* Scope & Collaboration FAQs */}
+            <div style={{ textAlign: 'center', marginBottom: '28px' }}>
+              <h2 style={{ fontSize: '28px', color: 'var(--c-blue)', fontWeight: 600, marginBottom: '10px' }}>
+                Project Scopes & Frequently Asked Questions
+              </h2>
+              <p style={{ fontSize: '17px', color: 'var(--c-text-muted)', maxWidth: '640px', margin: '0 auto', lineHeight: 1.5 }}>
+                Key information on onboarding, turnaround times, and scope commitments before we kick off.
+              </p>
+            </div>
+
+            <FaqAccordion items={CONTACT_FAQS} />
           </div>
         </div>
       </section>
