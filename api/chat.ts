@@ -133,16 +133,8 @@ export default async function handler(req: any, res: any) {
     }));
 
     let response;
+    let primaryErrObj: any = null;
     try {
-      response = await ai.models.generateContent({
-        model: 'gemini-3.8-flash',
-        contents,
-        config: {
-          systemInstruction: SYSTEM_INSTRUCTION,
-          temperature: 0.4,
-        }
-      });
-    } catch (primaryErr) {
       response = await ai.models.generateContent({
         model: 'gemini-2.5-flash',
         contents,
@@ -151,6 +143,27 @@ export default async function handler(req: any, res: any) {
           temperature: 0.4,
         }
       });
+    } catch (primaryErr: any) {
+      primaryErrObj = primaryErr;
+      try {
+        response = await ai.models.generateContent({
+          model: 'gemini-3-flash-preview',
+          contents,
+          config: {
+            systemInstruction: SYSTEM_INSTRUCTION,
+            temperature: 0.4,
+          }
+        });
+      } catch (fallbackErr: any) {
+        response = await ai.models.generateContent({
+          model: 'gemini-3.8-flash',
+          contents,
+          config: {
+            systemInstruction: SYSTEM_INSTRUCTION,
+            temperature: 0.4,
+          }
+        });
+      }
     }
 
     const reply = response.text || "I'm here to help with any questions about Clandest Agency's design, dev, and video services!";
@@ -159,7 +172,8 @@ export default async function handler(req: any, res: any) {
     console.error('Gemini API Error:', error);
     return res.status(500).json({
       error: 'Failed to generate response',
-      details: error?.message || String(error)
+      details: error?.message || String(error),
+      primaryError: primaryErrObj?.message || String(primaryErrObj)
     });
   }
 }
