@@ -135,7 +135,7 @@ export default async function handler(req: any, res: any) {
     let response;
     try {
       response = await ai.models.generateContent({
-        model: 'gemini-2.5-flash',
+        model: 'gemini-3.8-flash',
         contents,
         config: {
           systemInstruction: SYSTEM_INSTRUCTION,
@@ -144,7 +144,7 @@ export default async function handler(req: any, res: any) {
       });
     } catch (primaryErr) {
       response = await ai.models.generateContent({
-        model: 'gemini-2.0-flash',
+        model: 'gemini-2.5-flash',
         contents,
         config: {
           systemInstruction: SYSTEM_INSTRUCTION,
