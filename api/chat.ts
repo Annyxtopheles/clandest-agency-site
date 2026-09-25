@@ -1,5 +1,4 @@
 import { GoogleGenAI } from '@google/genai';
-import { PRIVATE_KNOWLEDGE_BASE } from './knowledge';
 
 const SYSTEM_INSTRUCTION = `You are the official AI Assistant for Clandest Agency (clandest.agency), a high-end digital studio based in Dhaka, Bangladesh.
 Your goal is to answer visitor inquiries politely, accurately, concisely, and helpfully based strictly on the agency's real information below.
@@ -37,9 +36,12 @@ Your goal is to answer visitor inquiries politely, accurately, concisely, and he
 - Keep answers punchy, friendly, professional, and directly to the point (2–4 paragraphs max).
 - Use Markdown (bold, bullet points) for readability.
 - When relevant, politely encourage visitors to submit a message on the Contact page (/contact) or reach out on WhatsApp for a custom proposal.
-- If asked about something outside Clandest's expertise, politely explain what Clandest does and offer to connect them with the team.`;
+- If asked about something outside Clandest's expertise, politely explain what Clandest does and offer to connect them with the team.
 
-const FULL_SYSTEM_INSTRUCTION = `${SYSTEM_INSTRUCTION}\n\n${PRIVATE_KNOWLEDGE_BASE}`;
+### Private Founders Knowledge:
+- Sadman Zaman Khan specializes in Figma design systems, vector assets, and brand design tokens.
+- Abdullah Al Rafayet specializes in Premiere Pro, DaVinci Resolve, and high-retention direct-response VSL editing.
+- Md Nafiur Rahman specializes in modern React, TypeScript, Core Web Vitals, and lightweight web architecture.`;
 
 export default async function handler(req: any, res: any) {
   res.setHeader('Access-Control-Allow-Credentials', 'true');
@@ -54,11 +56,24 @@ export default async function handler(req: any, res: any) {
     return res.status(200).end();
   }
 
+  if (req.method === 'GET') {
+    return res.status(200).json({ status: 'ok', service: 'Clandest AI Assistant' });
+  }
+
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method Not Allowed' });
   }
 
-  const { messages } = req.body || {};
+  let body = req.body;
+  if (typeof body === 'string') {
+    try {
+      body = JSON.parse(body);
+    } catch {
+      // raw body fallback
+    }
+  }
+
+  const { messages } = body || {};
 
   if (!Array.isArray(messages) || messages.length === 0) {
     return res.status(400).json({ error: 'Messages array is required.' });
@@ -67,13 +82,14 @@ export default async function handler(req: any, res: any) {
   const apiKey = process.env.GEMINI_API_KEY || process.env.VITE_GEMINI_API_KEY;
 
   if (!apiKey) {
-    const lastUserMessage = (messages[messages.length - 1]?.content || '').toLowerCase();
-    if (lastUserMessage.includes('price') || lastUserMessage.includes('cost') || lastUserMessage.includes('rate') || lastUserMessage.includes('pricing')) {
+    const lastUserMessage = (messages[messages.length - 1]?.content || '').toLowerCase().trim();
+
+    if (lastUserMessage.includes('price') || lastUserMessage.includes('cost') || lastUserMessage.includes('rate') || lastUserMessage.includes('pricing') || lastUserMessage.includes('quote')) {
       return res.status(200).json({
         reply: "We work on **transparent, fixed-price project quotes** based on your specific deliverables with zero surprise hourly overages. [Drop us a line on our Contact page](/contact) or message us on WhatsApp (+8801869504388) for a custom quote!"
       });
     }
-    if (lastUserMessage.includes('service') || lastUserMessage.includes('what do you do') || lastUserMessage.includes('offer')) {
+    if (lastUserMessage.includes('service') || lastUserMessage.includes('what do you do') || lastUserMessage.includes('offer') || lastUserMessage.includes('work')) {
       return res.status(200).json({
         reply: "Clandest Agency specializes in 3 core disciplines:\n\n1. **Logo & Brand Identity** (Sadman Zaman Khan)\n2. **Custom Web Engineering & Redesign** (Md Nafiur Rahman)\n3. **Marketing Video & Motion Graphics** (Abdullah Al Rafayet)\n\nYou can explore our detailed deliverables on the [Services page](/services)!"
       });
@@ -83,6 +99,22 @@ export default async function handler(req: any, res: any) {
         reply: "Our typical turnaround times:\n- **Marketing Videos**: 3–7 business days\n- **Brand Identity**: 1–2 weeks\n- **Custom Websites**: 2–4 weeks\n\nInitial visual concepts are delivered within 48–72 hours of kickoff!"
       });
     }
+    if (lastUserMessage.includes('who') || lastUserMessage.includes('founder') || lastUserMessage.includes('team') || lastUserMessage.includes('about')) {
+      return res.status(200).json({
+        reply: "Clandest is a creative studio founded by college friends from Munshiganj Polytechnic Institute: **Sadman Zaman Khan** (Brand/UI), **Md Nafiur Rahman** (Web Engineering), and **Abdullah Al Rafayet** (Video & Motion). You work directly with the makers with zero middlemen!"
+      });
+    }
+    if (lastUserMessage.includes('contact') || lastUserMessage.includes('email') || lastUserMessage.includes('whatsapp') || lastUserMessage.includes('call') || lastUserMessage.includes('meet')) {
+      return res.status(200).json({
+        reply: "You can reach us directly:\n- **Email**: clandest.agency@gmail.com\n- **WhatsApp**: [+880 1869-504388](https://wa.me/8801869504388)\n- **Meeting**: [Book a 15-minute intro call on Google Meet](/contact)\n\nWe respond within 12 business hours!"
+      });
+    }
+    if (lastUserMessage === 'hi' || lastUserMessage === 'hello' || lastUserMessage === 'hey' || lastUserMessage.startsWith('hi ') || lastUserMessage.startsWith('hello ')) {
+      return res.status(200).json({
+        reply: "Hello! 👋 Great to connect with you. I'm Clandest's AI assistant. Are you looking for brand identity design, custom web development, or marketing video post-production?"
+      });
+    }
+
     return res.status(200).json({
       reply: "Hi! I am the Clandest AI Assistant. We build high-impact brand systems, custom React websites, and marketing videos. How can we help your business today? Feel free to [reach out to our founding team directly](/contact)!"
     });
@@ -103,19 +135,19 @@ export default async function handler(req: any, res: any) {
     let response;
     try {
       response = await ai.models.generateContent({
-        model: 'gemini-3.6-flash',
+        model: 'gemini-2.5-flash',
         contents,
         config: {
-          systemInstruction: FULL_SYSTEM_INSTRUCTION,
+          systemInstruction: SYSTEM_INSTRUCTION,
           temperature: 0.4,
         }
       });
     } catch (primaryErr) {
       response = await ai.models.generateContent({
-        model: 'gemini-2.5-flash',
+        model: 'gemini-2.0-flash',
         contents,
         config: {
-          systemInstruction: FULL_SYSTEM_INSTRUCTION,
+          systemInstruction: SYSTEM_INSTRUCTION,
           temperature: 0.4,
         }
       });

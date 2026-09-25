@@ -168,8 +168,21 @@ export const AiChatWidget: React.FC = () => {
         body: JSON.stringify({ messages: outgoingMessages })
       });
 
-      const data = await response.json();
-      const replyText = data.reply || (data.details ? `Error: ${data.details}` : data.error) || "Sorry, I couldn't process that. Please reach out to us at clandest.agency@gmail.com!";
+      let replyText = '';
+      if (response.ok) {
+        const data = await response.json();
+        replyText = data.reply || "I'm here to help with any questions about Clandest Agency!";
+      } else {
+        try {
+          const errData = await response.json();
+          replyText = errData.reply || errData.details || errData.error || '';
+        } catch {
+          // not json
+        }
+        if (!replyText) {
+          replyText = "We're experiencing a brief connection delay. Please feel free to [drop us a line directly on our Contact page](/contact) or message our founders on WhatsApp (+8801869504388)!";
+        }
+      }
 
       const assistantMessage: Message = {
         id: (Date.now() + 1).toString(),
@@ -183,7 +196,7 @@ export const AiChatWidget: React.FC = () => {
       const fallbackMessage: Message = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
-        content: "We build high-impact brand systems, custom React websites, and marketing videos. Feel free to [drop us a line directly on our Contact page](/contact) or message us on WhatsApp (+8801869504388)!",
+        content: "We're experiencing a brief connection delay. Please feel free to [drop us a line directly on our Contact page](/contact) or message our founders on WhatsApp (+8801869504388)!",
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       };
       setMessages(prev => [...prev, fallbackMessage]);
