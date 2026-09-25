@@ -135,7 +135,7 @@ function buildHomeHtml(): string {
             </a>
             <a href="/services#branding" class="service-visual-card">
               <div class="service-image-box">
-                <img src="/assets/service-brand-design.gif" alt="Logo and Brand Design" width="928" height="800" fetchpriority="high">
+                <img src="/assets/service-brand-design.webp" alt="Logo and Brand Design" width="928" height="800" fetchpriority="high">
               </div>
               <div class="service-card-label">Logo & Brand Design</div>
             </a>
@@ -368,7 +368,7 @@ function buildServicesHtml(): string {
             </a>
             <a href="#branding" class="service-visual-card" style="text-decoration: none;">
               <div class="service-image-box">
-                <img src="/assets/service-brand-design.gif" alt="Logo & Brand Design" width="928" height="800" fetchpriority="high">
+                <img src="/assets/service-brand-design.webp" alt="Logo & Brand Design" width="928" height="800" fetchpriority="high">
               </div>
               <div class="service-card-label">
                 <span>Logo & Brand Design</span>

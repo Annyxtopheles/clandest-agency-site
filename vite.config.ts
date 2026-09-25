@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => {
   if (env.VITE_GEMINI_API_KEY) process.env.VITE_GEMINI_API_KEY = env.VITE_GEMINI_API_KEY;
 
   return {
-    base: './',
+    base: '/',
     plugins: [
       react(),
       {

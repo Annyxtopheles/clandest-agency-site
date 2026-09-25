@@ -150,7 +150,7 @@ export const Services: React.FC = () => {
             >
               <TiltCard>
                 <div className="service-image-box">
-                  <img src="/assets/service-brand-design.gif" alt="Logo & Brand Design" width="928" height="800" fetchPriority="high" />
+                  <img src="/assets/service-brand-design.webp" alt="Logo & Brand Design" width="928" height="800" fetchPriority="high" />
                 </div>
                 <div className="service-card-label">
                   <span>Logo & Brand Design</span>
