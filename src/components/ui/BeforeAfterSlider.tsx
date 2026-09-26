@@ -123,14 +123,6 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
         />
       </div>
 
-      {/* Floating Badges */}
-      <div className="before-after-label left-label">
-        {beforeLabel}
-      </div>
-      <div className="before-after-label right-label">
-        {afterLabel}
-      </div>
-
       {/* Draggable Divider Line & Thumb */}
       <div
         className="before-after-divider"

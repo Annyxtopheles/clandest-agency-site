@@ -122,27 +122,23 @@ export const WEB_PROJECTS: ServiceProjectItem[] = [
     galleryImages: [
       { 
         url: '/assets/projects/collabai/collabai-dashboard-after.webp', 
-        caption: 'Core Dashboard: Legacy Interface vs. Redesigned Workspace (Drag Slider to Compare)',
+        caption: 'Core Platform Dashboard',
         comparison: {
           beforeImage: '/assets/projects/collabai/collabai-dashboard-before.webp',
-          afterImage: '/assets/projects/collabai/collabai-dashboard-after.webp',
-          beforeLabel: 'Original Proof-of-Concept',
-          afterLabel: 'Redesigned Workspace'
+          afterImage: '/assets/projects/collabai/collabai-dashboard-after.webp'
         }
       },
       { 
         url: '/assets/projects/collabai/collabai-chat-after.webp', 
-        caption: 'Conversational Canvas: Legacy Chat Flow vs. Multi-Agent Reasoning Canvas (Drag Slider to Compare)',
+        caption: 'Conversational Reasoning Canvas',
         comparison: {
           beforeImage: '/assets/projects/collabai/collabai-chat-before.webp',
-          afterImage: '/assets/projects/collabai/collabai-chat-after.webp',
-          beforeLabel: 'Legacy Chat Flow',
-          afterLabel: 'Redesigned Canvas'
+          afterImage: '/assets/projects/collabai/collabai-chat-after.webp'
         }
       },
       { 
         url: '/assets/projects/collabai/collabai-mockup.webp', 
-        caption: 'CollabAI Multi-Agent Workspace — Minimal Dark Architecture & Global Composer' 
+        caption: 'CollabAI Multi-Agent Workspace' 
       }
     ],
     deliverables: [
@@ -164,27 +160,23 @@ export const WEB_PROJECTS: ServiceProjectItem[] = [
     galleryImages: [
       { 
         url: '/assets/projects/ephysician/ephysician-hero-after.webp', 
-        caption: 'Hero Section: Legacy Interface vs. Clinical Command Center Simulator (Drag Slider to Compare)',
+        caption: 'Clinical Intake Simulator & Hero',
         comparison: {
           beforeImage: '/assets/projects/ephysician/ephysician-hero-before.webp',
-          afterImage: '/assets/projects/ephysician/ephysician-hero-after.webp',
-          beforeLabel: 'Legacy ePhysician Hero',
-          afterLabel: 'Redesigned Clinical Hero'
+          afterImage: '/assets/projects/ephysician/ephysician-hero-after.webp'
         }
       },
       { 
         url: '/assets/projects/ephysician/ephysician-footer-after.webp', 
-        caption: 'Conversion Footer: Legacy Reseller Page vs. Enterprise Trust & ROI Architecture (Drag Slider to Compare)',
+        caption: 'Conversion Architecture & ROI Calculator',
         comparison: {
           beforeImage: '/assets/projects/ephysician/ephysician-footer-before.webp',
-          afterImage: '/assets/projects/ephysician/ephysician-footer-after.webp',
-          beforeLabel: 'Legacy Reseller Footer',
-          afterLabel: 'Redesigned Conversion Footer'
+          afterImage: '/assets/projects/ephysician/ephysician-footer-after.webp'
         }
       },
       { 
         url: '/assets/projects/ephysician/ephysician-cover.webp', 
-        caption: 'ePhysician Clinical Command Center & Enterprise Landing Page' 
+        caption: 'ePhysician Healthcare Platform' 
       }
     ],
     deliverables: [

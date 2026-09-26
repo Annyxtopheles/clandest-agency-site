@@ -55,8 +55,31 @@ export const ProjectGalleryModal: React.FC<ProjectGalleryModalProps> = ({ projec
     triggerHaptic('light');
   };
 
+  const overlayMouseDownRef = React.useRef(false);
+
+  const handleOverlayMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      overlayMouseDownRef.current = true;
+    } else {
+      overlayMouseDownRef.current = false;
+    }
+  };
+
+  const handleOverlayMouseUp = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (overlayMouseDownRef.current && e.target === e.currentTarget) {
+      onClose();
+    }
+    overlayMouseDownRef.current = false;
+  };
+
   return (
-    <div className="video-modal-overlay active" onClick={onClose} role="dialog" aria-modal="true">
+    <div 
+      className="video-modal-overlay active" 
+      onMouseDown={handleOverlayMouseDown}
+      onMouseUp={handleOverlayMouseUp}
+      role="dialog" 
+      aria-modal="true"
+    >
       <div 
         className="project-gallery-modal-dialog" 
         onClick={(e) => e.stopPropagation()}
@@ -77,8 +100,6 @@ export const ProjectGalleryModal: React.FC<ProjectGalleryModalProps> = ({ projec
                 key={`${project.id}-${activeImageIndex}`}
                 beforeImage={currentImage.comparison.beforeImage}
                 afterImage={currentImage.comparison.afterImage}
-                beforeLabel={currentImage.comparison.beforeLabel}
-                afterLabel={currentImage.comparison.afterLabel}
               />
             ) : (
               <img 

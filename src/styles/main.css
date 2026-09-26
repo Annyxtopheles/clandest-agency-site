@@ -2970,31 +2970,6 @@ button, input, select, textarea {
   box-shadow: 0 4px 16px rgba(0, 102, 255, 0.35);
 }
 
-.before-after-label {
-  position: absolute;
-  top: 14px;
-  z-index: 15;
-  padding: 5px 11px;
-  border-radius: 6px;
-  background-color: rgba(17, 24, 39, 0.85);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: #FFFFFF;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  pointer-events: none;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-.before-after-label.left-label {
-  left: 14px;
-}
-
-.before-after-label.right-label {
-  right: 14px;
-}
-
 .project-modal-content {
   padding: 24px 28px;
   display: grid;
