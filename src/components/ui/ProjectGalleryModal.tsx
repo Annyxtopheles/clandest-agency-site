@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ServiceProjectItem } from '../../data/serviceProjects';
+import { BeforeAfterSlider } from './BeforeAfterSlider';
 import { triggerHaptic } from '../../utils/haptics';
 
 interface ProjectGalleryModalProps {
@@ -68,20 +69,25 @@ export const ProjectGalleryModal: React.FC<ProjectGalleryModalProps> = ({ projec
           &times;
         </button>
 
-        {/* Modal Top Bar */}
-        <div className="project-modal-header">
-          <h2 className="project-modal-title">{project.title}</h2>
-          <p className="project-modal-author">{project.author}</p>
-        </div>
-
-        {/* Modal Visual Stage */}
+        {/* 1. Modal Visual Stage (At the very top) */}
         <div className="project-modal-stage">
           <div className="project-modal-image-wrapper">
-            <img 
-              src={currentImage.url} 
-              alt={currentImage.caption || project.title} 
-              className="project-modal-main-img"
-            />
+            {currentImage.comparison ? (
+              <BeforeAfterSlider
+                key={`${project.id}-${activeImageIndex}`}
+                beforeImage={currentImage.comparison.beforeImage}
+                afterImage={currentImage.comparison.afterImage}
+                beforeLabel={currentImage.comparison.beforeLabel}
+                afterLabel={currentImage.comparison.afterLabel}
+              />
+            ) : (
+              <img 
+                src={currentImage.url} 
+                alt={currentImage.caption || project.title} 
+                className="project-modal-main-img"
+              />
+            )}
+
             {project.galleryImages.length > 1 && (
               <>
                 <button 
@@ -132,7 +138,13 @@ export const ProjectGalleryModal: React.FC<ProjectGalleryModalProps> = ({ projec
           )}
         </div>
 
-        {/* Project Description & Deliverables */}
+        {/* 2. Modal Header (Title & Author underneath visual stage) */}
+        <div className="project-modal-header">
+          <h2 className="project-modal-title">{project.title}</h2>
+          <p className="project-modal-author">{project.author}</p>
+        </div>
+
+        {/* 3. Project Description & Deliverables */}
         <div className="project-modal-content">
           <div className="project-modal-summary">
             <h3 className="project-modal-section-title">Overview</h3>
@@ -152,7 +164,7 @@ export const ProjectGalleryModal: React.FC<ProjectGalleryModalProps> = ({ projec
           </div>
         </div>
 
-        {/* Optional Live Demo Link */}
+        {/* 4. Optional Live Demo Link */}
         {project.liveUrl && (
           <div className="project-modal-footer">
             <a 

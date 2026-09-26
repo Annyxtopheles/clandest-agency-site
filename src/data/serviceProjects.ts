@@ -1,6 +1,12 @@
 export interface ProjectGalleryImage {
   url: string;
   caption: string;
+  comparison?: {
+    beforeImage: string;
+    afterImage: string;
+    beforeLabel?: string;
+    afterLabel?: string;
+  };
 }
 
 export interface ServiceProjectItem {
@@ -114,11 +120,30 @@ export const WEB_PROJECTS: ServiceProjectItem[] = [
     summary: 'Full UI/UX redesign of CollabAI\'s multi-agent collaboration platform, replacing a cluttered neon interface with a minimal dark workspace featuring multi-model streaming (Groq, Gemini, OpenRouter), agent orchestration, and in-context tool execution.',
     coverImage: '/assets/projects/collabai/collabai-mockup.webp',
     galleryImages: [
-      { url: '/assets/projects/collabai/collabai-mockup.webp', caption: 'CollabAI Multi-Agent Workspace — Minimal Dark Architecture & Global Composer' },
-      { url: '/assets/projects/collabai/collabai-dashboard-after.webp', caption: 'Redesigned Core Dashboard — Multi-Model Provider Switcher & Context Tools' },
-      { url: '/assets/projects/collabai/collabai-chat-after.webp', caption: 'Fluid Conversational Canvas with Multi-Agent Reasoning Stream' },
-      { url: '/assets/projects/collabai/collabai-dashboard-before.webp', caption: 'Legacy Interface Before Redesign (Cluttered Neon Proof-of-Concept)' },
-      { url: '/assets/projects/collabai/collabai-chat-before.webp', caption: 'Original Legacy Chat Flow Before Workspace Redesign' }
+      { 
+        url: '/assets/projects/collabai/collabai-dashboard-after.webp', 
+        caption: 'Core Dashboard: Legacy Interface vs. Redesigned Workspace (Drag Slider to Compare)',
+        comparison: {
+          beforeImage: '/assets/projects/collabai/collabai-dashboard-before.webp',
+          afterImage: '/assets/projects/collabai/collabai-dashboard-after.webp',
+          beforeLabel: 'Original Proof-of-Concept',
+          afterLabel: 'Redesigned Workspace'
+        }
+      },
+      { 
+        url: '/assets/projects/collabai/collabai-chat-after.webp', 
+        caption: 'Conversational Canvas: Legacy Chat Flow vs. Multi-Agent Reasoning Canvas (Drag Slider to Compare)',
+        comparison: {
+          beforeImage: '/assets/projects/collabai/collabai-chat-before.webp',
+          afterImage: '/assets/projects/collabai/collabai-chat-after.webp',
+          beforeLabel: 'Legacy Chat Flow',
+          afterLabel: 'Redesigned Canvas'
+        }
+      },
+      { 
+        url: '/assets/projects/collabai/collabai-mockup.webp', 
+        caption: 'CollabAI Multi-Agent Workspace — Minimal Dark Architecture & Global Composer' 
+      }
     ],
     deliverables: [
       'Global quick composer with @agent and #tag routing',
@@ -137,11 +162,30 @@ export const WEB_PROJECTS: ServiceProjectItem[] = [
     summary: 'Comprehensive landing page and product UI/UX redesign for ePhysician — an enterprise AI front-desk automation platform powered by Collab AI for US medical and dental clinics. Replaces a fragmented, low-contrast legacy interface with an immersive clinical command center experience.',
     coverImage: '/assets/projects/ephysician/ephysician-cover.webp',
     galleryImages: [
-      { url: '/assets/projects/ephysician/ephysician-cover.webp', caption: 'ePhysician Clinical Command Center & Enterprise Landing Page' },
-      { url: '/assets/projects/ephysician/ephysician-hero-after.webp', caption: 'Redesigned Hero Section with Live Clinical Intake Interactive Simulator' },
-      { url: '/assets/projects/ephysician/ephysician-footer-after.webp', caption: 'Conversion Footer, HIPAA Badges & Enterprise ROI Calculator' },
-      { url: '/assets/projects/ephysician/ephysician-hero-before.webp', caption: 'Legacy ePhysician Hero Before Redesign' },
-      { url: '/assets/projects/ephysician/ephysician-footer-before.webp', caption: 'Legacy Reseller Footer Before Redesign' }
+      { 
+        url: '/assets/projects/ephysician/ephysician-hero-after.webp', 
+        caption: 'Hero Section: Legacy Interface vs. Clinical Command Center Simulator (Drag Slider to Compare)',
+        comparison: {
+          beforeImage: '/assets/projects/ephysician/ephysician-hero-before.webp',
+          afterImage: '/assets/projects/ephysician/ephysician-hero-after.webp',
+          beforeLabel: 'Legacy ePhysician Hero',
+          afterLabel: 'Redesigned Clinical Hero'
+        }
+      },
+      { 
+        url: '/assets/projects/ephysician/ephysician-footer-after.webp', 
+        caption: 'Conversion Footer: Legacy Reseller Page vs. Enterprise Trust & ROI Architecture (Drag Slider to Compare)',
+        comparison: {
+          beforeImage: '/assets/projects/ephysician/ephysician-footer-before.webp',
+          afterImage: '/assets/projects/ephysician/ephysician-footer-after.webp',
+          beforeLabel: 'Legacy Reseller Footer',
+          afterLabel: 'Redesigned Conversion Footer'
+        }
+      },
+      { 
+        url: '/assets/projects/ephysician/ephysician-cover.webp', 
+        caption: 'ePhysician Clinical Command Center & Enterprise Landing Page' 
+      }
     ],
     deliverables: [
       'High-contrast accessible clinical design system',
