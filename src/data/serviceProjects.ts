@@ -56,18 +56,18 @@ export const BRANDING_PROJECTS: ServiceProjectItem[] = [
     title: 'NEXURA Corporate Identity & Design System',
     category: 'branding',
     summary: 'Comprehensive corporate brand guidelines manual engineered for NEXURA Consulting & Tech Solutions Ltd. Details geometric logo construction, clearspace and alignment grids, color architecture, typography standards, and brand application standards across print collateral and corporate merchandise.',
-    coverImage: '/assets/projects/nexura/nexura-guidelines-01-cover.webp',
+    coverImage: '/assets/projects/nexura/nexura-cover-thumbnail.webp',
     galleryImages: [
+      { url: '/assets/projects/nexura/nexura-cover-thumbnail.webp', caption: 'NEXURA Logo Mark & Tagline' },
       { url: '/assets/projects/nexura/nexura-guidelines-01-cover.webp', caption: 'NEXURA Brand Guidelines Manual Cover' },
       { url: '/assets/projects/nexura/nexura-guidelines-02-construction.webp', caption: 'Logo Construction, Mathematical Grids & Clearspace Alignment Rules' },
       { url: '/assets/projects/nexura/nexura-guidelines-03-symbolism.webp', caption: 'Hexagonal Monogram Geometry, Symbolism & Icon Philosophy' },
-      { url: '/assets/projects/nexura/nexura-guidelines-04-palette-typography.webp', caption: 'Color Architecture (Aqua Cyan, Slate Gray) & Typography Hierarchy' },
-      { url: '/assets/projects/nexura/nexura-guidelines-stationery-specs.webp', caption: 'Office Stationery Brand Standards (Letterhead, Notebook, Invoice, Envelope)' },
-      { url: '/assets/projects/nexura/nexura-guidelines-marketing-specs.webp', caption: 'Marketing & Editorial Collateral Standards (Flyer, Magazine, Brochure, Web Banner)' },
+      { url: '/assets/projects/nexura/nexura-guidelines-04-palette-typography.webp', caption: 'Color Architecture & Typography Hierarchy' },
+      { url: '/assets/projects/nexura/nexura-guidelines-stationery-specs.webp', caption: 'Office Stationery Brand Standards' },
+      { url: '/assets/projects/nexura/nexura-guidelines-marketing-specs.webp', caption: 'Marketing & Editorial Collateral Standards' },
       { url: '/assets/projects/nexura/nexura-guidelines-id-calendar-specs.webp', caption: 'Corporate ID Cards, Business Cards & Calendar Standards' },
-      { url: '/assets/projects/nexura/nexura-guidelines-products-specs.webp', caption: 'Corporate Product Ecosystem Standards (Mug, Pens, Cap, Backpack, Notebook)' },
-      { url: '/assets/projects/nexura/nexura-guidelines-apparel-specs.webp', caption: 'Athletic & Corporate Apparel Standards (Jacket, Jersey, Polo, Sweatshirt)' },
-      { url: '/assets/projects/nexura/nexura-cover-thumbnail.webp', caption: 'NEXURA Brand System Overview Thumbnail' }
+      { url: '/assets/projects/nexura/nexura-guidelines-products-specs.webp', caption: 'Corporate Product Ecosystem Standards' },
+      { url: '/assets/projects/nexura/nexura-guidelines-apparel-specs.webp', caption: 'Athletic & Corporate Apparel Standards' }
     ],
     deliverables: [
       'Mathematical logo construction grids & clearspace rules',
