@@ -536,58 +536,164 @@ function buildServicesHtml(): string {
             </div>
           </div>
 
-          <div class="service-detail-block" id="branding">
-            <h2 style="font-size: 32px; color: var(--c-blue); margin-bottom: 16px;">2. Creative Brand Design Agency & Identity Systems</h2>
-            <p style="font-size: 18px; line-height: 1.6; max-width: 800px; margin-bottom: 16px;">
-              Led by Sadman Zaman Khan. As a dedicated brand design studio, we build complete visual identity systems and UI/UX design from the ground up: primary and secondary brandmarks, complete Figma design systems, typography hierarchies, and scalable brand guidelines. Learn more about our <a href="/process" style="color: var(--c-blue); text-decoration: underline;">design workflow</a> or <a href="/contact" style="color: var(--c-blue); text-decoration: underline;">book an intro consultation</a>.
-            </p>
-            <div class="deliverables-container">
-              <h3 class="deliverables-title">What you walk away with</h3>
-              <div class="deliverables-list">
-                <div class="deliverable-btn">
-                  <span class="deliverable-check">✓</span>
-                  <span>Master Vector Files (SVG, AI, PDF)</span>
+          <div class="service-detail-block" id="branding" style="margin-bottom: 80px;">
+            <div style="text-align: center; margin-bottom: 36px;">
+              <h2 style="font-size: 32px; color: var(--c-blue); font-weight: 600; margin-bottom: 10px;">Brand Identity Systems & Visual Craft</h2>
+              <p style="font-size: 18px; color: var(--c-text-muted); max-width: 680px; margin: 0 auto;">
+                Complete visual identities, logotype construction, luxury packaging, and design systems designed by Sadman Zaman Khan.
+              </p>
+            </div>
+
+            <div class="project-showcase-grid">
+              <div class="project-showcase-card">
+                <div class="project-cover-box">
+                  <img src="/assets/projects/noborangi/noborangi-banner-cover.webp" alt="Noborangi Brand Identity" loading="lazy">
                 </div>
-                <div class="deliverable-btn">
-                  <span class="deliverable-check">✓</span>
-                  <span>Complete Figma Brand System</span>
+                <div class="project-card-info">
+                  <div class="project-category-tag">Brand Identity & Packaging</div>
+                  <h3 class="project-card-title">Noborangi Brand Identity</h3>
+                  <p class="project-card-desc">High-contrast editorial serif logotype, luxury crimson & cream palette, bespoke retail packaging, boutique architectural signage, and split-tone merchandise.</p>
+                  <div class="project-card-tags-row">
+                    <span class="project-pill-tag">Logotype Design</span>
+                    <span class="project-pill-tag">Editorial Typography</span>
+                    <span class="project-pill-tag">Retail Packaging</span>
+                  </div>
+                  <div class="project-card-footer">
+                    <span class="project-author-label">Designed by Sadman Zaman Khan</span>
+                    <a href="https://sadmanportfolio.vercel.app/work/noborangi" target="_blank" rel="noopener noreferrer" class="project-case-study-badge" style="text-decoration: none;">Case Study ↗</a>
+                  </div>
                 </div>
-                <div class="deliverable-btn">
-                  <span class="deliverable-check">✓</span>
-                  <span>Typography & Color Tokens</span>
+              </div>
+
+              <div class="project-showcase-card">
+                <div class="project-cover-box">
+                  <img src="/assets/projects/nexura/nexura-guidelines-01-cover.webp" alt="NEXURA Corporate Identity & Design System" loading="lazy">
                 </div>
-                <div class="deliverable-btn">
-                  <span class="deliverable-check">✓</span>
-                  <span>100% Commercial Copyright</span>
+                <div class="project-card-info">
+                  <div class="project-category-tag">Corporate Identity & Guidelines</div>
+                  <h3 class="project-card-title">NEXURA Corporate Identity & Design System</h3>
+                  <p class="project-card-desc">Complete brand guidelines manual featuring geometric logo construction, clearspace alignment grids, brand color architecture, typography standards, and corporate collateral.</p>
+                  <div class="project-card-tags-row">
+                    <span class="project-pill-tag">Corporate Identity</span>
+                    <span class="project-pill-tag">Logo Construction</span>
+                    <span class="project-pill-tag">Brand Guidelines</span>
+                  </div>
+                  <div class="project-card-footer">
+                    <span class="project-author-label">Designed by Sadman Zaman Khan</span>
+                    <a href="https://sadmanportfolio.vercel.app/work/nexura-brand-system" target="_blank" rel="noopener noreferrer" class="project-case-study-badge" style="text-decoration: none;">Case Study ↗</a>
+                  </div>
                 </div>
+              </div>
+
+              <div class="project-showcase-card">
+                <div class="project-cover-box">
+                  <img src="/assets/projects/control-tower/og-agency-control-tower.webp" alt="Control Tower Enterprise AI Product Identities" loading="lazy">
+                </div>
+                <div class="project-card-info">
+                  <div class="project-category-tag">Multi-Product Brand Architecture</div>
+                  <h3 class="project-card-title">Control Tower Enterprise AI Product Identities</h3>
+                  <p class="project-card-desc">Full brand identities, custom logo marks, and domain palettes for 10+ vertical AI enterprise products including Agency Control Tower, ePhysician, and Mortgage AI.</p>
+                  <div class="project-card-tags-row">
+                    <span class="project-pill-tag">Enterprise AI Branding</span>
+                    <span class="project-pill-tag">Multi-Brand Architecture</span>
+                    <span class="project-pill-tag">Logo Marks</span>
+                  </div>
+                  <div class="project-card-footer">
+                    <span class="project-author-label">Designed by Sadman Zaman Khan</span>
+                    <a href="https://sadmanportfolio.vercel.app/work/control-tower-products" target="_blank" rel="noopener noreferrer" class="project-case-study-badge" style="text-decoration: none;">Case Study ↗</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="category-deliverables-box" style="margin-top: 48px; padding-top: 36px; border-top: 1px solid var(--c-border);">
+              <h3 style="font-size: 20px; font-weight: 600; color: var(--c-blue); margin-bottom: 18px; text-align: center;">What you walk away with</h3>
+              <div class="deliverables-list" style="justify-content: center;">
+                <div class="deliverable-btn"><span class="deliverable-check">✓</span><span>Master Vector Files (SVG, AI, PDF)</span></div>
+                <div class="deliverable-btn"><span class="deliverable-check">✓</span><span>Complete Figma Brand System</span></div>
+                <div class="deliverable-btn"><span class="deliverable-check">✓</span><span>Typography & Color Tokens</span></div>
+                <div class="deliverable-btn"><span class="deliverable-check">✓</span><span>100% Commercial Copyright</span></div>
               </div>
             </div>
           </div>
 
-          <div class="service-detail-block" id="development">
-            <h2 style="font-size: 32px; color: var(--c-blue); margin-bottom: 16px;">3. Web Design Agency & Custom Frontend Engineering</h2>
-            <p style="font-size: 18px; line-height: 1.6; max-width: 800px; margin-bottom: 16px;">
-              Led by Md Nafiur Rahman. A high-performance web development studio engineering responsive, lightning-fast web applications with clean TypeScript, React, and semantic HTML5/Tailwind. Zero bloated plugins, sub-second load speeds, and enterprise-grade SEO indexability. Review our <a href="/process" style="color: var(--c-blue); text-decoration: underline;">development stages</a> or <a href="/contact" style="color: var(--c-blue); text-decoration: underline;">start your web project</a>.
-            </p>
-            <div class="deliverables-container">
-              <h3 class="deliverables-title">What you walk away with</h3>
-              <div class="deliverables-list">
-                <div class="deliverable-btn">
-                  <span class="deliverable-check">✓</span>
-                  <span>Clean React & TypeScript Codebase</span>
+          <div class="service-detail-block" id="development" style="margin-bottom: 80px;">
+            <div style="text-align: center; margin-bottom: 36px;">
+              <h2 style="font-size: 32px; color: var(--c-blue); font-weight: 600; margin-bottom: 10px;">Website Redesign & Digital Experience</h2>
+              <p style="font-size: 18px; color: var(--c-text-muted); max-width: 680px; margin: 0 auto;">
+                Distraction-free product workspaces, enterprise SaaS platforms, and luxury e-commerce ecosystems engineered for performance and conversion.
+              </p>
+            </div>
+
+            <div class="project-showcase-grid">
+              <div class="project-showcase-card">
+                <div class="project-cover-box">
+                  <img src="/assets/projects/collabai-mockup.webp" alt="CollabAI — Multi-Agent Workspace Redesign" loading="lazy">
                 </div>
-                <div class="deliverable-btn">
-                  <span class="deliverable-check">✓</span>
-                  <span>Full GitHub Repo Ownership</span>
+                <div class="project-card-info">
+                  <div class="project-category-tag">AI Workspace & Product Redesign</div>
+                  <h3 class="project-card-title">CollabAI — Multi-Agent Workspace Redesign</h3>
+                  <p class="project-card-desc">Full UI/UX redesign of CollabAI's multi-agent collaboration platform, replacing a cluttered neon interface with a minimal dark workspace featuring multi-model streaming and orchestration.</p>
+                  <div class="project-card-tags-row">
+                    <span class="project-pill-tag">Multi-Agent UX</span>
+                    <span class="project-pill-tag">Real-Time Streaming</span>
+                    <span class="project-pill-tag">Dark Minimal UI</span>
+                  </div>
+                  <div class="project-card-footer">
+                    <span class="project-author-label">UI/UX by Sadman Zaman Khan</span>
+                    <a href="https://sadmanportfolio.vercel.app/work/collabai-platform" target="_blank" rel="noopener noreferrer" class="project-case-study-badge" style="text-decoration: none;">Case Study ↗</a>
+                  </div>
                 </div>
-                <div class="deliverable-btn">
-                  <span class="deliverable-check">✓</span>
-                  <span>Production Vercel Deployment</span>
+              </div>
+
+              <div class="project-showcase-card">
+                <div class="project-cover-box">
+                  <img src="/assets/projects/ephysician/ephysician-cover.webp" alt="ePhysician — AI Healthcare Platform Redesign" loading="lazy">
                 </div>
-                <div class="deliverable-btn">
-                  <span class="deliverable-check">✓</span>
-                  <span>Zero Subscriptions or Vendor Lock-in</span>
+                <div class="project-card-info">
+                  <div class="project-category-tag">Enterprise SaaS & Landing Page</div>
+                  <h3 class="project-card-title">ePhysician — AI Healthcare Platform Redesign</h3>
+                  <p class="project-card-desc">Comprehensive landing page and product UI/UX redesign for an enterprise AI front-desk automation platform serving US medical and dental clinics.</p>
+                  <div class="project-card-tags-row">
+                    <span class="project-pill-tag">Healthcare SaaS</span>
+                    <span class="project-pill-tag">Landing Page</span>
+                    <span class="project-pill-tag">HIPAA Compliance</span>
+                  </div>
+                  <div class="project-card-footer">
+                    <span class="project-author-label">UI/UX by Sadman Zaman Khan</span>
+                    <a href="https://sadmanportfolio.vercel.app/work/ephysician-redesign" target="_blank" rel="noopener noreferrer" class="project-case-study-badge" style="text-decoration: none;">Case Study ↗</a>
+                  </div>
                 </div>
+              </div>
+
+              <div class="project-showcase-card">
+                <div class="project-cover-box">
+                  <img src="/assets/projects/nagae-studio/nagae-studio-cover-banner.webp" alt="NAGAE Studio — Luxury Bridal Ecosystem" loading="lazy">
+                </div>
+                <div class="project-card-info">
+                  <div class="project-category-tag">Luxury Retail & Admin Intelligence</div>
+                  <h3 class="project-card-title">NAGAE Studio — Luxury Bridal Ecosystem</h3>
+                  <p class="project-card-desc">Multi-surface retailer ecosystem uniting gown catalog CMS management, B2B boutique CRM pipeline tracking, showroom performance analytics, and a Stylist Mobile App with AI fitting guidance.</p>
+                  <div class="project-card-tags-row">
+                    <span class="project-pill-tag">Luxury E-Commerce</span>
+                    <span class="project-pill-tag">B2B CRM</span>
+                    <span class="project-pill-tag">Showroom Analytics</span>
+                  </div>
+                  <div class="project-card-footer">
+                    <span class="project-author-label">Product Architecture by Sadman Zaman Khan</span>
+                    <a href="https://sadmanportfolio.vercel.app/work/nagae-studio" target="_blank" rel="noopener noreferrer" class="project-case-study-badge" style="text-decoration: none;">Case Study ↗</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="category-deliverables-box" style="margin-top: 48px; padding-top: 36px; border-top: 1px solid var(--c-border);">
+              <h3 style="font-size: 20px; font-weight: 600; color: var(--c-blue); margin-bottom: 18px; text-align: center;">What you walk away with</h3>
+              <div class="deliverables-list" style="justify-content: center;">
+                <div class="deliverable-btn"><span class="deliverable-check">✓</span><span>Clean React & TypeScript Codebase</span></div>
+                <div class="deliverable-btn"><span class="deliverable-check">✓</span><span>Full GitHub Repo Ownership</span></div>
+                <div class="deliverable-btn"><span class="deliverable-check">✓</span><span>Production Vercel Deployment</span></div>
+                <div class="deliverable-btn"><span class="deliverable-check">✓</span><span>Zero Subscriptions or Vendor Lock-in</span></div>
               </div>
             </div>
           </div>

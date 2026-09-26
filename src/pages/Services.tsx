@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { WordLift } from '../components/ui/WordLift';
 import { AnimatedButton } from '../components/ui/AnimatedButton';
 import { VideoModal } from '../components/ui/VideoModal';
+import { ProjectGalleryModal } from '../components/ui/ProjectGalleryModal';
 import { TiltCard } from '../components/ui/TiltCard';
 import { triggerHaptic } from '../utils/haptics';
+import { BRANDING_PROJECTS, WEB_PROJECTS, ServiceProjectItem } from '../data/serviceProjects';
 
 const VIDEO_PROJECTS = [
   {
@@ -84,6 +86,7 @@ export const Services: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<'video' | 'branding' | 'web'>('video');
   const [filter, setFilter] = useState<'all' | 'vsl' | 'documentary'>('all');
   const [activeModal, setActiveModal] = useState<{ id: string; title: string } | null>(null);
+  const [selectedProject, setSelectedProject] = useState<ServiceProjectItem | null>(null);
 
   useEffect(() => {
     const handleHash = () => {
@@ -284,19 +287,70 @@ export const Services: React.FC = () => {
           )}
 
           {activeCategory === 'branding' && (
-            <div className="category-showcase-panel" style={{ textAlign: 'center', padding: '60px 24px', background: '#FAFAFA', borderRadius: 'var(--radius-card)', border: '1px solid var(--c-border)', marginBottom: '40px' }}>
-              <span style={{ display: 'inline-block', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--c-text-muted)', marginBottom: '12px' }}>
-                Portfolio in Curation
-              </span>
-              <h2 style={{ fontSize: '32px', color: 'var(--c-blue)', fontWeight: 600, marginBottom: '12px' }}>
-                Creative Brand Design & Identity Systems
-              </h2>
-              <p style={{ fontSize: '18px', color: 'var(--c-text)', maxWidth: '620px', margin: '0 auto 36px', lineHeight: 1.5, textWrap: 'pretty' }}>
-                As a dedicated brand design studio, we build complete visual identities, scalable Figma design systems, and UI/UX assets designed by Sadman Zaman Khan to elevate modern startups and enterprises.
-              </p>
+            <div className="category-showcase-panel" id="branding" style={{ marginBottom: '80px' }}>
+              <div style={{ textAlign: 'center', marginBottom: '36px' }}>
+                <h2 style={{ fontSize: '32px', color: 'var(--c-blue)', fontWeight: 600, marginBottom: '10px' }}>
+                  Brand Identity Systems & Visual Craft
+                </h2>
+                <p style={{ fontSize: '18px', color: 'var(--c-text-muted)', maxWidth: '680px', margin: '0 auto' }}>
+                  Complete visual identities, logotype construction, luxury packaging, and design systems designed by Sadman Zaman Khan.
+                </p>
+              </div>
 
-              <div className="category-deliverables-box" style={{ paddingTop: '28px', borderTop: '1px solid var(--c-border)' }}>
-                <h3 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--c-blue)', marginBottom: '18px' }}>
+              {/* Branding Project Showcase Grid */}
+              <div className="project-showcase-grid">
+                {BRANDING_PROJECTS.map((proj) => (
+                  <div
+                    key={proj.id}
+                    className="project-showcase-card"
+                    onClick={() => {
+                      triggerHaptic('light');
+                      setSelectedProject(proj);
+                    }}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => e.key === 'Enter' && setSelectedProject(proj)}
+                  >
+                    <div className="project-cover-box">
+                      <img src={proj.coverImage} alt={proj.title} loading="lazy" />
+                      <div className="project-inspect-badge">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                          <circle cx="11" cy="11" r="8"></circle>
+                          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <span>View Gallery</span>
+                      </div>
+                    </div>
+                    <div className="project-card-info">
+                      <div className="project-category-tag">{proj.categoryLabel}</div>
+                      <h3 className="project-card-title">{proj.title}</h3>
+                      <p className="project-card-desc">{proj.summary}</p>
+                      
+                      <div className="project-card-tags-row">
+                        {proj.tags.slice(0, 3).map((tag, i) => (
+                          <span key={i} className="project-pill-tag">{tag}</span>
+                        ))}
+                      </div>
+
+                      <div className="project-card-footer">
+                        <span className="project-author-label">{proj.author}</span>
+                        <span className="project-case-study-badge">
+                          <span>Case Study</span>
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* What you walk away with */}
+              <div className="category-deliverables-box" style={{ marginTop: '48px', paddingTop: '36px', borderTop: '1px solid var(--c-border)' }}>
+                <h3 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--c-blue)', marginBottom: '18px', textAlign: 'center' }}>
                   What you walk away with
                 </h3>
                 <div className="deliverables-list" style={{ justifyContent: 'center' }}>
@@ -322,19 +376,70 @@ export const Services: React.FC = () => {
           )}
 
           {activeCategory === 'web' && (
-            <div className="category-showcase-panel" style={{ textAlign: 'center', padding: '60px 24px', background: '#FAFAFA', borderRadius: 'var(--radius-card)', border: '1px solid var(--c-border)', marginBottom: '40px' }}>
-              <span style={{ display: 'inline-block', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--c-text-muted)', marginBottom: '12px' }}>
-                Portfolio in Curation
-              </span>
-              <h2 style={{ fontSize: '32px', color: 'var(--c-blue)', fontWeight: 600, marginBottom: '12px' }}>
-                Web Design Agency & Custom Frontend Engineering
-              </h2>
-              <p style={{ fontSize: '18px', color: 'var(--c-text)', maxWidth: '620px', margin: '0 auto 36px', lineHeight: 1.5, textWrap: 'pretty' }}>
-                A high-performance web development studio delivering responsive, lightning-fast web applications, SEO-optimized landing pages, and clean TypeScript/React codebases engineered by Md. Nafiur Rahman.
-              </p>
+            <div className="category-showcase-panel" id="development" style={{ marginBottom: '80px' }}>
+              <div style={{ textAlign: 'center', marginBottom: '36px' }}>
+                <h2 style={{ fontSize: '32px', color: 'var(--c-blue)', fontWeight: 600, marginBottom: '10px' }}>
+                  Website Redesign & Digital Experience
+                </h2>
+                <p style={{ fontSize: '18px', color: 'var(--c-text-muted)', maxWidth: '680px', margin: '0 auto' }}>
+                  Distraction-free product workspaces, enterprise SaaS platforms, and luxury e-commerce ecosystems engineered for performance and conversion.
+                </p>
+              </div>
 
-              <div className="category-deliverables-box" style={{ paddingTop: '28px', borderTop: '1px solid var(--c-border)' }}>
-                <h3 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--c-blue)', marginBottom: '18px' }}>
+              {/* Web Project Showcase Grid */}
+              <div className="project-showcase-grid">
+                {WEB_PROJECTS.map((proj) => (
+                  <div
+                    key={proj.id}
+                    className="project-showcase-card"
+                    onClick={() => {
+                      triggerHaptic('light');
+                      setSelectedProject(proj);
+                    }}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => e.key === 'Enter' && setSelectedProject(proj)}
+                  >
+                    <div className="project-cover-box">
+                      <img src={proj.coverImage} alt={proj.title} loading="lazy" />
+                      <div className="project-inspect-badge">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                          <circle cx="11" cy="11" r="8"></circle>
+                          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <span>View Gallery</span>
+                      </div>
+                    </div>
+                    <div className="project-card-info">
+                      <div className="project-category-tag">{proj.categoryLabel}</div>
+                      <h3 className="project-card-title">{proj.title}</h3>
+                      <p className="project-card-desc">{proj.summary}</p>
+                      
+                      <div className="project-card-tags-row">
+                        {proj.tags.slice(0, 3).map((tag, i) => (
+                          <span key={i} className="project-pill-tag">{tag}</span>
+                        ))}
+                      </div>
+
+                      <div className="project-card-footer">
+                        <span className="project-author-label">{proj.author}</span>
+                        <span className="project-case-study-badge">
+                          <span>Case Study</span>
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* What you walk away with */}
+              <div className="category-deliverables-box" style={{ marginTop: '48px', paddingTop: '36px', borderTop: '1px solid var(--c-border)' }}>
+                <h3 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--c-blue)', marginBottom: '18px', textAlign: 'center' }}>
                   What you walk away with
                 </h3>
                 <div className="deliverables-list" style={{ justifyContent: 'center' }}>
@@ -379,6 +484,12 @@ export const Services: React.FC = () => {
         videoId={activeModal?.id || null}
         title={activeModal?.title || ''}
         onClose={() => setActiveModal(null)}
+      />
+
+      {/* Project Gallery Lightbox Modal */}
+      <ProjectGalleryModal
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
       />
     </main>
   );
