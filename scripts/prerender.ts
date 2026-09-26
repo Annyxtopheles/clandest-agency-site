@@ -550,17 +550,10 @@ function buildServicesHtml(): string {
                   <img src="/assets/projects/noborangi/noborangi-banner-cover.webp" alt="Noborangi Brand Identity" loading="lazy">
                 </div>
                 <div class="project-card-info">
-                  <div class="project-category-tag">Brand Identity & Packaging</div>
                   <h3 class="project-card-title">Noborangi Brand Identity</h3>
                   <p class="project-card-desc">High-contrast editorial serif logotype, luxury crimson & cream palette, bespoke retail packaging, boutique architectural signage, and split-tone merchandise.</p>
-                  <div class="project-card-tags-row">
-                    <span class="project-pill-tag">Logotype Design</span>
-                    <span class="project-pill-tag">Editorial Typography</span>
-                    <span class="project-pill-tag">Retail Packaging</span>
-                  </div>
                   <div class="project-card-footer">
                     <span class="project-author-label">Designed by Sadman Zaman Khan</span>
-                    <a href="https://sadmanportfolio.vercel.app/work/noborangi" target="_blank" rel="noopener noreferrer" class="project-case-study-badge" style="text-decoration: none;">Case Study ↗</a>
                   </div>
                 </div>
               </div>
@@ -570,17 +563,10 @@ function buildServicesHtml(): string {
                   <img src="/assets/projects/nexura/nexura-guidelines-01-cover.webp" alt="NEXURA Corporate Identity & Design System" loading="lazy">
                 </div>
                 <div class="project-card-info">
-                  <div class="project-category-tag">Corporate Identity & Guidelines</div>
                   <h3 class="project-card-title">NEXURA Corporate Identity & Design System</h3>
                   <p class="project-card-desc">Complete brand guidelines manual featuring geometric logo construction, clearspace alignment grids, brand color architecture, typography standards, and corporate collateral.</p>
-                  <div class="project-card-tags-row">
-                    <span class="project-pill-tag">Corporate Identity</span>
-                    <span class="project-pill-tag">Logo Construction</span>
-                    <span class="project-pill-tag">Brand Guidelines</span>
-                  </div>
                   <div class="project-card-footer">
                     <span class="project-author-label">Designed by Sadman Zaman Khan</span>
-                    <a href="https://sadmanportfolio.vercel.app/work/nexura-brand-system" target="_blank" rel="noopener noreferrer" class="project-case-study-badge" style="text-decoration: none;">Case Study ↗</a>
                   </div>
                 </div>
               </div>
@@ -590,17 +576,10 @@ function buildServicesHtml(): string {
                   <img src="/assets/projects/control-tower/og-agency-control-tower.webp" alt="Control Tower Enterprise AI Product Identities" loading="lazy">
                 </div>
                 <div class="project-card-info">
-                  <div class="project-category-tag">Multi-Product Brand Architecture</div>
                   <h3 class="project-card-title">Control Tower Enterprise AI Product Identities</h3>
                   <p class="project-card-desc">Full brand identities, custom logo marks, and domain palettes for 10+ vertical AI enterprise products including Agency Control Tower, ePhysician, and Mortgage AI.</p>
-                  <div class="project-card-tags-row">
-                    <span class="project-pill-tag">Enterprise AI Branding</span>
-                    <span class="project-pill-tag">Multi-Brand Architecture</span>
-                    <span class="project-pill-tag">Logo Marks</span>
-                  </div>
                   <div class="project-card-footer">
                     <span class="project-author-label">Designed by Sadman Zaman Khan</span>
-                    <a href="https://sadmanportfolio.vercel.app/work/control-tower-products" target="_blank" rel="noopener noreferrer" class="project-case-study-badge" style="text-decoration: none;">Case Study ↗</a>
                   </div>
                 </div>
               </div>
@@ -628,20 +607,13 @@ function buildServicesHtml(): string {
             <div class="project-showcase-grid">
               <div class="project-showcase-card">
                 <div class="project-cover-box">
-                  <img src="/assets/projects/collabai-mockup.webp" alt="CollabAI — Multi-Agent Workspace Redesign" loading="lazy">
+                  <img src="/assets/projects/collabai/collabai-mockup.webp" alt="CollabAI — Multi-Agent Workspace Redesign" loading="lazy">
                 </div>
                 <div class="project-card-info">
-                  <div class="project-category-tag">AI Workspace & Product Redesign</div>
                   <h3 class="project-card-title">CollabAI — Multi-Agent Workspace Redesign</h3>
                   <p class="project-card-desc">Full UI/UX redesign of CollabAI's multi-agent collaboration platform, replacing a cluttered neon interface with a minimal dark workspace featuring multi-model streaming and orchestration.</p>
-                  <div class="project-card-tags-row">
-                    <span class="project-pill-tag">Multi-Agent UX</span>
-                    <span class="project-pill-tag">Real-Time Streaming</span>
-                    <span class="project-pill-tag">Dark Minimal UI</span>
-                  </div>
                   <div class="project-card-footer">
                     <span class="project-author-label">UI/UX by Sadman Zaman Khan</span>
-                    <a href="https://sadmanportfolio.vercel.app/work/collabai-platform" target="_blank" rel="noopener noreferrer" class="project-case-study-badge" style="text-decoration: none;">Case Study ↗</a>
                   </div>
                 </div>
               </div>
@@ -651,17 +623,10 @@ function buildServicesHtml(): string {
                   <img src="/assets/projects/ephysician/ephysician-cover.webp" alt="ePhysician — AI Healthcare Platform Redesign" loading="lazy">
                 </div>
                 <div class="project-card-info">
-                  <div class="project-category-tag">Enterprise SaaS & Landing Page</div>
                   <h3 class="project-card-title">ePhysician — AI Healthcare Platform Redesign</h3>
                   <p class="project-card-desc">Comprehensive landing page and product UI/UX redesign for an enterprise AI front-desk automation platform serving US medical and dental clinics.</p>
-                  <div class="project-card-tags-row">
-                    <span class="project-pill-tag">Healthcare SaaS</span>
-                    <span class="project-pill-tag">Landing Page</span>
-                    <span class="project-pill-tag">HIPAA Compliance</span>
-                  </div>
                   <div class="project-card-footer">
                     <span class="project-author-label">UI/UX by Sadman Zaman Khan</span>
-                    <a href="https://sadmanportfolio.vercel.app/work/ephysician-redesign" target="_blank" rel="noopener noreferrer" class="project-case-study-badge" style="text-decoration: none;">Case Study ↗</a>
                   </div>
                 </div>
               </div>
@@ -671,17 +636,10 @@ function buildServicesHtml(): string {
                   <img src="/assets/projects/nagae-studio/nagae-studio-cover-banner.webp" alt="NAGAE Studio — Luxury Bridal Ecosystem" loading="lazy">
                 </div>
                 <div class="project-card-info">
-                  <div class="project-category-tag">Luxury Retail & Admin Intelligence</div>
                   <h3 class="project-card-title">NAGAE Studio — Luxury Bridal Ecosystem</h3>
                   <p class="project-card-desc">Multi-surface retailer ecosystem uniting gown catalog CMS management, B2B boutique CRM pipeline tracking, showroom performance analytics, and a Stylist Mobile App with AI fitting guidance.</p>
-                  <div class="project-card-tags-row">
-                    <span class="project-pill-tag">Luxury E-Commerce</span>
-                    <span class="project-pill-tag">B2B CRM</span>
-                    <span class="project-pill-tag">Showroom Analytics</span>
-                  </div>
                   <div class="project-card-footer">
                     <span class="project-author-label">Product Architecture by Sadman Zaman Khan</span>
-                    <a href="https://sadmanportfolio.vercel.app/work/nagae-studio" target="_blank" rel="noopener noreferrer" class="project-case-study-badge" style="text-decoration: none;">Case Study ↗</a>
                   </div>
                 </div>
               </div>

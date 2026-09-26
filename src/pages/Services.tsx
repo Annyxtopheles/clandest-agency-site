@@ -313,35 +313,12 @@ export const Services: React.FC = () => {
                   >
                     <div className="project-cover-box">
                       <img src={proj.coverImage} alt={proj.title} loading="lazy" />
-                      <div className="project-inspect-badge">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                          <circle cx="11" cy="11" r="8"></circle>
-                          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                        </svg>
-                        <span>View Gallery</span>
-                      </div>
                     </div>
                     <div className="project-card-info">
-                      <div className="project-category-tag">{proj.categoryLabel}</div>
                       <h3 className="project-card-title">{proj.title}</h3>
                       <p className="project-card-desc">{proj.summary}</p>
-                      
-                      <div className="project-card-tags-row">
-                        {proj.tags.slice(0, 3).map((tag, i) => (
-                          <span key={i} className="project-pill-tag">{tag}</span>
-                        ))}
-                      </div>
-
                       <div className="project-card-footer">
                         <span className="project-author-label">{proj.author}</span>
-                        <span className="project-case-study-badge">
-                          <span>Case Study</span>
-                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                            <polyline points="15 3 21 3 21 9"></polyline>
-                            <line x1="10" y1="14" x2="21" y2="3"></line>
-                          </svg>
-                        </span>
                       </div>
                     </div>
                   </div>
@@ -402,35 +379,12 @@ export const Services: React.FC = () => {
                   >
                     <div className="project-cover-box">
                       <img src={proj.coverImage} alt={proj.title} loading="lazy" />
-                      <div className="project-inspect-badge">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                          <circle cx="11" cy="11" r="8"></circle>
-                          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                        </svg>
-                        <span>View Gallery</span>
-                      </div>
                     </div>
                     <div className="project-card-info">
-                      <div className="project-category-tag">{proj.categoryLabel}</div>
                       <h3 className="project-card-title">{proj.title}</h3>
                       <p className="project-card-desc">{proj.summary}</p>
-                      
-                      <div className="project-card-tags-row">
-                        {proj.tags.slice(0, 3).map((tag, i) => (
-                          <span key={i} className="project-pill-tag">{tag}</span>
-                        ))}
-                      </div>
-
                       <div className="project-card-footer">
                         <span className="project-author-label">{proj.author}</span>
-                        <span className="project-case-study-badge">
-                          <span>Case Study</span>
-                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                            <polyline points="15 3 21 3 21 9"></polyline>
-                            <line x1="10" y1="14" x2="21" y2="3"></line>
-                          </svg>
-                        </span>
                       </div>
                     </div>
                   </div>
