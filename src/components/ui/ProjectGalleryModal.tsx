@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ServiceProjectItem } from '../../data/serviceProjects';
 import { BeforeAfterSlider } from './BeforeAfterSlider';
 import { triggerHaptic } from '../../utils/haptics';
@@ -10,6 +10,7 @@ interface ProjectGalleryModalProps {
 
 export const ProjectGalleryModal: React.FC<ProjectGalleryModalProps> = ({ project, onClose }) => {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const overlayMouseDownRef = useRef(false);
 
   useEffect(() => {
     setActiveImageIndex(0);
@@ -54,8 +55,6 @@ export const ProjectGalleryModal: React.FC<ProjectGalleryModalProps> = ({ projec
     setActiveImageIndex((prev) => (prev - 1 + project.galleryImages.length) % project.galleryImages.length);
     triggerHaptic('light');
   };
-
-  const overlayMouseDownRef = React.useRef(false);
 
   const handleOverlayMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) {
