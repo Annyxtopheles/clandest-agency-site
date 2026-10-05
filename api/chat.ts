@@ -29,6 +29,7 @@ Your goal is to answer visitor inquiries politely, accurately, concisely, and he
 - **Contact & Next Steps**: 
   - Email: clandest.agency@gmail.com
   - WhatsApp: +8801869504388
+  - LinkedIn: https://www.linkedin.com/company/clandestagency
   - Consultation: Free 15-minute intro call via Google Meet / WhatsApp.
   - Page Link: Invite them to check /contact or start a project.
 

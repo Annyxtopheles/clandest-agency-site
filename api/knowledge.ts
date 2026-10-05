@@ -1,4 +1,4 @@
-﻿/**
+/**
  * PRIVATE SERVER-SIDE KNOWLEDGE BASE
  * -----------------------------------
  * This file is NEVER shipped to client browsers or web scrapers.
@@ -33,9 +33,9 @@ export const PRIVATE_KNOWLEDGE_BASE = `
 - **Zero Middlemen**: Clients communicate directly with the three partners executing the work. No account executives, interns, or junior contractors.
 - **100% Commercial Ownership**: Upon final milestone payment, clients receive full commercial copyright and all raw master files (Figma files with vector assets, 4K ProRes video timelines + audio stems, and clean GitHub repository transfer).
 - **Fixed-Price Transparency**: Every project is scoped with a clear, fixed quote based on concrete deliverables. Zero hidden hourly fees or unexpected invoices.
-- **Turnaround Benchmarks**:
-  - Marketing Videos / UGC cuts: 3 to 7 business days
-  - Logo & Brand Identity: 1 to 2 weeks
-  - Custom Web Engineering & Redesign: 2 to 4 weeks
-  - Initial visual concepts are delivered within 48 to 72 hours of kickoff.
+- **Official Channels & Profiles**:
+  - Website: https://clandestagency.vercel.app
+  - LinkedIn Company Page: https://www.linkedin.com/company/clandestagency
+  - Email: clandest.agency@gmail.com
+  - WhatsApp: +8801869504388
 `;

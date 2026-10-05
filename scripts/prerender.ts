@@ -83,6 +83,12 @@ function getHeaderHtml(activePath: string = ''): string {
               </svg>
               +880 1886-373307
             </a>
+            <a href="https://www.linkedin.com/company/clandestagency" target="_blank" rel="noopener noreferrer" class="mobile-contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+              LinkedIn
+            </a>
           </div>
         </div>
       </div>
@@ -99,8 +105,9 @@ const footerHtml = `
         <div class="footer-bottom-bar">
           <p class="copyright-text">© 2026, Clandest.agency | Handcrafted in Dhaka, Bangladesh.</p>
           <div class="footer-social-links">
-            <a href="https://facebook.com" target="_blank" rel="noreferrer" class="social-pill-badge">Facebook</a>
-            <a href="https://wa.me/" target="_blank" rel="noreferrer" class="social-pill-badge">Whatsapp</a>
+            <a href="https://www.facebook.com/clandest.agency" target="_blank" rel="noreferrer" class="social-pill-badge">Facebook</a>
+            <a href="https://www.linkedin.com/company/clandestagency" target="_blank" rel="noreferrer" class="social-pill-badge">LinkedIn</a>
+            <a href="https://wa.me/8801869504388" target="_blank" rel="noreferrer" class="social-pill-badge">Whatsapp</a>
             <a href="mailto:clandest.agency@gmail.com" class="social-pill-badge">Gmail</a>
           </div>
         </div>
@@ -775,6 +782,9 @@ function buildContactHtml(): string {
             </a>
             <a href="mailto:clandest.agency@gmail.com" class="social-pill-badge" style="padding: 12px 24px; font-size: 15px;">
               <span>clandest.agency@gmail.com</span>
+            </a>
+            <a href="https://www.linkedin.com/company/clandestagency" target="_blank" rel="noopener noreferrer" class="social-pill-badge" style="padding: 12px 24px; font-size: 15px; border: 1.5px solid #0A66C2; color: #0A66C2; font-weight: 600;">
+              Connect on LinkedIn
             </a>
           </div>
 
