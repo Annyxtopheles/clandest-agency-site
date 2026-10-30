@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ServiceProjectItem } from '../../data/serviceProjects';
 import { BeforeAfterSlider } from './BeforeAfterSlider';
+import { SystemSandboxPreview } from './SystemSandboxPreview';
 import { triggerHaptic } from '../../utils/haptics';
 
 interface ProjectGalleryModalProps {
@@ -10,10 +11,12 @@ interface ProjectGalleryModalProps {
 
 export const ProjectGalleryModal: React.FC<ProjectGalleryModalProps> = ({ project, onClose }) => {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const [viewMode, setViewMode] = useState<'slides' | 'sandbox'>('slides');
   const overlayMouseDownRef = useRef(false);
 
   useEffect(() => {
     setActiveImageIndex(0);
+    setViewMode('slides');
   }, [project]);
 
   useEffect(() => {
@@ -93,68 +96,101 @@ export const ProjectGalleryModal: React.FC<ProjectGalleryModalProps> = ({ projec
 
         {/* 1. Modal Visual Stage (At the very top) */}
         <div className="project-modal-stage">
-          <div className="project-modal-image-wrapper">
-            {currentImage.comparison ? (
-              <BeforeAfterSlider
-                key={`${project.id}-${activeImageIndex}`}
-                beforeImage={currentImage.comparison.beforeImage}
-                afterImage={currentImage.comparison.afterImage}
-              />
-            ) : (
-              <img 
-                src={currentImage.url} 
-                alt={currentImage.caption || project.title} 
-                className="project-modal-main-img"
-              />
-            )}
-
-            {project.galleryImages.length > 1 && (
-              <>
-                <button 
-                  className="gallery-nav-btn prev" 
-                  onClick={prevImage}
-                  aria-label="Previous Image"
-                >
-                  ‹
-                </button>
-                <button 
-                  className="gallery-nav-btn next" 
-                  onClick={nextImage}
-                  aria-label="Next Image"
-                >
-                  ›
-                </button>
-              </>
-            )}
-          </div>
-          
-          {/* Caption & Counter */}
-          <div className="project-modal-caption">
-            <span>{currentImage.caption}</span>
-            {project.galleryImages.length > 1 && (
-              <span className="project-modal-counter">
-                {activeImageIndex + 1} / {project.galleryImages.length}
-              </span>
-            )}
-          </div>
-
-          {/* Complete Thumbnails Strip */}
-          {project.galleryImages.length > 1 && (
-            <div className="project-modal-thumbnails">
-              {project.galleryImages.map((img, idx) => (
-                <button
-                  key={idx}
-                  className={`project-modal-thumb-btn ${idx === activeImageIndex ? 'active' : ''}`}
-                  onClick={() => {
-                    setActiveImageIndex(idx);
-                    triggerHaptic('light');
-                  }}
-                  aria-label={`View slide ${idx + 1}`}
-                >
-                  <img src={img.url} alt={`Slide ${idx + 1}`} loading="lazy" />
-                </button>
-              ))}
+          {project.sandboxType && (
+            <div className="project-modal-mode-switcher">
+              <button
+                type="button"
+                className={`project-mode-btn ${viewMode === 'slides' ? 'active' : ''}`}
+                onClick={() => {
+                  triggerHaptic('selection');
+                  setViewMode('slides');
+                }}
+              >
+                Visual Gallery ({project.galleryImages.length})
+              </button>
+              <button
+                type="button"
+                className={`project-mode-btn ${viewMode === 'sandbox' ? 'active' : ''}`}
+                onClick={() => {
+                  triggerHaptic('selection');
+                  setViewMode('sandbox');
+                }}
+              >
+                ⚡ Interactive Architecture Sandbox
+              </button>
             </div>
+          )}
+
+          {viewMode === 'sandbox' && project.sandboxType ? (
+            <div className="project-modal-sandbox-stage">
+              <SystemSandboxPreview type={project.sandboxType} />
+            </div>
+          ) : (
+            <>
+              <div className="project-modal-image-wrapper">
+                {currentImage.comparison ? (
+                  <BeforeAfterSlider
+                    key={`${project.id}-${activeImageIndex}`}
+                    beforeImage={currentImage.comparison.beforeImage}
+                    afterImage={currentImage.comparison.afterImage}
+                  />
+                ) : (
+                  <img 
+                    src={currentImage.url} 
+                    alt={currentImage.caption || project.title} 
+                    className="project-modal-main-img"
+                  />
+                )}
+
+                {project.galleryImages.length > 1 && (
+                  <>
+                    <button 
+                      className="gallery-nav-btn prev" 
+                      onClick={prevImage}
+                      aria-label="Previous Image"
+                    >
+                      ‹
+                    </button>
+                    <button 
+                      className="gallery-nav-btn next" 
+                      onClick={nextImage}
+                      aria-label="Next Image"
+                    >
+                      ›
+                    </button>
+                  </>
+                )}
+              </div>
+              
+              {/* Caption & Counter */}
+              <div className="project-modal-caption">
+                <span>{currentImage.caption}</span>
+                {project.galleryImages.length > 1 && (
+                  <span className="project-modal-counter">
+                    {activeImageIndex + 1} / {project.galleryImages.length}
+                  </span>
+                )}
+              </div>
+
+              {/* Complete Thumbnails Strip */}
+              {project.galleryImages.length > 1 && (
+                <div className="project-modal-thumbnails">
+                  {project.galleryImages.map((img, idx) => (
+                    <button
+                      key={idx}
+                      className={`project-modal-thumb-btn ${idx === activeImageIndex ? 'active' : ''}`}
+                      onClick={() => {
+                        setActiveImageIndex(idx);
+                        triggerHaptic('light');
+                      }}
+                      aria-label={`View slide ${idx + 1}`}
+                    >
+                      <img src={img.url} alt={`Slide ${idx + 1}`} loading="lazy" />
+                    </button>
+                  ))}
+                </div>
+              )}
+            </>
           )}
         </div>
 

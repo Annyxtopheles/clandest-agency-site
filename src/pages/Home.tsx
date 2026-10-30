@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { WordLift } from '../components/ui/WordLift';
 import { AnimatedButton } from '../components/ui/AnimatedButton';
 import { TiltCard } from '../components/ui/TiltCard';
+import { SystemSandboxPreview } from '../components/ui/SystemSandboxPreview';
 import { triggerHaptic } from '../utils/haptics';
 
 export const Home: React.FC = () => {
@@ -89,6 +90,72 @@ export const Home: React.FC = () => {
                 <div className="service-card-label">Website Redesign</div>
               </TiltCard>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* SYSTEMS IN MOTION — INTERACTIVE CASE STUDY PREVIEWS */}
+      <section className="systems-in-motion-section" id="systems-showcase">
+        <div className="container">
+          <div className="systems-section-header">
+            <span className="systems-eyebrow-pill">LIVE ARCHITECTURE SANDBOXES</span>
+            <h2 className="section-heading-centered">Systems in Motion.</h2>
+            <p className="section-subtext-centered">
+              Don’t just look at flat screenshots. Test our production token engines, institutional financial terminals, and multi-agent node graphs right here.
+            </p>
+          </div>
+
+          <div className="systems-bento-grid">
+            {/* Sandbox 1: Aegis Credit Terminal */}
+            <div className="systems-bento-card">
+              <SystemSandboxPreview type="aegis" />
+              <div className="systems-bento-meta">
+                <div className="systems-meta-top">
+                  <span className="systems-meta-tag">FINTECH TELEMETRY</span>
+                  <Link to="/services#development" className="systems-meta-link">
+                    Explore Case Study →
+                  </Link>
+                </div>
+                <h3 className="systems-meta-title">Aegis Credit Terminal — $2.275B Debt Surveillance</h3>
+                <p className="systems-meta-desc">
+                  Bloomberg-Dark fixed-income surveillance for B&amp;G Foods with real-time 7.52x Net Leverage breach telemetry and 3-tier RBAC governance.
+                </p>
+              </div>
+            </div>
+
+            {/* Sandbox 2: CollabAI 91-Token Engine */}
+            <div className="systems-bento-card">
+              <SystemSandboxPreview type="collabai" />
+              <div className="systems-bento-meta">
+                <div className="systems-meta-top">
+                  <span className="systems-meta-tag">AI DESIGN SYSTEM</span>
+                  <Link to="/services#development" className="systems-meta-link">
+                    Explore Case Study →
+                  </Link>
+                </div>
+                <h3 className="systems-meta-title">CollabAI — 91-Token Multi-Agent Workspace</h3>
+                <p className="systems-meta-desc">
+                  3-theme semantic CSS variable engine (Dark, Light, Emerald), 64px collapsible icon rail, and 73-node WCAG AA contrast remediation.
+                </p>
+              </div>
+            </div>
+
+            {/* Sandbox 3: AncestryForge & Control Tower DAG */}
+            <div className="systems-bento-card">
+              <SystemSandboxPreview type="ancestry" />
+              <div className="systems-bento-meta">
+                <div className="systems-meta-top">
+                  <span className="systems-meta-tag">GRAPH &amp; AI ROUTING</span>
+                  <Link to="/services#development" className="systems-meta-link">
+                    Explore Case Study →
+                  </Link>
+                </div>
+                <h3 className="systems-meta-title">AncestryForge &amp; Control Tower DAG Engine</h3>
+                <p className="systems-meta-desc">
+                  Directed Acyclic Graph (DAG) lineage virtualization with Dagre auto-layout, B-tree historical date indexing, and 10-vertical AI triage.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

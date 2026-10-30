@@ -19,6 +19,7 @@ export interface ServiceProjectItem {
   galleryImages: ProjectGalleryImage[];
   deliverables: string[];
   liveUrl?: string;
+  sandboxType?: 'aegis' | 'collabai' | 'ancestry';
   author: string;
 }
 
@@ -107,6 +108,7 @@ export const BRANDING_PROJECTS: ServiceProjectItem[] = [
       'Commercial sales enablement presentation decks',
       'High-impact social OpenGraph visual cards'
     ],
+    sandboxType: 'ancestry',
     author: 'Designed by Sadman Zaman Khan'
   }
 ];
@@ -117,7 +119,7 @@ export const WEB_PROJECTS: ServiceProjectItem[] = [
     slug: 'collabai-platform',
     title: 'CollabAI — Multi-Agent Workspace Redesign',
     category: 'web',
-    summary: 'Full UI/UX redesign of CollabAI\'s multi-agent collaboration platform, replacing a cluttered neon interface with a minimal dark workspace featuring multi-model streaming (Groq, Gemini, OpenRouter), agent orchestration, and in-context tool execution.',
+    summary: 'Full UI/UX redesign of CollabAI\'s multi-agent collaboration platform, replacing a cluttered neon interface with a 91-variable semantic token workspace featuring multi-model streaming (Groq, Gemini, OpenRouter), 64px ergonomic icon rail, and 73-node WCAG AA remediation.',
     coverImage: '/assets/projects/collabai/collabai-mockup.webp',
     galleryImages: [
       { 
@@ -142,13 +144,58 @@ export const WEB_PROJECTS: ServiceProjectItem[] = [
       }
     ],
     deliverables: [
+      '91-variable semantic CSS token engine (Dark, Light, Emerald)',
       'Global quick composer with @agent and #tag routing',
-      'Multi-model switcher supporting low-latency Groq and Gemini',
-      'Ergonomic workspace navigation and token streaming UI',
+      '64px collapsible ergonomic icon rail & 73-node WCAG AA fix',
       'Full TypeScript/React design system & interactive prototype'
     ],
     liveUrl: 'https://collabai-redesign.onrender.com/',
-    author: 'UI/UX by Sadman Zaman Khan'
+    sandboxType: 'collabai',
+    author: 'UI/UX & Systems by Sadman Zaman Khan'
+  },
+  {
+    id: 'aegis-credit-terminal',
+    slug: 'aegis-credit-terminal',
+    title: 'Aegis Credit Terminal — $2.275B Debt Surveillance',
+    category: 'web',
+    summary: 'Institutional Bloomberg-Dark (#0A0E1A) fixed-income and covenant surveillance terminal engineered for B&G Foods ($2.275B debt stack). Tracks real-time Net Leverage covenant breaches (7.52x vs 6.00x max), SEC 10-Q/10-K capital structures, and 3-tier RBAC governance.',
+    coverImage: '/assets/projects/collabai/collabai-dashboard-after.webp',
+    galleryImages: [
+      {
+        url: '/assets/projects/collabai/collabai-dashboard-after.webp',
+        caption: 'Aegis Institutional Debt Surveillance & Covenant Telemetry'
+      }
+    ],
+    deliverables: [
+      'Bloomberg-Dark (#0A0E1A) high-density tabular telemetry UI',
+      'Real-time $2.275B debt stack & 7.52x covenant breach alerts',
+      '3-tier Role-Based Access Control (Super Admin, IR Director, Analyst)',
+      'Zero-dependency React + TypeScript financial terminal architecture'
+    ],
+    sandboxType: 'aegis',
+    author: 'Systems Architecture by Sadman Zaman Khan & Md. Nafiur Rahman'
+  },
+  {
+    id: 'ancestry-forge',
+    slug: 'ancestry-forge',
+    title: 'AncestryForge — Graph-Relational DAG Lineage Engine',
+    category: 'web',
+    summary: 'Full-stack genealogical graph engine powered by a Directed Acyclic Graph (DAG) data model, React Flow viewport virtualization, Dagre automated hierarchical layout, fuzzy historical date B-tree indexing, and bidirectional GEDCOM 5.5.1 parsing.',
+    coverImage: '/assets/projects/control-tower/og-agency-control-tower.webp',
+    galleryImages: [
+      {
+        url: '/assets/projects/control-tower/og-agency-control-tower.webp',
+        caption: 'AncestryForge Directed Acyclic Graph (DAG) & Control Tower Node Architecture'
+      }
+    ],
+    deliverables: [
+      'Directed Acyclic Graph (DAG) union & lineage state engine',
+      'React Flow viewport virtualization with Dagre auto-layout',
+      'Fuzzy historical date parser with integer sort-key B-tree index',
+      'Bidirectional GEDCOM 5.5.1 import/export streaming pipeline'
+    ],
+    sandboxType: 'ancestry',
+    author: 'Engineered by Sadman Zaman Khan & Md. Nafiur Rahman'
   },
   {
     id: 'ephysician-redesign',
