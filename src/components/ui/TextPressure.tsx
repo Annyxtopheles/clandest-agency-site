@@ -85,8 +85,15 @@ export const TextPressure: React.FC<TextPressureProps> = ({
       return Math.max(minVal, val + minVal);
     };
 
-    let animId: number;
+    let animId: number | null = null;
+    let isVisible = false;
+
     const animate = () => {
+      if (!isVisible) {
+        animId = null;
+        return;
+      }
+
       mouse.x += (cursor.x - mouse.x) / 12;
       mouse.y += (cursor.y - mouse.y) / 12;
 
@@ -124,7 +131,31 @@ export const TextPressure: React.FC<TextPressureProps> = ({
       animId = requestAnimationFrame(animate);
     };
 
-    animId = requestAnimationFrame(animate);
+    const observer =
+      typeof IntersectionObserver !== 'undefined'
+        ? new IntersectionObserver(
+            (entries) => {
+              const entry = entries[0];
+              isVisible = Boolean(entry && entry.isIntersecting);
+              if (isVisible && animId === null) {
+                updateInitialPos();
+                setSize();
+                animId = requestAnimationFrame(animate);
+              } else if (!isVisible && animId !== null) {
+                cancelAnimationFrame(animId);
+                animId = null;
+              }
+            },
+            { threshold: 0.01 }
+          )
+        : null;
+
+    if (observer) {
+      observer.observe(container);
+    } else {
+      isVisible = true;
+      animId = requestAnimationFrame(animate);
+    }
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
@@ -132,7 +163,8 @@ export const TextPressure: React.FC<TextPressureProps> = ({
       window.removeEventListener('touchmove', handleTouchMove);
       window.removeEventListener('touchend', handleTouchEnd);
       window.removeEventListener('resize', setSize);
-      cancelAnimationFrame(animId);
+      if (observer) observer.disconnect();
+      if (animId !== null) cancelAnimationFrame(animId);
     };
   }, [text]);
 

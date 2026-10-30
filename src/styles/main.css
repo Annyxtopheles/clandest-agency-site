@@ -3744,3 +3744,34 @@ button, input, select, textarea {
     scroll-behavior: auto !important;
   }
 }
+
+
+/* ==========================================================================
+   Physics-Interpolated TiltCard Specular Spotlight
+   ========================================================================== */
+.tilt-card-surface {
+  position: relative;
+}
+
+@media (any-hover: hover) and (any-pointer: fine) {
+  .process-step-card.tilt-card-surface::after,
+  .team-member-card.tilt-card-surface::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: radial-gradient(
+      320px circle at var(--spotlight-x, 50%) var(--spotlight-y, 50%),
+      rgba(46, 79, 148, 0.065),
+      transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  .process-step-card.tilt-card-surface:hover::after,
+  .team-member-card.tilt-card-surface:hover::after {
+    opacity: 1;
+  }
+}
