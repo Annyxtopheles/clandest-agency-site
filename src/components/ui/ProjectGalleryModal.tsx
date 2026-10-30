@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { ServiceProjectItem } from '../../data/serviceProjects';
 import { BeforeAfterSlider } from './BeforeAfterSlider';
-import { SystemSandboxPreview } from './SystemSandboxPreview';
 import { triggerHaptic } from '../../utils/haptics';
 
 interface ProjectGalleryModalProps {
@@ -12,13 +11,11 @@ interface ProjectGalleryModalProps {
 
 export const ProjectGalleryModal: React.FC<ProjectGalleryModalProps> = ({ project, onClose }) => {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
-  const [viewMode, setViewMode] = useState<'slides' | 'sandbox'>('slides');
   const overlayMouseDownRef = useRef(false);
   const touchStartXRef = useRef<number | null>(null);
 
   useEffect(() => {
     setActiveImageIndex(0);
-    setViewMode('slides');
   }, [project]);
 
   useEffect(() => {
@@ -92,132 +89,99 @@ export const ProjectGalleryModal: React.FC<ProjectGalleryModalProps> = ({ projec
 
             {/* 1. Modal Visual Stage (At the very top) */}
             <div className="project-modal-stage">
-              {project.sandboxType && (
-                <div className="project-modal-mode-switcher">
-                  <button
-                    type="button"
-                    className={`project-mode-btn ${viewMode === 'slides' ? 'active' : ''}`}
-                    onClick={() => {
-                      triggerHaptic('selection');
-                      setViewMode('slides');
-                    }}
-                  >
-                    Visual Gallery ({project.galleryImages.length})
-                  </button>
-                  <button
-                    type="button"
-                    className={`project-mode-btn ${viewMode === 'sandbox' ? 'active' : ''}`}
-                    onClick={() => {
-                      triggerHaptic('selection');
-                      setViewMode('sandbox');
-                    }}
-                  >
-                    ⚡ Interactive Architecture Sandbox
-                  </button>
-                </div>
-              )}
+              <div
+                className="project-modal-image-wrapper"
+                onTouchStart={(e) => {
+                  const currentSlide = project.galleryImages[activeImageIndex];
+                  if (currentSlide?.comparison) return;
+                  touchStartXRef.current = e.touches[0]?.clientX ?? null;
+                }}
+                onTouchEnd={(e) => {
+                  const currentSlide = project.galleryImages[activeImageIndex];
+                  if (currentSlide?.comparison || touchStartXRef.current === null || project.galleryImages.length <= 1) {
+                    touchStartXRef.current = null;
+                    return;
+                  }
+                  const endX = e.changedTouches[0]?.clientX ?? touchStartXRef.current;
+                  const deltaX = endX - touchStartXRef.current;
+                  touchStartXRef.current = null;
+                  if (Math.abs(deltaX) > 48) {
+                    triggerHaptic('light');
+                    if (deltaX < 0) {
+                      setActiveImageIndex((prev) => (prev + 1) % project.galleryImages.length);
+                    } else {
+                      setActiveImageIndex((prev) => (prev - 1 + project.galleryImages.length) % project.galleryImages.length);
+                    }
+                  }
+                }}
+              >
+                {(project.galleryImages[activeImageIndex] || { url: project.coverImage, caption: project.title }).comparison ? (
+                  <BeforeAfterSlider
+                    key={`${project.id}-${activeImageIndex}`}
+                    beforeImage={project.galleryImages[activeImageIndex].comparison!.beforeImage}
+                    afterImage={project.galleryImages[activeImageIndex].comparison!.afterImage}
+                  />
+                ) : (
+                  <img
+                    src={(project.galleryImages[activeImageIndex] || { url: project.coverImage }).url}
+                    alt={(project.galleryImages[activeImageIndex] || { caption: project.title }).caption || project.title}
+                    className="project-modal-main-img"
+                  />
+                )}
 
-              {viewMode === 'sandbox' && project.sandboxType ? (
-                <div className="project-modal-sandbox-stage">
-                  <SystemSandboxPreview type={project.sandboxType} />
-                </div>
-              ) : (
-                <>
-                  <div
-                    className="project-modal-image-wrapper"
-                    onTouchStart={(e) => {
-                      const currentSlide = project.galleryImages[activeImageIndex];
-                      if (currentSlide?.comparison) return;
-                      touchStartXRef.current = e.touches[0]?.clientX ?? null;
-                    }}
-                    onTouchEnd={(e) => {
-                      const currentSlide = project.galleryImages[activeImageIndex];
-                      if (currentSlide?.comparison || touchStartXRef.current === null || project.galleryImages.length <= 1) {
-                        touchStartXRef.current = null;
-                        return;
-                      }
-                      const endX = e.changedTouches[0]?.clientX ?? touchStartXRef.current;
-                      const deltaX = endX - touchStartXRef.current;
-                      touchStartXRef.current = null;
-                      if (Math.abs(deltaX) > 48) {
+                {project.galleryImages.length > 1 && (
+                  <>
+                    <button
+                      className="gallery-nav-btn prev"
+                      onClick={() => {
+                        setActiveImageIndex((prev) => (prev - 1 + project.galleryImages.length) % project.galleryImages.length);
                         triggerHaptic('light');
-                        if (deltaX < 0) {
-                          setActiveImageIndex((prev) => (prev + 1) % project.galleryImages.length);
-                        } else {
-                          setActiveImageIndex((prev) => (prev - 1 + project.galleryImages.length) % project.galleryImages.length);
-                        }
-                      }
-                    }}
-                  >
-                    {(project.galleryImages[activeImageIndex] || { url: project.coverImage, caption: project.title }).comparison ? (
-                      <BeforeAfterSlider
-                        key={`${project.id}-${activeImageIndex}`}
-                        beforeImage={project.galleryImages[activeImageIndex].comparison!.beforeImage}
-                        afterImage={project.galleryImages[activeImageIndex].comparison!.afterImage}
-                      />
-                    ) : (
-                      <img
-                        src={(project.galleryImages[activeImageIndex] || { url: project.coverImage }).url}
-                        alt={(project.galleryImages[activeImageIndex] || { caption: project.title }).caption || project.title}
-                        className="project-modal-main-img"
-                      />
-                    )}
+                      }}
+                      aria-label="Previous Image"
+                    >
+                      ‹
+                    </button>
+                    <button
+                      className="gallery-nav-btn next"
+                      onClick={() => {
+                        setActiveImageIndex((prev) => (prev + 1) % project.galleryImages.length);
+                        triggerHaptic('light');
+                      }}
+                      aria-label="Next Image"
+                    >
+                      ›
+                    </button>
+                  </>
+                )}
+              </div>
 
-                    {project.galleryImages.length > 1 && (
-                      <>
-                        <button
-                          className="gallery-nav-btn prev"
-                          onClick={() => {
-                            setActiveImageIndex((prev) => (prev - 1 + project.galleryImages.length) % project.galleryImages.length);
-                            triggerHaptic('light');
-                          }}
-                          aria-label="Previous Image"
-                        >
-                          ‹
-                        </button>
-                        <button
-                          className="gallery-nav-btn next"
-                          onClick={() => {
-                            setActiveImageIndex((prev) => (prev + 1) % project.galleryImages.length);
-                            triggerHaptic('light');
-                          }}
-                          aria-label="Next Image"
-                        >
-                          ›
-                        </button>
-                      </>
-                    )}
-                  </div>
+              {/* Caption & Counter */}
+              <div className="project-modal-caption">
+                <span>{(project.galleryImages[activeImageIndex] || { caption: project.title }).caption}</span>
+                {project.galleryImages.length > 1 && (
+                  <span className="project-modal-counter">
+                    {activeImageIndex + 1} / {project.galleryImages.length}
+                  </span>
+                )}
+              </div>
 
-                  {/* Caption & Counter */}
-                  <div className="project-modal-caption">
-                    <span>{(project.galleryImages[activeImageIndex] || { caption: project.title }).caption}</span>
-                    {project.galleryImages.length > 1 && (
-                      <span className="project-modal-counter">
-                        {activeImageIndex + 1} / {project.galleryImages.length}
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Complete Thumbnails Strip */}
-                  {project.galleryImages.length > 1 && (
-                    <div className="project-modal-thumbnails">
-                      {project.galleryImages.map((img, idx) => (
-                        <button
-                          key={idx}
-                          className={`project-modal-thumb-btn ${idx === activeImageIndex ? 'active' : ''}`}
-                          onClick={() => {
-                            setActiveImageIndex(idx);
-                            triggerHaptic('light');
-                          }}
-                          aria-label={`View slide ${idx + 1}`}
-                        >
-                          <img src={img.url} alt={`Slide ${idx + 1}`} loading="lazy" />
-                        </button>
-                      ))}
-                    </div>
-                  )}
-                </>
+              {/* Complete Thumbnails Strip */}
+              {project.galleryImages.length > 1 && (
+                <div className="project-modal-thumbnails">
+                  {project.galleryImages.map((img, idx) => (
+                    <button
+                      key={idx}
+                      className={`project-modal-thumb-btn ${idx === activeImageIndex ? 'active' : ''}`}
+                      onClick={() => {
+                        setActiveImageIndex(idx);
+                        triggerHaptic('light');
+                      }}
+                      aria-label={`View slide ${idx + 1}`}
+                    >
+                      <img src={img.url} alt={`Slide ${idx + 1}`} loading="lazy" />
+                    </button>
+                  ))}
+                </div>
               )}
             </div>
 

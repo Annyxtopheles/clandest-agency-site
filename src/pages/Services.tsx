@@ -4,7 +4,6 @@ import { AnimatedButton } from '../components/ui/AnimatedButton';
 import { VideoModal } from '../components/ui/VideoModal';
 import { ProjectGalleryModal } from '../components/ui/ProjectGalleryModal';
 import { TiltCard } from '../components/ui/TiltCard';
-import { SystemSandboxPreview } from '../components/ui/SystemSandboxPreview';
 import { triggerHaptic } from '../utils/haptics';
 import { BRANDING_PROJECTS, WEB_PROJECTS, ServiceProjectItem } from '../data/serviceProjects';
 
@@ -321,20 +320,11 @@ export const Services: React.FC = () => {
                     tabIndex={0}
                     onKeyDown={(e) => e.key === 'Enter' && setSelectedProject(proj)}
                   >
-                    {proj.sandboxType ? (
-                      <div className="project-cover-sandbox-wrapper">
-                        <SystemSandboxPreview type={proj.sandboxType} compact />
-                      </div>
-                    ) : (
-                      <div className="project-cover-box">
-                        <img src={proj.coverImage} alt={proj.title} loading="lazy" />
-                      </div>
-                    )}
+                    <div className="project-cover-box">
+                      <img src={proj.coverImage} alt={proj.title} loading="lazy" />
+                    </div>
                     <div className="project-card-info">
-                      <div className="project-card-header-row">
-                        <h3 className="project-card-title">{proj.title}</h3>
-                        {proj.sandboxType && <span className="project-interactive-pill">LIVE SANDBOX</span>}
-                      </div>
+                      <h3 className="project-card-title">{proj.title}</h3>
                       <p className="project-card-desc">{proj.summary}</p>
                       <div className="project-card-footer">
                         <span className="project-author-label">{proj.author}</span>
@@ -396,20 +386,11 @@ export const Services: React.FC = () => {
                     tabIndex={0}
                     onKeyDown={(e) => e.key === 'Enter' && setSelectedProject(proj)}
                   >
-                    {proj.sandboxType ? (
-                      <div className="project-cover-sandbox-wrapper">
-                        <SystemSandboxPreview type={proj.sandboxType} compact />
-                      </div>
-                    ) : (
-                      <div className="project-cover-box">
-                        <img src={proj.coverImage} alt={proj.title} loading="lazy" />
-                      </div>
-                    )}
+                    <div className="project-cover-box">
+                      <img src={proj.coverImage} alt={proj.title} loading="lazy" />
+                    </div>
                     <div className="project-card-info">
-                      <div className="project-card-header-row">
-                        <h3 className="project-card-title">{proj.title}</h3>
-                        {proj.sandboxType && <span className="project-interactive-pill">LIVE SANDBOX</span>}
-                      </div>
+                      <h3 className="project-card-title">{proj.title}</h3>
                       <p className="project-card-desc">{proj.summary}</p>
                       <div className="project-card-footer">
                         <span className="project-author-label">{proj.author}</span>

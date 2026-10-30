@@ -204,39 +204,8 @@ export const Contact: React.FC = () => {
             </form>
           </div>
 
-          {/* Studio Information & Location Signals */}
+          {/* Scope & Collaboration FAQs */}
           <div style={{ marginTop: '70px', borderTop: '1px solid var(--c-border)', paddingTop: '50px' }}>
-            <div style={{ textAlign: 'center', marginBottom: '36px' }}>
-              <h2 style={{ fontSize: '28px', color: 'var(--c-blue)', fontWeight: 600, marginBottom: '10px' }}>
-                Direct Access & Studio Operations
-              </h2>
-              <p style={{ fontSize: '17px', color: 'var(--c-text-muted)', maxWidth: '640px', margin: '0 auto', lineHeight: 1.5 }}>
-                We operate as an agile creative studio headquartered in Dhaka, Bangladesh, collaborating with founders, startups, and marketing leaders globally.
-              </p>
-            </div>
-
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '20px', marginBottom: '60px' }}>
-              <div style={{ background: '#FFFFFF', border: '1px solid var(--c-border)', borderRadius: 'var(--radius-card)', padding: '28px 24px' }}>
-                <h3 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--c-blue)', marginBottom: '8px' }}>Studio Headquarters</h3>
-                <p style={{ fontSize: '15px', color: 'var(--c-text)', lineHeight: 1.5, margin: 0 }}>
-                  Dhaka, Bangladesh (UTC+6). We coordinate seamless timezone overlap for clients across North America, Europe, and Asia.
-                </p>
-              </div>
-              <div style={{ background: '#FFFFFF', border: '1px solid var(--c-border)', borderRadius: 'var(--radius-card)', padding: '28px 24px' }}>
-                <h3 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--c-blue)', marginBottom: '8px' }}>Response Time</h3>
-                <p style={{ fontSize: '15px', color: 'var(--c-text)', lineHeight: 1.5, margin: 0 }}>
-                  Guaranteed response within 12 hours on business days (Sunday–Thursday). Direct communication with founders—never account managers.
-                </p>
-              </div>
-              <div style={{ background: '#FFFFFF', border: '1px solid var(--c-border)', borderRadius: 'var(--radius-card)', padding: '28px 24px' }}>
-                <h3 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--c-blue)', marginBottom: '8px' }}>Sprint Engagements</h3>
-                <p style={{ fontSize: '15px', color: 'var(--c-text)', lineHeight: 1.5, margin: 0 }}>
-                  We take on a limited number of client projects per month to maintain craftsmanship, focus, and rapid turnaround speeds.
-                </p>
-              </div>
-            </div>
-
-            {/* Scope & Collaboration FAQs */}
             <div style={{ textAlign: 'center', marginBottom: '28px' }}>
               <h2 style={{ fontSize: '28px', color: 'var(--c-blue)', fontWeight: 600, marginBottom: '10px' }}>
                 Project Scopes & Frequently Asked Questions
