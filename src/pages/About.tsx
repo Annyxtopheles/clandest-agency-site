@@ -19,7 +19,7 @@ export const About: React.FC = () => {
           {/* Narrative Row 1: Origin */}
           <div className="about-narrative-row">
             <div className="about-narrative-text">
-              <h2 style={{ fontSize: '28px', color: 'var(--c-blue)', marginBottom: '12px', fontWeight: 600 }}>The Origin</h2>
+              <h2 className="about-narrative-heading">The Origin</h2>
               <p>Our journey began at <strong>Munshiganj Polytechnic Institute</strong>, where we met for the first time while pursuing our Diplomas in Computer Technology (2021–2025). Coming from different backgrounds, contexts, and histories, we discovered a shared passion for visual aesthetics, robust engineering, and creative media.</p>
               <p>Collaborating on projects throughout our studies, we established a seamless team shorthand and standard of work.</p>
             </div>
@@ -46,7 +46,7 @@ export const About: React.FC = () => {
               />
             </div>
             <div className="about-narrative-text">
-              <h2 style={{ fontSize: '28px', color: 'var(--c-blue)', marginBottom: '12px', fontWeight: 600 }}>Leadership in Scouts</h2>
+              <h2 className="about-narrative-heading">Leadership in Scouts</h2>
               <p>During our college years, we dedicated our energy to the <strong>Rover Scouts movement</strong>. Scouting was our testing ground for discipline, accountability, volunteer coordination, and leadership under pressure.</p>
               <p>Under Md Nafiur Rahman's leadership as Senior Rover Mate, our campus unit won national recognition, including the prestigious <strong>"Serader Sera"</strong> award at the National Rover Moot 2024, placing in the top 16 of 600+ units across Bangladesh.</p>
             </div>
@@ -55,7 +55,7 @@ export const About: React.FC = () => {
           {/* Narrative Row 3: Industrial Attachment */}
           <div className="about-narrative-row">
             <div className="about-narrative-text">
-              <h2 style={{ fontSize: '28px', color: 'var(--c-blue)', marginBottom: '12px', fontWeight: 600 }}>Industrial Mastery</h2>
+              <h2 className="about-narrative-heading">Industrial Mastery</h2>
               <p>After our diplomas, we expanded our industry experience. Sadman and Rafayet completed their industrial attachment together at <strong>European IT Solutions in Mirpur</strong>.</p>
               <p>Working side-by-side on commercial graphics, illustration assets, and branding systems, they integrated their design and editing workflows—laying the foundation for Clandest's visual strategy.</p>
             </div>

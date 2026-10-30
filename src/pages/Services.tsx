@@ -188,8 +188,8 @@ export const Services: React.FC = () => {
           {activeCategory === 'video' && (
             <div className="video-portfolio-section" id="video-portfolio" style={{ marginBottom: '80px' }}>
               <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-                <h2 style={{ fontSize: '32px', color: 'var(--c-blue)', fontWeight: 600, marginBottom: '10px' }}>Direct-Response Marketing Video & Motion</h2>
-                <p style={{ fontSize: '18px', color: 'var(--c-text-muted)', maxWidth: '680px', margin: '0 auto' }}>
+                <h2 className="category-showcase-heading">Direct-Response Marketing Video & Motion</h2>
+                <p className="category-showcase-subtext">
                   High-converting VSLs, commercial product ads, documentary post-production, and motion graphics edited by Abdullah Al Rafayet.
                 </p>
               </div>
@@ -289,10 +289,10 @@ export const Services: React.FC = () => {
           {activeCategory === 'branding' && (
             <div className="category-showcase-panel" id="branding" style={{ marginBottom: '80px' }}>
               <div style={{ textAlign: 'center', marginBottom: '36px' }}>
-                <h2 style={{ fontSize: '32px', color: 'var(--c-blue)', fontWeight: 600, marginBottom: '10px' }}>
+                <h2 className="category-showcase-heading">
                   Brand Identity Systems & Visual Craft
                 </h2>
-                <p style={{ fontSize: '18px', color: 'var(--c-text-muted)', maxWidth: '680px', margin: '0 auto' }}>
+                <p className="category-showcase-subtext">
                   Complete visual identities, logotype construction, luxury packaging, and design systems designed by Sadman Zaman Khan.
                 </p>
               </div>
@@ -355,10 +355,10 @@ export const Services: React.FC = () => {
           {activeCategory === 'web' && (
             <div className="category-showcase-panel" id="development" style={{ marginBottom: '80px' }}>
               <div style={{ textAlign: 'center', marginBottom: '36px' }}>
-                <h2 style={{ fontSize: '32px', color: 'var(--c-blue)', fontWeight: 600, marginBottom: '10px' }}>
+                <h2 className="category-showcase-heading">
                   Website Redesign & Digital Experience
                 </h2>
-                <p style={{ fontSize: '18px', color: 'var(--c-text-muted)', maxWidth: '680px', margin: '0 auto' }}>
+                <p className="category-showcase-subtext">
                   Distraction-free product workspaces, enterprise SaaS platforms, and luxury e-commerce ecosystems engineered for performance and conversion.
                 </p>
               </div>
