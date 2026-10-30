@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { createPortal } from 'react-dom';
 
 interface VideoModalProps {
   videoId: string | null;
@@ -22,9 +23,10 @@ export const VideoModal: React.FC<VideoModalProps> = ({ videoId, title, onClose 
   }, [videoId, onClose]);
 
   if (!videoId) return null;
+  if (typeof document === 'undefined') return null;
 
-  return (
-    <div className="video-modal-overlay active" onClick={onClose}>
+  return createPortal(
+    <div className="video-modal-overlay active" onClick={onClose} role="dialog" aria-modal="true">
       <div className="video-modal-dialog" onClick={(e) => e.stopPropagation()}>
         <button className="video-modal-close-btn" aria-label="Close Video Player" onClick={onClose}>
           &times;
@@ -47,6 +49,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({ videoId, title, onClose 
           )}
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };

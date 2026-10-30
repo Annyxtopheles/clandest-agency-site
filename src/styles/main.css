@@ -1319,20 +1319,23 @@ button, input, select, textarea {
 /* Lightbox Video Modal */
 .video-modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(10, 15, 30, 0.82);
+  background-color: rgba(10, 15, 30, 0.85);
   backdrop-filter: blur(10px);
-  z-index: 99999;
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 999999;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 32px 16px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
 }
 
 .video-modal-overlay.active {
@@ -1343,13 +1346,14 @@ button, input, select, textarea {
 .video-modal-dialog {
   width: 100%;
   max-width: 960px;
+  margin: auto;
   background-color: #000000;
   border-radius: 16px;
   overflow: visible;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
   position: relative;
-  transform: scale(0.94);
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scale(0.96);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .video-modal-overlay.active .video-modal-dialog {
@@ -2739,6 +2743,7 @@ button, input, select, textarea {
   width: 100%;
   max-width: 900px;
   max-height: 90vh;
+  margin: auto;
   background-color: #FFFFFF;
   border-radius: 20px;
   overflow-y: auto;
@@ -2747,7 +2752,7 @@ button, input, select, textarea {
   display: flex;
   flex-direction: column;
   transform: scale(0.96);
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   scrollbar-width: none;
   -ms-overflow-style: none;
 }

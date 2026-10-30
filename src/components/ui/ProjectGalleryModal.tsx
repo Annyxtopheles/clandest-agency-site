@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { ServiceProjectItem } from '../../data/serviceProjects';
 import { BeforeAfterSlider } from './BeforeAfterSlider';
 import { triggerHaptic } from '../../utils/haptics';
@@ -11,9 +12,13 @@ interface ProjectGalleryModalProps {
 export const ProjectGalleryModal: React.FC<ProjectGalleryModalProps> = ({ project, onClose }) => {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const overlayMouseDownRef = useRef(false);
+  const dialogRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setActiveImageIndex(0);
+    if (dialogRef.current) {
+      dialogRef.current.scrollTop = 0;
+    }
   }, [project]);
 
   useEffect(() => {
@@ -40,6 +45,7 @@ export const ProjectGalleryModal: React.FC<ProjectGalleryModalProps> = ({ projec
   }, [project, onClose]);
 
   if (!project) return null;
+  if (typeof document === 'undefined') return null;
 
   const currentImage = project.galleryImages[activeImageIndex] || {
     url: project.coverImage,
@@ -71,7 +77,7 @@ export const ProjectGalleryModal: React.FC<ProjectGalleryModalProps> = ({ projec
     overlayMouseDownRef.current = false;
   };
 
-  return (
+  return createPortal(
     <div 
       className="video-modal-overlay active" 
       onMouseDown={handleOverlayMouseDown}
@@ -80,6 +86,7 @@ export const ProjectGalleryModal: React.FC<ProjectGalleryModalProps> = ({ projec
       aria-modal="true"
     >
       <div 
+        ref={dialogRef}
         className="project-gallery-modal-dialog" 
         onClick={(e) => e.stopPropagation()}
       >
@@ -204,6 +211,7 @@ export const ProjectGalleryModal: React.FC<ProjectGalleryModalProps> = ({ projec
           </div>
         )}
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
