@@ -15,17 +15,30 @@ import { NotFound } from './pages/NotFound';
 export const App: React.FC = () => {
   const location = useLocation();
 
+  const handleRouteExitComplete = () => {
+    if (typeof window === 'undefined') return;
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
+  };
+
   return (
     <>
       <ScrollToTop />
       <Header />
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait" onExitComplete={handleRouteExitComplete}>
         <motion.div
           key={location.pathname}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+          initial={{ opacity: 0, y: 12, filter: 'blur(3px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          exit={{ opacity: 0, y: -8, filter: 'blur(2px)' }}
+          transition={{ type: 'spring', stiffness: 300, damping: 28, mass: 0.85 }}
         >
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />

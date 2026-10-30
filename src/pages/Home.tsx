@@ -64,7 +64,7 @@ export const Home: React.FC = () => {
             {/* Service 1: Marketing Video */}
             <Link to="/services#video" className="service-visual-card">
               <TiltCard>
-                <div className="service-image-box">
+                <div className="service-image-box vt-service-video">
                   <img src="/assets/service-marketing-video.webp" alt="Marketing Video Production" width="928" height="800" fetchPriority="high" />
                 </div>
                 <div className="service-card-label">Marketing Video</div>
@@ -74,7 +74,7 @@ export const Home: React.FC = () => {
             {/* Service 2: Logo & Brand Design */}
             <Link to="/services#branding" className="service-visual-card">
               <TiltCard>
-                <div className="service-image-box">
+                <div className="service-image-box vt-service-branding">
                   <img src="/assets/service-brand-design.webp" alt="Logo and Brand Design" width="928" height="800" fetchPriority="high" />
                 </div>
                 <div className="service-card-label">Logo & Brand Design</div>
@@ -84,7 +84,7 @@ export const Home: React.FC = () => {
             {/* Service 3: Website Redesign */}
             <Link to="/services#development" className="service-visual-card">
               <TiltCard>
-                <div className="service-image-box">
+                <div className="service-image-box vt-service-web">
                   <img src="/assets/service-web-redesign.webp" alt="Website Redesign and Development" width="928" height="800" fetchPriority="high" />
                 </div>
                 <div className="service-card-label">Website Redesign</div>

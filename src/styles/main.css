@@ -3711,3 +3711,36 @@ button, input, select, textarea {
   overflow: hidden;
   border: 1px solid var(--c-border);
 }
+
+
+/* ==========================================================================
+   Native View Transitions API & Reduced Motion Guards
+   ========================================================================== */
+@media (prefers-reduced-motion: no-preference) {
+  .vt-service-video {
+    view-transition-name: vt-service-video;
+  }
+  .vt-service-branding {
+    view-transition-name: vt-service-branding;
+  }
+  .vt-service-web {
+    view-transition-name: vt-service-web;
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.28s;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

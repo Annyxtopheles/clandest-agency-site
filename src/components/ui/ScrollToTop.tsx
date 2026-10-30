@@ -1,19 +1,21 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
 export const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
+  const prevPathnameRef = useRef(pathname);
 
   useEffect(() => {
-    if (hash) {
+    const isSamePageHashChange = prevPathnameRef.current === pathname && Boolean(hash);
+    prevPathnameRef.current = pathname;
+
+    if (isSamePageHashChange && hash) {
       const id = hash.replace('#', '');
       const element = document.getElementById(id);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
-        return;
       }
     }
-    window.scrollTo(0, 0);
   }, [pathname, hash]);
 
   return null;

@@ -101,6 +101,24 @@ export const Services: React.FC = () => {
     return () => window.removeEventListener('hashchange', handleHash);
   }, []);
 
+  const switchCategoryWithTransition = (nextCat: 'video' | 'branding' | 'web') => {
+    triggerHaptic('selection');
+    const docWithVT = document as Document & {
+      startViewTransition?: (cb: () => void) => void;
+    };
+    const prefersReducedMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (docWithVT.startViewTransition && !prefersReducedMotion) {
+      docWithVT.startViewTransition(() => {
+        setActiveCategory(nextCat);
+      });
+    } else {
+      setActiveCategory(nextCat);
+    }
+  };
+
   const filteredVideos = filter === 'all' ? VIDEO_PROJECTS : VIDEO_PROJECTS.filter((v) => v.category === filter);
 
   return (
@@ -121,17 +139,14 @@ export const Services: React.FC = () => {
             {/* Category 1: Marketing Video */}
             <div
               className={`service-visual-card ${activeCategory === 'video' ? 'active-service-card' : ''}`}
-              onClick={() => {
-                triggerHaptic('selection');
-                setActiveCategory('video');
-              }}
+              onClick={() => switchCategoryWithTransition('video')}
               style={{ cursor: 'pointer' }}
               role="button"
               tabIndex={0}
-              onKeyDown={(e) => e.key === 'Enter' && setActiveCategory('video')}
+              onKeyDown={(e) => e.key === 'Enter' && switchCategoryWithTransition('video')}
             >
               <TiltCard>
-                <div className="service-image-box">
+                <div className="service-image-box vt-service-video">
                   <img src="/assets/service-marketing-video.webp" alt="Marketing Video Production" width="928" height="800" fetchPriority="high" />
                 </div>
                 <div className="service-card-label">
@@ -143,17 +158,14 @@ export const Services: React.FC = () => {
             {/* Category 2: Logo & Brand Design */}
             <div
               className={`service-visual-card ${activeCategory === 'branding' ? 'active-service-card' : ''}`}
-              onClick={() => {
-                triggerHaptic('selection');
-                setActiveCategory('branding');
-              }}
+              onClick={() => switchCategoryWithTransition('branding')}
               style={{ cursor: 'pointer' }}
               role="button"
               tabIndex={0}
-              onKeyDown={(e) => e.key === 'Enter' && setActiveCategory('branding')}
+              onKeyDown={(e) => e.key === 'Enter' && switchCategoryWithTransition('branding')}
             >
               <TiltCard>
-                <div className="service-image-box">
+                <div className="service-image-box vt-service-branding">
                   <img src="/assets/service-brand-design.webp" alt="Logo & Brand Design" width="928" height="800" fetchPriority="high" />
                 </div>
                 <div className="service-card-label">
@@ -165,17 +177,14 @@ export const Services: React.FC = () => {
             {/* Category 3: Website Redesign */}
             <div
               className={`service-visual-card ${activeCategory === 'web' ? 'active-service-card' : ''}`}
-              onClick={() => {
-                triggerHaptic('selection');
-                setActiveCategory('web');
-              }}
+              onClick={() => switchCategoryWithTransition('web')}
               style={{ cursor: 'pointer' }}
               role="button"
               tabIndex={0}
-              onKeyDown={(e) => e.key === 'Enter' && setActiveCategory('web')}
+              onKeyDown={(e) => e.key === 'Enter' && switchCategoryWithTransition('web')}
             >
               <TiltCard>
-                <div className="service-image-box">
+                <div className="service-image-box vt-service-web">
                   <img src="/assets/service-web-redesign.webp" alt="Website Redesign and Development" width="928" height="800" fetchPriority="high" />
                 </div>
                 <div className="service-card-label">
