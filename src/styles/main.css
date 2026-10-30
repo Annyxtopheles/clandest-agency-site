@@ -363,7 +363,11 @@ button, input, select, textarea {
 }
 
 .easter-egg:hover::after,
-.easter-egg:hover::before {
+.easter-egg:hover::before,
+.easter-egg.is-open::after,
+.easter-egg.is-open::before,
+.easter-egg:focus-visible::after,
+.easter-egg:focus-visible::before {
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) translateY(0);
@@ -1840,10 +1844,37 @@ button, input, select, textarea {
   }
 }
 
+@media (max-width: 640px) {
+  .services-category-selector {
+    display: flex !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 14px !important;
+    padding-bottom: 10px;
+    scrollbar-width: none;
+  }
+
+  .services-category-selector::-webkit-scrollbar {
+    display: none;
+  }
+
+  .services-category-selector .service-visual-card {
+    flex: 0 0 64%;
+    max-width: 240px;
+    scroll-snap-align: center;
+  }
+
+  .services-category-selector .service-card-label {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+}
+
 @media (max-width: 480px) {
   .services-category-selector .service-card-label {
-    font-size: 11px;
-    letter-spacing: -0.2px;
+    font-size: 13.5px;
+    letter-spacing: -0.01em;
   }
 
   .team-members-grid {
@@ -2918,6 +2949,7 @@ button, input, select, textarea {
   max-height: 520px;
   overflow: hidden;
   user-select: none;
+  touch-action: pan-y;
   cursor: ew-resize;
   background-color: #FFFFFF;
   display: flex;

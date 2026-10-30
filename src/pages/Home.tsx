@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { WordLift } from '../components/ui/WordLift';
 import { AnimatedButton } from '../components/ui/AnimatedButton';
@@ -9,6 +9,20 @@ import { triggerHaptic } from '../utils/haptics';
 export const Home: React.FC = () => {
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [feedbackMsg, setFeedbackMsg] = useState('');
+  const [openEasterEgg, setOpenEasterEgg] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (openEasterEgg === null) return;
+    const closeOnOutside = () => setOpenEasterEgg(null);
+    window.addEventListener('click', closeOnOutside);
+    return () => window.removeEventListener('click', closeOnOutside);
+  }, [openEasterEgg]);
+
+  const toggleEasterEgg = (index: number, e: React.MouseEvent | React.KeyboardEvent) => {
+    e.stopPropagation();
+    triggerHaptic('light');
+    setOpenEasterEgg((prev) => (prev === index ? null : index));
+  };
 
   const handleContactSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -50,7 +64,40 @@ export const Home: React.FC = () => {
             We design brands, websites,<br />and edit marketing videos.
           </WordLift>
           <p className="hero-subtext">
-            We are <span className="easter-egg" data-tooltip="🎨 Design + 💻 Code + 🎬 Motion">college friends</span> who met at <span className="easter-egg" data-tooltip="📍 Munshiganj / Dhaka, Bangladesh">Munshiganj Polytechnic Institute</span>. We combine UX design, clean software engineering, and post-production video editing to build digital assets that actually work. Direct access to founders—<span className="easter-egg" data-tooltip="⚡ Sadman, Nafiur & Rafayet">zero middlemen</span>.
+            We are{' '}
+            <span
+              className={`easter-egg ${openEasterEgg === 0 ? 'is-open' : ''}`}
+              data-tooltip="🎨 Design + 💻 Code + 🎬 Motion"
+              role="button"
+              tabIndex={0}
+              onClick={(e) => toggleEasterEgg(0, e)}
+              onKeyDown={(e) => e.key === 'Enter' && toggleEasterEgg(0, e)}
+            >
+              college friends
+            </span>{' '}
+            who met at{' '}
+            <span
+              className={`easter-egg ${openEasterEgg === 1 ? 'is-open' : ''}`}
+              data-tooltip="📍 Munshiganj / Dhaka, Bangladesh"
+              role="button"
+              tabIndex={0}
+              onClick={(e) => toggleEasterEgg(1, e)}
+              onKeyDown={(e) => e.key === 'Enter' && toggleEasterEgg(1, e)}
+            >
+              Munshiganj Polytechnic Institute
+            </span>
+            . We combine UX design, clean software engineering, and post-production video editing to build digital assets that actually work. Direct access to founders—
+            <span
+              className={`easter-egg ${openEasterEgg === 2 ? 'is-open' : ''}`}
+              data-tooltip="⚡ Sadman, Nafiur & Rafayet"
+              role="button"
+              tabIndex={0}
+              onClick={(e) => toggleEasterEgg(2, e)}
+              onKeyDown={(e) => e.key === 'Enter' && toggleEasterEgg(2, e)}
+            >
+              zero middlemen
+            </span>
+            .
           </p>
         </div>
       </section>

@@ -14,6 +14,7 @@ export const ProjectGalleryModal: React.FC<ProjectGalleryModalProps> = ({ projec
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [viewMode, setViewMode] = useState<'slides' | 'sandbox'>('slides');
   const overlayMouseDownRef = useRef(false);
+  const touchStartXRef = useRef<number | null>(null);
 
   useEffect(() => {
     setActiveImageIndex(0);
@@ -122,7 +123,32 @@ export const ProjectGalleryModal: React.FC<ProjectGalleryModalProps> = ({ projec
                 </div>
               ) : (
                 <>
-                  <div className="project-modal-image-wrapper">
+                  <div
+                    className="project-modal-image-wrapper"
+                    onTouchStart={(e) => {
+                      const currentSlide = project.galleryImages[activeImageIndex];
+                      if (currentSlide?.comparison) return;
+                      touchStartXRef.current = e.touches[0]?.clientX ?? null;
+                    }}
+                    onTouchEnd={(e) => {
+                      const currentSlide = project.galleryImages[activeImageIndex];
+                      if (currentSlide?.comparison || touchStartXRef.current === null || project.galleryImages.length <= 1) {
+                        touchStartXRef.current = null;
+                        return;
+                      }
+                      const endX = e.changedTouches[0]?.clientX ?? touchStartXRef.current;
+                      const deltaX = endX - touchStartXRef.current;
+                      touchStartXRef.current = null;
+                      if (Math.abs(deltaX) > 48) {
+                        triggerHaptic('light');
+                        if (deltaX < 0) {
+                          setActiveImageIndex((prev) => (prev + 1) % project.galleryImages.length);
+                        } else {
+                          setActiveImageIndex((prev) => (prev - 1 + project.galleryImages.length) % project.galleryImages.length);
+                        }
+                      }
+                    }}
+                  >
                     {(project.galleryImages[activeImageIndex] || { url: project.coverImage, caption: project.title }).comparison ? (
                       <BeforeAfterSlider
                         key={`${project.id}-${activeImageIndex}`}
